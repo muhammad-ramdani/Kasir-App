@@ -5,10 +5,10 @@ import dataPelanggan from "../../assets/imagesManagemenAll/data-pelanggan.svg";
 import dataSupplier from "../../assets/imagesManagemenAll/data-supplier.svg";
 import diskonBarang from "../../assets/imagesManagemenAll/diskon-barang.svg";
 import stokBarang from "../../assets/imagesManagemenAll/stok-barang.svg";
-import { FC } from 'react';
 import Layout from '../../Layout/Layout';
 
-const Dashboard: FC = () => {
+
+function Dashboard() {
     return (
         <>
             <Layout titlePage='Manajemen'>
