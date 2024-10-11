@@ -5,10 +5,9 @@ import dataPelanggan from "../../assets/imagesManagemenAll/data-pelanggan.svg";
 import dataSupplier from "../../assets/imagesManagemenAll/data-supplier.svg";
 import diskonBarang from "../../assets/imagesManagemenAll/diskon-barang.svg";
 import stokBarang from "../../assets/imagesManagemenAll/stok-barang.svg";
+import { FC } from 'react';
 
-
-
-function Dashboard() {
+const Dashboard: FC = () => {
     return (
         <>
             <div className="container py-4">
@@ -28,7 +27,7 @@ function Dashboard() {
                                         <img
                                             src={dataBarang}
                                             className="float-end"
-                                            alt=""
+                                            alt="Data Barang"
                                         />
                                     </div>
                                 </div>
@@ -59,7 +58,7 @@ function Dashboard() {
                                         <img
                                             src={kategoriBarang}
                                             className="float-end"
-                                            alt=""
+                                            alt="Kategori Barang"
                                         />
                                     </div>
                                 </div>
@@ -90,7 +89,7 @@ function Dashboard() {
                                         <img
                                             src={dataPelanggan}
                                             className="float-end"
-                                            alt=""
+                                            alt="Data Pelanggan"
                                         />
                                     </div>
                                 </div>
@@ -121,7 +120,7 @@ function Dashboard() {
                                         <img
                                             src={dataSupplier}
                                             className="float-end"
-                                            alt=""
+                                            alt="Data Supplier"
                                         />
                                     </div>
                                 </div>
@@ -152,7 +151,7 @@ function Dashboard() {
                                         <img
                                             src={diskonBarang}
                                             className="float-end"
-                                            alt=""
+                                            alt="Diskon Barang"
                                         />
                                     </div>
                                 </div>
@@ -180,7 +179,7 @@ function Dashboard() {
                                         </p>
                                     </div>
                                     <div className="col-2">
-                                        <img src={stokBarang} className="float-end" alt="" />
+                                        <img src={stokBarang} className="float-end" alt="Stok Barang" />
                                     </div>
                                 </div>
                                 <div className="d-grid gap-2">
@@ -198,7 +197,7 @@ function Dashboard() {
                 </div>
             </div>
         </>
-    )
+    );
 }
 
-export default Dashboard
+export default Dashboard;
