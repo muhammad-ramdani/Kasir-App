@@ -5,6 +5,7 @@ import ChangePassword from './compenents/auth/change-passwd/changePassword'
 import VerifyEmail from './compenents/auth/change-passwd/verifyEmail'
 import NewPasswd from './compenents/auth/change-passwd/newPasswd'
 import Dashboard from './compenents/manajemen/dashboard'
+import Laporan from './Pages/Laporan/Laporan'
 
 function App() {
     return (
@@ -18,6 +19,9 @@ function App() {
                 <Route path='/newpasswd' element={<NewPasswd />} />
                 {/* <Route path='/' element={<Login/>}/>
       <Route path='/' element={<Login/>}/> */}
+
+                {/* Halaman laporan */}
+                <Route path='/laporan' element={<Laporan />} />
             </Routes>
         </>
     )
