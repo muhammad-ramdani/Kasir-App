@@ -5,14 +5,13 @@ import dataPelanggan from "../../assets/imagesManagemenAll/data-pelanggan.svg";
 import dataSupplier from "../../assets/imagesManagemenAll/data-supplier.svg";
 import diskonBarang from "../../assets/imagesManagemenAll/diskon-barang.svg";
 import stokBarang from "../../assets/imagesManagemenAll/stok-barang.svg";
+import { FC } from 'react';
 import Layout from '../../Layout/Layout';
 
-
-
-function Dashboard() {
+const Dashboard: FC = () => {
     return (
         <>
-            <Layout titlePage="Manajemen">
+            <Layout titlePage='Manajemen'>
                 <div className="container py-4">
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         <div className="col col-card">
@@ -200,9 +199,8 @@ function Dashboard() {
                     </div>
                 </div>
             </Layout>
-
         </>
-    )
+    );
 }
 
-export default Dashboard
+export default Dashboard;
