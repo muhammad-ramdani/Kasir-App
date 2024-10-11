@@ -60,6 +60,9 @@
    justify-content: space-between;
 }
 
+.manajamen {
+   background-color: #F2F4FA;
+}
 .header-left {
    display: flex;
    align-items: center;

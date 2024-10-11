@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+
+
+function Card() {
+  return (
+    <div>card</div>
+=======
 import React from 'react';
 import './Card.css'
 
@@ -33,6 +40,7 @@ const Card: React.FC<CardProps> = ({ title, description, icon }) => {
         </div>
       </div>
     </div>
+>>>>>>> 14c19952b928ef39a760334216472b04fe3a331d
   )
 }
 
