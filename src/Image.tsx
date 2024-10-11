@@ -12,7 +12,8 @@ import notification from '../src/assets/notification.png';
 import person from '../src/assets/person.png';
 import camera from '../src/assets/camera.png';
 import edit from '../src/assets/edit.png';
-import wallet from '../src/assets/wallet.png'
+import wallet from '../src/assets/wallet.png';
+import shopping from '../src/assets/shopping.svg';
 
 const images = {
     logo,
@@ -29,7 +30,9 @@ const images = {
     person,
     camera,
     edit,
-    wallet
+    wallet,
+    shopping
+    
 
 }
 

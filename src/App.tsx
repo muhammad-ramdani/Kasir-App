@@ -4,7 +4,7 @@ import Login from "./compenents/auth/login/login";
 import ChangePassword from "./compenents/auth/change-passwd/changePassword";
 import VerifyEmail from "./compenents/auth/change-passwd/verifyEmail";
 import NewPasswd from "./compenents/auth/change-passwd/newPasswd";
-import Dashboard from "./compenents/manajemen/dashboard";
+import Dashboard from "./Pages/manajemen/dashboard";
 import ResetBerhasil from "./compenents/auth/change-passwd/resetBerhasil";
 import Register from "./compenents/auth/register/register";
 

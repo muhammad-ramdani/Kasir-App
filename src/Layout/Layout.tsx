@@ -98,7 +98,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                         </section>
                     </div>
                 </div>
-                <div className="col-11 manajamen ">
+                <div className="col-11 ">
                     <header className="header-menu">
                         <div className="header-left">
                             {/* Hamburger Button */}
