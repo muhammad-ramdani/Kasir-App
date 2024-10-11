@@ -1,0 +1,95 @@
+.otp-modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 560px;
+    height: 400px; 
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .otp-modal h2 {
+    color: rgb(0, 0, 0);
+  }
+
+  .otp-modal p {
+    color: rgb(122, 122, 122);
+    margin-top: 32px;
+  }
+
+  .otp-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    margin-top: 26px;
+  }
+  
+  .otp-input {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    border: 1px solid #FF0000; 
+    border-radius: 14px;
+    outline: none; 
+  }
+  
+
+  .otp-input:focus {
+    border-color: #FF0000; 
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); 
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    justify-content: flex-end;
+    display: flex;
+    gap: 10px
+  }
+
+  .otp-kirim-ulang {
+    color: rgb(122, 122, 122);
+    margin-bottom: 42px;
+    margin-top: 32px;
+  }
+
+  
+  .btn-cancel {
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .btn-verify-modal {
+    background-color: red;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  

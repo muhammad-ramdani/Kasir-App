@@ -1,0 +1,105 @@
+
+
+/* Main container to align left and right sections */
+.content-newPasswd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+
+.left-section-newPasswd {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
+}
+
+
+
+/* Right section with login form */
+.right-section-newPasswd {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.newPasswd-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.newPasswd-form h1 {
+  font-size: 30px;
+  margin-bottom: 1px;
+  font-weight: 600;
+}
+
+.newPasswd-form p {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 50px;
+  margin-top: 1px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #777777;
+}
+
+
+input:focus {
+  border-color: #ccc; 
+  outline: none; 
+
+}
+
+.newPasswd-field {
+  position: relative;
+}
+
+.newPasswd-field input {
+  height: 48px;
+  width: 100%;
+  margin-top: 6px;
+  padding-right: 40px; 
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.newPasswd-toggle {
+  position: absolute;
+  right: 10px;
+  top: 56%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #000000;
+}
+
+
+
+.btn-login {
+  width: 106%;
+  height: 56px;
+  padding: 10px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
