@@ -6,6 +6,8 @@ import VerifyEmail from './compenents/auth/change-passwd/verifyEmail'
 import NewPasswd from './compenents/auth/change-passwd/newPasswd'
 import Dashboard from './compenents/manajemen/dashboard'
 import Laporan from './Pages/Laporan/Laporan'
+import LaporanTransaksi from './Pages/Laporan/LaporanTransaksi'
+import Shift from './Pages/Shift/Shift'
 
 function App() {
     return (
@@ -22,6 +24,9 @@ function App() {
 
                 {/* Halaman laporan */}
                 <Route path='/laporan' element={<Laporan />} />
+                <Route path='/laporan-transaksi' element={<LaporanTransaksi />} />
+
+                <Route path='/shift' element={<Shift />} />
             </Routes>
         </>
     )

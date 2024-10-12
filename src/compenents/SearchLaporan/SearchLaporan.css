@@ -1,0 +1,19 @@
+.col-cari-data-barang {
+   padding-left: 0px !important;
+}
+
+.form-control-cari-data-barang {
+   padding: 9.5px 12px 9.5px 0px !important;
+}
+
+.form-control-cari-data-barang::placeholder {
+   color: #9f9f9f !important;
+}
+
+.form-control-cari-data-barang:focus {
+   box-shadow: none !important;
+}
+
+.component-filter {
+    margin-top: 43px;
+}

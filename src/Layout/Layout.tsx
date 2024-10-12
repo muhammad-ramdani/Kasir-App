@@ -54,12 +54,12 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                                 </Link>
                             </div>
                             <div className="logo-sidebar">
-                                <Link to="/">
+                                <Link to="/laporan">
                                     <img src={images.laporan} alt="" className="img-logo" />
                                 </Link>
                             </div>
                             <div className="logo-sidebar">
-                                <Link to="/">
+                                <Link to="/shift">
                                     <img src={images.shift} alt="" className="img-logo" />
                                 </Link>
                             </div>
@@ -153,13 +153,13 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                                     </Link>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/" className="text-decoration-none text-dark">
+                                    <Link to="/laporan" className="text-decoration-none text-dark">
                                         <img src={images.laporan} alt="" className="img-logo" />
                                         <span className="ms-2">Laporan</span>
                                     </Link>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/" className="text-decoration-none text-dark">
+                                    <Link to="/shift" className="text-decoration-none text-dark">
                                         <img src={images.shift} alt="" className="img-logo" />
                                         <span className="ms-2">Shifts</span>
                                     </Link>

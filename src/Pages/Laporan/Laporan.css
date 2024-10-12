@@ -1,0 +1,36 @@
+/* laporan transaksi */
+.btn-order {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.label-status-pembayaran {
+    color:#FF0000;
+}
+
+.btn-status-pembayaran {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.item-status {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+   width: 100%;
+}
+
+.label-status {
+   color: #494949;
+}
+
+.btn-ekspor-laporan {
+    background-color: #FF0000;
+}
+
+.label-ekspor-laporan {
+    color: #fffffF !important;
+}
