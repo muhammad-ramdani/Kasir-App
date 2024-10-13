@@ -12,6 +12,8 @@ import LaporanTransaksi from "./Pages/Laporan/LaporanTransaksi";
 import LaporanPembelianBarang from "./Pages/Laporan/LaporanPembelianBarang";
 import LaporanPelanggan from "./Pages/Laporan/LaporanPelanggan";
 import LaporanPersediaanBarang from "./Pages/Laporan/LaporanPersediaaanBarang";
+import Pengaturan from "./Pages/Pengaturan/Pengaturan";
+import InformasiToko from "./Pages/Pengaturan/InformasiToko";
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
         <Route path="/laporan-pembelian-barang" element={<LaporanPembelianBarang />} />
         <Route path="/laporan-pelanggan" element={<LaporanPelanggan />} />
         <Route path="/laporan-persediaan-barang" element={<LaporanPersediaanBarang />} />
+        {/* Pengaturan */}
+        <Route path="/pengaturan" element={<Pengaturan />} />
+        <Route path="/informasi-toko" element={<InformasiToko />} />
       </Routes>
     </>
   );
