@@ -15,6 +15,7 @@ import LaporanPersediaanBarang from "./Pages/Laporan/LaporanPersediaaanBarang";
 import Transaksi from "./Pages/transaksi/transaksi";
 import Pembayaran from "./Pages/transaksi/pembayaran";
 import StrukPage from "./Pages/transaksi/struck";
+import Shift from "./Pages/shift/Shift";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
         <Route path="/transaksi" element={<Transaksi />} />
         <Route path="/transaksi/pembayaran" element={<Pembayaran />} />
         <Route path="/transaksi/struk" element={<StrukPage />} />
+        {/* Pages Shift */}
+        <Route path="/shift" element={<Shift />} />
       </Routes>
     </>
   );
