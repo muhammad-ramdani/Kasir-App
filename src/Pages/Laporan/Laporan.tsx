@@ -20,7 +20,7 @@ const Laporan = () => {
             title: "Laporan Persediaan Barang",
             description: "Pantau persediaan barang secara efisien dengan laporan terperinci yang memastikan stok tetap optimal sesuai kebutuha.",
             icon: <img src={images.laporan3} alt="Icon 3" />,
-            link: '/laporan-transaksi'
+            link: '/laporan-persediaan-barang'
         },
         {
             title: "Laporan Pelanggan",
