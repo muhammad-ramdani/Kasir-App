@@ -13,7 +13,14 @@ import person from '../src/assets/person.png';
 import camera from '../src/assets/camera.png';
 import edit from '../src/assets/edit.png';
 import wallet from '../src/assets/wallet.png';
-import shopping from '../src/assets/shopping.svg';
+import laporan1 from '../src/assets/laporan1.svg';
+import laporan2 from '../src/assets/laporan2.svg';
+import laporan3 from '../src/assets/laporan3.svg';
+import laporan4 from '../src/assets/laporan4.svg';
+import search from '../src/assets/search.svg';
+import redFilter from '../src/assets/red-filter.svg';
+import ekspor from '../src/assets/ekspor.svg';
+import notFound from '../src/assets/notFound.svg'; 
 
 const images = {
     logo,
@@ -31,7 +38,14 @@ const images = {
     camera,
     edit,
     wallet,
-    shopping
+    laporan1,
+    laporan2,
+    laporan3,
+    laporan4,
+    search,
+    redFilter,
+    ekspor,
+    notFound
     
 
 }

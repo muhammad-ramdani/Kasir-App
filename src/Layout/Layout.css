@@ -8,8 +8,7 @@
 
 .sidebar {
    height: 100vh;
-   /* width: 80px; */
-   background-color: #ffffff;
+   background-color: #ffffff !important;
 }
 
 .image-logo {
@@ -61,11 +60,9 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-}
-
-.manajamen {
    background-color: #F2F4FA;
 }
+
 .header-left {
    display: flex;
    align-items: center;
@@ -154,7 +151,7 @@
 }
 
 /* offcanvas */
-.offcanvas{
+.offcanvas {
    width: 248px !important;
 }
 

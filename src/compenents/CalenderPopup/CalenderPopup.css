@@ -1,0 +1,9 @@
+/* Di dalam file CSS Anda (misalnya, styles.css) */
+
+.calendar-popup {
+   position: fixed; /* Tetap di posisi tetap di layar */
+   top: 25%; /* Posisikan di tengah vertikal */
+   left: 23%; /* Posisikan di tengah horizontal */
+}
+
+

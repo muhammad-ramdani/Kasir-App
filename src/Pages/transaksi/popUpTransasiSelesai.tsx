@@ -30,7 +30,7 @@ const PopUpTransaksiSelesai: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             Cetak Struk
             <img src={arrowRight} alt="arrow" className="arrow-icon" />
           </button>
-          <Link to="/struk" className="btn btn-struck">
+          <Link to="/transaksi/struk" className="btn btn-struck">
             Lihat Struk 
             <img src={arrowRight} alt="arrow-right" className="arrow-icon" />
           </Link>

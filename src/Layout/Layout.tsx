@@ -42,33 +42,33 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
             <section className="section-main mb-3">
               <p className="p-section-main">Main</p>
 
-              <div className="logo-sidebar">
-                <Link to="/">
-                  <img src={images.coin} alt="" className="img-logo" />
-                </Link>
-              </div>
-              <div className="logo-sidebar">
-                <Link to="/transaksi">
-                  <img src={images.dollar} alt="" className="img-logo" />
-                </Link>
-              </div>
-              <div className="logo-sidebar">
-                <Link to="/">
-                  <img src={images.laporan} alt="" className="img-logo" />
-                </Link>
-              </div>
-              <div className="logo-sidebar">
-                <Link to="/">
-                  <img src={images.shift} alt="" className="img-logo" />
-                </Link>
-              </div>
-              <div className="logo-sidebar">
-                <Link to="/">
-                  <img src={images.stock} alt="" className="img-logo" />
-                </Link>
-              </div>
-            </section>
-            <hr />
+                            <div className="logo-sidebar">
+                                <Link to="/">
+                                    <img src={images.coin} alt="" className="img-logo" />
+                                </Link>
+                            </div>
+                            <div className="logo-sidebar">
+                                <Link to="/transaksi">
+                                    <img src={images.dollar} alt="" className="img-logo" />
+                                </Link>
+                            </div>
+                            <div className="logo-sidebar">
+                                <Link to="/laporan">
+                                    <img src={images.laporan} alt="" className="img-logo" />
+                                </Link>
+                            </div>
+                            <div className="logo-sidebar">
+                                <Link to="/shift">
+                                    <img src={images.shift} alt="" className="img-logo" />
+                                </Link>
+                            </div>
+                            <div className="logo-sidebar">
+                                <Link to="/">
+                                    <img src={images.stock} alt="" className="img-logo" />
+                                </Link>
+                            </div>
+                        </section>
+                        <hr />
 
             {/* section more */}
             <section className="section-main mb-2">
@@ -87,82 +87,85 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
               </div>
             </section>
 
-            {/* section logout */}
-            <section className="section-main logout-section">
-              <div className="logo-sidebar-logout">
-                <Link to="/">
-                  <img src={images.logout} alt="" className="img-logo" />
-                </Link>
-              </div>
-            </section>
-          </div>
-        </div>
-        <div className="col-11 main-content">
-          <header className="header-menu">
-            <div className="header-left">
-              {/* Hamburger Button */}
-              <button className="btn button-hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
-                <img src={images.hamburger} alt="hamburger menu" className="hamburger-menu" />
-              </button>
-              <span className="title-page">{titlePage}</span>
-            </div>
-            <div className="header-right">
-              <button className="btn btn-notification" onClick={handleNotificationClick}>
-                <img src={images.notification} alt="" className="me-2" />
-                Notifikasi <span>(0)</span>
-              </button>
+                        {/* section logout */}
+                        <section className="section-main logout-section">
+                            <div className="logo-sidebar">
+                                <Link to="/">
+                                    <img src={images.logout} alt="" className="img-logo" />
+                                </Link>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div className="col-11">
+                    <header className="header-menu">
+                        <div className="header-left">
+                            {/* Hamburger Button */}
+                            <button className="btn button-hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                                <img src={images.hamburger} alt="hamburger menu" className="hamburger-menu" />
+                            </button>
+                            <span className="title-page">{titlePage}</span>
+                        </div>
+                        <div className="header-right">
+                            <button
+                                className="btn btn-notification"
+                                onClick={handleNotificationClick}
+                            >
+                                <img src={images.notification} alt="" className="me-2" />
+                                Notifikasi <span>(0)</span>
+                            </button>
 
               <img src={images.person} alt="user" className="me-5 ms-3" onClick={handleClickProfile} />
             </div>
           </header>
           <hr />
 
-          {/* Offcanvas Sidebar */}
-          <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
-            <div className="offcanvas-header d-flex align-items-center justify-content-start">
-              <section className="section-logo mb-3 d-flex align-items-center justify-content-center">
-                <img src={images.logo} alt="" className="image-logo mt-0 mb-0 me-2" />
-                <span className="header-logo mt-0 mb-0">Kasir Jempolan</span>
-              </section>
-            </div>
-            <div className="offcanvas-body">
-              {/* Sidebar content inside Offcanvas */}
-              <section className="section-main-offcanvas mb-3">
-                <div className="">
-                  <p className="p-section-main-offcanvas">Main</p>
-                </div>
-                <div className="logo-sidebar-offcanvas">
-                  <Link to="/" className="text-decoration-none text-dark">
-                    <img src={images.coin} alt="" className="img-logo" />
-                    <span className="ms-2">Manajemen</span>
-                  </Link>
-                </div>
-                <div className="logo-sidebar-offcanvas">
-                  <Link to="/transaksi" className="text-decoration-none text-dark">
-                    <img src={images.dollar} alt="" className="img-logo" />
-                    <span className="ms-2">Transaksi</span>
-                  </Link>
-                </div>
-                <div className="logo-sidebar-offcanvas">
-                  <Link to="/" className="text-decoration-none text-dark">
-                    <img src={images.laporan} alt="" className="img-logo" />
-                    <span className="ms-2">Laporan</span>
-                  </Link>
-                </div>
-                <div className="logo-sidebar-offcanvas">
-                  <Link to="/" className="text-decoration-none text-dark">
-                    <img src={images.shift} alt="" className="img-logo" />
-                    <span className="ms-2">Shifts</span>
-                  </Link>
-                </div>
-                <div className="logo-sidebar-offcanvas">
-                  <Link to="/" className="text-decoration-none text-dark">
-                    <img src={images.stock} alt="" className="img-logo" />
-                    <span className="ms-2">Stock Opname</span>
-                  </Link>
-                </div>
-                <hr />
-              </section>
+                    {/* Offcanvas Sidebar */}
+                    <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+                        <div className="offcanvas-header d-flex align-items-center justify-content-start">
+                            <section className="section-logo mb-3 d-flex align-items-center justify-content-center">
+                                <img src={images.logo} alt="" className="image-logo mt-0 mb-0 me-2" />
+                                <span className="header-logo mt-0 mb-0">Kasir Jempolan</span>
+                            </section>
+                        </div>
+                        <div className="offcanvas-body">
+                            {/* Sidebar content inside Offcanvas */}
+                            <section className="section-main-offcanvas mb-3">
+                                <div className="">
+                                    <p className="p-section-main-offcanvas">Main</p>
+                                </div>
+                                <div className="logo-sidebar-offcanvas">
+                                    <Link to="/" className="text-decoration-none text-dark">
+                                        <img src={images.coin} alt="" className="img-logo" />
+                                        <span className="ms-2">Manajemen</span>
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar-offcanvas">
+                                    <Link to="/transaksi" className="text-decoration-none text-dark">
+                                        <img src={images.dollar} alt="" className="img-logo" />
+                                        <span className="ms-2">Transaksi</span>
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar-offcanvas">
+                                    <Link to="/laporan" className="text-decoration-none text-dark">
+                                        <img src={images.laporan} alt="" className="img-logo" />
+                                        <span className="ms-2">Laporan</span>
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar-offcanvas">
+                                    <Link to="/shift" className="text-decoration-none text-dark">
+                                        <img src={images.shift} alt="" className="img-logo" />
+                                        <span className="ms-2">Shifts</span>
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar-offcanvas">
+                                    <Link to="/" className="text-decoration-none text-dark">
+                                        <img src={images.stock} alt="" className="img-logo" />
+                                        <span className="ms-2">Stock Opname</span>
+                                    </Link>
+                                </div>
+                                <hr />
+                            </section>
 
               <section className="section-main-offcanvas mb-2">
                 <p className="p-section-main-offcanvas">More</p>

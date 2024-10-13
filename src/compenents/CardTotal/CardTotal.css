@@ -1,0 +1,19 @@
+.card-total-card {
+    border-radius: 8px;
+    height: 119px;
+    /* width: 251px; */
+    border-bottom: 8px solid #FF0000;
+}
+
+.card-total-title{
+    font-size: 16px;
+    font-weight: 400;
+    color: #646464;
+    margin-bottom: 30px;
+}
+
+.desc-total{
+    font-size: 22px;
+    color: black;
+    font-weight: 500;
+}

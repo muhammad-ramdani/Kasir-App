@@ -7,6 +7,11 @@ import NewPasswd from "./compenents/auth/change-passwd/newPasswd";
 import Dashboard from "./Pages/manajemen/dashboard";
 import ResetBerhasil from "./compenents/auth/change-passwd/resetBerhasil";
 import Register from "./compenents/auth/register/register";
+import Laporan from "./Pages/Laporan/Laporan";
+import LaporanTransaksi from "./Pages/Laporan/LaporanTransaksi";
+import LaporanPembelianBarang from "./Pages/Laporan/LaporanPembelianBarang";
+import LaporanPelanggan from "./Pages/Laporan/LaporanPelanggan";
+import LaporanPersediaanBarang from "./Pages/Laporan/LaporanPersediaaanBarang";
 import Transaksi from "./Pages/transaksi/transaksi";
 import Pembayaran from "./Pages/transaksi/pembayaran";
 import StrukPage from "./Pages/transaksi/struck";
@@ -23,9 +28,16 @@ function App() {
         <Route path="/new-passwd" element={<NewPasswd />} />
         <Route path="/reset-berhasil" element={<ResetBerhasil />} />
         <Route path="/register" element={<Register />} />
+        {/* Pages laporan */}
+        <Route path="/laporan" element={<Laporan />} />
+        <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
+        <Route path="/laporan-pembelian-barang" element={<LaporanPembelianBarang />} />
+        <Route path="/laporan-pelanggan" element={<LaporanPelanggan />} />
+        <Route path="/laporan-persediaan-barang" element={<LaporanPersediaanBarang />} />
+        {/* Pages Transaksi */}
         <Route path="/transaksi" element={<Transaksi />} />
         <Route path="/transaksi/pembayaran" element={<Pembayaran />} />
-        <Route path="/struk" element={<StrukPage />} />
+        <Route path="/transaksi/struk" element={<StrukPage />} />
       </Routes>
     </>
   );
