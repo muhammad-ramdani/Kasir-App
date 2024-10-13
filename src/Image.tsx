@@ -21,6 +21,12 @@ import search from '../src/assets/search.svg';
 import redFilter from '../src/assets/red-filter.svg';
 import ekspor from '../src/assets/ekspor.svg';
 import notFound from '../src/assets/notFound.svg'; 
+import pengaturan1 from '../src/assets/pengaturan1.svg';
+import pengaturan2 from '../src/assets/pengaturan2.svg';
+import pengaturan3 from '../src/assets/pengaturan3.svg';
+import pengaturan4 from '../src/assets/pengaturan4.svg';
+import pengaturan5 from '../src/assets/pengaturan5.svg';
+import profileToko from '../src/assets/profile-toko.svg'
 
 const images = {
     logo,
@@ -45,7 +51,13 @@ const images = {
     search,
     redFilter,
     ekspor,
-    notFound
+    notFound,
+    pengaturan1,
+    pengaturan2,
+    pengaturan3,
+    pengaturan4,
+    pengaturan5,
+    profileToko
     
 
 }
