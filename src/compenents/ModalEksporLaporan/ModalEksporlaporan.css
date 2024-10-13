@@ -1,0 +1,36 @@
+.modal-ekspor-laporan {
+   width: 601px;
+   height: 251px;
+}
+
+.h5-modal-title {
+   font-size: 24px;
+   font-weight: 500;
+}
+
+.body-modal-ekspor-laporan {
+    margin-right: 18px;
+}
+
+.p-modal-body {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.footer-modal-ekspor-laporan {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.footer-modal-ekspor-laporan .btn-modal-ekspor {
+    background-color: #FF0000 !important;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 41px 31px 20px 0;
+    height: 40px;
+    width: 139px;
+}
+

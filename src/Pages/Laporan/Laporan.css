@@ -1,0 +1,145 @@
+/* laporan transaksi */
+
+/* card */
+.card-total-penjualan {
+   width: 251px;
+}
+.btn-order {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #ffffff;
+   border: none !important;
+   transition: all 0.5s ease-in-out;
+}
+
+.btn-order:hover {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #ffffff;
+   border: none !important;
+}
+
+.btn-order:focus {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #ffffff;
+   border: none !important;
+}
+
+.label-status-pembayaran {
+   color: #ff0000;
+}
+
+.btn-status-pembayaran {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: #ffffff;
+   border: none !important;
+   transition: all 0.5s ease-in-out;
+}
+
+.btn-status-pembayaran:hover {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: #ffffff;
+   border: none !important;
+}
+
+.btn-status-pembayaran:focus {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   background-color: #ffffff;
+   border: none !important;
+}
+
+.item-status {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: flex-start;
+   width: 100%;
+}
+
+.label-status {
+   color: #494949;
+}
+
+.btn-ekspor-laporan {
+   background-color: #ff0000;
+   transition: all 0.5s ease-in-out;
+}
+
+.btn-ekspor-laporan:hover {
+   background-color: #ff0000;
+}
+
+.btn-ekspor-laporan:focus {
+   background-color: #ff0000;
+   border: none;
+}
+
+.label-ekspor-laporan {
+   color: #ffffff !important;
+}
+
+/* table transaction */
+.table-responsive {
+   margin-top: 30px;
+}
+
+.custom-thead .table-head {
+   border: 1px solid #eceff8 !important;
+}
+
+.custom-thead th {
+   background-color: #eceff8;
+   font-weight: 500;
+   font-size: 16px;
+   text-align: center;
+   position: relative; /* Penting untuk pseudo-element */
+}
+
+.custom-thead th::after {
+   content: "";
+   position: absolute;
+   right: 0;
+   top: 25%; /* Mengatur posisi awal dari garis */
+   height: 50%; /* Membuat garis hanya setengah dari tinggi th */
+   width: 1px;
+   background-color: #d4d9ea;
+}
+
+.custom-thead th:last-child::after {
+   display: none; /* Tidak menampilkan garis pada elemen terakhir */
+}
+
+.custom-tbody td {
+   font-size: 16px;
+   font-weight: 400;
+   position: relative;
+   padding: 12px 15px;
+   border: none; /* Menghilangkan border pada td */
+   border-bottom: 2px solid #eceff8;
+}
+
+.custom-tbody {
+   border: none; /* Menghilangkan border pada tbody jika ada */
+}
+
+/* data not found */
+.h6-notfound {
+   font-size: 20px;
+   font-weight: 500;
+}
+
+.p-notfound {
+   font-size: 16px;
+   font-weight: 400;
+   color: #828282;
+}

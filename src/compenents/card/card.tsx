@@ -1,20 +1,15 @@
-<<<<<<< HEAD
-
-
-function Card() {
-  return (
-    <div>card</div>
-=======
 import React from 'react';
 import './Card.css'
+import { Link } from 'react-router-dom';
 
 interface CardProps {
   title: string;
   description: string;
   icon: JSX.Element;
+  link: string
 }
 
-const Card: React.FC<CardProps> = ({ title, description, icon }) => {
+const Card: React.FC<CardProps> = ({ title, description, icon, link }) => {
   return (
     <div className="card">
       <div className="card-body">
@@ -30,17 +25,16 @@ const Card: React.FC<CardProps> = ({ title, description, icon }) => {
           </div>
         </div>
         <div className="d-grid gap-2">
-          <a
+          <Link
+            to={link}
             className="btn btn-danger fw-semibold mt-2"
-            href="#"
             role="button"
           >
             Atur sekarang
-          </a>
+          </Link>
         </div>
       </div>
     </div>
->>>>>>> 14c19952b928ef39a760334216472b04fe3a331d
   )
 }
 
