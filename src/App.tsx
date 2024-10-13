@@ -17,14 +17,14 @@ import InformasiToko from "./Pages/Pengaturan/InformasiToko";
 
 function App() {
   return (
+
     <>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-
         <Route path="/login" element={<Login />} />
-        <Route path="/changepassword" element={<ChangePassword />} />
-        <Route path="/verifyemail" element={<VerifyEmail />} />
-        <Route path="/newpasswd" element={<NewPasswd />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/new-passwd" element={<NewPasswd />} />
         <Route path="/reset-berhasil" element={<ResetBerhasil />} />
         <Route path="/register" element={<Register />} />
         {/* Pages laporan */}
@@ -40,5 +40,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
