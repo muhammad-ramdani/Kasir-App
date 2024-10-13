@@ -7,6 +7,11 @@ import NewPasswd from "./compenents/auth/change-passwd/newPasswd";
 import Dashboard from "./Pages/manajemen/dashboard";
 import ResetBerhasil from "./compenents/auth/change-passwd/resetBerhasil";
 import Register from "./compenents/auth/register/register";
+import Laporan from "./Pages/Laporan/Laporan";
+import LaporanTransaksi from "./Pages/Laporan/LaporanTransaksi";
+import LaporanPembelianBarang from "./Pages/Laporan/LaporanPembelianBarang";
+import LaporanPelanggan from "./Pages/Laporan/LaporanPelanggan";
+import LaporanPersediaanBarang from "./Pages/Laporan/LaporanPersediaaanBarang";
 
 function App() {
   return (
@@ -14,18 +19,21 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
 
-                <Route path='/login' element={<Login />} />
-                <Route path='/changepassword' element={<ChangePassword />} />
-                <Route path='/verifyemail' element={<VerifyEmail />} />
-                <Route path='/newpasswd' element={<NewPasswd />} />
-                {/* <Route path='/' element={<Login/>}/>
-      <Route path='/' element={<Login/>}/> */}
-
-                {/* Halaman laporan */}
-                <Route path='/laporan' element={<Laporan />} />
-            </Routes>
-        </>
-    )
+        <Route path="/login" element={<Login />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/verifyemail" element={<VerifyEmail />} />
+        <Route path="/newpasswd" element={<NewPasswd />} />
+        <Route path="/reset-berhasil" element={<ResetBerhasil />} />
+        <Route path="/register" element={<Register />} />
+        {/* Pages laporan */}
+        <Route path="/laporan" element={<Laporan />} />
+        <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
+        <Route path="/laporan-pembelian-barang" element={<LaporanPembelianBarang />} />
+        <Route path="/laporan-pelanggan" element={<LaporanPelanggan />} />
+        <Route path="/laporan-persediaan-barang" element={<LaporanPersediaanBarang />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

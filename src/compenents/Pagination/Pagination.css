@@ -1,0 +1,33 @@
+.pagination {
+   display: flex;
+   list-style-type: none;
+   padding: 0;
+   justify-content: center; /* Center pagination */
+}
+
+.page-item {
+   margin: 0 5px;
+}
+
+.page-link {
+   padding: 8px 12px;
+   border: 1px solid #007bff;
+   color: #007bff;
+   text-decoration: none;
+   background-color: white;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.page-link:hover {
+   background-color: #007bff;
+   color: white;
+}
+
+.page-item.active .page-link {
+   background-color: #007bff;
+   color: white;
+}
+ .modal-calender {
+    background-color: rgba(0, 0, 0, 0.5);
+ }

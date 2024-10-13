@@ -20,6 +20,7 @@ import laporan4 from '../src/assets/laporan4.svg';
 import search from '../src/assets/search.svg';
 import redFilter from '../src/assets/red-filter.svg';
 import ekspor from '../src/assets/ekspor.svg';
+import notFound from '../src/assets/notFound.svg'; 
 
 const images = {
     logo,
@@ -43,7 +44,8 @@ const images = {
     laporan4,
     search,
     redFilter,
-    ekspor
+    ekspor,
+    notFound
     
 
 }
