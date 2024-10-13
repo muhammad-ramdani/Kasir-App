@@ -1,0 +1,161 @@
+
+  .list-barang {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  .card-title-pembayaran {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 10px;
+
+  }
+
+  .barang-item {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+    margin-top: 16px;
+  }
+  
+
+  .payment-method .btn {
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  
+
+   
+
+  .keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .btn-keypad {
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    border: none; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-keypad img {
+    max-width: 55%;
+    display: inline-block;
+  }
+  
+  .btn-keypad:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .btn-keypad:active {
+    transform: translateY(2px); 
+  }
+  
+  
+  .payment-input {
+    margin-top: 16px;
+    border-top: 1px solid #e6e6e6;
+  }
+
+
+  .total-amount {
+    margin-top: 4rem;
+    margin-left: 5.7rem;
+    border: 1px solid #ccc;
+    padding: 16px 20px; 
+    border-radius: 12px;
+    text-align: center;
+    align-items: center; 
+    background-color: #ffffff; 
+    font-size: 20px; 
+    font-weight: 500; 
+    width:70%; 
+   
+
+  }
+
+  .custom-keypad-button {
+    font-weight: bold; 
+    color: #333;       
+    background-color: white; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+  }
+  
+
+  .img-barang {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: 14px;
+    margin-left: -30px;
+  }
+  
+  .quantity-product {
+    font-weight: 700;
+    font-size: 28px;
+    margin-left: 12px;
+    margin-top: 7px;
+  }
+
+  .name-product {
+    font-size: 18px;
+    margin-left: -40px;
+    margin-right: 60px;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  .price-product {
+    margin-top: 10px;
+    font-size: 18px;
+    margin-right: 12px;
+    font-weight: 500;
+  }
+
+  .total {
+    margin-top: 10rem;
+    
+  }
+
+  .total, .discount span {
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .final-total {
+    margin-top: 1.6rem;
+    border-top: 2px dashed #494949; 
+    padding-top: 2.2rem; 
+    margin-left: 10px;
+    margin-right: 10px;          
+  }
+
+  .payment-method h6  {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: #646464;
+  }
+  
+  .btn-payment {
+    border: 2px solid red;
+    color: black;
+    background-color: white; 
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-payment:hover,
+  .btn-payment:active { 
+    background-color: red;
+    color: white; 
+  }
+  
