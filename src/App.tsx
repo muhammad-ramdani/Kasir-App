@@ -12,10 +12,12 @@ import LaporanTransaksi from "./Pages/Laporan/LaporanTransaksi";
 import LaporanPembelianBarang from "./Pages/Laporan/LaporanPembelianBarang";
 import LaporanPelanggan from "./Pages/Laporan/LaporanPelanggan";
 import LaporanPersediaanBarang from "./Pages/Laporan/LaporanPersediaaanBarang";
+import Pengaturan from "./Pages/Pengaturan/Pengaturan";
+import InformasiToko from "./Pages/Pengaturan/InformasiToko";
 import Transaksi from "./Pages/transaksi/transaksi";
 import Pembayaran from "./Pages/transaksi/pembayaran";
 import StrukPage from "./Pages/transaksi/struck";
-import Shift from "./Pages/shift/Shift";
+import Shift from "./Pages/shift/shift";
 
 function App() {
   return (
@@ -41,6 +43,9 @@ function App() {
         <Route path="/transaksi/struk" element={<StrukPage />} />
         {/* Pages Shift */}
         <Route path="/shift" element={<Shift />} />
+        {/* Pengaturan */}
+        <Route path="/pengaturan" element={<Pengaturan />} />
+        <Route path="/informasi-toko" element={<InformasiToko />} />
       </Routes>
     </>
   );
