@@ -23,6 +23,9 @@ import MetodePembayaran from "./Pages/Pengaturan/MetodePembayaran";
 import PengaturanStruk from "./Pages/Pengaturan/PengaturanStruk";
 import PerangkatEdc from "./Pages/Pengaturan/PerangkatEdc";
 import Profile from "./Pages/Pengaturan/Profile";
+import Shift from "./Pages/Shift/shift";
+import MulaiShift from "./Pages/Shift/mulaiShift";
+import DetailRekapShift from "./Pages/Shift/detailRekapShift";
 
 function App() {
   return (
@@ -49,6 +52,10 @@ function App() {
         <Route path="/transaksi" element={<Transaksi />} />
         <Route path="/transaksi/pembayaran" element={<Pembayaran />} />
         <Route path="/transaksi/struk" element={<StrukPage />} />
+        {/* Pages Shift */}
+        <Route path="/shift" element={<Shift />} />
+        <Route path="/shift/start-shift" element={<MulaiShift />} />
+        <Route path="/shift/detail-shift" element={<DetailRekapShift />} />
         {/* Pengaturan */}
         <Route path="/pengaturan" element={<Pengaturan />} />
         <Route path="/informasi-toko" element={<InformasiToko />} />
