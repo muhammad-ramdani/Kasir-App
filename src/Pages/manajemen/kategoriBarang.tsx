@@ -1,22 +1,38 @@
-import Layout from "../../Layout/Layout"
-
+import "./styleManajemenKategoriBarang.css";
+import Layout from "../../Layout/Layout";
+import React, { useState, useEffect } from "react";
 
 function KategoriBarang() {
+    const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.innerWidth > 1440);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <Layout titlePage="Kategori Barang">
-            <div className="container" style={{ padding: "14px 18px 30px 18px" }}>
-                <div className="row m-0 gap-4">
+            <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
+                <div className="row m-0" style={{ columnGap: "30px" }}>
                     <div className="col p-0">
                         <div className="card rounded-4">
                             <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolor numquam nobis deleniti quidem suscipit sit, rerum illo maiores ad, velit ullam officia omnis rem nulla voluptate saepe veritatis provident recusandae molestias vero, beatae reiciendis nesciunt. Quam cum saepe sequi minima dicta necessitatibus labore itaque nisi, corrupti odio aspernatur soluta quae eligendi, perspiciatis adipisci illum sit nam cupiditate, impedit expedita et incidunt minus. Eius, perspiciatis nam ducimus voluptates ex rem aliquid ipsa exercitationem inventore laboriosam odio dolores explicabo obcaecati id aut quaerat tenetur aliquam ea distinctio alias, esse, harum sed quibusdam asperiores. Placeat ab excepturi recusandae vero libero veritatis distinctio iusto porro atque ad minima natus nemo iure saepe, earum inventore nulla. Alias officiis repudiandae culpa amet velit reprehenderit ducimus ipsa deleniti corrupti asperiores obcaecati autem nemo quaerat laborum dolorem illum rerum labore accusantium, modi impedit! Aperiam, vitae quos nam quam accusantium nostrum sequi, consequuntur sunt rerum nihil maxime mollitia possimus exercitationem harum repellat, eveniet optio veniam? Cumque, quo, aliquam quasi incidunt voluptatibus reprehenderit vel cum doloremque dicta dignissimos possimus eaque repellat magnam? Illo eligendi numquam quos a. Dolorum repudiandae at perspiciatis veniam facere? Delectus recusandae facere rerum iusto, ea repudiandae ut officiis unde, animi totam veniam et a cupiditate?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                         </div>
                     </div>
                     <div className="col p-0">
                         <div className="card rounded-4">
                             <div className="card-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolor numquam nobis deleniti quidem suscipit sit, rerum illo maiores ad, velit ullam officia omnis rem nulla voluptate saepe veritatis provident recusandae molestias vero, beatae reiciendis nesciunt. Quam cum saepe sequi minima dicta necessitatibus labore itaque nisi, corrupti odio aspernatur soluta quae eligendi, perspiciatis adipisci illum sit nam cupiditate, impedit expedita et incidunt minus. Eius, perspiciatis nam ducimus voluptates ex rem aliquid ipsa exercitationem inventore laboriosam odio dolores explicabo obcaecati id aut quaerat tenetur aliquam ea distinctio alias, esse, harum sed quibusdam asperiores. Placeat ab excepturi recusandae vero libero veritatis distinctio iusto porro atque ad minima natus nemo iure saepe, earum inventore nulla. Alias officiis repudiandae culpa amet velit reprehenderit ducimus ipsa deleniti corrupti asperiores obcaecati autem nemo quaerat laborum dolorem illum rerum labore accusantium, modi impedit! Aperiam, vitae quos nam quam accusantium nostrum sequi, consequuntur sunt rerum nihil maxime mollitia possimus exercitationem harum repellat, eveniet optio veniam? Cumque, quo, aliquam quasi incidunt voluptatibus reprehenderit vel cum doloremque dicta dignissimos possimus eaque repellat magnam? Illo eligendi numquam quos a. Dolorum repudiandae at perspiciatis veniam facere? Delectus recusandae facere rerum iusto, ea repudiandae ut officiis unde, animi totam veniam et a cupiditate?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                         </div>
                     </div>
