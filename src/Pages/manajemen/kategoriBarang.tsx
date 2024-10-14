@@ -12,7 +12,6 @@ function KategoriBarang() {
 
         window.addEventListener("resize", handleResize);
 
-        // Cleanup the event listener when the component is unmounted
         return () => {
             window.removeEventListener("resize", handleResize);
         };
@@ -23,14 +22,14 @@ function KategoriBarang() {
             <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
                 <div className="row m-0" style={{ columnGap: "30px" }}>
                     <div className="col p-0">
-                        <div className="card rounded-4">
-                            <div className="card-body">
+                        <div className="card rounded-4 height-calc-100vh-151px">
+                            <div className="card-body card-body-padding-23px">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
                         </div>
                     </div>
                     <div className="col p-0">
-                        <div className="card rounded-4">
+                        <div className="card rounded-4 height-calc-100vh-151px">
                             <div className="card-body">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             </div>
