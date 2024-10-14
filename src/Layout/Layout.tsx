@@ -82,7 +82,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                             </div>
 
                             <div className="logo-sidebar">
-                                <Link to="/">
+                                <Link to="/pengaturan">
                                     <img src={images.setting} alt="" className="img-logo" />
                                 </Link>
                             </div>
@@ -182,7 +182,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                                     </Link>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/" className="text-decoration-none text-dark">
+                                    <Link to="/pengaturan" className="text-decoration-none text-dark">
                                         <img src={images.setting} alt="" className="img-logo" />
                                         <span className="ms-2">Pengaturan</span>
                                     </Link>

@@ -1,4 +1,5 @@
 import CardPengaturan from "../../compenents/CardPengaturan/CardPengaturan";
+import LogoutButton from "../../compenents/LogoutButton/LogoutButton";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 import './Pengaturan.css'
@@ -19,7 +20,7 @@ const Pengaturan = () => {
         {
             iconPengaturan: images.pengaturan3,
             description: "Profil",
-            link: '/profil'
+            link: '/profile'
         },
         {
             iconPengaturan: images.pengaturan4,
@@ -43,6 +44,9 @@ const Pengaturan = () => {
                         link={item.link}
                     />
                 ))}
+            </div>
+            <div className="logout-btn">
+                <LogoutButton />
             </div>
         </Layout>
     )

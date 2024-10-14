@@ -14,6 +14,10 @@ import LaporanPelanggan from "./Pages/Laporan/LaporanPelanggan";
 import LaporanPersediaanBarang from "./Pages/Laporan/LaporanPersediaaanBarang";
 import Pengaturan from "./Pages/Pengaturan/Pengaturan";
 import InformasiToko from "./Pages/Pengaturan/InformasiToko";
+import Profile from "./Pages/Pengaturan/Profile";
+import PerangkatEdc from "./Pages/Pengaturan/PerangkatEdc";
+import PengaturanStruk from "./Pages/Pengaturan/PengaturanStruk";
+import MetodePembayaran from "./Pages/Pengaturan/MetodePembayaran";
 
 function App() {
   return (
@@ -36,6 +40,10 @@ function App() {
         {/* Pengaturan */}
         <Route path="/pengaturan" element={<Pengaturan />} />
         <Route path="/informasi-toko" element={<InformasiToko />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/perangkat-edc" element={<PerangkatEdc />} />
+        <Route path="/pengaturan-struk" element={<PengaturanStruk />} />
+        <Route path="metode-pembayaran" element={<MetodePembayaran />} />
       </Routes>
     </>
   );

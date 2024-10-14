@@ -1,0 +1,25 @@
+.form-check-label{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.custom-switch .form-check-input {
+   width: 50px;
+   height: 30px;
+   margin-left: -58px;
+}
+
+.custom-switch .form-check-input:checked {
+   background-color: red;
+   border-color: red;
+}
+
+.custom-switch .form-check-input:before {
+   width: 23px;
+   height: 23px;
+}
+
+.custom-switch .form-check-input:checked:before {
+   transform: translateX(25px);
+}

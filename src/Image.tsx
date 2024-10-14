@@ -26,7 +26,9 @@ import pengaturan2 from '../src/assets/pengaturan2.svg';
 import pengaturan3 from '../src/assets/pengaturan3.svg';
 import pengaturan4 from '../src/assets/pengaturan4.svg';
 import pengaturan5 from '../src/assets/pengaturan5.svg';
-import profileToko from '../src/assets/profile-toko.svg'
+import profileToko from '../src/assets/profile-toko.svg';
+import logoutButtonImg from '../src/assets/logout.svg';
+import edc from '../src/assets/edc.svg';
 
 const images = {
     logo,
@@ -57,7 +59,9 @@ const images = {
     pengaturan3,
     pengaturan4,
     pengaturan5,
-    profileToko
+    profileToko,
+    logoutButtonImg,
+    edc
     
 
 }
