@@ -1,0 +1,228 @@
+.btn-outline-light {
+    border-color: #E6E6E6 !important;
+}
+
+.btn-filter-data-barang {
+    padding: 9.21px 9.5px !important;
+}
+
+.dropdown-item-filter-data-barang {
+    padding: 10px 21px !important;
+}
+
+.dropdown-menu-filter-data-barang {
+    border-color: #E6E6E6 !important;
+}
+
+.form-control-cari-data-barang {
+    padding: 9.5px 12px 9.5px 0px !important;
+}
+
+.form-control-cari-data-barang::placeholder {
+    color: #9F9F9F !important;
+}
+
+.btn-close-tambah-data-barang,
+.form-control-input-keterangan-barang,
+.form-control-input-diskon-harga-barang,
+.form-select-satuan-rincian-barang,
+.form-control-input-berat-rincian-barang,
+.form-control-input-letak-rak,
+.form-control-input-batas-minimum-stok,
+.form-select-kategori,
+.form-control-input-harga-dasar,
+.form-control-input-harga-jual,
+.form-control-input-kode-barang,
+.form-control-input-stok-barang,
+.form-check-input-tampilkanDiTransaksi-dan-pakaiStok,
+.form-select-tipe-barang,
+.form-control-input-nama-barang,
+.form-control-cari-data-barang:focus {
+    box-shadow: none !important;
+    border-color: #DEE2E6 !important;
+}
+
+.btn-simpan-data-barang,
+.btn-tambah-data-barang {
+    background-color: #FF0000 !important;
+    color: #FFFFFF !important;
+    font-size: 18px !important;
+    padding: 11.5px 0px !important;
+    margin-top: 34px;
+}
+
+.card-data-barang-100vh {
+    min-height: calc(100vh - 161px);
+}
+
+.content-fill-manajemen-data-barang-tidak-ada {
+    min-height: calc(100vh - 338px);
+}
+
+.content-fill-manajemen-data-barang {
+    min-height: calc(100vh - 433px);
+    height: 1px;
+    margin: 0px -20px;
+    padding: 0px 14px 0px 23px;
+}
+
+.modal-content-dengan-100vh {
+    height: calc(100vh - 56px);
+}
+
+.card-tambah-data-barang-untukform-overflow {
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.content-fill-manajemen-data-barang::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-fill-manajemen-data-barang::-webkit-scrollbar-thumb {
+    background: #D9D9D9;
+    border-radius: 50px;
+}
+
+.text-tidak-ada-barang,
+.text-tidak-ada-barang-yang-dipilih {
+    font-size: 18px;
+    color: #CECECE;
+}
+
+.group-button-filter-kategori-barang {
+    margin: 20px 0 35px 0;
+}
+
+.button-filter-kategori-barang {
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+    font-size: 15px !important;
+    padding-top: 7.75px !important;
+    padding-bottom: 7.75px !important;
+    margin-right: 10px;
+}
+
+.button-filter-kategori-barang-active {
+    color: #FFFFFF !important;
+    border-width: 0px !important;
+    background-color: #FF0000 !important;
+    font-size: 15px !important;
+    padding-top: 7.75px !important;
+    padding-bottom: 7.75px !important;
+    margin-right: 10px;
+}
+
+.card-body-data-barang,
+.card-body-rincian-barang {
+    padding: 23px !important;
+}
+
+.images-card-barang {
+    padding: 13px 13px 13px 10px;
+    width: 78px;
+}
+
+.card-barang-active {
+    border-color: #FF0000 !important;
+}
+
+.button-edit-rincian-barang {
+    background-color: #FFE6E6 !important;
+    color: #FF0000 !important;
+    padding: 5px 17.25px !important;
+    margin-right: 10px;
+}
+
+.button-hapus-barang-dirincian-barang {
+    background-color: #FF0000 !important;
+    padding: 5px 8px !important;
+}
+
+.button-hapus-barang-lanjutan-dimodal {
+    background-color: #FF0000 !important;
+    font-size: 15px;
+    padding: 8px 23.78px !important;
+}
+
+.button-batalkan-hapus-barang {
+    font-size: 15px;
+    padding: 7px 15px !important;
+}
+
+.form-control-input-keterangan-barang,
+.form-control-input-diskon-harga-barang,
+.form-select-satuan-rincian-barang,
+.form-control-input-berat-rincian-barang,
+.form-control-input-letak-rak,
+.form-control-input-batas-minimum-stok,
+.form-select-kategori,
+.form-control-input-harga-dasar,
+.form-control-input-harga-jual,
+.form-control-input-kode-barang,
+.form-control-input-refresh-disabled,
+.form-control-input-stok-barang,
+.form-select-tipe-barang,
+.form-control-input-nama-barang {
+    background-color: #F2F4FA !important;
+    padding: 9.5px 18px !important;
+}
+
+.form-control-cari-data-barang,
+.form-control-input-keterangan-barang,
+.form-control-input-diskon-harga-barang,
+.form-control-input-berat-rincian-barang,
+.form-control-input-letak-rak,
+.form-control-input-batas-minimum-stok,
+.form-control-input-harga-jual,
+.form-control-input-harga-dasar,
+.form-control-input-refresh-disabled,
+.form-control-input-kode-barang,
+.form-control-input-nama-barang,
+.form-control-input-stok-barang {
+    font-size: 16px !important;
+}
+
+.form-control-cari-data-barang::placeholder,
+.form-control-input-keterangan-barang::placeholder,
+.form-control-input-diskon-harga-barang::placeholder,
+.form-control-input-berat-rincian-barang::placeholder,
+.form-control-input-letak-rak::placeholder,
+.form-control-input-batas-minimum-stok::placeholder,
+.form-control-input-harga-jual::placeholder,
+.form-control-input-harga-dasar::placeholder,
+.form-control-input-kode-barang::placeholder,
+.form-control-input-stok-barang::placeholder,
+.form-control-input-nama-barang::placeholder {
+    font-size: 16px !important;
+}
+
+.form-check-input-tampilkanDiTransaksi-dan-pakaiStok:checked {
+    background-color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+
+.form-check-input-tampilkanDiTransaksi-dan-pakaiStok {
+    border-color: #FF0000 !important;
+}
+
+.class-diskon-persen-atau-rp {
+    color: #303030 !important;
+    background-color: #F2F4FA !important;
+    border-color: #E6E8ED !important;
+}
+
+.btn-check:checked+.class-diskon-persen-atau-rp {
+    background-color: #FF0000 !important;
+    color: #FFFFFF !important;
+    border-color: #FF0000 !important;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9;
+    border-radius: 50px;
+}
