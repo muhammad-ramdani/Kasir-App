@@ -1,43 +1,237 @@
 .wrap-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.logout-btn {
+   margin-top: 30%;
 }
 
 /* informasi toko */
 .card-informasi-toko {
-    width: 1127px;
-    border-radius: 8px;
-    border-bottom: 8px solid #ff0000;
+   width: 1127px;
+   border-radius: 8px;
+   border-bottom: 8px solid #ff0000;
 }
 
 .image-profile-toko {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
+   height: 70px;
+   width: 70px;
+   border-radius: 50%;
 }
 
 .informasi-label {
-    /* margin-bottom: 23px; */
-    margin-left: 35px;
-    margin-top: 33px
+   /* margin-bottom: 23px; */
+   margin-left: 35px;
+   margin-top: 33px;
 }
 
 .label-info {
-    font-size: 16px;
-    font-weight: 400;
-    color: #646464;
+   font-size: 16px;
+   font-weight: 400;
+   color: #646464;
 }
 
 .value-info {
-    font-size: 20px;
-    font-weight: 400;
-    color: #000000;
+   font-size: 20px;
+   font-weight: 400;
+   color: #000000;
 }
 
 .btn-edit-info {
-    background-color: #FFFFFF;
-    height: 74px;
-    width: 140px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+   background-color: #ffffff;
+   height: 74px;
+   width: 140px;
+   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* perangkat edc */
+.perangkat-edc-wrap {
+   display: flex;
+   justify-content: center;
+}
+.perangkat-edc {
+   margin-top: 20px;
+   width: 1127px;
+   height: 608px;
+   border-radius: 8px;
+   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+   border-bottom: 8px solid #ff0000;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.header-perangkat-edc {
+   width: 780px;
+   height: 96px;
+   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+   margin-top: 43px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.desc-edc {
+   font-size: 24px;
+   color: #000000;
+}
+
+.data-edc-desc {
+   font-size: 16px;
+   font-weight: 400;
+   color: #646464;
+}
+
+.btn-edc {
+   background-color: #ff0000 !important;
+   color: #ffffff;
+   border-radius: 8px;
+   width: 545px;
+   height: 54px;
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 25px;
+}
+
+/* pengaturan struk */
+.col-switch-struk {
+   background-color: #ffffff;
+   /* margin-left: 20px; */
+}
+
+.label-logo-karakter {
+   font-size: 20px;
+   color: #000000;
+}
+
+.input-logo-karakter {
+   height: 60px;
+   font-size: 20px !important;
+}
+
+.input-logo-karakter::placeholder {
+   font-size: 20px;
+}
+
+.switch-struk {
+   margin-bottom: 24px;
+   padding-top: 20px;
+}
+
+.title-preview {
+   font-size: 20px;
+   font-weight: 500;
+}
+
+.struk-preview {
+   width: 511px;
+   background-color: #ffffff;
+   height: auto;
+   display: flex;
+   justify-content: center;
+}
+
+.border-dash-struk {
+   border-bottom: 1px dashed #000000;
+}
+
+.toko-brain {
+   font-size: 24px;
+   font-weight: 400;
+   margin-top: 49px;
+}
+
+.jalan-brain {
+   font-size: 20px;
+   font-size: 300;
+}
+
+.kode-pos {
+   font-size: 18px;
+   color: #494949;
+}
+
+.item-left {
+   font-size: 18px;
+}
+
+.item-right {
+   font-size: 18px;
+}
+
+.terimakasih {
+   font-size: 20px;
+}
+
+/* metode pembayaran */
+.metode-pembayaran-wrap {
+   height: 808px;
+   width: 1127px;
+   background-color: #ffffff;
+   border-radius: 8px;
+   border-bottom: 8px solid #ff0000;
+}
+
+.metode-pembayaran-content {
+   margin-top: 79px;
+}
+
+.title-metode-pembayaran {
+   font-size: 18px;
+   color: #000000;
+}
+
+.input-tambah-metode-pembayaran {
+   width: 514px;
+   height: 59px;
+   font-size: 20px !important;
+}
+
+.input-tambah-metode-pembayaran::placeholder {
+   font-size: 20px;
+}
+
+.btn-tambah {
+   width: 180px;
+   height: 59px;
+   background-color: #ff0000 !important;
+   color: white !important;
+   font-size: 20px;
+   margin-left: 24px;
+   margin-right: 20px;
+}
+
+.pembayaran {
+   width: 342px;
+   height: 58px;
+   background-color: #ffffff;
+   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+   margin-bottom: 24px;
+   border-radius: 8px;
+   padding: 12px 25px 12px 0;
+}
+
+.left-bca {
+   font-size: 20px;
+}
+
+.right-bca {
+   font-size: 20px;
+}
+
+.btn-metode-pembayaran {
+   width: 545px;
+   height: 74px;
+   background-color: #ff0000;
+   border-radius: 8px;
+   font-size: 24px;
+   color: white !important;
+}
+
+.metode-tambahan {
+   margin-bottom: 176px;
 }
