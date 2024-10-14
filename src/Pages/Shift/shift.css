@@ -1,0 +1,239 @@
+/* Bagian kiri - Info Kasir */
+.card-shift-left {
+  min-height: calc(86vh - 48px);
+  background-color: #f2f4fa;
+  border: none;
+}
+
+.content-shift-left h6 {
+  font-size: 18px;
+  margin-bottom: 13px;
+  font-weight: 600;
+}
+
+.content-shift-right h6 {
+  font-size: 18px;
+  margin-bottom: 13px;
+  font-weight: 600;
+}
+
+.custom-card-kasir {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: none;
+}
+
+.form-label-shift {
+  font-weight: 600;
+  padding-bottom: 13px;
+  padding-top: 2rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Custom Card for Pilih Cash Drawer */
+.custom-card-pilih {
+  background-color: #fff;
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* padding: 20px; */
+  margin-bottom: 20px;
+}
+
+/* Custom Card for Masukkan Saldo Awal */
+.custom-card-saldo {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.form-select,
+.form-control {
+  border: none;
+}
+
+/* Styling for Select element */
+.custom-select {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* Styling for the input in the custom card */
+.custom-card-saldo {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-control {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Styling for placeholder */
+.custom-control::placeholder {
+  font-weight: 600;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* When the input is focused */
+.custom-control:focus {
+  outline: none;
+  border: 0px solid black;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.text-muted-saldo {
+  color: #dc3636;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.btn-start-shift {
+  background-color: #ff0000;
+  height: 64px;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #ffffff;
+  border-radius: 12px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover state */
+.btn-start-shift:hover {
+  background-color: #ff0000;
+  color: #ffffff !important;
+}
+
+/* Active state (when clicked) */
+.btn-start-shift:active {
+  background-color: #ff0000 !important;
+}
+
+
+
+/* Bagian kanan - Riwayat Shift */
+.card-shift-right {
+  min-height: calc(86vh - 48px);
+  background-color: #fff;
+  border: none;
+}
+
+.table th,
+.table td {
+  align-items: center;
+  padding-left: 44px;
+  text-align: start;
+}
+
+/* Table - Custom Styles */
+.table-custom {
+  margin-top: 20px;
+}
+
+.table-custom th {
+  font-weight: 600;
+  color: #000;
+}
+
+.table-custom td {
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+}
+
+/* Status Dot Styling */
+.status-dot-end {
+  height: 10px;
+  width: 10px;
+  background-color: #FF0000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-dot-start {
+  height: 10px;
+  width: 10px;
+  background-color: #0EC320;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Detail Button */
+.btn-detail {
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+.btn-detail:hover {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+}
+
+.text-date-intime p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.content-shift-right {
+  display: block;
+}
+
+.content-shift-right h6 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+/* Agar <h6> dan tombol berada dalam satu baris tanpa float */
+.content-shift-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 14px;
+}
+
+.btn-long p {
+  display: inline;
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+}
+
+.btn-long {
+  width: 105%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 14px;
+  background-color: #f3f5fb;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.icon-calender {
+  padding-right: 10px;
+  width: 18px;
+  height: 18px;
+}
