@@ -813,8 +813,8 @@ function DataBarang() {
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                 >
-                    <div className="modal-dialog modal-dialog-scrollable" style={{ width: 605 }}>
-                        <div className="modal-content shadow rounded-4 p-0" style={{ width: 605 }}>
+                    <div className="modal-dialog modal-dialog-scrollable" style={{ width: 900 }}>
+                        <div className="modal-content shadow rounded-4 p-0" style={{ width: 900 }}>
                             <div
                                 className="modal-header"
                                 style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}
