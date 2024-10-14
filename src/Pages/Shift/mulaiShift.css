@@ -1,0 +1,104 @@
+
+/* Left-side (Shift Info) card */
+.card-start-shift-left {
+    min-height: calc(86vh - 48px);
+    background-color: #ffffff;
+    border: none;
+  }
+  
+  .content-start-shift-left h6 {
+    font-size: 18px;
+    margin-bottom: 13px;
+    font-weight: 600;
+  }
+  
+  .card-info-shift {
+    border: none;
+    /* background-color: #f7f7f7; */
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .list-one {
+    border-bottom: 1px solid #CACACA;
+    padding-bottom: 6px;
+  }
+  
+  .list-twoe {
+    margin-top: -15px;
+    border-bottom: 1px solid #CACACA;
+    padding-bottom: 6px;
+  }
+
+  .list-three {
+    margin-top: -15px;
+  }
+  
+  .card-info-shift p {
+    /* margin: 0; */
+    font-size: 16px;
+  }
+  
+  .text-kanan, .text-kiri {
+    font-weight: 500;
+  }
+
+  .card-red-info {
+    background-color: #ffe5e5; 
+    width: 100%;
+    border: none; 
+    border-radius: 10px; 
+  }
+  
+  .text-danger {
+    color: red !important;
+  }
+  
+  /* Buttons for Rekap and Akhiri Shift */
+
+  .rekap-akhir-shift {
+    padding-top: 70px; 
+  }
+
+
+  .btn-rekap {
+    background-color: #ffffff;
+    font-size: 15px;
+    color: #ff0000;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+    padding: 10px 0;
+    border: 1px solid #ff0000 !important;
+  }
+  
+  .btn-rekap:hover {
+
+    color: #ff0000 !important;
+    
+  }
+  
+  .btn-akhir {
+    background-color: #ff0000;
+    font-size: 15px;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+    padding: 10px 0;
+    border: 1px solid #ff0000 !important;
+  }
+  
+  .btn-akhir:hover {
+    background-color: #ff0000 !important;
+    color: #ffffff !important;
+  }
+
+
+
+
+
+
+
