@@ -15,16 +15,16 @@
 
   }
   
-  .modal-header {
+  /* .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 20px;
 
-  }
+  } */
   
-  .modal-title {
+  /* .modal-title {
     flex-grow: 1;
     text-align: center;
     margin-top: 8px;
@@ -32,7 +32,7 @@
     font-weight: 600;
     font-size: 18px;
 
-  }
+  } */
   
 
   .d-flex button {
@@ -54,12 +54,12 @@
     font-size: 1.2rem;
   }
   
-  .modal-footer {
+  /* .modal-footer {
     justify-content: flex-end;
     padding-top: 20px;
     border-top: 1px solid #e6e6e6;
     
-  }
+  } */
   
   .modal-footer button {
     width: 120px; 
@@ -131,9 +131,9 @@
     height: auto;
   }
   
-  .modal-body {
+  /* .modal-body {
     padding: 20px;
-  }
+  } */
 
 
   .btn-outline-danger {

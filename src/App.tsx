@@ -18,6 +18,8 @@ import Transaksi from "./Pages/transaksi/transaksi";
 import Pembayaran from "./Pages/transaksi/pembayaran";
 import StrukPage from "./Pages/transaksi/struck";
 import Shift from "./Pages/shift/shift";
+import MulaiShift from "./Pages/shift/mulaiShift";
+import DetailRekapShift from "./Pages/shift/detailRekapShift";
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
         <Route path="/transaksi/struk" element={<StrukPage />} />
         {/* Pages Shift */}
         <Route path="/shift" element={<Shift />} />
+        <Route path="/shift/start-shift" element={<MulaiShift/>} />
+        <Route path="/shift/detail-shift" element={<DetailRekapShift/>} />
         {/* Pengaturan */}
         <Route path="/pengaturan" element={<Pengaturan />} />
         <Route path="/informasi-toko" element={<InformasiToko />} />
