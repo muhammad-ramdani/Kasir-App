@@ -1,6 +1,6 @@
 import "./styleManajemenKategoriBarang.css";
 import Layout from "../../Layout/Layout";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function KategoriBarang() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
