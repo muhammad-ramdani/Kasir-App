@@ -19,6 +19,7 @@ import InformasiToko from "./Pages/Pengaturan/InformasiToko";
 // import StrukPage from "./Pages/transaksi/struck";
 // import Shift from "./Pages/shift/shift";
 import DataBarang from "./Pages/manajemen/dataBarang";
+import KategoriBarang from "./Pages/manajemen/kategoriBarang";
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/reset-berhasil" element={<ResetBerhasil />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/databarang" element={<DataBarang />} />
+                <Route path="/katogori-barang" element={<KategoriBarang />} />
                 {/* Pages laporan */}
                 <Route path="/laporan" element={<Laporan />} />
                 <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
