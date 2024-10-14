@@ -1,0 +1,171 @@
+
+/* Left-side (Shift Info) card */
+.card-detail-shift-left {
+    min-height: calc(86vh - 48px);
+    background-color: #ffffff;
+    border: none;
+  }
+  
+  .content-detail-shift-left h6 {
+    font-size: 18px;
+    margin-bottom: 13px;
+    font-weight: 600;
+  }
+  
+  .card-detail-shift {
+    border: none;
+    /* background-color: #f7f7f7; */
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .list-one {
+    border-bottom: 1px solid #CACACA;
+    padding-bottom: 6px;
+  }
+  
+  .list-twoe {
+    margin-top: -15px;
+    border-bottom: 1px solid #CACACA;
+    padding-bottom: 6px;
+  }
+
+  .list-three {
+    margin-top: -15px;
+  }
+  
+
+.list-four {
+    margin-top: -15px;
+    border-top: 1px solid #CACACA;
+    padding-top: 14px;
+}
+
+
+  .card-info-shift p {
+    /* margin: 0; */
+    font-size: 16px;
+  }
+  
+  .text-kanan, .text-kiri {
+    font-weight: 500;
+  }
+
+  .text-kanan-cashdrawer {
+    font-weight: 500;
+    /* padding-right: auto; */
+  }
+
+
+  
+
+
+
+  
+
+
+  
+/* Bagian kanan -  Shift */
+
+.card-detail-shift-right {
+  min-height: calc(86vh - 48px);
+  background-color: #fff;
+  border: none;
+}
+
+.content-detail-shift-right h6 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #C4C4C4;
+  font-weight: 600;
+}
+
+.content-checkbox {
+  padding-top: 20px;
+}
+
+.input-checkbox {
+  /* appearance: none;  */
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  border: 2px solid red; 
+  border-radius: 4px; 
+  cursor: pointer;
+  outline: #ff0000; 
+  box-shadow: none; 
+
+}
+
+.input-checkbox:focus {
+  box-shadow: #ffffff !important;
+  box-shadow: none;
+  border: 2px solid red; 
+
+}
+
+.input-checkbox:checked {
+  background-color: red; 
+  border: #ff0000;
+
+}
+
+.input-checkbox:checked::after {
+  background-color: white;
+  box-shadow: #ffffff !important;
+}
+
+
+.text-info-saldo-shift {
+  font-weight: 500;
+  border-bottom: 1px solid #CACACA;
+  padding-bottom: 8px;
+}
+
+
+
+.shift-history-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.shift-history-item:last-child {
+  border-bottom: none;
+}
+
+
+.btn-catatan-rekap-shift-content {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  /* margin-top: 20rem;  */
+  margin-top: 18rem;
+  
+  
+}
+
+
+.btn-akhiri-shift-rekap {
+  border-radius: 12px; 
+  background-color: #ff0000; 
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px;
+  margin-top: 9.1rem;
+}
+
+
+.btn-akhiri-shift-rekap:hover {
+  background-color: #ff0000 !important; 
+}
+
+
+
+
+  
+
+
+
+
+
+
