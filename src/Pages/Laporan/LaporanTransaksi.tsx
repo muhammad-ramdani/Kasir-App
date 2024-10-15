@@ -84,6 +84,11 @@ const LaporanTransaksi = () => {
 
     // state popup datePicker
     const [isPopupOpen, setPopupOpen] = React.useState(false);
+    // State untuk rentang tanggal
+    const [selectedDateRange, setSelectedDateRange] = React.useState({
+        startDate: '01 okt 2022',
+        endDate: '01 des 2024'
+    });
     // state popup open modal ekspor laporan
     const [isModalOpen, setModalOpen] = React.useState(false);
     const [formatEkspor, setFormatEkspor] = React.useState<'PDF' | 'Excel'>('PDF');
@@ -99,6 +104,14 @@ const LaporanTransaksi = () => {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
+    };
+
+    // handle change date peeker
+    const handleDateRangeChange = (startDate: string, endDate: string) => {
+        setSelectedDateRange({
+            startDate,
+            endDate
+        });
     };
 
     // handle open modal ekspor laporan
@@ -126,7 +139,7 @@ const LaporanTransaksi = () => {
                 ))}
             </div>
             <div className="component-filter">
-                <div className="row">
+                <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-2">
                         <SearchLaporan
                             placeholder='cari struk...'
@@ -134,11 +147,18 @@ const LaporanTransaksi = () => {
                     </div>
                     <div className="col-3">
                         <button
-                            className='btn btn-danger w-100'
+                            className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
                             onClick={() => setPopupOpen(true)}
-
-                        >Rentang Tanggal</button>
-                        <PopupDateRange isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
+                        >
+                            <img src={images.calender} alt="" />
+                            {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
+                        </button>
+                        {/* Pass fungsi handleDateRangeChange sebagai prop */}
+                        <PopupDateRange
+                            isOpen={isPopupOpen}
+                            onClose={() => setPopupOpen(false)}
+                            onDateRangeChange={handleDateRangeChange}
+                        />
                     </div>
                     <div className="col-2">
                         <div className="dropdown">
@@ -276,6 +296,8 @@ const LaporanTransaksi = () => {
                 format={formatEkspor}
                 onConfirm={handleConfirmExport}
                 jenisLaporan='Laporan'
+                starDate={selectedDateRange.startDate}
+                endDate={selectedDateRange.endDate}
             />
         </Layout>
     )

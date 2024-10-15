@@ -1,17 +1,16 @@
 import React from "react";
 import './ModalEksporlaporan.css'
 
-interface EskporModalLaporanProps {
+interface EskporModalLaporanPersediaanBarangProps {
     onClose: () => void;
     onConfirm: () => void;
     format: 'PDF' | 'Excel';
     isOpen: boolean;
     jenisLaporan: string;
-    starDate: string;
-    endDate: string;
+    selectedDate: string;
 }
 
-const EksporModalLaporan: React.FC<EskporModalLaporanProps> = ({ onClose, onConfirm, format, isOpen, jenisLaporan,starDate, endDate }) => {
+const EksporModalLaporanPersediaanBarang: React.FC<EskporModalLaporanPersediaanBarangProps> = ({ onClose, onConfirm, format, isOpen, jenisLaporan, selectedDate }) => {
     if (!isOpen) {
         return null;
     }
@@ -26,7 +25,7 @@ const EksporModalLaporan: React.FC<EskporModalLaporanProps> = ({ onClose, onConf
                     </div>
                     <div className="modal-body body-modal-ekspor-laporan">
                         <p className="p-modal-body">
-                            Rekap {jenisLaporan} untuk periode {starDate} hingga {endDate} akan diekspor dalam format {format} dan disimpan di perangkat yang sedang digunakan. Lanjutkan?
+                            Rekap {jenisLaporan} untuk periode {selectedDate} akan diekspor dalam format {format} dan disimpan di perangkat yang sedang digunakan. Lanjutkan?
                         </p>
                     </div>
                     <div className="footer-modal-ekspor-laporan">
@@ -38,4 +37,4 @@ const EksporModalLaporan: React.FC<EskporModalLaporanProps> = ({ onClose, onConf
     );
 }
 
-export default EksporModalLaporan;
+export default EksporModalLaporanPersediaanBarang;
