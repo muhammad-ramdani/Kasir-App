@@ -4,8 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import './CalenderPopup.css';
 
 interface CalenderPopupProps {
-    selectedDate: Date | undefined; // Ubah ini dari Date | null ke Date | undefined
-    setSelectedDate: (date: Date | undefined) => void; // Ubah dari Date | null
+    selectedDate: Date | undefined; 
+    setSelectedDate: (date: Date | undefined) => void;
     onClose: () => void;
 }
 
@@ -15,8 +15,8 @@ const CalenderPopup: React.FC<CalenderPopupProps> = ({ selectedDate, setSelected
             <DatePicker
                 selected={selectedDate}
                 onChange={(date) => {
-                    setSelectedDate(date || undefined); // Pastikan untuk mengatur ke undefined jika date adalah null
-                    onClose(); // Tutup kalender setelah memilih
+                    setSelectedDate(date || undefined); 
+                    onClose(); 
                 }}
                 inline
             />

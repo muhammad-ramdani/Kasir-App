@@ -10,6 +10,11 @@ import Pagination from "../../compenents/Pagination/Pagination";
 const LaporanPembelianBarang = () => {
     // state popup datePicker
     const [isPopupOpen, setPopupOpen] = React.useState(false);
+    // State untuk rentang tanggal
+    const [selectedDateRange, setSelectedDateRange] = React.useState({
+        startDate: '01 okt 2022',
+        endDate: '01 des 2024'
+    });
     // state popup open modal ekspor laporan
     const [isModalOpen, setModalOpen] = React.useState(false);
     const [formatEkspor, setFormatEkspor] = React.useState<'PDF' | 'Excel'>('PDF');
@@ -93,6 +98,15 @@ const LaporanPembelianBarang = () => {
         setCurrentPage(page);
     };
 
+    // handle change date peeker
+    const handleDateRangeChange = (startDate: string, endDate: string) => {
+        setSelectedDateRange({
+            startDate,
+            endDate
+        });
+    };
+
+
     // handle open modal ekspor laporan
     const handleOpenModal = (format: 'PDF' | 'Excel') => {
         setFormatEkspor(format);
@@ -127,11 +141,18 @@ const LaporanPembelianBarang = () => {
                         </div>
                         <div className="col-5">
                             <button
-                                className='btn btn-danger w-100'
+                                className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
                                 onClick={() => setPopupOpen(true)}
-
-                            >Rentang Tanggal</button>
-                            <PopupDateRange isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
+                            >
+                                <img src={images.calender} alt="" />
+                                {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
+                            </button>
+                            {/* Pass fungsi handleDateRangeChange sebagai prop */}
+                            <PopupDateRange
+                                isOpen={isPopupOpen}
+                                onClose={() => setPopupOpen(false)}
+                                onDateRangeChange={handleDateRangeChange}
+                            />
                         </div>
                     </div>
                     <div className="col-6 d-flex justify-content-end gap-2">
@@ -245,6 +266,8 @@ const LaporanPembelianBarang = () => {
                 format={formatEkspor}
                 onConfirm={handleConfirmExport}
                 jenisLaporan="Pembelian Barang"
+                starDate={selectedDateRange.startDate}
+                endDate={selectedDateRange.endDate}
             />
         </Layout>
     );

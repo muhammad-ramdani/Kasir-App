@@ -4,6 +4,16 @@
 .card-total-penjualan {
    width: 251px;
 }
+
+.component-filter {
+   margin-top: 43px;
+}
+
+.btn-rentan-tanggal {
+   background-color: #ffffff;
+   border: 8px;
+}
+
 .btn-order {
    display: flex;
    justify-content: space-between;
@@ -12,6 +22,7 @@
    border: none !important;
    transition: all 0.5s ease-in-out;
 }
+
 
 .btn-order:hover {
    display: flex;
