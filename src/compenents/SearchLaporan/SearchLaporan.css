@@ -1,5 +1,10 @@
-.col-cari-data-barang {
+/* .col-cari-data-barang {
    padding-left: 0px !important;
+} */
+
+.input-group-search {
+   margin-top: 0px !important;
+   height: 50px !important;
 }
 
 .form-control-cari-data-barang {
@@ -12,8 +17,4 @@
 
 .form-control-cari-data-barang:focus {
    box-shadow: none !important;
-}
-
-.component-filter {
-    margin-top: 43px;
 }
