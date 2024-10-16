@@ -6,8 +6,6 @@ import dataSupplier from "../../assets/imagesManagemenAll/data-supplier.svg";
 import diskonBarang from "../../assets/imagesManagemenAll/diskon-barang.svg";
 import stokBarang from "../../assets/imagesManagemenAll/stok-barang.svg";
 import Layout from '../../Layout/Layout';
-import { Link } from 'react-router-dom';
-
 
 function Dashboard() {
     return (
