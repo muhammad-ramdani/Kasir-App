@@ -26,6 +26,8 @@ import Profile from "./Pages/Pengaturan/Profile";
 import Shift from "./Pages/Shift/shift";
 import MulaiShift from "./Pages/Shift/mulaiShift";
 import DetailRekapShift from "./Pages/Shift/detailRekapShift";
+import StockOpname from "./Pages/stock-opname/stockOpname";
+import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 
 function App() {
   return (
@@ -56,6 +58,10 @@ function App() {
         <Route path="/shift" element={<Shift />} />
         <Route path="/shift/start-shift" element={<MulaiShift />} />
         <Route path="/shift/detail-shift" element={<DetailRekapShift />} />
+        {/* Pages Stock Opname */}
+        <Route path="/stock-opname" element={<StockOpname />} />
+        <Route path="/detail-stock-opname" element={<DetailStockOpname />} />
+    
         {/* Pengaturan */}
         <Route path="/pengaturan" element={<Pengaturan />} />
         <Route path="/informasi-toko" element={<InformasiToko />} />

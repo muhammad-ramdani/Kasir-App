@@ -32,7 +32,7 @@ function Shift() {
                   <div className="col-md-6">
                     <label className="form-label-shift">Pilih Cash Drawer</label>
                     <div className="card custom-card-pilih p-3 ">
-                      <select className="form-select custom-select">
+                      <select className="form-select-pilih-cash-drawer custom-select">
                         <option>Cash Drawer 1</option>
                         <option>Cash Drawer 2</option>
                       </select>
@@ -41,7 +41,7 @@ function Shift() {
                   <div className="col-md-6">
                     <label className="form-label-shift">Masukkan saldo awal</label>
                     <div className="card custom-card-saldo p-3 ">
-                      <input type="text" className="form-control custom-control" placeholder="Rp. 0" />
+                      <input type="text" className="form-control-masukan-saldo custom-control" placeholder="Rp. 0" />
                     </div>
                     <small className="text-muted-saldo">Masukkan data terakhir</small>
                   </div>

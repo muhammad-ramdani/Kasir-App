@@ -1,0 +1,89 @@
+/* Container styling */
+/* .container-stock-opname {
+    margin-top: 20px;
+  }
+   */
+  /* Tambah Stok Button */
+  .btn-tambah-stok-stock-opname {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 12px;
+  }
+  
+  /* Card Container */
+  .card-stock-opname {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: calc(87vh - 180px); /* Responsive height with calc */
+    /* margin-bottom: 30px; */
+    overflow-y: auto; /* Enables scroll if content overflows */
+  }
+  
+  /* Filter Section */
+  .filter-stock-opname {
+    padding: 15px;
+  }
+  
+  /* Button for Date Range */
+  .btn-date-range-stock-opname {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+  }
+  
+  /* Button for Calendar and additional action */
+  .btn-kalender-stock-opname,
+  .btn-another-action-stock-opname {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Table Container */
+  /* .table-container-stock-opname {
+    padding: 20px;
+  } */
+  
+  /* Table Styles */
+  .table-stock-opname {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .table-stock-opname th,
+  .table-stock-opname td {
+    padding: 15px 20px;
+    vertical-align: middle;
+  }
+  
+  .table-stock-opname thead th {
+    background-color: #f0f0f0;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .actions-stock-opname button {
+    margin-right: 5px;
+  }
+  
+  /* Buttons inside table actions */
+  /* .btn-success,
+  .btn-secondary,
+  .btn-danger {
+    border-radius: 5px;
+    padding: 8px 16px;
+  }
+   */

@@ -1,99 +1,44 @@
-.modal-overlay-choose {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content-choose {
-    background: white;
-    border-radius: 12px; 
-    padding: 20px; 
-    max-width: 600px; 
-    width: 100%;
+.btn-icon-close-modal:focus{
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+}
 
-  }
-  
-  /* .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #e6e6e6;
-    margin-bottom: 20px;
 
-  } */
-  
-  /* .modal-title {
-    flex-grow: 1;
-    text-align: center;
-    margin-top: 8px;
-    margin-bottom: 22px;
-    font-weight: 600;
-    font-size: 18px;
 
-  } */
-  
-
-  .d-flex button {
-    width: 50px; 
-    height: 50px;
-  }
-  
-  .form-label {
-    margin-top: 5rem;
-  }
-
-  .input-group {
-    margin-top: 14px;
-  }
-
-  .input-group button {
-    width: 80px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-  
-  /* .modal-footer {
-    justify-content: flex-end;
-    padding-top: 20px;
-    border-top: 1px solid #e6e6e6;
-    
-  } */
-  
-  .modal-footer button {
-    width: 120px; 
-    height: 45px;
-    border-radius: 10px; 
-    font-size: 16px;
-  }
   
   .product-info {
     display: flex;
     align-items: center;
   }
   
-
   .product-image {
     max-width: 80px;
     height: auto;
   }
   
-  .product-details {
+  .product-details-transaksi {
     margin-left: 2.4rem; 
     text-align: start; 
   } 
   
-  .product-name  {
+  .product-name-transaksi {
     font-size: 1.2rem; 
     margin-bottom: 5px; 
-
   } 
+
+  .product-price-transaksi {
+    font-size: 16px; 
+    color: #888; 
+    margin-left: 0px;
+    font-weight: 500;
+  }
 
   .text-quantity {
     font-weight: 600;
     font-size: 28px;
   }
+
+
 
   .btn-plus-minus {
     width: 40px;
@@ -119,35 +64,49 @@
     border: none; 
   }
 
-  .product-price {
-    font-size: 1rem; 
-    color: #888; 
-    margin-left: 0px;
-    font-weight: 500;
-  }
-  
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* .modal-body {
-    padding: 20px;
-  } */
-
-
-  .btn-outline-danger {
-    margin-right: 10px;
-  }
-  /* .btn-batal {
-    margin-right: 18px;
-    color: black;
-    padding-right: 20px;
-  }
-  
-  
-  .btn-batal:hover {
+  .btn-batal-transaksi-modal {
     background-color: white;
-    color: rgb(0, 0, 0)
-    ;
+    border: 1px solid #ff0000;
+    font-weight: 500;
+    width: 110px; 
+  }
+
+  .btn-batal-transaksi-modal:hover {
+    background-color: white;
+    border: 1px solid #ff0000;
+  }
+
+  .btn-batal-transaksi-modal:active {
+    background-color: white;
+    border: 1px solid #ff0000 !important;
+  }
+
+  .btn-simpan-transaksi-modal {
+    background-color: #ff0000;
+    color: white;
+    font-weight: 500;
+    width: 110px; 
+  }
+
+  .btn-simpan-transaksi-modal:hover {
+    background-color: #ff0000;
+    color: white;
+  }
+
+  .btn-simpan-transaksi-modal:active {
+    background-color: #ff0000 !important;
+    color: white !important;
+    border: 1px solid #ff0000 !important;
+  }
+
+
+
+
+
+/*   
+  .modal-footer button {
+    width: 120px; 
+    height: 45px;
+    border-radius: 10px; 
+    font-size: 16px;
   } */

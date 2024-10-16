@@ -176,7 +176,7 @@ function DetailRekapShift() {
                       {/* <div className="btn-catatan-rekap-shift-content"> */}
                       <div className="d-grid gap-2 mx-auto">
                         <button className="btn btn-primary btn-akhiri-shift-rekap " data-bs-target="#exampleModalToggle" data-bs-toggle="modal" type="button">
-                          Akhiri shift
+                        Tambah catatan singkat
                         </button>
                       </div>
                     </div>

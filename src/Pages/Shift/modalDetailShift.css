@@ -1,0 +1,115 @@
+.modal-detail-shift-content {
+    border-radius: 10px;
+    padding: 12px;
+  }
+  
+  .modal-detail-shift-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .modal-detail-shift-close:focus{
+    box-shadow: none !important;
+    border-color: #ced4da !important;
+  }
+  
+  .btn-modal-detail-shift-saldo-masuk-modal1{
+    background-color: #ff0000;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .btn-modal-detail-shift-saldo-masuk-modal1:hover {
+    background-color: #ff0000 !important;
+    color: white !important;
+  }
+
+  .btn-modal-detail-shift-saldo-masuk-modal2 {
+    background-color: #ffffff;
+    color: #494949;
+    border: 2px solid #C4C4C4;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .btn-modal-detail-shift-saldo-masuk-modal2:hover {
+    background-color: #ffffff !important;
+    color: #494949 !important;
+    border: 2px solid #C4C4C4 !important;
+  }
+
+
+  .btn-modal-detail-shift-saldo-keluar-modal1 {
+    background-color: #ffffff;
+    color: #494949;
+    border: 2px solid #C4C4C4;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .btn-modal-detail-shift-saldo-keluar-modal1:hover {
+    background-color: #ffffff !important;
+    color: #494949 !important;
+    border: 2px solid #C4C4C4 !important;
+  }
+
+
+  .btn-modal-detail-shift-saldo-keluar-modal2 {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .btn-modal-detail-shift-saldo-keluar-modal2:hover {
+    background-color: #ff0000 !important;
+    color: white !important;
+  }
+
+
+  .modal-detail-shift-amount {
+    padding-top: 24px;
+    padding-bottom: 22px;
+  }
+
+  .modal-detail-shift-label {
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+  }
+
+  .modal-detail-shift-input {
+    border: 1px solid #C7C7C7;
+    padding: 16px 14px;
+    border-radius: 14px;
+    width: 66%;
+  }
+
+  .modal-detail-shift-textarea {
+    border: 1px solid #C7C7C7;
+    border-radius: 14px;
+    padding: 16px 14px 52px;
+  }
+
+  .modal-detail-shift-footer {
+    padding-top: 28px; 
+  }
+
+ .modal-detail-shift-save {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+
+  .modal-detail-shift-save:hover {
+    background-color: #ff0000 !important;
+    color: white !important;
+  }
+  

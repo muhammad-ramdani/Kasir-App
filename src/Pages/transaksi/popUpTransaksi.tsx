@@ -1,100 +1,59 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import chitato from "../.././assets/assetsTransaksi/chitato.svg";
 import "./popUpTransaksi-css.css";
 
-interface ModalPopupProps {
-  show: boolean;
-  onClose: () => void;
-  product: {
-    name: string;
-    price: string;
-    image: string;
-  } | null;
-}
+function PopUpTransaksi() {
+  const [quantity, setQuantity] = useState(0);
 
-const ModalPopup: React.FC<ModalPopupProps> = ({ show, onClose, product }) => {
-  const [quantity, setQuantity] = useState(1);
-  const [discount, setDiscount] = useState(0.0);
-  const [isPercent, setIsPercent] = useState(true); 
-
-  if (!show || !product) return null;
-
-  const handleQuantityChange = (type: 'increment' | 'decrement') => {
-    if (type === 'increment') {
+  const handleQuantityChange = (type: "increment" | "decrement") => {
+    if (type === "increment") {
       setQuantity(quantity + 1);
-    } else if (type === 'decrement' && quantity > 1) {
+    } else if (type === "decrement" && quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
-
   return (
-    <div className="modal-overlay">
-      <div className="modal-content-choose">
-        <div className="modal-header">
-          <h5 className="modal-title text-center">Edit</h5>
-        </div>
-        <div className="modal-body">
-          {/* Product Info */}
-          <div className="product-info d-flex align-items-center  mb-3">
-            <img src={product.image} alt={product.name} className="img-fluid" style={{ width: '80px' }} />
-            <div className="product-details">
-              <h6 className="product-name">{product.name}</h6>
-              <p className="product-price">{product.price}</p>
+    <>
+      <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="staticBackdropLabel">
+                Edit
+              </h1>
+              <button type="button" className="btn-close btn-icon-close-modal" data-bs-dismiss="modal" aria-label="Close" />
             </div>
-          </div>
-
-          {/* Quantity Control */}
-          <div className="d-flex justify-content-center align-items-center mb-3">
-            <button
-              className="btn btn-plus-minus"
-              onClick={() => handleQuantityChange('decrement')}
-            >
-              -
-            </button>
-            <span className="mx-5 text-quantity">{quantity}</span>
-            <button
-              className="btn btn-plus-minus"
-              onClick={() => handleQuantityChange('increment')}
-            >
-              +
-            </button>
-          </div>
-
-          {/* Discount Input */}
-          <div className="mb-3">
-            <label className="form-label">Ubah Diskon Perjumlah</label>
-            <div className="input-group">
-              <input
-                type="number"
-                className="form-control"
-                value={discount}
-                onChange={(e) => setDiscount(parseFloat(e.target.value))}
-              />
-              <button
-                className={`btn ${isPercent ? 'btn-primary' : 'btn-outline-secondary'}`}
-                onClick={() => setIsPercent(true)}
-              >
-                %
+            <div className="modal-body">
+              <div className="product-info d-flex align-items-center  mb-3">
+                <img src={chitato} alt="Chitato" className="img-fluid" style={{ width: "70px" }} />
+                <div className="product-details-transaksi">
+                  <h6 className="product-name-transaksi">chitato</h6>
+                  <p className="product-price-transaksi">Rp 300.000</p>
+                </div>
+              </div>
+              <div className="d-flex justify-content-center align-items-center mb-3">
+                <button className="btn btn-plus-minus" onClick={() => handleQuantityChange("decrement")}>
+                  -
+                </button>
+                <span className="mx-5 text-quantity">{quantity}</span>
+                <button className="btn btn-plus-minus" onClick={() => handleQuantityChange("increment")}>
+                  +
+                </button>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-batal-transaksi-modal" data-bs-dismiss="modal">
+                Batal
               </button>
-              <button
-                className={`btn ${!isPercent ? 'btn-primary' : 'btn-outline-secondary'}`}
-                onClick={() => setIsPercent(false)}
-              >
-                Rp
+              <button type="button" className="btn btn-simpan-transaksi-modal">
+                Simpan
               </button>
             </div>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="modal-footer">
-          <button className="btn btn-outline-danger" onClick={onClose}>
-            Batal
-          </button>
-          <button className="btn btn-danger" onClick={onClose}>Simpan</button>
         </div>
       </div>
-    </div>
+    </>
   );
-};
+}
 
-export default ModalPopup;
+export default PopUpTransaksi;

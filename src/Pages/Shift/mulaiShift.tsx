@@ -9,7 +9,7 @@ function MulaiShift() {
   return (
     <Layout titlePage="Shift">
       <div className="container py-4">
-        <div className="row g-3">
+        <div className="asd row g-3">
           {/* Bagian kiri - Info Kasir dan Shift */}
           <div className="col-md-6">
             <div className="card rounded-3 card-start-shift-left p-3">
