@@ -28,7 +28,7 @@ import MulaiShift from "./Pages/Shift/mulaiShift";
 import DetailRekapShift from "./Pages/Shift/detailRekapShift";
 
 function App() {
-  return (
+    return (
 
     <>
       <Routes>
@@ -41,7 +41,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         {/* Pages Manajemen */}
         <Route path="/databarang" element={<DataBarang />} />
-        <Route path="/katogori-barang" element={<KategoriBarang />} />
+        <Route path="/kategori-barang" element={<KategoriBarang />} />
         {/* Pages laporan */}
         <Route path="/laporan" element={<Laporan />} />
         <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
@@ -54,16 +54,11 @@ function App() {
         <Route path="/transaksi/struk" element={<StrukPage />} />
         {/* Pages Shift */}
         <Route path="/shift" element={<Shift />} />
-        <Route path="/shift/start-shift" element={<MulaiShift />} />
-        <Route path="/shift/detail-shift" element={<DetailRekapShift />} />
+        <Route path="/shift/start-shift" element={<MulaiShift/>} />
+        <Route path="/shift/detail-shift" element={<DetailRekapShift/>} />
         {/* Pengaturan */}
         <Route path="/pengaturan" element={<Pengaturan />} />
         <Route path="/informasi-toko" element={<InformasiToko />} />
-        <Route path="/metode-pembayaran" element={<MetodePembayaran />} />
-        <Route path="/pengaturan-struk" element={<PengaturanStruk />} />
-        <Route path="/perangkat-edc" element={<PerangkatEdc />} />
-        <Route path="/profile" element={<Profile />} />
-
       </Routes>
     </>
   );

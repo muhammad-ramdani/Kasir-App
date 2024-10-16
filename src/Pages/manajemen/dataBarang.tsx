@@ -1,4 +1,5 @@
 import './styleManajemenDataBarang.css';
+import "./styleAllManajemen.css";
 import chitato from "../../assets/imagesManajemenDataBarang/chitato.png";
 import logoEditRincianBarangDark from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-dark.svg";
 import logoEditRincianBarangWhite from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-white.svg";
@@ -30,14 +31,16 @@ function DataBarang() {
                                                     data-bs-toggle="dropdown"
                                                     aria-expanded="false"
                                                     data-bs-offset="0,10"
+                                                    style={{ borderColor: "#E6E6E6", padding: "9.21px 9.5px" }}
                                                 >
-                                                    <img src={sort}/>
+                                                    <img src={sort} />
                                                 </button>
-                                                <ul className="dropdown-menu shadow dropdown-menu-filter-data-barang">
+                                                <ul className="dropdown-menu shadow dropdown-menu-filter-data-barang" style={{ borderColor: "#E6E6E6" }}>
                                                     <li>
                                                         <a
                                                             className="dropdown-item dropdown-item-filter-data-barang"
                                                             href="#"
+                                                            style={{ padding: "10px 21px" }}
                                                         >
                                                             Barang
                                                         </a>
@@ -46,6 +49,7 @@ function DataBarang() {
                                                         <a
                                                             className="dropdown-item dropdown-item-filter-data-barang"
                                                             href="#"
+                                                            style={{ padding: "10px 21px" }}
                                                         >
                                                             Kode
                                                         </a>
@@ -54,6 +58,7 @@ function DataBarang() {
                                                         <a
                                                             className="dropdown-item dropdown-item-filter-data-barang"
                                                             href="#"
+                                                            style={{ padding: "10px 21px" }}
                                                         >
                                                             Harga jual
                                                         </a>
@@ -62,6 +67,7 @@ function DataBarang() {
                                                         <a
                                                             className="dropdown-item dropdown-item-filter-data-barang"
                                                             href="#"
+                                                            style={{ padding: "10px 21px" }}
                                                         >
                                                             Stok
                                                         </a>
@@ -70,6 +76,7 @@ function DataBarang() {
                                                         <a
                                                             className="dropdown-item dropdown-item-filter-data-barang"
                                                             href="#"
+                                                            style={{ padding: "10px 21px" }}
                                                         >
                                                             Produk terbaru
                                                         </a>
@@ -86,10 +93,9 @@ function DataBarang() {
                                                 />
                                                 <input
                                                     type="text"
-                                                    className="form-control form-control-cari-data-barang border border-start-0 rounded-end-3"
+                                                    className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-manajemen border border-start-0 rounded-end-3"
                                                     placeholder="Cari barang.."
-                                                    aria-label="Username"
-                                                    aria-describedby="addon-wrapping"
+                                                    style={{ padding: "9.5px 12px 9.5px 0px" }}
                                                 />
                                             </div>
                                         </div>
@@ -122,7 +128,7 @@ function DataBarang() {
                                             Alat Rumah Tangga
                                         </button>
                                     </div>
-                                    <div className="content-fill-manajemen-data-barang overflow-auto">
+                                    <div className="content-fill-manajemen-data-barang overflow-auto-custom-card-manajemen overflow-auto">
                                         <div className="card rounded-4 mb-3">
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
@@ -162,7 +168,7 @@ function DataBarang() {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="card rounded-4 mb-3 card-barang-active">
+                                        <div className="card rounded-4 mb-3 card-barang-active" style={{ borderColor: "#FF0000" }}>
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
                                                     <img
@@ -528,7 +534,7 @@ function DataBarang() {
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                 >
-                    <div className="modal-dialog modal-dialog-scrollable" style={{ width: 605 }}>
+                    <div className="modal-dialog modal-xl modal-dialog-scrollable" style={{ width: 605 }}>
                         <div className="modal-content shadow rounded-4 p-0" style={{ width: 605 }}>
                             <div
                                 className="modal-header"
@@ -540,13 +546,13 @@ function DataBarang() {
                                 </span>
                                 <button
                                     type="button"
-                                    className="btn-close btn-close-tambah-data-barang"
+                                    className="btn-close focus-ring-none-manajemen"
                                     data-bs-dismiss="modal"
                                     aria-label="Close"
                                 ></button>
                             </div>
                             <div
-                                className="modal-body"
+                                className="modal-body overflow-auto-custom-card-manajemen"
                                 style={{ padding: "20px 23px 20px 32px", margin: "0px 3px 0px 0px" }}
                             >
                                 <div className="text-center mb-3">
@@ -578,14 +584,15 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 form-control-input-nama-barang"
+                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputNamaBarang"
                                         placeholder="Masukan nama.."
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                     />
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label mt-0">Tipe Barang</label>
-                                    <select className="form-select rounded-3 form-select-tipe-barang">
+                                    <select className="form-select rounded-3 focus-ring-none-manajemen" style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}>
                                         <option value={1}>Default</option>
                                         <option value={2}>Paket</option>
                                         <option value={3}>Multisatuan</option>
@@ -598,6 +605,7 @@ function DataBarang() {
                                             type="checkbox"
                                             defaultValue=""
                                             id="flexCheckTampilkanDiTransaksi"
+                                            style={{ borderColor: "#FF0000" }}
                                             defaultChecked
                                         />
                                         <label
@@ -626,10 +634,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-stok-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputStokBarang"
                                             placeholder="0"
-                                            style={{ width: 193 }}
+                                            style={{ width: 193, backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                         />
                                     </div>
                                     <div className="col p-0" style={{ marginRight: 10 }}>
@@ -638,17 +646,18 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-kode-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputKodeBarang"
                                             placeholder="Masukkan kode"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                     <div className="col-auto p-0 align-self-end">
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-refresh-disabled"
+                                            className="form-control rounded-3 font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputRefreshDisabled"
-                                            style={{ width: 45 }}
+                                            style={{ width: 45, backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                             disabled
                                         />
                                     </div>
@@ -660,9 +669,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-harga-dasar"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaDasar"
                                             placeholder="Rp 0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                     <div className="col-auto p-0" style={{ marginRight: 20 }} />
@@ -672,15 +682,16 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-harga-jual"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaJual"
                                             placeholder="Rp 0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label mt-0">Kategori</label>
-                                    <select className="form-select rounded-3 form-select-kategori">
+                                    <select className="form-select rounded-3 focus-ring-none-manajemen" style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}>
                                         <option value={1}>Kebutuhan Rumah Tangga</option>
                                         <option value={2}>Kebutuhan Rumah Orang</option>
                                     </select>
@@ -692,9 +703,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-batas-minimum-stok"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBatasMinimumStok"
                                             placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                     <div className="col-auto p-0" style={{ marginRight: 20 }} />
@@ -704,9 +716,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-letak-rak"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputLetakRak"
                                             placeholder="Masukkan letak"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                 </div>
@@ -717,15 +730,16 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-berat-rincian-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBeratRincianBarang"
                                             placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                     <div className="col-auto p-0" style={{ marginRight: 20 }} />
                                     <div className="col p-0">
                                         <label className="form-label mt-0">Satuan</label>
-                                        <select className="form-select rounded-3 form-select-satuan-rincian-barang">
+                                        <select className="form-select rounded-3 focus-ring-none-manajemen" style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}>
                                             <option value={1}>Gram</option>
                                             <option value={2}>Pcs</option>
                                         </select>
@@ -738,9 +752,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-diskon-harga-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputDiskonHargaBarang"
                                             placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         />
                                     </div>
                                     <div className="col-auto p-0" style={{ marginRight: 10 }} />
@@ -782,9 +797,10 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 form-control-input-keterangan-barang"
+                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputKeteranganBarang"
                                         placeholder="Masukkan keterangan"
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                     />
                                 </div>
                             </div>
@@ -813,8 +829,8 @@ function DataBarang() {
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                 >
-                    <div className="modal-dialog modal-dialog-scrollable" style={{ width: 900 }}>
-                        <div className="modal-content shadow rounded-4 p-0" style={{ width: 900 }}>
+                    <div className="modal-dialog modal-xl modal-dialog-scrollable" style={{ width: 605 }}>
+                        <div className="modal-content shadow rounded-4 p-0" style={{ width: 605 }}>
                             <div
                                 className="modal-header"
                                 style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}
@@ -825,13 +841,13 @@ function DataBarang() {
                                 </span>
                                 <button
                                     type="button"
-                                    className="btn-close btn-close-tambah-data-barang"
+                                    className="btn-close focus-ring-none-manajemen"
                                     data-bs-dismiss="modal"
                                     aria-label="Close"
                                 ></button>
                             </div>
                             <div
-                                className="modal-body"
+                                className="modal-body overflow-auto-custom-card-manajemen"
                                 style={{ padding: "20px 23px 20px 32px", margin: "0px 3px 0px 0px" }}
                             >
                                 <div className="text-center mb-3">
@@ -863,15 +879,16 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 form-control-input-nama-barang"
+                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputNamaBarang"
                                         placeholder="Masukan nama.."
                                         value="Tissue Paseo 2 Lapis 250 Lembar"
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                     />
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label mt-0">Tipe Barang</label>
-                                    <select className="form-select rounded-3 form-select-tipe-barang">
+                                    <select className="form-select rounded-3 focus-ring-none-manajemen" style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}>
                                         <option value={1}>Default</option>
                                         <option value={2}>Paket</option>
                                         <option value={3}>Multisatuan</option>
@@ -880,7 +897,7 @@ function DataBarang() {
                                 <div style={{ marginBottom: 20 }}>
                                     <div className="form-check mb-2">
                                         <input
-                                            className="form-check-input form-check-input-tampilkanDiTransaksi-dan-pakaiStok rounded-2"
+                                            className="form-check-input form-check-input-tampilkanDiTransaksi-dan-pakaiStok focus-ring-none-manajemen rounded-2"
                                             type="checkbox"
                                             defaultValue=""
                                             id="flexCheckTampilkanDiTransaksi"
@@ -895,7 +912,7 @@ function DataBarang() {
                                     </div>
                                     <div className="form-check mb-0">
                                         <input
-                                            className="form-check-input form-check-input-tampilkanDiTransaksi-dan-pakaiStok rounded-2"
+                                            className="form-check-input form-check-input-tampilkanDiTransaksi-dan-pakaiStok focus-ring-none-manajemen rounded-2"
                                             type="checkbox"
                                             defaultValue=""
                                             id="flexCheckPakaiStok"
@@ -912,10 +929,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-stok-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputStokBarang"
                                             placeholder="0"
-                                            style={{ width: 193 }}
+                                            style={{ width: 193, backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                             value="145"
                                         />
                                     </div>
@@ -925,18 +942,19 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-kode-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputKodeBarang"
                                             placeholder="Masukkan kode"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="000002"
                                         />
                                     </div>
                                     <div className="col-auto p-0 align-self-end">
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-refresh-disabled"
+                                            className="form-control rounded-3 font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputRefreshDisabled"
-                                            style={{ width: 45 }}
+                                            style={{ width: 45, backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                             disabled
                                         />
                                     </div>
@@ -948,9 +966,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-harga-dasar"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaDasar"
                                             placeholder="Rp 0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="Rp 9.000"
                                         />
                                     </div>
@@ -961,16 +980,17 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-harga-jual"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaJual"
                                             placeholder="Rp 0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="Rp 11.000"
                                         />
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <label className="form-label mt-0">Kategori</label>
-                                    <select className="form-select rounded-3 form-select-kategori">
+                                    <select className="form-select rounded-3 focus-ring-none-manajemen" style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}>
                                         <option value={1}>Kebutuhan Rumah Tangga</option>
                                         <option value={2}>Kebutuhan Rumah Orang</option>
                                     </select>
@@ -982,9 +1002,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-batas-minimum-stok"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBatasMinimumStok"
                                             placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="50"
                                         />
                                     </div>
@@ -995,9 +1016,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-letak-rak"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputLetakRak"
                                             placeholder="Masukkan letak"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="Rak B"
                                         />
                                     </div>
@@ -1009,16 +1031,17 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-berat-rincian-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBeratRincianBarang"
                                             placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="25"
                                         />
                                     </div>
                                     <div className="col-auto p-0" style={{ marginRight: 20 }} />
                                     <div className="col p-0">
                                         <label className="form-label mt-0">Satuan</label>
-                                        <select className="form-select rounded-3 form-select-satuan-rincian-barang">
+                                        <select className="form-select rounded-3 focus-ring-none-manajemen" style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}>
                                             <option value={1}>Gram</option>
                                             <option value={2}>Pcs</option>
                                         </select>
@@ -1031,9 +1054,10 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 form-control-input-diskon-harga-barang"
+                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputDiskonHargaBarang"
                                             placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                             value="20"
                                         />
                                     </div>
@@ -1076,9 +1100,10 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 form-control-input-keterangan-barang"
+                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputKeteranganBarang"
                                         placeholder="Masukkan keterangan"
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         value="-"
                                     />
                                 </div>
