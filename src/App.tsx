@@ -24,40 +24,40 @@ import KategoriBarang from "./Pages/manajemen/kategoriBarang";
 import DataBarang from "./Pages/manajemen/dataBarang";
 
 function App() {
-  return (
+    return (
 
-    <>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/change-password" element={<ChangePassword />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/new-passwd" element={<NewPasswd />} />
-        <Route path="/reset-berhasil" element={<ResetBerhasil />} />
-        <Route path="/register" element={<Register />} />
-        {/* Pages Manajemen */}
-        <Route path="/databarang" element={<DataBarang />} />
-        <Route path="/katogori-barang" element={<KategoriBarang />} />
-        {/* Pages laporan */}
-        <Route path="/laporan" element={<Laporan />} />
-        <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
-        <Route path="/laporan-pembelian-barang" element={<LaporanPembelianBarang />} />
-        <Route path="/laporan-pelanggan" element={<LaporanPelanggan />} />
-        <Route path="/laporan-persediaan-barang" element={<LaporanPersediaanBarang />} />
-        {/* Pages Transaksi */}
-        <Route path="/transaksi" element={<Transaksi />} />
-        <Route path="/transaksi/pembayaran" element={<Pembayaran />} />
-        <Route path="/transaksi/struk" element={<StrukPage />} />
-        {/* Pages Shift */}
-        <Route path="/shift" element={<Shift />} />
-        <Route path="/shift/start-shift" element={<MulaiShift/>} />
-        <Route path="/shift/detail-shift" element={<DetailRekapShift/>} />
-        {/* Pengaturan */}
-        <Route path="/pengaturan" element={<Pengaturan />} />
-        <Route path="/informasi-toko" element={<InformasiToko />} />
-      </Routes>
-    </>
-  );
+        <>
+            <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/change-password" element={<ChangePassword />} />
+                <Route path="/verify-email" element={<VerifyEmail />} />
+                <Route path="/new-passwd" element={<NewPasswd />} />
+                <Route path="/reset-berhasil" element={<ResetBerhasil />} />
+                <Route path="/register" element={<Register />} />
+                {/* Pages Manajemen */}
+                <Route path="/databarang" element={<DataBarang />} />
+                <Route path="/kategori-barang" element={<KategoriBarang />} />
+                {/* Pages laporan */}
+                <Route path="/laporan" element={<Laporan />} />
+                <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
+                <Route path="/laporan-pembelian-barang" element={<LaporanPembelianBarang />} />
+                <Route path="/laporan-pelanggan" element={<LaporanPelanggan />} />
+                <Route path="/laporan-persediaan-barang" element={<LaporanPersediaanBarang />} />
+                {/* Pages Transaksi */}
+                <Route path="/transaksi" element={<Transaksi />} />
+                <Route path="/transaksi/pembayaran" element={<Pembayaran />} />
+                <Route path="/transaksi/struk" element={<StrukPage />} />
+                {/* Pages Shift */}
+                <Route path="/shift" element={<Shift />} />
+                <Route path="/shift/start-shift" element={<MulaiShift />} />
+                <Route path="/shift/detail-shift" element={<DetailRekapShift />} />
+                {/* Pengaturan */}
+                <Route path="/pengaturan" element={<Pengaturan />} />
+                <Route path="/informasi-toko" element={<InformasiToko />} />
+            </Routes>
+        </>
+    );
 }
 
 

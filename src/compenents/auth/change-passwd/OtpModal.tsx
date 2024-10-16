@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Modal from "react-modal";
-import "./otpModal.css";
+import "./otp-modal.css";
 
 // Props type definition for OTP Modal
 interface OtpModalProps {
