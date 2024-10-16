@@ -29,6 +29,7 @@ import pengaturan5 from '../src/assets/pengaturan5.svg';
 import profileToko from '../src/assets/profile-toko.svg';
 import logoutButtonImg from '../src/assets/logout.svg';
 import edc from '../src/assets/edc.svg';
+import calender from '../src/assets/calender.svg'
 
 const images = {
     logo,
@@ -61,7 +62,8 @@ const images = {
     pengaturan5,
     profileToko,
     logoutButtonImg,
-    edc
+    edc,
+    calender
     
 
 }

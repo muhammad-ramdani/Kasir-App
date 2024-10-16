@@ -1,0 +1,25 @@
+.focus-ring-none-manajemen:focus {
+    box-shadow: none !important;
+    border-color: #DEE2E6 !important;
+}
+
+.font-size-16px-manajemen {
+    font-size: 16px !important;
+}
+
+.placeholder-font-size-16px-manajemen::placeholder {
+    font-size: 16px !important;
+}
+
+.overflow-auto-custom-card-manajemen::-webkit-scrollbar {
+    width: 6px;
+}
+
+.overflow-auto-custom-card-manajemen::-webkit-scrollbar-thumb {
+    background: #D9D9D9;
+    border-radius: 50px;
+}
+
+.height-calc-100vh-151px {
+    height: calc(100vh - 151px);
+}

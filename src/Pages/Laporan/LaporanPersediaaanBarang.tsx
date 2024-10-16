@@ -1,11 +1,11 @@
 import React from "react";
-import EksporModalLaporan from "../../compenents/ModalEksporLaporan/ModalEksporLaporan";
 import SearchLaporan from "../../compenents/SearchLaporan/SearchLaporan";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 import { Link } from "react-router-dom";
 import CalenderPopup from "../../compenents/CalenderPopup/CalenderPopup";
 import Pagination from "../../compenents/Pagination/Pagination";
+import EksporModalLaporanPersediaanBarang from "../../compenents/ModalEksporLaporan/ModalEksporLaporanPersediaanBarang";
 
 const LaporanPersediaanBarang = () => {
 
@@ -17,7 +17,7 @@ const LaporanPersediaanBarang = () => {
             kuantitas: 25,
             satuan: 'pcs',
             hargaModal: 250000,
-            totalNilaiPersediaan: 6250000, 
+            totalNilaiPersediaan: 6250000,
         },
         {
             namaProduk: 'Blender',
@@ -26,7 +26,7 @@ const LaporanPersediaanBarang = () => {
             kuantitas: 30,
             satuan: 'pcs',
             hargaModal: 150000,
-            totalNilaiPersediaan: 4500000, 
+            totalNilaiPersediaan: 4500000,
         },
         {
             namaProduk: 'Panci Set',
@@ -35,7 +35,7 @@ const LaporanPersediaanBarang = () => {
             kuantitas: 15,
             satuan: 'pcs',
             hargaModal: 350000,
-            totalNilaiPersediaan: 5250000, 
+            totalNilaiPersediaan: 5250000,
         },
         {
             namaProduk: 'Kompor Gas',
@@ -44,7 +44,7 @@ const LaporanPersediaanBarang = () => {
             kuantitas: 10,
             satuan: 'pcs',
             hargaModal: 700000,
-            totalNilaiPersediaan: 7000000, 
+            totalNilaiPersediaan: 7000000,
         },
         {
             namaProduk: 'Set Sendok Makan',
@@ -53,7 +53,7 @@ const LaporanPersediaanBarang = () => {
             kuantitas: 50,
             satuan: 'pcs',
             hargaModal: 50000,
-            totalNilaiPersediaan: 2500000, 
+            totalNilaiPersediaan: 2500000,
         },
         {
             namaProduk: 'Kursi Makan',
@@ -62,7 +62,7 @@ const LaporanPersediaanBarang = () => {
             kuantitas: 20,
             satuan: 'pcs',
             hargaModal: 300000,
-            totalNilaiPersediaan: 6000000, 
+            totalNilaiPersediaan: 6000000,
         },
     ];
 
@@ -71,7 +71,7 @@ const LaporanPersediaanBarang = () => {
     const [formatEkspor, setFormatEkspor] = React.useState<'PDF' | 'Excel'>('PDF');
 
     // state untuk tanggal yang dipilih
-    const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(undefined);
+    const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(new Date()); // Inisialisasi dengan tanggal saat ini
     const [showCalendar, setShowCalendar] = React.useState(false);
 
     // pagination
@@ -113,10 +113,11 @@ const LaporanPersediaanBarang = () => {
                         </div>
                         <div className="col-4">
                             <button
-                                className='btn btn-danger w-100'
+                                className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
                                 onClick={() => setShowCalendar(!showCalendar)} // Toggle tampilkan kalender
                             >
-                                {showCalendar ? 'Sembunyikan Tanggal' : 'Pilih Tanggal'}
+                                <img src={images.calender} alt="" />
+                                {selectedDate ? ` ${selectedDate.toLocaleDateString()}` : 'Pilih Tanggal'}
                             </button>
                         </div>
                         <div className="col-4">
@@ -244,12 +245,13 @@ const LaporanPersediaanBarang = () => {
             </div>
 
             {/* modal ekspor laporan */}
-            <EksporModalLaporan
+            <EksporModalLaporanPersediaanBarang
                 isOpen={isModalOpen}
                 onClose={() => setModalOpen(false)}
                 format={formatEkspor}
                 onConfirm={handleConfirmExport}
                 jenisLaporan="Persediaan Barang"
+                selectedDate={selectedDate ? selectedDate.toLocaleDateString() : ''}
             />
 
             {/* Tampilkan kalender jika showCalendar true */}

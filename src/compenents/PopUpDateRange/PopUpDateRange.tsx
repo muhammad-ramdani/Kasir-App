@@ -1,4 +1,3 @@
-// PopupDateRange.tsx
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -7,17 +6,23 @@ import './PopUpDateRange.css';
 interface PopupDateRangeProps {
     isOpen: boolean;
     onClose: () => void;
+    onDateRangeChange: (startDate: string, endDate: string) => void;
 }
 
-const PopupDateRange: React.FC<PopupDateRangeProps> = ({ isOpen, onClose }) => {
+const PopupDateRange: React.FC<PopupDateRangeProps> = ({ isOpen, onClose, onDateRangeChange }) => {
     const [startDate, setStartDate] = useState<Date | null>(new Date());
     const [endDate, setEndDate] = useState<Date | null>(new Date());
     const [startTime, setStartTime] = useState('07:00');
     const [endTime, setEndTime] = useState('23:59');
 
     const handleProcess = () => {
-        console.log('Rentang Tanggal:', startDate, 'hingga', endDate);
-        console.log('Rentang Waktu:', startTime, 'hingga', endTime);
+        if (startDate && endDate) {
+            const start = startDate.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+            const end = endDate.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
+
+            // Kirim rentang tanggal ke parent component
+            onDateRangeChange(start, end);
+        }
         onClose();
     };
 
@@ -62,7 +67,10 @@ const PopupDateRange: React.FC<PopupDateRangeProps> = ({ isOpen, onClose }) => {
                                 <div className="row mt-0 p-0 row-time">
                                     <div className="col-3">
                                         <label className="form-label mt-0 text-dark">Dari Tanggal</label>
-                                        <p className='date-from'>ini tanggal</p>
+                                        <p className='date-from'>
+                                            {/* Tampilkan tanggal mulai */}
+                                            {startDate ? startDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : 'Belum dipilih'}
+                                        </p>
                                     </div>
                                     <div className="col-3">
                                         <label className="form-label mt-0 text-dark">Dari Pukul</label>
@@ -75,7 +83,10 @@ const PopupDateRange: React.FC<PopupDateRangeProps> = ({ isOpen, onClose }) => {
                                     </div>
                                     <div className="col-3">
                                         <label className="form-label mt-0 text-dark">Hingga Tanggal</label>
-                                        <p className='date-to'>ini tanggal</p>
+                                        <p className='date-to'>
+                                            {/* Tampilkan tanggal hingga */}
+                                            {endDate ? endDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : 'Belum dipilih'}
+                                        </p>
                                     </div>
                                     <div className="col-3">
                                         <label className="form-label mt-0 text-dark">Hingga Pukul</label>

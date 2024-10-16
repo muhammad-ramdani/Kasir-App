@@ -28,7 +28,7 @@ const InformasiToko = () => {
                         </div>
                         <div className="row">
                             <div className="col-12 d-flex justify-content-end">
-                                <button type="button" className="btn btn-edit-info d-flex justify-content-center align-items-center">Edit</button>
+                                <button type="button" className="btn btn-edit-info-toko d-flex justify-content-center align-items-center">Edit</button>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ const InformasiToko = () => {
                         </div>
                         <div className="row">
                             <div className="col-12 d-flex justify-content-end">
-                                <button type="button" className="btn btn-edit-info d-flex justify-content-center align-items-center">Edit</button>
+                                <button type="button" className="btn btn-edit-info-toko d-flex justify-content-center align-items-center">Edit</button>
                             </div>
                         </div>
                     </div>
