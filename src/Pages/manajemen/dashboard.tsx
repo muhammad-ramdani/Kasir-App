@@ -6,6 +6,7 @@ import dataSupplier from "../../assets/imagesManagemenAll/data-supplier.svg";
 import diskonBarang from "../../assets/imagesManagemenAll/diskon-barang.svg";
 import stokBarang from "../../assets/imagesManagemenAll/stok-barang.svg";
 import Layout from '../../Layout/Layout';
+import { Link } from 'react-router-dom';
 
 
 function Dashboard() {
@@ -34,11 +35,7 @@ function Dashboard() {
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a
-                                            className="btn btn-danger fw-semibold mt-2"
-                                            href="#"
-                                            role="button"
-                                        >
+                                        <a className="btn btn-danger fw-semibold mt-2" href="/databarang" role="button">
                                             Atur sekarang
                                         </a>
                                     </div>
@@ -65,11 +62,7 @@ function Dashboard() {
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a
-                                            className="btn btn-danger fw-semibold mt-2"
-                                            href="#"
-                                            role="button"
-                                        >
+                                        <a className="btn btn-danger fw-semibold mt-2" href="/kategori-barang" role="button">
                                             Atur sekarang
                                         </a>
                                     </div>
@@ -96,13 +89,9 @@ function Dashboard() {
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a
-                                            className="btn btn-danger fw-semibold mt-2"
-                                            href="#"
-                                            role="button"
-                                        >
-                                            Atur sekarang
-                                        </a>
+                                            <a className="btn btn-danger fw-semibold mt-2" href="#" role="button">
+                                                Atur sekarang
+                                            </a>
                                     </div>
                                 </div>
                             </div>
