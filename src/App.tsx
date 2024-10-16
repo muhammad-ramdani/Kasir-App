@@ -26,6 +26,8 @@ import Profile from "./Pages/Pengaturan/Profile";
 import Shift from "./Pages/Shift/shift";
 import MulaiShift from "./Pages/Shift/mulaiShift";
 import DetailRekapShift from "./Pages/Shift/detailRekapShift";
+import StockOpname from "./Pages/stock-opname/stockOpname";
+import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 
 function App() {
     return (
@@ -64,6 +66,9 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/perangkat-edc" element={<PerangkatEdc />} />
                 <Route path="pengaturan-struk" element={<PengaturanStruk />} />
+                {/* Pengaturan */}
+                <Route path="/stock-opname" element={<StockOpname />} />
+                <Route path="//detail-stock-opname" element={<DetailStockOpname />} />
             </Routes>
         </>
     );

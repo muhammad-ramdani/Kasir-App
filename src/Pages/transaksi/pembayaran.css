@@ -1,30 +1,95 @@
 
-  .list-barang {
-    margin-bottom: 20px;
-    margin-top: 20px;
+  
+  /* right content */
+  /* .card-title-list-barang, .card-title-pembayaran {
+    font-weight: 500;
+    font-size: 18px;
+  } */
+  
+  .content-list-barang-left {
+    margin-top: 16px;
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
   }
   
-  .card-title-pembayaran {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 10px;
-    margin-left: 10px;
-
+  .quantity-product-list-barang {
+    font-weight: 700;
+    font-size: 28px;
+    margin-left: 12px;
+    margin-top: 7px;
   }
 
-  .barang-item {
+  .barang-item-list-barang {
     font-size: 1.2rem;
     margin-bottom: 2px;
     margin-top: 16px;
   }
   
+  .img-barang {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: 44px;
+    margin-left: -30px;
+  }
+  
 
-  /* .payment-method .btn {
-    width: 100px;
-    margin-bottom: 10px;
-  } */
+
+  .name-product-list-barang {
+    font-size: 18px;
+    margin-left: -40px;
+    margin-right: 60px;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  .price-product-list-barang {
+    margin-top: 10px;
+    font-size: 18px;
+    margin-right: 12px;
+    font-weight: 500;
+  }
+
+  .total-price-list-barang  {
+    margin-top: 12rem;
+  }
+
+  .total-price-list-barang , .discount span {
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .final-total {
+    margin-top: 1.6rem;
+    border-top: 2px dashed #494949; 
+    padding-top: 2.2rem; 
+    margin-left: 10px;
+    margin-right: 10px;          
+  }
+
+  .payment-method h6  {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: #646464;
+  }
+  
+  .btn-payment {
+    border: 2px solid red;
+    color: black;
+    background-color: white; 
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-payment:hover,
+  .btn-payment:active { 
+    background-color: red;
+    color: white; 
+  }
+  
+
+
   
 
    
@@ -32,7 +97,8 @@
   .keypad {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 30px;
+    padding-top: 20px;
   }
 
   .btn-keypad {
@@ -90,72 +156,3 @@
   }
   
 
-  .img-barang {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-left: 14px;
-    margin-left: -30px;
-  }
-  
-  .quantity-product {
-    font-weight: 700;
-    font-size: 28px;
-    margin-left: 12px;
-    margin-top: 7px;
-  }
-
-  .name-product {
-    font-size: 18px;
-    margin-left: -40px;
-    margin-right: 60px;
-    margin-top: 10px;
-    font-weight: 500;
-  }
-
-  .price-product {
-    margin-top: 10px;
-    font-size: 18px;
-    margin-right: 12px;
-    font-weight: 500;
-  }
-
-  .total {
-    margin-top: 10rem;
-    
-  }
-
-  .total, .discount span {
-    font-weight: 500;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .final-total {
-    margin-top: 1.6rem;
-    border-top: 2px dashed #494949; 
-    padding-top: 2.2rem; 
-    margin-left: 10px;
-    margin-right: 10px;          
-  }
-
-  .payment-method h6  {
-    margin-bottom: 20px;
-    margin-left: 10px;
-    color: #646464;
-  }
-  
-  .btn-payment {
-    border: 2px solid red;
-    color: black;
-    background-color: white; 
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .btn-payment:hover,
-  .btn-payment:active { 
-    background-color: red;
-    color: white; 
-  }
-  

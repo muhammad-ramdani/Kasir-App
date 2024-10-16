@@ -35,22 +35,26 @@ function Login() {
             <h1>Masuk ke Akun Anda</h1>
             <p>Kamu dapat masuk sebagai owner ataupun staf</p>
             <form onSubmit={handleSubmit} className="text-form">
-              <label htmlFor="email">Email</label>
-              <div className="email-field">
-                <input type="email" id="email" placeholder="Email" required />
+              <div className="content-form-email-login">
+                <label htmlFor="email">Email</label>
+                <div className="email-field">
+                  <input type="email" id="email" placeholder="Email" required />
+                </div>
               </div>
 
-              <label htmlFor="password">Password</label>
-              <div className="password-field">
-                <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
+              <div className="content-form-password-login mt-4">
+                <label htmlFor="password">Password</label>
+                <div className="password-field">
+                  <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
 
-                <span className="password-toggle-lgn" onClick={handlePasswordToggle}>
-                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                </span>
+                  <span className="password-toggle-lgn" onClick={handlePasswordToggle}>
+                    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                  </span>
+                </div>
               </div>
 
               <div className="forgot-password">
-                <Link to="/changepassword">Lupa Password?</Link>
+                <Link to="/change-password">Lupa Password?</Link>
               </div>
 
               <button type="submit" className="btn-login">
@@ -59,7 +63,7 @@ function Login() {
             </form>
 
             <div className="register">
-              Belum punya akun? <a href="#">Daftar</a>
+              Belum punya akun? <Link to="/register">Daftar</Link>
             </div>
           </div>
         </div>

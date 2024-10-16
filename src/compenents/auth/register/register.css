@@ -1,182 +1,169 @@
+/* Main container to align left and right sections */
+.content-register-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.left-section-register-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
+}
 
-  /* Main container to align left and right sections */
-  .content-regis {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  
-  .left-section-regis {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px; 
-  }
-  
-  .illustration {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-  }
-  
-  /* Right section with login form */
-  .right-section-regis {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .regis-form {
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .regis-form h1 {
-    font-size: 34px;
-    margin-bottom: 1px;
-    font-weight: 600;
-  }
-  
-  .regis-form p {
-    font-size: 16px;
-    color: #888;
-    margin-bottom: 50px;
-    margin-top: 1px;
-  }
-  
+.illustration {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
 
-  
-  .phone-field {
-    position: relative; /* Added to make the child elements position relative to this container */
-  }
-  
-  .phone-field input {
-    width: 100%;
-    height: 48px;
-    margin-top: 6px;
-    padding-right: 40px; /* Leave space for the icon */
-    font-size: 12px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-  }
-  
-  .phone-check-icon {
-    position: absolute;
-    right: 10px;
-    top: 56%;
-    transform: translateY(-50%);
-    color: green;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .email-field input{
-    width: 100%;
-    height: 48px;
-    margin-top: 6px;
-    padding-right: 40px; 
-    font-size: 12px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-  }
-  
-  input:focus {
-    border-color: #ccc; 
-    outline: none; 
-  
-  }
-  
-  .regisPasswd-field {
-    position: relative;
-  }
-  
-  .regisPasswd-field input {
-    height: 48px;
-    width: 100%;
-    margin-top: 6px;
-    padding-right: 40px; 
-    font-size: 12px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-  }
-  
-  .regisPasswd-toggle {
-    position: absolute;
-    right: 10px;
-    top: 56%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 18px;
-    color: #000000;
-  }
-  
+/* Right section with register form */
+.right-section-register-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-  .terms-checkbox {
-    display: flex; 
-    align-items: center;
-   
-  }
-  
-  .terms-checkbox input {
-    margin-right: 10px; 
-    width: 56px; 
-    height: 56px; 
-    border-radius: 200000px;
-    accent-color: red; 
-  }
-  
-  .terms-checkbox label {
-    font-size: 14px; 
-    color: #777; 
-  }
-  
-  .terms-checkbox a {
-    color: red; 
-    text-decoration: none; 
-  }
-  
-  .terms-checkbox a:hover {
-    text-decoration: underline; 
-  }
-  
+.register-content-form {
+  width: 100%;
+  max-width: 400px;
+}
 
-  
-  .btn-login {
-    width: 106%;
-    height: 56px;
-    padding: 10px;
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  
-  
-  .register {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: 500;
-    font-size: 18px;
-  }
-  
-  .register a {
-    color: #FF0000;
-    text-decoration: none;
-  }
-  
+.register-content-form h1 {
+  font-size: 34px;
+  margin-bottom: 1px;
+  font-weight: 600;
+}
+
+.register-content-form p {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 50px;
+  margin-top: 1px;
+}
+
+.phone-field {
+  position: relative; /* Added to make the child elements position relative to this container */
+}
+
+.phone-field input {
+  width: 100%;
+  height: 48px;
+  margin-top: 6px;
+  padding-right: 40px; /* Leave space for the icon */
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.phone-check-icon {
+  position: absolute;
+  right: 10px;
+  top: 56%;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.email-field input{
+  width: 100%;
+  height: 48px;
+  margin-top: 6px;
+  padding-right: 40px; 
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+input:focus {
+  border-color: #ccc; 
+  outline: none; 
+}
+
+.register-contentPasswd-field {
+  position: relative;
+}
+
+.register-contentPasswd-field input {
+  height: 48px;
+  width: 100%;
+  margin-top: 6px;
+  padding-right: 40px; 
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.register-contentPasswd-toggle {
+  position: absolute;
+  right: 10px;
+  top: 56%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #000000;
+}
+
+.terms-checkbox {
+  display: flex; 
+  align-items: center;
+}
+
+.terms-checkbox input {
+  margin-right: 10px; 
+  width: 56px; 
+  height: 56px; 
+  border-radius: 200000px;
+  accent-color: red; 
+}
+
+.terms-checkbox label {
+  font-size: 14px; 
+  color: #777; 
+}
+
+.terms-checkbox a {
+  color: red; 
+  text-decoration: none; 
+}
+
+.terms-checkbox a:hover {
+  text-decoration: underline; 
+}
+
+.btn-login {
+  width: 106%;
+  height: 56px;
+  padding: 10px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.register {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.register a {
+  color: #FF0000;
+  text-decoration: none;
+}

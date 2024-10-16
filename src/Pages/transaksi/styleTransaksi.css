@@ -1,0 +1,232 @@
+.height-calc-100vh-151px {
+    height: calc(100vh - 151px);
+}
+
+/* .card-body-padding-23px {
+    padding: 23px;
+} */
+
+.transaksi-pages-btn-img-size {
+    width: 24px; 
+    height: 24px; 
+  }
+
+  
+  .transaksi-pages-btn-img-barcode-size {
+    width: 40px; 
+    height: 40px; 
+  }
+
+.transaksi-pages-scan-icon {
+    width: 52px; 
+    height: 52px; 
+}
+
+  .transaksi-pages-btn-search,
+  .transaksi-pages-btn-barcode {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50px ;
+    align-items: center;
+    padding: 0;
+  }
+
+  .transaksi-pages-btn-search {
+    background-color: #f0f3f5;
+  }
+  
+  .transaksi-pages-btn-search:hover {
+    background-color: #f0f3f5 !important;
+  }
+
+  .transaksi-pages-btn-barcode {
+    background-color: #ffe6e6;
+  }
+
+  .transaksi-pages-btn-barcode:hover {
+    background-color: #ffe6e6 !important;
+  }
+  
+  .transaksi-pages-icon {
+    max-width: 100%;
+    max-height: 100%;
+
+  }
+
+  
+  .transaksi-pages-input-search::placeholder{
+    font-size: 16px;
+  }
+
+
+  .transaksi-pages-input-search:focus {
+    box-shadow: none !important;
+    border-color: #DEE2E6 !important;
+}
+
+.text-kategori-transaksi {
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 2px;
+    margin-top: 20px;
+}
+
+
+.transaksi-pages-button-filter-kategori {
+    color: #FF0000 !important;
+    border: 1px solid #FF0000 !important;
+    font-size: 15px !important;
+    padding-top: 7.75px !important;
+    padding-bottom: 7.75px !important;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+.transaksi-pages-button-filter-kategori:active {
+    color: #FFFFFF !important;
+    border-width: 0px !important;
+    background-color: #FF0000 !important;
+    font-size: 15px !important;
+    padding-top: 7.75px !important;
+    padding-bottom: 7.75px !important;
+    margin-right: 10px;
+}
+
+.transaksi-pages-button-filter-kategori:active {
+  border: 1px solid #ff0000 !important;
+}
+
+/* Grid container */
+.product-grid-transaksi-pages {
+    max-height: calc(100vh - 351.594px);
+   
+
+  }
+
+  .card-body-list-barang-right {
+    max-height: calc(100vh - 655.59px);
+  }
+  
+  /* Scrollbar Style */
+
+  .overflow-product-scroll {
+    margin: 20px 0px;
+  }
+
+  .overflow-product-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .overflow-product-scroll::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3;
+    border-radius: 10px;
+  }
+  
+  .overflow-product-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #b0b0b0;
+  }
+  
+  /* Card styling */
+  .product-card-transaksi {
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  
+  
+  /* Text styling */
+  .card-title-product-transaksi {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .card-text-price-product-transaksi {
+    font-weight: 500;
+  }
+
+  .list-barang-transaksi-right {
+    border-bottom: 1px solid #DEE2E6;
+    border-top: 1px solid #DEE2E6;
+    padding: 12px 0; 
+  }
+  
+
+  .card-title-transaksi-right {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .count-barang-transaksi-product {
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 3px;
+  }
+
+  .img-barang-list-barang {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: 16px;
+  }
+
+  .text-list-barang-product {
+    margin-left: 32px;
+    
+  }
+
+  .name-barang-list-barang {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .icon-delete-list-barang {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    padding-right: 10px; 
+  }
+  
+
+  .content-btn-proses-pembayaran-list-barang {
+    justify-content: center;
+  }
+  
+  /* .content-btn-proses-pembayaran {
+    justify-content: center;
+  } */
+
+  /* .voucher-content-input {
+    margin-top: 20rem;
+  } */
+
+
+
+  .btn-proses-pembayaran {
+    background-color: #ff0000;
+    color: white;
+    font-weight: 500;
+    width: 460px; 
+    padding: 12px 0;
+    border-radius: 14px;
+  }
+
+  .btn-proses-pembayaran:hover {
+    background-color: white;
+    border: 1px solid #ff0000;
+    color: #FF0000;
+  }
+
+  .btn-proses-pembayaran:active {
+    background-color: white;
+    border: 1px solid #ff0000 !important;
+    color: #FF0000 !important;
+  }
+
+
+
+  /* .btn-proses-pembayaran {
+    color: #ffffff;
+    background-color: #ff0000;
+  } */

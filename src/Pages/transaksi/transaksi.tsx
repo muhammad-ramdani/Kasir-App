@@ -1,27 +1,32 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../Layout/Layout";
-import ModalPopup from "./popUpTransaksi"; // Import the Modal component
-import "./transaksi-css.css";
-import barcode from "../.././assets/assetsTransaksi/barcode.svg";
+import "./styleTransaksi.css";
+import barcode from "../../assets/assetsTransaksi/barcode.svg";
+import search from "../../assets/assetsTransaksi/search-normal.svg";
+import scanner from "../../assets/assetsTransaksi/scanner.svg";
 import chitato from "../.././assets/assetsTransaksi/chitato.svg";
-import search from "../.././assets/assetsTransaksi/search-normal.svg";
-import scanner from "../.././assets/assetsTransaksi/scanner.svg";
 import trash from "../.././assets/assetsTransaksi/Trash 2.svg";
-import voucher from "../.././assets/assetsTransaksi/ticket-discount.svg";
 import arrow from "../.././assets/assetsTransaksi/arrow-right.svg";
+import voucher from "../.././assets/assetsTransaksi/ticket-discount.svg";
+import PopUpTransaksi from "./popUpTransaksi";
 import { Link } from "react-router-dom";
 
-interface Product {
-  name: string;
-  price: string;
-  image: string;
-}
+function Transaksi() {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
 
-const Transaksi: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1440);
+    };
 
-  const products: Product[] = [
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const products = [
     {
       name: "Chitato Sapi Panggang",
       price: "Rp 1.000.000",
@@ -67,96 +72,161 @@ const Transaksi: React.FC = () => {
       price: "Rp 1.000.000",
       image: chitato,
     },
+    {
+      name: "Lays Barbeque",
+      price: "Rp 1.200.000",
+      image: chitato,
+    },
+    {
+      name: "Doritos",
+      price: "Rp 1.050.000",
+      image: chitato,
+    },
+    {
+      name: "Cheetos",
+      price: "Rp 1.300.000",
+      image: chitato,
+    },
+    {
+      name: "Taro",
+      price: "Rp 850.000",
+      image: chitato,
+    },
+    {
+      name: "Qtela",
+      price: "Rp 1.000.000",
+      image: chitato,
+    },
+    {
+      name: "Taro",
+      price: "Rp 850.000",
+      image: chitato,
+    },
+    {
+      name: "Qtela",
+      price: "Rp 1.000.000",
+      image: chitato,
+    },
   ];
-
-  const handleProductClick = (product: Product) => {
-    setSelectedProduct(product);
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-    setSelectedProduct(null);
-  };
+  
 
   return (
     <Layout titlePage="Transaksi">
-      <div className={`container py-4 ${showModal ? "blur-background" : ""}`}>
-        <div className="row g-4">
-          {/* Left content */}
-          <div className="col-7">
-            <div className="card rounded-3 card-data-barang-100vh">
+      <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
+        <div className="row m-0" style={{ columnGap: "30px" }}>
+          {/* Left content (Search and Category Filter) */}
+          <div className="col p-0">
+            <div className="card rounded-4 height-calc-100vh-151px">
               <div className="card-body">
-                {/* Search and Filter */}
-                <div className="row mb-3">
+                <div className="row">
+                  {/* Search and Barcode Buttons */}
                   <div className="col-auto">
-                    <div className="dropdown me-1">
-                      <button type="button" className="btn btn-outline-light-search btn-filter-data-barang rounded-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,10">
-                        <img src={search} className="icon-circle" alt="search" />
-                      </button>
-                      <button type="button" className="btn btn-outline-light-barcode btn-filter-data-barang rounded-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,10">
-                        <img src={barcode} className="icon-circle" alt="barcode" />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="col col-cari-data-barang">
-                    <div className="input-group flex-nowrap search-bar">
-                      <img src={scanner} className="input-group-text scan bg-white rounded-start-3" alt="search" />
-                      <input type="text" className="form-control form-control-cari-data-barang border border-start-0 rounded-end-3" placeholder="scan barcode" aria-label="search" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Kategori Section */}
-                <div className="mb-3">
-                  <button className="btn btn-kategori">Semua</button>
-                  <button className="btn btn-kategori">Snack</button>
-                  <button className="btn btn-kategori">Alat Tulis</button>
-                  <button className="btn btn-kategori">Bahan Baku</button>
-                </div>
-
-                {/* Product Grid */}
-                <div className="row row-cols-3 g-3 product-grid">
-                  {products.map((product, idx) => (
-                    <div className="col" key={idx}>
-                      <div className="card product-card" onClick={() => handleProductClick(product)}>
-                        <img src={product.image} className="card-img-top" alt={product.name} />
-                        <div className="card-body p-2 text-start">
-                          <p className="card-title mb-1">{product.name}</p>
-                          <p className="card-text">{product.price}</p>
-                        </div>
+                    <div className="col-auto">
+                      <div className="icon-search-barcode-transaksi">
+                        <button type="button" className="btn btn-outline-light transaksi-pages-btn-search ">
+                          <img src={search} className="transaksi-pages-icon transaksi-pages-btn-img-size" alt="search" />
+                        </button>
+                        <button type="button" className="btn btn-outline-light mx-3 transaksi-pages-btn-barcode ">
+                          <img src={barcode} className="transaksi-pages-icon transaksi-pages-btn-img-barcode-size" alt="barcode" />
+                        </button>
                       </div>
                     </div>
-                  ))}
+                  </div>
+                  {/* Scan Input */}
+                  <div className="col ps-0">
+                    <div className="input-group flex-nowrap mt-0">
+                      <img src={scanner} className="input-group-text transaksi-pages-scan-icon bg-white rounded-start-3" alt="" />
+                      <input
+                        type="text"
+                        className="form-control form-control-cari-barang border border-start-0 rounded-end-3 transaksi-pages-input-search"
+                        placeholder="Cari barang.."
+                        aria-label="Username"
+                        aria-describedby="addon-wrapping"
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* Category Filter Buttons */}
+                <div>
+                  <div className="transaksi-pages-group-button-filter-kategori">
+                    <h6 className="text-kategori-transaksi">Kategori</h6>
+                    <button type="button" className="btn rounded-3 ms-1 transaksi-pages-button-filter-kategori">
+                      Semua
+                    </button>
+                    <button type="button" className="btn rounded-3 mx-2 transaksi-pages-button-filter-kategori">
+                      Snack
+                    </button>
+                    <button type="button" className="btn rounded-3 mx-2 transaksi-pages-button-filter-kategori">
+                      Alat Tulis
+                    </button>
+                    <button type="button" className="btn rounded-3 mx-2 transaksi-pages-button-filter-kategori">
+                      Bahan Baku
+                    </button>
+                  </div>
+                </div>
+
+                <div className="container-fluid overflow-product-scroll overflow-y-scroll">
+                  <div className="row row-cols-1 row-cols-md-4 g-2 product-grid-transaksi-pages">
+                    {products.map((product, idx) => (
+                      <div className="col" key={idx}>
+                        <div className="card product-card product-card-transaksi " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                          <img src={product.image} className="card-img-top" alt={product.name} />
+                          <div className="card-body d-flex flex-column justify-content-between p-2 text-start">
+                            <p className="card-title card-title-product-transaksi mb-1">{product.name}</p>
+                            <p className="card-text card-text-price-product-transaksi">{product.price}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right content */}
-          <div className="col-5">
-            <div className="card rounded-3 card-data-barang-right-100vh">
-              <div className="card-body">
-                <h5 className="card-title-right">List Barang</h5>
-                <ul className="list-group mb-5">
-                  <li className="list-group-item d-flex align-items-center border-custom">
-                    <span className="count-barang me-3">2</span>
-                    <img src={chitato} alt="Chitato" className=" img-barang" />
-                    <div className="d-flex flex-column flex-grow-1  ">
-                      <span className="name-barang ">Chitato Sapi Panggang</span>
-                      <span className="harga-barang ">Rp 2.000.000</span>
-                    </div>
-                    <img src={trash} alt="Hapus" className="ms-5 icon-delete" />
-                  </li>
-                </ul>
-                <div className="voucher-input">
-                  <img src={voucher} className="voucher-img" alt="Voucher" />
-                  <span className=" w-100 mb-2 voucher-text">Lihat Diskon</span>
-                  <img src={arrow} className="arrow-img" alt="Arrow" />
+          {/* Right content (Cart or List) */}
+          <div className="col p-0">
+            <div className="card rounded-4 height-calc-100vh-151px">
+              <div className="card-body" style={{ height: "calc(100vh - 351px)" }}>
+                <div>
+                  <h5 className="card-title-transaksi-right">List Barang</h5>
                 </div>
-                <div className="d-grid mt-5">
+                <div className="list-barang-transaksi-right">
+                  <li className="list-group-item d-flex align-items-center">
+                    <span className="count-barang-transaksi-product me-3">2</span>
+                    <div>
+                      <img src={chitato} alt="Chitato" className=" img-barang-list-barang" />
+                    </div>
+                    <div className="d-flex flex-column flex-grow-1 text-list-barang-product ">
+                      <span className="name-barang-list-barang ">Chitato Sapi Panggang</span>
+                      <span className="harga-barang-listbarang ">Rp 2.000.000</span>
+                    </div>
+                    <img src={trash} alt="Hapus" className="ms icon-delete-list-barang" />
+                  </li>
+                </div>
+                <div className="list-barang-transaksi-right">
+                  <li className="list-group-item d-flex align-items-center">
+                    <span className="count-barang-transaksi-product me-3">2</span>
+                    <div>
+                      <img src={chitato} alt="Chitato" className=" img-barang-list-barang" />
+                    </div>
+                    <div className="d-flex flex-column flex-grow-1 text-list-barang-product ">
+                      <span className="name-barang-list-barang">Chitato Sapi Panggang</span>
+                      <span className="harga-barang-listbarang">Rp 2.000.000</span>
+                    </div>
+                    <img src={trash} alt="Hapus" className="ms icon-delete-list-barang" />
+                  </li>
+                </div>
+              </div>
+              <div className="card-footer border-0 bg-white d-grid mb-4 rounded-bottom-4 content-btn-proses-pembayaran">
+                <div className="voucher-content-input mb-5 mx-2 d-flex align-items-center">
+                  <img src={voucher} className="voucher-img me" alt="Voucher" /> {/* Tambahkan margin-end di sini */}
+                  <span className=" voucher-text ms-4">Lihat Diskon</span>
+                  <img src={arrow} className="arrow-img-list-barang ms-auto" alt="Arrow" /> {/* ms-auto untuk memindahkan ke posisi akhir */}
+                </div>
+                <div className="content-btn-proses-pembayaran-list-barang d-grid gap-2 col-6 mx-auto">
                   <Link to="/transaksi/pembayaran">
-                    <button className="btn btn-bayar">Proses Pembayaran</button>
+                    <button className="btn btn-proses-pembayaran">Proses Pembayaran</button>
                   </Link>
                 </div>
               </div>
@@ -164,11 +234,9 @@ const Transaksi: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Modal Popup */}
-      <ModalPopup show={showModal} onClose={handleCloseModal} product={selectedProduct} />
+      <PopUpTransaksi />
     </Layout>
   );
-};
+}
 
 export default Transaksi;

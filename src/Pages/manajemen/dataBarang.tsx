@@ -11,7 +11,7 @@ import searchNormal from "../../assets/imagesManajemenDataBarang/search-normal.s
 import sort from "../../assets/imagesManajemenDataBarang/sort.svg";
 // import tidakAdaBarang from "../../assets/imagesManajemenDataBarang/tidak-ada-barang.svg";
 import tisuPaseo from "../../assets/imagesManajemenDataBarang/tisu-paseo.png";
-import Layout from '../../Layout/Layout';
+import Layout from "../../Layout/Layout";
 
 function DataBarang() {
     return (
@@ -383,146 +383,110 @@ function DataBarang() {
                                         <h5 class="card-title">Rincian Barang :</h5>
                                         <p class="text-tidak-ada-barang-yang-dipilih fw-medium text-center position-absolute top-50 start-50 translate-middle w-100 px-3">Tidak ada barang yang dipilih</p>
                                     </div> */}
-                                {/* end | card-body ketika tidak memilih rincian */}
-                                {/* card-body ketika memilih rincian */}
-                                <div className="card-body card-body-rincian-barang">
-                                    <div className="row">
-                                        <div className="col">
-                                            <h5 className="card-title">Rincian Barang :</h5>
-                                        </div>
-                                        <div className="col text-end">
-                                            <button
-                                                type="button"
-                                                className="btn button-edit-rincian-barang rounded-pill border-0"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#modalEditRincianDataBarang"
-                                            >
-                                                <img
-                                                    src={logoEditRincianBarang}
-                                                    className="me-2"
-                                                />
-                                                <span className="small fw-medium">Edit rincian</span>
-                                            </button>
-                                            <button
-                                                type="button"
-                                                className="btn button-hapus-barang-dirincian-barang rounded-circle border-0"
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#modalHapusRincianBarang"
-                                            >
-                                                <img src={logoHapusBarangDirincianBarang} />
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="row" style={{ marginTop: 15 }}>
-                                        <div className="col-auto pe-0" style={{ marginRight: 30 }}>
-                                            <img
-                                                src={tisuPaseo}
-                                                className="images-card-rincian-barang"
-                                                style={{ width: 125 }}
-                                            />
-                                        </div>
-                                        <div className="col ps-0" style={{ display: "table" }}>
-                                            <div style={{ display: "table-cell", verticalAlign: "middle" }}>
-                                                <p className="fw-medium mb-1" style={{ fontSize: 18 }}>
-                                                    Tissue Paseo 2 Lapis 250 Lembar
-                                                </p>
-                                                <p className="text-secondary mb-0" style={{ fontSize: 18 }}>
-                                                    000002
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <table
-                                        className="table table-borderless mb-0 table-sm mt-3"
-                                        style={{ fontSize: 15 }}
-                                    >
-                                        <tbody>
-                                            <tr>
-                                                <td>Harga Dasar</td>
-                                                <td>: Rp 9.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Harga Jual</td>
-                                                <td>: Rp 11.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Diskon</td>
-                                                <td>: 10%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Berat</td>
-                                                <td>: 25 gram</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kode</td>
-                                                <td>: 000002</td>
-                                            </tr>
-                                            <tr>
-                                                <td colSpan={2}>
-                                                    <p />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Stok</td>
-                                                <td>: 145</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Stok Minimum</td>
-                                                <td>: 50</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kategori</td>
-                                                <td>: Kebutuhan Rumah Tangga</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Letak Rak</td>
-                                                <td>: Rak B</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Keterangan</td>
-                                                <td>: -</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div
-                                    className="modal fade"
-                                    id="modalHapusRincianBarang"
-                                    tabIndex={-1}
-                                    aria-labelledby="exampleModalLabel"
-                                    aria-hidden="true"
-                                >
-                                    <div
-                                        className="modal-dialog modal-dialog-centered modal-dialog-hapus-barang"
-                                        style={{ width: 438 }}
-                                    >
-                                        <div className="modal-content rounded-4 shadow">
-                                            <div className="modal-body" style={{ padding: 20 }}>
-                                                Apakah anda yakin ingin menghapus barang ini?
-                                                <div className="text-end" style={{ marginTop: 44 }}>
-                                                    <button
-                                                        type="button"
-                                                        className="btn button-batalkan-hapus-barang fw-medium"
-                                                        data-bs-dismiss="modal"
-                                                    >
-                                                        Batalkan
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        className="btn button-hapus-barang-lanjutan-dimodal border-0 fw-semibold rounded-3 text-white"
-                                                    >
-                                                        Hapus
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* end | card-body ketika memilih rincian */}
-                            </div>
-                        </div>
+                {/* end | card-body ketika tidak memilih rincian */}
+                {/* card-body ketika memilih rincian */}
+                <div className="card-body card-body-rincian-barang">
+                  <div className="row">
+                    <div className="col">
+                      <h5 className="card-title">Rincian Barang :</h5>
                     </div>
+                    <div className="col text-end">
+                      <button type="button" className="btn button-edit-rincian-barang rounded-pill border-0" data-bs-toggle="modal" data-bs-target="#modalEditRincianDataBarang">
+                        <img src={logoEditRincianBarang} className="me-2" />
+                        <span className="small fw-medium">Edit rincian</span>
+                      </button>
+                      <button type="button" className="btn button-hapus-barang-dirincian-barang rounded-circle border-0" data-bs-toggle="modal" data-bs-target="#modalHapusRincianBarang">
+                        <img src={logoHapusBarangDirincianBarang} />
+                      </button>
+                    </div>
+                  </div>
+                  <div className="row" style={{ marginTop: 15 }}>
+                    <div className="col-auto pe-0" style={{ marginRight: 30 }}>
+                      <img src={tisuPaseo} className="images-card-rincian-barang" style={{ width: 125 }} />
+                    </div>
+                    <div className="col ps-0" style={{ display: "table" }}>
+                      <div style={{ display: "table-cell", verticalAlign: "middle" }}>
+                        <p className="fw-medium mb-1" style={{ fontSize: 18 }}>
+                          Tissue Paseo 2 Lapis 250 Lembar
+                        </p>
+                        <p className="text-secondary mb-0" style={{ fontSize: 18 }}>
+                          000002
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <table className="table table-borderless mb-0 table-sm mt-3" style={{ fontSize: 15 }}>
+                    <tbody>
+                      <tr>
+                        <td>Harga Dasar</td>
+                        <td>: Rp 9.000</td>
+                      </tr>
+                      <tr>
+                        <td>Harga Jual</td>
+                        <td>: Rp 11.000</td>
+                      </tr>
+                      <tr>
+                        <td>Diskon</td>
+                        <td>: 10%</td>
+                      </tr>
+                      <tr>
+                        <td>Berat</td>
+                        <td>: 25 gram</td>
+                      </tr>
+                      <tr>
+                        <td>Kode</td>
+                        <td>: 000002</td>
+                      </tr>
+                      <tr>
+                        <td colSpan={2}>
+                          <p />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Stok</td>
+                        <td>: 145</td>
+                      </tr>
+                      <tr>
+                        <td>Stok Minimum</td>
+                        <td>: 50</td>
+                      </tr>
+                      <tr>
+                        <td>Kategori</td>
+                        <td>: Kebutuhan Rumah Tangga</td>
+                      </tr>
+                      <tr>
+                        <td>Letak Rak</td>
+                        <td>: Rak B</td>
+                      </tr>
+                      <tr>
+                        <td>Keterangan</td>
+                        <td>: -</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
+                <div className="modal fade" id="modalHapusRincianBarang" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div className="modal-dialog modal-dialog-centered modal-dialog-hapus-barang" style={{ width: 438 }}>
+                    <div className="modal-content rounded-4 shadow">
+                      <div className="modal-body" style={{ padding: 20 }}>
+                        Apakah anda yakin ingin menghapus barang ini?
+                        <div className="text-end" style={{ marginTop: 44 }}>
+                          <button type="button" className="btn button-batalkan-hapus-barang fw-medium" data-bs-dismiss="modal">
+                            Batalkan
+                          </button>
+                          <button type="button" className="btn button-hapus-barang-lanjutan-dimodal border-0 fw-semibold rounded-3 text-white">
+                            Hapus
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* end | card-body ketika memilih rincian */}
+              </div>
+            </div>
+          </div>
+        </div>
 
                 {/* Modal Tambah Barang */}
                 <div
@@ -1128,4 +1092,4 @@ function DataBarang() {
     )
 }
 
-export default DataBarang
+export default DataBarang;

@@ -5,6 +5,7 @@ import { faEye, faEyeSlash, faCheckCircle } from "@fortawesome/free-solid-svg-ic
 
 import { useState } from "react";
 import "./register.css";
+import { Link } from "react-router-dom";
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -41,43 +42,51 @@ function Register() {
           <span className="brand-name">Kasir Jempolan</span>
         </header>
 
-        <div className="content-regis">
-          <div className="left-section-regis">
+        <div className="content-register-content">
+          <div className="left-section-register-content">
             <img src={loginImg} alt="Team illustration" className="illustration" />
           </div>
 
-          <div className="right-section-regis">
-            <div className="regis-form">
+          <div className="right-section-register-content">
+            <div className="register-content-form">
               <h1>Buat Akun Anda</h1>
               <form onSubmit={handleSubmit} className="text-form">
-                <label htmlFor="email">Email</label>
-                <div className="email-field">
-                  <input type="email" id="email" placeholder="Email" required />
+                <div className="content-form-email-register mt-4">
+                  <label htmlFor="email">Email</label>
+                  <div className="email-field">
+                    <input type="email" id="email" placeholder="Email" required />
+                  </div>
                 </div>
 
-                <label htmlFor="phone">Nomor Telepon</label>
-                <div className="phone-field">
-                  <input type="text" id="phone" placeholder="Nomor Telepon" value={phoneNumber} onChange={handlePhoneChange} required />
-                  {isPhoneValid && <FontAwesomeIcon icon={faCheckCircle} className="phone-check-icon" />}
+                <div className="content-form-nomor-telepon mt-4">
+                  <label htmlFor="phone">Nomor Telepon</label>
+                  <div className="phone-field">
+                    <input type="text" id="phone" placeholder="Nomor Telepon" value={phoneNumber} onChange={handlePhoneChange} required />
+                    {isPhoneValid && <FontAwesomeIcon icon={faCheckCircle} className="phone-check-icon" />}
+                  </div>
                 </div>
 
-                <label htmlFor="password">Password</label>
-                <div className="regisPasswd-field">
-                  <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
-                  <span className="regisPasswd-toggle" onClick={handlePasswordToggle}>
-                    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                  </span>
+                <div className="content-form-password-regis mt-4">
+                  <label htmlFor="password">Password</label>
+                  <div className="register-contentPasswd-field">
+                    <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
+                    <span className="register-contentPasswd-toggle" onClick={handlePasswordToggle}>
+                      <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                    </span>
+                  </div>
                 </div>
 
-                <label htmlFor="confirmPassword">Konfirmasi Kata Sandi</label>
-                <div className="regisPasswd-field">
-                  <input type={showConfirmPassword ? "text" : "password"} id="confirmPassword" placeholder="Masukkan kata sandi baru" required className="text-password" />
-                  <span className="regisPasswd-toggle" onClick={handleConfirmPasswordToggle}>
-                    <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
-                  </span>
+                <div className="content-form-newpassword-regis mt-4">
+                  <label htmlFor="confirmPassword">Konfirmasi Kata Sandi</label>
+                  <div className="register-contentPasswd-field">
+                    <input type={showConfirmPassword ? "text" : "password"} id="confirmPassword" placeholder="Masukkan kata sandi baru" required className="text-password" />
+                    <span className="register-contentPasswd-toggle" onClick={handleConfirmPasswordToggle}>
+                      <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
+                    </span>
+                  </div>
                 </div>
 
-                <div className="terms-checkbox">
+                <div className="terms-checkbox mt-4 mb-4">
                   <input type="checkbox" id="terms" required />
                   <label htmlFor="terms">
                     Dengan mendaftar, saya menyatakan telah membaca dan menyetujui
@@ -91,7 +100,7 @@ function Register() {
               </form>
 
               <div className="register">
-                Sudah punya akun? <a href="#">Masuk</a>
+                Sudah punya akun? <Link to="/login">Masuk</Link>
               </div>
             </div>
           </div>

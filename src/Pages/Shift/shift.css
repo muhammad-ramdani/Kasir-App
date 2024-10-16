@@ -58,6 +58,15 @@
   padding: 20px;
 }
 
+
+.form-select-pilih-cash-drawer,
+.form-control-masukan-saldo {
+  border: none;
+}
+
+
+
+
 /* Styling for Select element */
 .custom-select {
   font-weight: 500;
