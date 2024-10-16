@@ -85,6 +85,9 @@
    height: 45px;
    border-radius: 50px;
 }
+.btn-notification {
+   border: none;
+}
 
 .main-content {
    height: max-content;

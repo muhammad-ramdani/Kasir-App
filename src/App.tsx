@@ -66,6 +66,9 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/perangkat-edc" element={<PerangkatEdc />} />
                 <Route path="pengaturan-struk" element={<PengaturanStruk />} />
+                {/* Pengaturan */}
+                <Route path="/stock-opname" element={<StockOpname />} />
+                <Route path="//detail-stock-opname" element={<DetailStockOpname />} />
             </Routes>
         </>
     );

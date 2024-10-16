@@ -215,11 +215,13 @@
   .btn-proses-pembayaran:hover {
     background-color: white;
     border: 1px solid #ff0000;
+    color: #FF0000;
   }
 
   .btn-proses-pembayaran:active {
     background-color: white;
     border: 1px solid #ff0000 !important;
+    color: #FF0000 !important;
   }
 
 

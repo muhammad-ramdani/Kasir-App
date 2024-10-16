@@ -1,13 +1,11 @@
-
-import './change.css';
-import logoChgPaswd from "../../../assets/lupa-sandi.png"; 
-import logoKasir from "../../../assets/kasir-jempol.png"; 
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import "./change.css";
+import logoChgPaswd from "../../../assets/lupa-sandi.png";
+import logoKasir from "../../../assets/kasir-jempol.png";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function ChangePassword() {
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
@@ -28,12 +26,13 @@ function ChangePassword() {
           <div className="right-section-chg">
             <div className="change-form">
               <h1>Lupa kata sandi?</h1>
-              <p>Jangan khawatir, kami akan mengirimkan petunjuk 
-              pengaturan ulang kepada anda.</p>
+              <p>Jangan khawatir, kami akan mengirimkan petunjuk pengaturan ulang kepada anda.</p>
               <form onSubmit={handleSubmit} className="text-form">
-                <label htmlFor="email">Email</label>
-                <div className="email-field-chng">
-                  <input type="email" id="email" placeholder="Masukan email anda" required />
+                <div className="content-form-email-change-password">
+                  <label htmlFor="email">Email</label>
+                  <div className="email-field-change">
+                    <input type="email" id="email" placeholder="Masukan email anda" required />
+                  </div>
                 </div>
 
                 <button type="submit" className="btn-changepswd">
@@ -42,7 +41,7 @@ function ChangePassword() {
               </form>
 
               <div className="back-login">
-                <FontAwesomeIcon icon={faArrowLeft} className='back-icon' />
+                <FontAwesomeIcon icon={faArrowLeft} className="back-icon" />
                 <Link to="/login">Kembali ke login</Link>
               </div>
             </div>
