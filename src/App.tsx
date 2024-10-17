@@ -28,13 +28,13 @@ import MulaiShift from "./Pages/Shift/mulaiShift";
 import DetailRekapShift from "./Pages/Shift/detailRekapShift";
 import StockOpname from "./Pages/stock-opname/stockOpname";
 import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
+import DataPelanggan from "./Pages/manajemen/dataPelanggan";
 
 function App() {
     return (
 
         <>
             <Routes>
-                {/* <Route path="/" element={<Dashboard />} /> */}
                 <Route path="/" element={<Login />} />
                 <Route path="/change-password" element={<ChangePassword />} />
                 <Route path="/verify-email" element={<VerifyEmail />} />
@@ -45,6 +45,7 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/databarang" element={<DataBarang />} />
                 <Route path="/kategori-barang" element={<KategoriBarang />} />
+                <Route path="/data-pelanggan" element={<DataPelanggan />} />
                 {/* Pages laporan */}
                 <Route path="/laporan" element={<Laporan />} />
                 <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
