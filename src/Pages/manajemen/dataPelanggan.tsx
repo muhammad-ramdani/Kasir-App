@@ -4,6 +4,9 @@ import Layout from "../../Layout/Layout";
 import logoExportData from "../../assets/imagesAllManajemen/logo-export-data.svg";
 import logoImportData from "../../assets/imagesAllManajemen/logo-import-data.svg";
 import searchNormal from "../../assets/imagesManajemenDataBarang/search-normal.svg";
+import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
+import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
+import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 
 function DataPelanggan() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
@@ -19,6 +22,33 @@ function DataPelanggan() {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
+    const cardContents = [
+        {
+            namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
+            emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
+            noTeleponDimanajemenDataPelanggan: "081328639415",
+            alamatDimanajemenDataPelanggan: "Jl. D.I. Pandjaitan No. 128, Purwokerto",
+            pointDimanajemenDataPelanggan: "0",
+            kodeDimanajemenDataPelanggan: "069751",
+        },
+        {
+            namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
+            emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
+            noTeleponDimanajemenDataPelanggan: "081328639415",
+            alamatDimanajemenDataPelanggan: "Jl. D.I. Pandjaitan No. 128, Purwokerto",
+            pointDimanajemenDataPelanggan: "0",
+            kodeDimanajemenDataPelanggan: "069751",
+        },
+        {
+            namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
+            emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
+            noTeleponDimanajemenDataPelanggan: "081328639415",
+            alamatDimanajemenDataPelanggan: "Jl. D.I. Pandjaitan No. 128, Purwokerto",
+            pointDimanajemenDataPelanggan: "0",
+            kodeDimanajemenDataPelanggan: "069751",
+        },
+    ];
 
     return (
         <Layout titlePage="Data Pelanggan">
@@ -52,29 +82,48 @@ function DataPelanggan() {
                     </div>
                 </div>
                 <div className="card rounded-4" style={{ borderColor: "#EDEDED", height: "calc(100vh - 233px)", margin: "30px 0px 4px 0px" }}>
-                    <div className="p-3" style={{ background: "linear-gradient(to bottom, #ECEFF8 50%, transparent 50%)" }}>
-                        <table className="table">
-                            <thead className="">
-                                <tr className="">
-                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px", borderTopLeftRadius: "15px" }}>Nama</th>
-                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Email</th>
-                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>No Telepon</th>
-                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Alamat</th>
-                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Point</th>
-                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Kode</th>
-                                    <th className="" style={{ padding: "22px 31px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px", borderTopRightRadius: "15px" }}>Aksi</th>
+                    <div className="rounded-4" style={{ background: "linear-gradient(to bottom, #ECEFF8 68px, transparent 68px)", padding: "22px 31px 22px 31px" }}>
+                        <table className="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px", borderTopLeftRadius: "15px" }}>Nama</th>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Email</th>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>No Telepon</th>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Alamat</th>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Point</th>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Kode</th>
+                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px", borderTopRightRadius: "15px" }} scope="col-auto">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
-                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
-                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
-                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
-                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
-                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
-                                    <td className="" style={{ padding: "22px 31px 22px 31px" }}>Lorem, ipsum</td>
-                                </tr>
+                                {cardContents.map((content, index) => (
+                                    content.namaPelangganDimanajemenDataPelanggan || content.emailDimanajemenDataPelanggan || content.noTeleponDimanajemenDataPelanggan || content.alamatDimanajemenDataPelanggan || content.pointDimanajemenDataPelanggan || content.kodeDimanajemenDataPelanggan ? (
+                                        <tr key={index}>
+                                            {content.namaPelangganDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.namaPelangganDimanajemenDataPelanggan}</td>}
+                                            {content.emailDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.emailDimanajemenDataPelanggan}</td>}
+                                            {content.noTeleponDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.noTeleponDimanajemenDataPelanggan}</td>}
+                                            {content.alamatDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.alamatDimanajemenDataPelanggan}</td>}
+                                            {content.pointDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
+                                            {content.kodeDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>}
+                                            <td className="align-middle" style={{ padding: "15px 0px", color: "#646464", whiteSpace: "nowrap", width: "1%" }}>
+                                                <button type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }}>
+                                                    <img src={logoEditManajemenGreen} className="me-2" />
+                                                    <span>Edit</span>
+                                                </button>
+                                                <button type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }}>
+                                                    <img src={logoHapusManajemenRed} />
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ) : null
+                                ))}
+
+                                {cardContents.every(content => !content.namaPelangganDimanajemenDataPelanggan && !content.emailDimanajemenDataPelanggan && !content.noTeleponDimanajemenDataPelanggan && !content.alamatDimanajemenDataPelanggan && !content.pointDimanajemenDataPelanggan && !content.kodeDimanajemenDataPelanggan) &&
+                                    <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 305px)" }}>
+                                        <img src={imageNoData} />
+                                        <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Tidak ada kategori</p>
+                                    </td>
+                                }
                             </tbody>
                         </table>
                     </div>
