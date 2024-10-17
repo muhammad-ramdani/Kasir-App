@@ -6,9 +6,23 @@ import dataSupplier from "../../assets/imagesManagemenAll/data-supplier.svg";
 import diskonBarang from "../../assets/imagesManagemenAll/diskon-barang.svg";
 import stokBarang from "../../assets/imagesManagemenAll/stok-barang.svg";
 import Layout from '../../Layout/Layout';
-
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
+    const navigate = useNavigate();
+
+    const onClickToPageManajemenDataBarang = () => {
+        navigate("/databarang");
+    };
+
+    const onClickToPageManajemenKategoriBarang = () => {
+        navigate("/kategori-barang");
+    };
+
+    const onClickToPageManajemenDataPelanggan = () => {
+        navigate("/data-pelanggan");
+    };
+
     return (
         <>
             <Layout titlePage='Manajemen'>
@@ -34,11 +48,8 @@ function Dashboard() {
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a
-                                            className="btn btn-danger fw-semibold mt-2"
-                                            href="#"
-                                            role="button"
-                                        >
+                                        
+                                        <a className="btn btn-danger fw-semibold mt-2" role="button" onClick={onClickToPageManajemenDataBarang}>
                                             Atur sekarang
                                         </a>
                                     </div>
@@ -57,19 +68,11 @@ function Dashboard() {
                                             </p>
                                         </div>
                                         <div className="col-2">
-                                            <img
-                                                src={kategoriBarang}
-                                                className="float-end"
-                                                alt=""
-                                            />
+                                            <img src={kategoriBarang} className="float-end"/>
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a
-                                            className="btn btn-danger fw-semibold mt-2"
-                                            href="#"
-                                            role="button"
-                                        >
+                                        <a className="btn btn-danger fw-semibold mt-2" role="button" onClick={onClickToPageManajemenKategoriBarang}>
                                             Atur sekarang
                                         </a>
                                     </div>
@@ -88,21 +91,13 @@ function Dashboard() {
                                             </p>
                                         </div>
                                         <div className="col-2">
-                                            <img
-                                                src={dataPelanggan}
-                                                className="float-end"
-                                                alt=""
-                                            />
+                                            <img src={dataPelanggan} className="float-end"/>
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a
-                                            className="btn btn-danger fw-semibold mt-2"
-                                            href="#"
-                                            role="button"
-                                        >
-                                            Atur sekarang
-                                        </a>
+                                        <a className="btn btn-danger fw-semibold mt-2" role="button" onClick={onClickToPageManajemenDataPelanggan}>
+                                                Atur sekarang
+                                            </a>
                                     </div>
                                 </div>
                             </div>
