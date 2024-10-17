@@ -29,6 +29,7 @@ import DetailRekapShift from "./Pages/Shift/detailRekapShift";
 import StockOpname from "./Pages/stock-opname/stockOpname";
 import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 import DataPelanggan from "./Pages/manajemen/dataPelanggan";
+import DataSupplier from "./Pages/manajemen/dataSupplier";
 
 function App() {
     return (
@@ -46,6 +47,7 @@ function App() {
                 <Route path="/databarang" element={<DataBarang />} />
                 <Route path="/kategori-barang" element={<KategoriBarang />} />
                 <Route path="/data-pelanggan" element={<DataPelanggan />} />
+                <Route path="/data-supplier" element={<DataSupplier />} />
                 {/* Pages laporan */}
                 <Route path="/laporan" element={<Laporan />} />
                 <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />

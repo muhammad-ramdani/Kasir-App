@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Layout from "../../Layout/Layout";
 import logoExportData from "../../assets/imagesAllManajemen/logo-export-data.svg";
 import logoImportData from "../../assets/imagesAllManajemen/logo-import-data.svg";
-import searchNormal from "../../assets/imagesManajemenDataBarang/search-normal.svg";
+import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-normal-manajemen.svg";
 import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
 import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
@@ -24,22 +24,6 @@ function DataPelanggan() {
     }, []);
 
     const cardContents = [
-        {
-            namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
-            emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
-            noTeleponDimanajemenDataPelanggan: "081328639415",
-            alamatDimanajemenDataPelanggan: "Jl. D.I. Pandjaitan No. 128, Purwokerto",
-            pointDimanajemenDataPelanggan: "0",
-            kodeDimanajemenDataPelanggan: "069751",
-        },
-        {
-            namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
-            emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
-            noTeleponDimanajemenDataPelanggan: "081328639415",
-            alamatDimanajemenDataPelanggan: "Jl. D.I. Pandjaitan No. 128, Purwokerto",
-            pointDimanajemenDataPelanggan: "0",
-            kodeDimanajemenDataPelanggan: "069751",
-        },
         {
             namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
             emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
@@ -71,7 +55,7 @@ function DataPelanggan() {
                     </div>
                     <div className="col-auto p-0 ms-auto">
                         <div className="input-group flex-nowrap mt-0" style={{ width: "350px" }}>
-                            <img src={searchNormal} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED" }} />
+                            <img src={searchNormalManajemen} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED" }} />
                             <input
                                 type="text"
                                 className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-manajemen border-start-0 rounded-end-3"
@@ -121,7 +105,7 @@ function DataPelanggan() {
                                 {cardContents.every(content => !content.namaPelangganDimanajemenDataPelanggan && !content.emailDimanajemenDataPelanggan && !content.noTeleponDimanajemenDataPelanggan && !content.alamatDimanajemenDataPelanggan && !content.pointDimanajemenDataPelanggan && !content.kodeDimanajemenDataPelanggan) &&
                                     <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 305px)" }}>
                                         <img src={imageNoData} />
-                                        <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Tidak ada kategori</p>
+                                        <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Data tidak ditemukan</p>
                                     </td>
                                 }
                             </tbody>
