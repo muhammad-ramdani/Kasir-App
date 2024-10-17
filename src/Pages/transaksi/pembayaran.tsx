@@ -108,8 +108,14 @@ function Pembayaran() {
                   <div className="d-flex flex-column align-items-center mt-4">
                     <div className="keypad d-grid">
                       {[1, 2, 3, "C", 4, 5, 6, "<", 7, 8, 9, ".", 0, "00", "000", "✓"].map((key) => (
-                        <button key={key} className="btn btn-keypad btn-lg mb-1  custom-keypad-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style={{ width: "92px", height: "92px", fontSize: "1.5rem" }} onClick={() => handleKeyPress(key)}>
-                          {key === "✓" ? <img src={checkmark} alt="Checkmark"  /> : key === "<" ? <img src={backspace} alt="Backspace" /> : key}
+                        <button
+                          key={key}
+                          className="btn btn-keypad btn-lg mb-1 custom-keypad-button"
+                          style={{ width: "92px", height: "92px", fontSize: "1.5rem" }}
+                          onClick={() => handleKeyPress(key)}
+                          {...(key === "✓" && { "data-bs-toggle": "modal", "data-bs-target": "#staticBackdrop" })}
+                        >
+                          {key === "✓" ? <img src={checkmark} alt="Checkmark" /> : key === "<" ? <img src={backspace} alt="Backspace" /> : key}
                         </button>
                       ))}
                     </div>
@@ -118,10 +124,9 @@ function Pembayaran() {
               </div>
             </div>
           </div>
-        
         </div>
       </div>
-      <PopUpTransasiSelesai/>
+      <PopUpTransasiSelesai />
     </Layout>
   );
 }
