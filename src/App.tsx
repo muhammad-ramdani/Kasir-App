@@ -35,7 +35,6 @@ function App() {
 
         <>
             <Routes>
-                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/" element={<Login />} />
                 <Route path="/change-password" element={<ChangePassword />} />
                 <Route path="/verify-email" element={<VerifyEmail />} />
@@ -43,6 +42,7 @@ function App() {
                 <Route path="/reset-berhasil" element={<ResetBerhasil />} />
                 <Route path="/register" element={<Register />} />
                 {/* Pages Manajemen */}
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/databarang" element={<DataBarang />} />
                 <Route path="/kategori-barang" element={<KategoriBarang />} />
                 <Route path="/data-pelanggan" element={<DataPelanggan />} />

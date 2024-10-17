@@ -67,7 +67,7 @@ function NewPasswd() {
 
             <div className="back-login">
               <FontAwesomeIcon icon={faArrowLeft} className="back-icon" />
-              <Link to="/login">Kembali ke login</Link>
+              <Link to="/">Kembali ke login</Link>
             </div>
           </div>
         </div>

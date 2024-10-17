@@ -100,7 +100,7 @@ function Register() {
               </form>
 
               <div className="register">
-                Sudah punya akun? <Link to="/login">Masuk</Link>
+                Sudah punya akun? <Link to="/">Masuk</Link>
               </div>
             </div>
           </div>
