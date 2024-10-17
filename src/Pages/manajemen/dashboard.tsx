@@ -19,6 +19,10 @@ function Dashboard() {
         navigate("/kategori-barang");
     };
 
+    const onClickToPageManajemenDataPelanggan = () => {
+        navigate("/data-pelanggan");
+    };
+
     return (
         <>
             <Layout titlePage='Manajemen'>
@@ -64,11 +68,7 @@ function Dashboard() {
                                             </p>
                                         </div>
                                         <div className="col-2">
-                                            <img
-                                                src={kategoriBarang}
-                                                className="float-end"
-                                                alt=""
-                                            />
+                                            <img src={kategoriBarang} className="float-end"/>
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
@@ -91,15 +91,11 @@ function Dashboard() {
                                             </p>
                                         </div>
                                         <div className="col-2">
-                                            <img
-                                                src={dataPelanggan}
-                                                className="float-end"
-                                                alt=""
-                                            />
+                                            <img src={dataPelanggan} className="float-end"/>
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                            <a className="btn btn-danger fw-semibold mt-2" href="#" role="button">
+                                        <a className="btn btn-danger fw-semibold mt-2" role="button" onClick={onClickToPageManajemenDataPelanggan}>
                                                 Atur sekarang
                                             </a>
                                     </div>
