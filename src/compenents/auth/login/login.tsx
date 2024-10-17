@@ -4,13 +4,18 @@ import loginImg from "../../../assets/login.png";
 import logoKasir from "../../../assets/kasir-jempol.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate ();
 
   const handlePasswordToggle = () => {
     setShowPassword(!showPassword);
+  };
+
+  const clickToPages = () => {
+    navigate ("/dashboard");
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -57,7 +62,7 @@ function Login() {
                 <Link to="/change-password">Lupa Password?</Link>
               </div>
 
-              <button type="submit" className="btn-login">
+              <button type="submit" className="btn-login" onClick={clickToPages}>
                 Login
               </button>
             </form>
