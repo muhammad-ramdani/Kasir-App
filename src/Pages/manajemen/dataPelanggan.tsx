@@ -52,48 +52,32 @@ function DataPelanggan() {
                     </div>
                 </div>
                 <div className="card rounded-4" style={{ borderColor: "#EDEDED", height: "calc(100vh - 233px)", margin: "30px 0px 4px 0px" }}>
-                    {/* <table>
-                        <tr style={{ padding: "22px 31px" }}>
-                            <th className="ps-0">Nama</th>
-                            <th className="ps-0">Email</th>
-                            <th className="ps-0">No Telepon</th>
-                            <th className="ps-0">Alamat</th>
-                            <th className="ps-0">Point</th>
-                            <th className="ps-0">Kode</th>
-                            <th className="ps-0">Aksi</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        <tr></tr>
-                    </table> */}
-                    <table className="table">
-                        <thead className="">
-                            <tr style={{  }}>
-                                <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8" }}>Nama</th>
-                                <th className="" style={{ padding: "22px 0px 22px 31px" }}>Email</th>
-                                <th className="" style={{ padding: "22px 0px 22px 31px" }}>No Telepon</th>
-                                <th className="" style={{ padding: "22px 0px 22px 31px" }}>Alamat</th>
-                                <th className="" style={{ padding: "22px 0px 22px 31px" }}>Point</th>
-                                <th className="" style={{ padding: "22px 0px 22px 31px" }}>Kode</th>
-                                <th className="" style={{ padding: "22px 31px 22px 31px" }}>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="ps-0">Lorem, ipsum</td>
-                                <td className="ps-0">Lorem, ipsum</td>
-                                <td className="ps-0">Lorem, ipsum</td>
-                                <td className="ps-0">Lorem, ipsum</td>
-                                <td className="ps-0">Lorem, ipsum</td>
-                                <td className="ps-0">Lorem, ipsum</td>
-                                <td className="ps-0">Lorem, ipsum</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            ...
-                        </tfoot>
-                    </table>
+                    <div className="p-3" style={{ background: "linear-gradient(to bottom, #ECEFF8 50%, transparent 50%)" }}>
+                        <table className="table">
+                            <thead className="">
+                                <tr className="">
+                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px", borderTopLeftRadius: "15px" }}>Nama</th>
+                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Email</th>
+                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>No Telepon</th>
+                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Alamat</th>
+                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Point</th>
+                                    <th className="" style={{ padding: "22px 0px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px" }}>Kode</th>
+                                    <th className="" style={{ padding: "22px 31px 22px 31px", backgroundColor: "#ECEFF8", borderBottom: "0px", borderTopRightRadius: "15px" }}>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
+                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
+                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
+                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
+                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
+                                    <td className="" style={{ padding: "22px 0px 22px 31px" }}>Lorem, ipsum</td>
+                                    <td className="" style={{ padding: "22px 31px 22px 31px" }}>Lorem, ipsum</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </Layout>
