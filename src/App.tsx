@@ -29,6 +29,7 @@ import DetailRekapShift from "./Pages/Shift/detailRekapShift";
 import StockOpname from "./Pages/stock-opname/stockOpname";
 import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 import DataPelanggan from "./Pages/manajemen/dataPelanggan";
+import PaginationFix from "./compenents/pagination-fix/paginationFix";
 
 function App() {
     return (
@@ -70,7 +71,11 @@ function App() {
                 <Route path="pengaturan-struk" element={<PengaturanStruk />} />
                 {/* Pengaturan */}
                 <Route path="/stock-opname" element={<StockOpname />} />
-                <Route path="//detail-stock-opname" element={<DetailStockOpname />} />
+                <Route path="/detail-stock-opname" element={<DetailStockOpname />} />
+
+
+                {/* coba */}
+                <Route path="/pagination" element={<PaginationFix />} />
             </Routes>
         </>
     );
