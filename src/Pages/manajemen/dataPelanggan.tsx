@@ -7,7 +7,6 @@ import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-n
 import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
 import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
-import PaginationFix from "../../compenents/pagination-fix/paginationFix";
 
 function DataPelanggan() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
