@@ -76,7 +76,7 @@ function App() {
 
 
                 {/* coba */}
-                <Route path="/pagination" element={<PaginationFix />} />
+        
             </Routes>
         </>
     );
