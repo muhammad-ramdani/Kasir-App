@@ -7,21 +7,22 @@ import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-n
 import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
 import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
+import PaginationFix from "../../compenents/pagination-fix/paginationFix";
 
 function DataPelanggan() {
-    const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsLargeScreen(window.innerWidth > 1440);
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1440);
+    };
 
-        window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
     const cardContents = [
         {
