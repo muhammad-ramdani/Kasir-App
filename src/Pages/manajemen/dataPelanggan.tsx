@@ -7,21 +7,22 @@ import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-n
 import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
 import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
+import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 
 function DataPelanggan() {
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
+    const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 1440);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.innerWidth > 1440);
+        };
 
-    window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const cardContents = [
         {
@@ -39,7 +40,7 @@ function DataPelanggan() {
             <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
                 <div className="row m-0" style={{ columnGap: "12px" }}>
                     <div className="col-auto p-0">
-                        <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#..." style={{ backgroundColor: "#FF0000", padding: "12px 26.45px" }}>
+                        <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahPelangganDimanajemenDataPelanggan" style={{ backgroundColor: "#FF0000", padding: "12px 26.45px" }}>
                             + Tambah Pelanggan
                         </button>
                     </div>
@@ -94,7 +95,7 @@ function DataPelanggan() {
                                                     <img src={logoEditManajemenGreen} className="me-2" />
                                                     <span>Edit</span>
                                                 </button>
-                                                <button type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }}>
+                                                <button type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }} data-bs-toggle="modal" data-bs-target="#modalHapusPelangganDimanajemenDataPelanggan">
                                                     <img src={logoHapusManajemenRed} />
                                                 </button>
                                             </td>
@@ -113,6 +114,89 @@ function DataPelanggan() {
                     </div>
                 </div>
             </div>
+
+            {/* Modal Tambah Pelanggan Dimanajemen Data Pelanggan */}
+            <div className="modal fade" id="modalTambahPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                            <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
+                            <span className="fw-medium" style={{ fontSize: 18 }}>
+                                Tambah Pelanggan
+                            </span>
+                            <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
+                                    placeholder="Masukan nama.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputNoTeleponPelangganDimanajemenDataPelanggan"
+                                    placeholder="000 000 000"
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputAlamatPelangganDimanajemenDataPelanggan"
+                                    placeholder="Masukkan alamat.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputEmailPelangganDimanajemenDataPelanggan"
+                                    placeholder="Masukkan email.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                        </div>
+                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                Tambah
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Tambah Pelanggan Dimanajemen Data Pelanggan */}
+
+            {/* Modal Hapus Pelanggan Dimanajemen Data Pelanggan */}
+            <div className="modal fade" id="modalHapusPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-dialog-centered" style={{ width: 473 }}>
+                    <div className="modal-content rounded-4 shadow">
+                        <div className="modal-body" style={{ padding: 23 }}>
+                            Apakah anda yakin ingin menghapus pelanggan ini?
+                            <div className="text-end" style={{ marginTop: 44 }}>
+                                <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                    Batalkan
+                                </button>
+                                <button type="button" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Hapus Pelanggan Dimanajemen Data Pelanggan */}
         </Layout>
     );
 }

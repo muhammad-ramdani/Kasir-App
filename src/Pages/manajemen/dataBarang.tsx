@@ -5,7 +5,7 @@ import logoEditRincianBarangDark from "../../assets/imagesManajemenDataBarang/lo
 import logoEditRincianBarangWhite from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-white.svg";
 import logoEditRincianBarang from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang.svg";
 import logoHapusBarangDirincianBarang from "../../assets/imagesManajemenDataBarang/logo-hapus-barang-dirincian-barang.svg";
-import logoTambahBarangDimodal from "../../assets/imagesManajemenDataBarang/logo-tambah-barang-dimodal.svg";
+import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 import noImagesForTambahBarang from "../../assets/imagesManajemenDataBarang/no-images-for-tambah-barang.png";
 import searchNormal from "../../assets/imagesManajemenDataBarang/search-normal.svg";
 import logoFilterDropdownManajemen from "../../assets/imagesAllManajemen/logo-filter-dropdown-manajemen.svg";
@@ -504,7 +504,7 @@ function DataBarang() {
                                 className="modal-header"
                                 style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}
                             >
-                                <img src={logoTambahBarangDimodal} className="me-2" />
+                                <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
                                 <span className="fw-medium" style={{ fontSize: 18 }}>
                                     Tambah Barang
                                 </span>
