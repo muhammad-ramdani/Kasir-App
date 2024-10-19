@@ -7,6 +7,7 @@ import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-n
 import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
 import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
+import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 
 function DataSupplier() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
@@ -38,7 +39,7 @@ function DataSupplier() {
             <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
                 <div className="row m-0" style={{ columnGap: "12px" }}>
                     <div className="col-auto p-0">
-                        <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#..." style={{ backgroundColor: "#FF0000", padding: "12px 30.12px" }}>
+                        <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahSupplierDimanajemenDataSupplier" style={{ backgroundColor: "#FF0000", padding: "12px 30.12px" }}>
                             + Tambah Supplier
                         </button>
                     </div>
@@ -91,7 +92,7 @@ function DataSupplier() {
                                                     <img src={logoEditManajemenGreen} className="me-2" />
                                                     <span>Edit</span>
                                                 </button>
-                                                <button type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }}>
+                                                <button type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }} data-bs-toggle="modal" data-bs-target="#modalHapusSupplierDimanajemenDataSupplier">
                                                     <img src={logoHapusManajemenRed} />
                                                 </button>
                                             </td>
@@ -110,6 +111,89 @@ function DataSupplier() {
                     </div>
                 </div>
             </div>
+
+            {/* Modal Tambah Supplier Dimanajemen Data Supplier */}
+            <div className="modal fade" id="modalTambahSupplierDimanajemenDataSupplier" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                            <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
+                            <span className="fw-medium" style={{ fontSize: 18 }}>
+                                Tambah Supplier
+                            </span>
+                            <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputNamaLengkapSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputNamaLengkapSupplierDimanajemenDataSupplier"
+                                    placeholder="Masukan nama.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputAlamatSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputAlamatSupplierDimanajemenDataSupplier"
+                                    placeholder="Masukkan alamat.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputEmailSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputEmailSupplierDimanajemenDataSupplier"
+                                    placeholder="Masukkan email.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="inputNoTeleponSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputNoTeleponSupplierDimanajemenDataSupplier"
+                                    placeholder="000 000 000"
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                />
+                            </div>
+                        </div>
+                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                Tambah
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Tambah Supplier Dimanajemen Data Supplier */}
+
+            {/* Modal Hapus Supplier Dimanajemen Data Supplier */}
+            <div className="modal fade" id="modalHapusSupplierDimanajemenDataSupplier" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-dialog-centered" style={{ width: 448 }}>
+                    <div className="modal-content rounded-4 shadow">
+                        <div className="modal-body" style={{ padding: 23 }}>
+                            Apakah anda yakin ingin menghapus supplier ini?
+                            <div className="text-end" style={{ marginTop: 44 }}>
+                                <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                    Batalkan
+                                </button>
+                                <button type="button" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Hapus Supplier Dimanajemen Data Supplier */}
         </Layout>
     )
 }

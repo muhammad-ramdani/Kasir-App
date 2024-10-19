@@ -6,6 +6,7 @@ import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-n
 import logoHapusManajemenRed24 from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red-24.svg";
 import logoEditManajemenDark24 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-24.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
+import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 
 function DiskonBarang() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
@@ -72,7 +73,7 @@ function DiskonBarang() {
                                 </div>
                             </div>
                             <div className="col-auto p-0">
-                                <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#..." style={{ backgroundColor: "#FF0000", padding: "10.5px 22.88px" }}>
+                                <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahPotonganAtauDiskonDimanajemenDiskonBarang" style={{ backgroundColor: "#FF0000", padding: "10.5px 22.88px" }}>
                                     + Tambah Potongan/Diskon
                                 </button>
                             </div>
@@ -96,7 +97,7 @@ function DiskonBarang() {
                                                     <button type="button" className="btn p-0 border-0" style={{ marginRight: "25px" }}>
                                                         <img src={logoEditManajemenDark24} />
                                                     </button>
-                                                    <button type="button" className="btn p-0 border-0">
+                                                    <button type="button" className="btn p-0 border-0" data-bs-toggle="modal" data-bs-target="#modalHapusPoptonganAtauDiskonDimanajemenDiskonBarang">
                                                         <img src={logoHapusManajemenRed24} />
                                                     </button>
                                                 </div>
@@ -118,6 +119,50 @@ function DiskonBarang() {
                     </div>
                 </div>
             </div>
+
+            {/* Modal Tambah Potongan / Diskon Dimanajemen Diskon Barang */}
+            <div className="modal fade" id="modalTambahPotonganAtauDiskonDimanajemenDiskonBarang" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                            <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
+                            <span className="fw-medium" style={{ fontSize: 18 }}>
+                                Tambah Potongan / Diskon
+                            </span>
+                            <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit est excepturi illum cumque nemo alias natus porro numquam voluptatum aliquid, aliquam tenetur eos aspernatur eius necessitatibus. Quod reiciendis provident praesentium?
+                        </div>
+                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                Tambah
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Tambah Potongan / Diskon Dimanajemen Diskon Barang */}
+
+            {/* Modal Hapus Potongan / Diskon Dimanajemen Diskon Barang */}
+            <div className="modal fade" id="modalHapusPoptonganAtauDiskonDimanajemenDiskonBarang" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-dialog-centered" style={{ width: 436 }}>
+                    <div className="modal-content rounded-4 shadow">
+                        <div className="modal-body" style={{ padding: 23 }}>
+                            Apakah anda yakin ingin menghapus diskon ini?
+                            <div className="text-end" style={{ marginTop: 44 }}>
+                                <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                    Batalkan
+                                </button>
+                                <button type="button" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Hapus Potongan / Diskon Dimanajemen Diskon Barang */}
         </Layout>
     )
 }
