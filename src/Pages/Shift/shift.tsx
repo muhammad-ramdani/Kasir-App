@@ -3,8 +3,17 @@ import Layout from "../../Layout/Layout";
 import "./shift.css";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import KalenderChoose from "./kalenderChoose";
 
 function Shift() {
+  const [showCalendar, setShowCalendar] = useState<boolean>(false); // State to manage modal visibility
+
+  // Function to toggle the calendar modal
+  const handleCalendarClick = () => {
+    setShowCalendar(!showCalendar);
+  };
+
   return (
     <Layout titlePage="Shift">
       <div className="container py-4">
@@ -60,7 +69,7 @@ function Shift() {
                 <div className="content-shift-right mb-3">
                   <h6 className="riwayat-title">Riwayat</h6>
                   <div className="btn-container">
-                    <button className="btn-long">
+                    <button className="btn-long" onClick={handleCalendarClick}>
                       <FontAwesomeIcon icon={faCalendarDays} className="icon-calender" />
                       <p>02 OKT 2024 - 03 OKT 2024</p>
                     </button>
@@ -112,6 +121,7 @@ function Shift() {
           </div>
         </div>
       </div>
+      <KalenderChoose isOpen={showCalendar} onClose={handleCalendarClick} />
     </Layout>
   );
 }

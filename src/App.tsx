@@ -74,7 +74,11 @@ function App() {
                 <Route path="pengaturan-struk" element={<PengaturanStruk />} />
                 {/* Pengaturan */}
                 <Route path="/stock-opname" element={<StockOpname />} />
-                <Route path="//detail-stock-opname" element={<DetailStockOpname />} />
+                <Route path="/detail-stock-opname" element={<DetailStockOpname />} />
+
+
+                {/* coba */}
+        
             </Routes>
         </>
     );

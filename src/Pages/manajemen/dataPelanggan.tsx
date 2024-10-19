@@ -9,19 +9,19 @@ import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-ma
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 
 function DataPelanggan() {
-    const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsLargeScreen(window.innerWidth > 1440);
-        };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1440);
+    };
 
-        window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
     const cardContents = [
         {
