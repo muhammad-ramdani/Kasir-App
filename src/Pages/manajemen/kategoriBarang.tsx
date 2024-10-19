@@ -107,7 +107,7 @@ function KategoriBarang() {
                                     />
                                     <input
                                         type="text"
-                                        className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-manajemen border border-start-0 rounded-end-3"
+                                        className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border border-start-0 rounded-end-3"
                                         placeholder="Cari kategori.."
                                         style={{ padding: "9.5px 12px 9.5px 0px" }}
                                     />
@@ -214,7 +214,7 @@ function KategoriBarang() {
                                 <label htmlFor="inputNamaKategoriBarang" className="form-label mt-0">Nama Kategori</label>
                                 <input
                                     type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                     id="inputNamaKategoriBarang"
                                     placeholder="Masukan nama.."
                                     style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}

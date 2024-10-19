@@ -58,7 +58,7 @@ function DataPelanggan() {
                             <img src={searchNormalManajemen} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED" }} />
                             <input
                                 type="text"
-                                className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-manajemen border-start-0 rounded-end-3"
+                                className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border-start-0 rounded-end-3"
                                 placeholder="Cari pelanggan.."
                                 style={{ borderColor: "#EDEDED", padding: "11px 12px 11px 0px" }}
                             />

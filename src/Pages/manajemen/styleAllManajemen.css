@@ -7,8 +7,9 @@
     font-size: 16px !important;
 }
 
-.placeholder-font-size-16px-manajemen::placeholder {
+.placeholder-font-size-16px-color-8E8E8E-manajemen::placeholder {
     font-size: 16px !important;
+    color: #8E8E8E;
 }
 
 .overflow-auto-custom-card-manajemen::-webkit-scrollbar {
