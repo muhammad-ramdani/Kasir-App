@@ -1,7 +1,7 @@
 import './styleManajemenDataBarang.css';
 import "./styleAllManajemen.css";
 import chitato from "../../assets/imagesManajemenDataBarang/chitato.png";
-import logoEditRincianBarangDark from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-dark.svg";
+import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
 import logoEditRincianBarangWhite from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-white.svg";
 import logoEditRincianBarang from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang.svg";
 import logoHapusBarangDirincianBarang from "../../assets/imagesManajemenDataBarang/logo-hapus-barang-dirincian-barang.svg";
@@ -799,7 +799,7 @@ function DataBarang() {
                                 className="modal-header"
                                 style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}
                             >
-                                <img src={logoEditRincianBarangDark} className="me-2" />
+                                <img src={logoEditManajemenDark22} className="me-2" />
                                 <span className="fw-medium" style={{ fontSize: 18 }}>
                                     Edit Barang
                                 </span>

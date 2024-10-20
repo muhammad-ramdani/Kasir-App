@@ -8,6 +8,7 @@ import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-ma
 import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-manajemen-red.svg";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
+import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
 
 function DataSupplier() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
@@ -88,7 +89,7 @@ function DataSupplier() {
                                             {content.noTeleponDimanajemenDataSupplier && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.noTeleponDimanajemenDataSupplier}</td>}
                                             {content.kodeDimanajemenDataSupplier && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataSupplier}</td>}
                                             <td className="align-middle" style={{ padding: "15px 0px", color: "#646464", whiteSpace: "nowrap", width: "1%" }}>
-                                                <button type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }}>
+                                                <button type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }} data-bs-toggle="modal" data-bs-target="#modalEditDataSupplierDimanajemenDataSupplier">
                                                     <img src={logoEditManajemenGreen} className="me-2" />
                                                     <span>Edit</span>
                                                 </button>
@@ -145,7 +146,7 @@ function DataSupplier() {
                                 />
                             </div>
                             <div style={{ marginBottom: 17 }}>
-                                <label htmlFor="inputEmailSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
+                                <label htmlFor="inputEmailSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email</label>
                                 <input
                                     type="text"
                                     className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
@@ -174,6 +175,73 @@ function DataSupplier() {
                 </div>
             </div>
             {/* Akhir --- Modal Tambah Supplier Dimanajemen Data Supplier */}
+
+            {/* Modal Edit Data Supplier Dimanajemen Data Supplier */}
+            <div className="modal fade" id="modalEditDataSupplierDimanajemenDataSupplier" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                            <img src={logoEditManajemenDark22} className="me-2" />
+                            <span className="fw-medium" style={{ fontSize: 18 }}>
+                                Edit Data Supplier
+                            </span>
+                            <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputNamaLengkapSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputNamaLengkapSupplierDimanajemenDataSupplier"
+                                    placeholder="Masukan nama.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                    value="PT Mitra Sejati"
+                                />
+                            </div>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputAlamatSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputAlamatSupplierDimanajemenDataSupplier"
+                                    placeholder="Masukkan alamat.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                    value="Jl. D.I. Pandjaitan No. 128, Purwokerto"
+                                />
+                            </div>
+                            <div style={{ marginBottom: 17 }}>
+                                <label htmlFor="inputEmailSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputEmailSupplierDimanajemenDataSupplier"
+                                    placeholder="Masukkan email.."
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                    value="mitrasejati@gmail.com"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="inputNoTeleponSupplierDimanajemenDataSupplier" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
+                                <input
+                                    type="text"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    id="inputNoTeleponSupplierDimanajemenDataSupplier"
+                                    placeholder="000 000 000"
+                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                    value="081328639415"
+                                />
+                            </div>
+                        </div>
+                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                Simpan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Akhir --- Modal Edit Data Supplier Dimanajemen Data Supplier */}
 
             {/* Modal Hapus Supplier Dimanajemen Data Supplier */}
             <div className="modal fade" id="modalHapusSupplierDimanajemenDataSupplier" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
