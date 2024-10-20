@@ -1,8 +1,4 @@
-/* Container styling */
-/* .container-stock-opname {
-    margin-top: 20px;
-  }
-   */
+
   /* Tambah Stok Button */
   .btn-tambah-stok-stock-opname {
     padding: 12px 24px;
@@ -34,7 +30,7 @@
   .btn-date-range-stock-opname {
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #f0f0f0;
+    background-color: #D9D9D9;
     border: 1px solid #ddd;
     border-radius: 5px;
     color: #333;
@@ -48,19 +44,19 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     color: #333;
-    background-color: #fff;
+    background-color: #D9D9D9;
   }
-  
-  /* Table Container */
-  /* .table-container-stock-opname {
-    padding: 20px;
+
+  /* .calender-white, .calender-grey {
+padding-right: 4px;
   } */
-  
+
   /* Table Styles */
   .table-stock-opname {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 10px;
+    text-align: center;
   }
   
   .table-stock-opname th,
@@ -68,9 +64,18 @@
     padding: 15px 20px;
     vertical-align: middle;
   }
+
+  .table-stock-opname th {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .table-stock-opname .table-light th {
+    color: #8d8d8d;
+  }
   
   .table-stock-opname thead th {
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     color: #333;
     border-bottom: 2px solid #ddd;
   }
@@ -79,11 +84,88 @@
     margin-right: 5px;
   }
   
-  /* Buttons inside table actions */
-  /* .btn-success,
-  .btn-secondary,
-  .btn-danger {
-    border-radius: 5px;
-    padding: 8px 16px;
-  }
-   */
+
+
+  /* Detail Stock Opname */
+
+  /* Tambah Stok Button */
+.btn-tambah-stok-detail-stock-opname {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Card Container */
+.card-detail-stock-opname {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: calc(87vh - 260px); 
+  overflow-y: auto; 
+}
+
+/* Filter Section */
+.filter-detail-stock-opname {
+  padding: 15px;
+}
+
+/* Button for Date Range */
+.btn-date-range-detail-stock-opname {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #D9D9D9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* Button for Calendar and additional action */
+.btn-kalender-detail-stock-opname,
+.btn-another-action-detail-stock-opname {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+  background-color: #D9D9D9;
+}
+
+/* Table Styles */
+.table-detail-stock-opname {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  text-align: center;
+  
+}
+
+
+.table-detail-stock-opname th,
+.table-detail-stock-opname td {
+  padding: 15px 20px;
+  vertical-align: middle;
+}
+
+.table-detail-stock-opname th {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.table-detail-stock-opname .table-light th {
+  color: #8d8d8d;
+}
+
+.table-detail-stock-opname thead th {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Update detail-stock-opname class */
+.detail-stock-opname button {
+  margin-right: 5px;
+}

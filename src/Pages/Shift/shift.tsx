@@ -1,24 +1,28 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "../../Layout/Layout";
 import "./shift.css";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import KalenderChoose from "./kalenderChoose";
+import CalenderComponent from './calenderComponent';
 
 function Shift() {
-  const [showCalendar, setShowCalendar] = useState<boolean>(false); // State to manage modal visibility
+  const [showCalendar, setShowCalendar] = useState<boolean>(false); 
 
-  // Function to toggle the calendar modal
+  // Mengatur visibilitas kalender
   const handleCalendarClick = () => {
-    setShowCalendar(!showCalendar);
+    setShowCalendar(!showCalendar); 
+  };
+
+  const handleCloseCalendar = () => {
+    setShowCalendar(false); 
   };
 
   return (
     <Layout titlePage="Shift">
       <div className="container py-4">
         <div className="row g-3">
-          {/* Bagian kiri - Info Kasir dan Shift */}
+          {/* Left Section - Info Kasir dan Shift */}
           <div className="col-md-6">
             <div className="card rounded-3 card-shift-left p-4">
               <div className="card-body">
@@ -36,7 +40,7 @@ function Shift() {
                   </div>
                 </div>
 
-                {/* Pilihan Cash Drawer dan Saldo Awal */}
+                {/* Pilih Cash Drawer dan Saldo Awal */}
                 <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label-shift">Pilih Cash Drawer</label>
@@ -62,7 +66,7 @@ function Shift() {
             </div>
           </div>
 
-          {/* Bagian kanan - Riwayat Shift */}
+          {/* Right Section - Riwayat Shift */}
           <div className="col-md-6">
             <div className="card rounded-3 card-shift-right p-4">
               <div className="card-body">
@@ -121,7 +125,15 @@ function Shift() {
           </div>
         </div>
       </div>
-      <KalenderChoose isOpen={showCalendar} onClose={handleCalendarClick} />
+
+      {/* Kalender ditampilkan sebagai modal overlay */}
+      {showCalendar && (
+        <div className="calendar-modal-overlay" onClick={handleCloseCalendar}>
+          <div className="calendar-modal" onClick={(e) => e.stopPropagation()}>
+            <CalenderComponent open={showCalendar} onClose={handleCloseCalendar} />
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }
