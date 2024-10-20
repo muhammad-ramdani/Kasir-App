@@ -1,14 +1,14 @@
 import './styleManajemenDataBarang.css';
 import "./styleAllManajemen.css";
 import chitato from "../../assets/imagesManajemenDataBarang/chitato.png";
-import logoEditRincianBarangDark from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-dark.svg";
+import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
 import logoEditRincianBarangWhite from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang-white.svg";
 import logoEditRincianBarang from "../../assets/imagesManajemenDataBarang/logo-edit-rincian-barang.svg";
 import logoHapusBarangDirincianBarang from "../../assets/imagesManajemenDataBarang/logo-hapus-barang-dirincian-barang.svg";
-import logoTambahBarangDimodal from "../../assets/imagesManajemenDataBarang/logo-tambah-barang-dimodal.svg";
+import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 import noImagesForTambahBarang from "../../assets/imagesManajemenDataBarang/no-images-for-tambah-barang.png";
 import searchNormal from "../../assets/imagesManajemenDataBarang/search-normal.svg";
-import sort from "../../assets/imagesManajemenDataBarang/sort.svg";
+import logoFilterDropdownManajemen from "../../assets/imagesAllManajemen/logo-filter-dropdown-manajemen.svg";
 // import tidakAdaBarang from "../../assets/imagesManajemenDataBarang/tidak-ada-barang.svg";
 import tisuPaseo from "../../assets/imagesManajemenDataBarang/tisu-paseo.png";
 import Layout from "../../Layout/Layout";
@@ -33,7 +33,7 @@ function DataBarang() {
                                                     data-bs-offset="0,10"
                                                     style={{ borderColor: "#E6E6E6", padding: "9.21px 9.5px" }}
                                                 >
-                                                    <img src={sort} />
+                                                    <img src={logoFilterDropdownManajemen} />
                                                 </button>
                                                 <ul className="dropdown-menu shadow dropdown-menu-filter-data-barang" style={{ borderColor: "#E6E6E6" }}>
                                                     <li>
@@ -93,7 +93,7 @@ function DataBarang() {
                                                 />
                                                 <input
                                                     type="text"
-                                                    className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-manajemen border border-start-0 rounded-end-3"
+                                                    className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border border-start-0 rounded-end-3"
                                                     placeholder="Cari barang.."
                                                     style={{ padding: "9.5px 12px 9.5px 0px" }}
                                                 />
@@ -383,110 +383,110 @@ function DataBarang() {
                                         <h5 class="card-title">Rincian Barang :</h5>
                                         <p class="text-tidak-ada-barang-yang-dipilih fw-medium text-center position-absolute top-50 start-50 translate-middle w-100 px-3">Tidak ada barang yang dipilih</p>
                                     </div> */}
-                {/* end | card-body ketika tidak memilih rincian */}
-                {/* card-body ketika memilih rincian */}
-                <div className="card-body card-body-rincian-barang">
-                  <div className="row">
-                    <div className="col">
-                      <h5 className="card-title">Rincian Barang :</h5>
-                    </div>
-                    <div className="col text-end">
-                      <button type="button" className="btn button-edit-rincian-barang rounded-pill border-0" data-bs-toggle="modal" data-bs-target="#modalEditRincianDataBarang">
-                        <img src={logoEditRincianBarang} className="me-2" />
-                        <span className="small fw-medium">Edit rincian</span>
-                      </button>
-                      <button type="button" className="btn button-hapus-barang-dirincian-barang rounded-circle border-0" data-bs-toggle="modal" data-bs-target="#modalHapusRincianBarang">
-                        <img src={logoHapusBarangDirincianBarang} />
-                      </button>
-                    </div>
-                  </div>
-                  <div className="row" style={{ marginTop: 15 }}>
-                    <div className="col-auto pe-0" style={{ marginRight: 30 }}>
-                      <img src={tisuPaseo} className="images-card-rincian-barang" style={{ width: 125 }} />
-                    </div>
-                    <div className="col ps-0" style={{ display: "table" }}>
-                      <div style={{ display: "table-cell", verticalAlign: "middle" }}>
-                        <p className="fw-medium mb-1" style={{ fontSize: 18 }}>
-                          Tissue Paseo 2 Lapis 250 Lembar
-                        </p>
-                        <p className="text-secondary mb-0" style={{ fontSize: 18 }}>
-                          000002
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <table className="table table-borderless mb-0 table-sm mt-3" style={{ fontSize: 15 }}>
-                    <tbody>
-                      <tr>
-                        <td>Harga Dasar</td>
-                        <td>: Rp 9.000</td>
-                      </tr>
-                      <tr>
-                        <td>Harga Jual</td>
-                        <td>: Rp 11.000</td>
-                      </tr>
-                      <tr>
-                        <td>Diskon</td>
-                        <td>: 10%</td>
-                      </tr>
-                      <tr>
-                        <td>Berat</td>
-                        <td>: 25 gram</td>
-                      </tr>
-                      <tr>
-                        <td>Kode</td>
-                        <td>: 000002</td>
-                      </tr>
-                      <tr>
-                        <td colSpan={2}>
-                          <p />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Stok</td>
-                        <td>: 145</td>
-                      </tr>
-                      <tr>
-                        <td>Stok Minimum</td>
-                        <td>: 50</td>
-                      </tr>
-                      <tr>
-                        <td>Kategori</td>
-                        <td>: Kebutuhan Rumah Tangga</td>
-                      </tr>
-                      <tr>
-                        <td>Letak Rak</td>
-                        <td>: Rak B</td>
-                      </tr>
-                      <tr>
-                        <td>Keterangan</td>
-                        <td>: -</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div className="modal fade" id="modalHapusRincianBarang" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div className="modal-dialog modal-dialog-centered modal-dialog-hapus-barang" style={{ width: 438 }}>
-                    <div className="modal-content rounded-4 shadow">
-                      <div className="modal-body" style={{ padding: 20 }}>
-                        Apakah anda yakin ingin menghapus barang ini?
-                        <div className="text-end" style={{ marginTop: 44 }}>
-                          <button type="button" className="btn button-batalkan-hapus-barang fw-medium" data-bs-dismiss="modal">
-                            Batalkan
-                          </button>
-                          <button type="button" className="btn button-hapus-barang-lanjutan-dimodal border-0 fw-semibold rounded-3 text-white">
-                            Hapus
-                          </button>
+                                {/* end | card-body ketika tidak memilih rincian */}
+                                {/* card-body ketika memilih rincian */}
+                                <div className="card-body card-body-rincian-barang">
+                                    <div className="row">
+                                        <div className="col">
+                                            <h5 className="card-title">Rincian Barang :</h5>
+                                        </div>
+                                        <div className="col text-end">
+                                            <button type="button" className="btn button-edit-rincian-barang rounded-pill border-0" data-bs-toggle="modal" data-bs-target="#modalEditRincianDataBarang">
+                                                <img src={logoEditRincianBarang} className="me-2" />
+                                                <span className="small fw-medium">Edit rincian</span>
+                                            </button>
+                                            <button type="button" className="btn button-hapus-barang-dirincian-barang rounded-circle border-0" data-bs-toggle="modal" data-bs-target="#modalHapusRincianBarang">
+                                                <img src={logoHapusBarangDirincianBarang} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="row" style={{ marginTop: 15 }}>
+                                        <div className="col-auto pe-0" style={{ marginRight: 30 }}>
+                                            <img src={tisuPaseo} className="images-card-rincian-barang" style={{ width: 125 }} />
+                                        </div>
+                                        <div className="col ps-0" style={{ display: "table" }}>
+                                            <div style={{ display: "table-cell", verticalAlign: "middle" }}>
+                                                <p className="fw-medium mb-1" style={{ fontSize: 18 }}>
+                                                    Tissue Paseo 2 Lapis 250 Lembar
+                                                </p>
+                                                <p className="text-secondary mb-0" style={{ fontSize: 18 }}>
+                                                    000002
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table className="table table-borderless mb-0 table-sm mt-3" style={{ fontSize: 15 }}>
+                                        <tbody>
+                                            <tr>
+                                                <td>Harga Dasar</td>
+                                                <td>: Rp 9.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Harga Jual</td>
+                                                <td>: Rp 11.000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diskon</td>
+                                                <td>: 10%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Berat</td>
+                                                <td>: 25 gram</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kode</td>
+                                                <td>: 000002</td>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan={2}>
+                                                    <p />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stok</td>
+                                                <td>: 145</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Stok Minimum</td>
+                                                <td>: 50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kategori</td>
+                                                <td>: Kebutuhan Rumah Tangga</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Letak Rak</td>
+                                                <td>: Rak B</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Keterangan</td>
+                                                <td>: -</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div className="modal fade" id="modalHapusRincianBarang" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div className="modal-dialog modal-dialog-centered modal-dialog-hapus-barang" style={{ width: 438 }}>
+                                        <div className="modal-content rounded-4 shadow">
+                                            <div className="modal-body" style={{ padding: 20 }}>
+                                                Apakah anda yakin ingin menghapus barang ini?
+                                                <div className="text-end" style={{ marginTop: 44 }}>
+                                                    <button type="button" className="btn button-batalkan-hapus-barang fw-medium" data-bs-dismiss="modal">
+                                                        Batalkan
+                                                    </button>
+                                                    <button type="button" className="btn button-hapus-barang-lanjutan-dimodal border-0 fw-semibold rounded-3 text-white">
+                                                        Hapus
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* end | card-body ketika memilih rincian */}
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-                {/* end | card-body ketika memilih rincian */}
-              </div>
-            </div>
-          </div>
-        </div>
 
                 {/* Modal Tambah Barang */}
                 <div
@@ -504,7 +504,7 @@ function DataBarang() {
                                 className="modal-header"
                                 style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}
                             >
-                                <img src={logoTambahBarangDimodal} className="me-2" />
+                                <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
                                 <span className="fw-medium" style={{ fontSize: 18 }}>
                                     Tambah Barang
                                 </span>
@@ -548,7 +548,7 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputNamaBarang"
                                         placeholder="Masukan nama.."
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -598,7 +598,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputStokBarang"
                                             placeholder="0"
                                             style={{ width: 193, backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
@@ -610,7 +610,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputKodeBarang"
                                             placeholder="Masukkan kode"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -633,7 +633,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaDasar"
                                             placeholder="Rp 0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -646,7 +646,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaJual"
                                             placeholder="Rp 0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -667,7 +667,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBatasMinimumStok"
                                             placeholder="0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -680,7 +680,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputLetakRak"
                                             placeholder="Masukkan letak"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -694,7 +694,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBeratRincianBarang"
                                             placeholder="0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -716,7 +716,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputDiskonHargaBarang"
                                             placeholder="0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -761,7 +761,7 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputKeteranganBarang"
                                         placeholder="Masukkan keterangan"
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -799,7 +799,7 @@ function DataBarang() {
                                 className="modal-header"
                                 style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}
                             >
-                                <img src={logoEditRincianBarangDark} className="me-2" />
+                                <img src={logoEditManajemenDark22} className="me-2" />
                                 <span className="fw-medium" style={{ fontSize: 18 }}>
                                     Edit Barang
                                 </span>
@@ -843,7 +843,7 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputNamaBarang"
                                         placeholder="Masukan nama.."
                                         value="Tissue Paseo 2 Lapis 250 Lembar"
@@ -893,7 +893,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputStokBarang"
                                             placeholder="0"
                                             style={{ width: 193, backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
@@ -906,7 +906,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputKodeBarang"
                                             placeholder="Masukkan kode"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -930,7 +930,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaDasar"
                                             placeholder="Rp 0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -944,7 +944,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputHargaJual"
                                             placeholder="Rp 0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -966,7 +966,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBatasMinimumStok"
                                             placeholder="0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -980,7 +980,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputLetakRak"
                                             placeholder="Masukkan letak"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -995,7 +995,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputBeratRincianBarang"
                                             placeholder="0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -1018,7 +1018,7 @@ function DataBarang() {
                                         </label>
                                         <input
                                             type="text"
-                                            className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                             id="inputDiskonHargaBarang"
                                             placeholder="0"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
@@ -1064,7 +1064,7 @@ function DataBarang() {
                                     </label>
                                     <input
                                         type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                         id="inputKeteranganBarang"
                                         placeholder="Masukkan keterangan"
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}

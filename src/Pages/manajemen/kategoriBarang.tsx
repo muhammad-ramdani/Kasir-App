@@ -6,7 +6,7 @@ import gambarGoodDay from "../../assets/imagesAllManajemen/good-day.png";
 import gambarIndomie from "../../assets/imagesAllManajemen/indomie.png";
 import gambarJetz from "../../assets/imagesAllManajemen/jetz.png";
 import gambarPotabee from "../../assets/imagesAllManajemen/potabee.png";
-import logoTambahBarangDimodal from "../../assets/imagesManajemenDataBarang/logo-tambah-barang-dimodal.svg";
+import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 import Layout from "../../Layout/Layout";
 import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -107,7 +107,7 @@ function KategoriBarang() {
                                     />
                                     <input
                                         type="text"
-                                        className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-manajemen border border-start-0 rounded-end-3"
+                                        className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border border-start-0 rounded-end-3"
                                         placeholder="Cari kategori.."
                                         style={{ padding: "9.5px 12px 9.5px 0px" }}
                                     />
@@ -201,27 +201,27 @@ function KategoriBarang() {
             {/* Modal Tambah Kategori */}
             <div className="modal fade" id="modalTambahNamaKategoriBarangDimanajemen" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
                 <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
-                    <div className="modal-content shadow rounded-4 p-0" style={{ width: 605 }}>
-                        <div className="modal-header" style={{ margin: "32px 32px 0 32px", padding: "0 0 18px 0" }}>
-                            <img src={logoTambahBarangDimodal} className="me-2" />
+                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                            <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
                             <span className="fw-medium" style={{ fontSize: 18 }}>
                                 Tambah Kategori
                             </span>
                             <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 32px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
                             <div>
                                 <label htmlFor="inputNamaKategoriBarang" className="form-label mt-0">Nama Kategori</label>
                                 <input
                                     type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
                                     id="inputNamaKategoriBarang"
                                     placeholder="Masukan nama.."
                                     style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                 />
                             </div>
                         </div>
-                        <div className="modal-footer border-0" style={{ padding: "50px 32px 32px 32px" }}>
+                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
                             <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
                                 Tambah
                             </button>
