@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Layout from "../../Layout/Layout";
 import "./stock-opname.css";
+import calenderGrey from "../../assets/assetStockOpname/calendar-grey.svg";
+import calenderWhite from "../../assets/assetStockOpname/calendar-search-white.svg";
 
 function StockOpname() {
   return (
@@ -20,15 +22,21 @@ function StockOpname() {
             <div className="row ">
               <div className="col-md-6 col-sm-12 d-flex align-items-center filter-stock-opname">
                 {/* Button for Date Range */}
-                <button className="btn btn-outline-secondary btn-date-range-stock-opname">2 October 2024 - 2 October 2024</button>
+                <button className="btn btn-outline-secondary btn-date-range-stock-opname">
+                  <img src={calenderGrey} alt="calender-grey" className="calender-grey" />
+                  2 October 2024 - 2 October 2024
+                </button>
                 {/* Button for Calendar */}
-                <button className="btn btn-outline-secondary btn-kalender-stock-opname ms-3">Kalender</button>
+                <button className="btn btn-outline-secondary btn-kalender-stock-opname ms-3">
+                  <img src={calenderWhite} alt="calender-white" className="calender-white"/>
+                  Kalender
+                  </button>
               </div>
             </div>
 
             {/* Table Section */}
             <div className="table-responsive table-container-stock-opname">
-              <table className="table table-hover table-bordered table-stock-opname">
+              <table className=" table-stock-opname">
                 <thead className="table-light">
                   <tr>
                     <th>Tanggal</th>

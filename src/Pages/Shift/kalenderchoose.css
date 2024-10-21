@@ -1,0 +1,123 @@
+.calendar-container {
+    width: 440px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+  
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+  
+.month-year {
+    font-size: 18px;
+    font-weight: 600;
+    color: #030303;
+    cursor: pointer;
+}
+  
+.month-year span {
+    cursor: pointer;
+}
+  
+.nav-icon {
+    cursor: pointer;
+    font-size: 26px;
+    color: #0038FF;
+    margin-left: 12px;
+}
+  
+.nav-icon:hover {
+    color: #0038FF;
+}
+  
+.dropdowns {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.dropdown-month-list, .dropdown-year-list {
+    background-color: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    margin-top: -2rem;
+    width: 150px;
+    z-index: 10;
+}
+  
+.dropdown-month-list li, .dropdown-year-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.dropdown-month-list li:hover, .dropdown-year-list li:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+  
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+  
+.calendar-header-day {
+    font-weight: 300;
+    font-size: 16px;
+    padding: 10px 0;
+    color: #636363;
+}
+  
+.calendar-day.empty {
+    border: none;
+}
+  
+.calendar-day {
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    font-weight: 500;
+    color: #000000;
+}
+  
+.calendar-day:hover {
+    background-color: #F5B3B3;
+}
+  
+.calendar-day.selected {
+    background-color: #ff0000;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+  
+.calendar-day.selected:hover {
+    background-color: #ff0000;
+}
+
+/* Styling for today's date */
+.calendar-day.today {
+    color: red; 
+    font-weight: bold;
+    border: 2px solid red; 
+    border-radius: 20px;
+}
+
+.calendar-day.today.selected {
+    background-color: #ff0000; 
+    color: white;
+    border: 2px solid #ff0000; 
+    border-radius: 20px;
+}
