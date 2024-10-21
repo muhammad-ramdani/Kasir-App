@@ -5,7 +5,7 @@ import EksporModalLaporan from "../../compenents/ModalEksporLaporan/ModalEksporL
 import SearchLaporan from "../../compenents/SearchLaporan/SearchLaporan";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
-import Pagination from "../../compenents/Pagination/Pagination";
+import PaginationWithItemsPerPage from "../../compenents/Pagination/Pagination";
 
 const LaporanPembelianBarang = () => {
     // state popup datePicker
@@ -85,9 +85,10 @@ const LaporanPembelianBarang = () => {
 
 
 
-    // pagination
+    // paginataion
     const [currentPage, setCurrentPage] = React.useState<number>(1);
-    const itemsPerPage = 5; // Sesuaikan jumlah item per halaman
+    const [itemsPerPage, setItemsPerPage] = React.useState<number>(3); // Default items per page
+    const itemsPerPageOptions = [3, 5, 10, 20]; // Pilihan jumlah item per halaman
 
     const indexOfLastTransaction = currentPage * itemsPerPage;
     const indexOfFirstTransaction = indexOfLastTransaction - itemsPerPage;
@@ -96,6 +97,11 @@ const LaporanPembelianBarang = () => {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
+    };
+    
+    const handleItemsPerPageChange = (newItemsPerPage: number) => {
+        setItemsPerPage(newItemsPerPage);
+        setCurrentPage(1); // Reset to first page when items per page is changed
     };
 
     // handle change date peeker
@@ -131,7 +137,7 @@ const LaporanPembelianBarang = () => {
                 ))}
             </div>
             {/* component filter */}
-            <div className="component-filter">
+            <div className="component-filter mb-3">
                 <div className="row d-flex flex-row">
                     <div className="col-6 d-flex justifiy-content-start gap-2">
                         <div className="col-5">
@@ -214,50 +220,56 @@ const LaporanPembelianBarang = () => {
                 </div>
             </div>
 
-            <div className="table-responsive">
-                <table className="table table-bordered">
-                    <thead className="custom-thead">
-                        <tr className='table-head'>
-                            <th>Nama Supplier</th>
-                            <th>Nama Barang</th>
-                            <th>Tanggal Pembelian</th>
-                            <th>Kuantitas</th>
-                            <th>Satuan</th>
-                            <th>Total Harga</th>
-                            <th>Total Pengeluaran</th>
-                        </tr>
-                    </thead>
-                    <tbody className='custom-tbody'>
-                        {transactions.length > 0 ? (
-                            currentTransactions.map((transaction, index) => (
-                                <tr key={index}>
-                                    <td>{transaction.namaSupplier}</td>
-                                    <td>{transaction.namaBarang}</td>
-                                    <td>{transaction.tanggalPembelian}</td>
-                                    <td>{transaction.kuantitas}</td>
-                                    <td>{transaction.satuan}</td>
-                                    <td>{transaction.totalHarga}</td>
-                                    <td>{transaction.totalPengeluaran}</td>
+            <div className="wrap-table-content">
+                <div className="overflow-table">
+                    <div className="table-responsive">
+                        <table className="table table-bordered">
+                            <thead className="custom-thead">
+                                <tr className='table-head'>
+                                    <th>Nama Supplier</th>
+                                    <th>Nama Barang</th>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>Kuantitas</th>
+                                    <th>Satuan</th>
+                                    <th>Total Harga</th>
+                                    <th>Total Pengeluaran</th>
                                 </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan={7} className="text-center">
-                                    <img src={images.notFound} alt="image not found" className='mt-5' />
-                                    <h6 className='h6-notfound'>Data tidak tersedia</h6>
-                                    <p className='p-notfound mb-5'>Belum ada data yang dapat ditampilkan di halaman ini</p>
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-                {transactions.length > 0 && (
-                    <Pagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={handlePageChange}
-                    />
-                )}
+                            </thead>
+                            <tbody className='custom-tbody'>
+                                {transactions.length > 0 ? (
+                                    currentTransactions.map((transaction, index) => (
+                                        <tr key={index}>
+                                            <td>{transaction.namaSupplier}</td>
+                                            <td>{transaction.namaBarang}</td>
+                                            <td>{transaction.tanggalPembelian}</td>
+                                            <td>{transaction.kuantitas}</td>
+                                            <td>{transaction.satuan}</td>
+                                            <td>{transaction.totalHarga}</td>
+                                            <td>{transaction.totalPengeluaran}</td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td colSpan={7} className="text-center">
+                                            <img src={images.notFound} alt="image not found" className='mt-5' />
+                                            <h6 className='h6-notfound'>Data tidak tersedia</h6>
+                                            <p className='p-notfound mb-5'>Belum ada data yang dapat ditampilkan di halaman ini</p>
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {/* Komponen PaginationWithItemsPerPage */}
+                <PaginationWithItemsPerPage
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    itemsPerPage={itemsPerPage}
+                    itemsPerPageOptions={itemsPerPageOptions}
+                    onPageChange={handlePageChange}
+                    onItemsPerPageChange={handleItemsPerPageChange}
+                />
             </div>
             {/* modal ekspor laporan */}
             <EksporModalLaporan

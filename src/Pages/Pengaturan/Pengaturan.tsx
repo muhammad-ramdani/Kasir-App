@@ -35,7 +35,7 @@ const Pengaturan = () => {
     ]
     return (
         <Layout titlePage="Pengaturan">
-            <div className="wrap-card ">
+            <div className="wrap-card">
                 {DataCardPengaturan.map((item, index) => (
                     <CardPengaturan
                         key={index}

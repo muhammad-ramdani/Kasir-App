@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import CalenderPopup from "../../compenents/CalenderPopup/CalenderPopup";
 import Pagination from "../../compenents/Pagination/Pagination";
 import EksporModalLaporanPersediaanBarang from "../../compenents/ModalEksporLaporan/ModalEksporLaporanPersediaanBarang";
+import PaginationWithItemsPerPage from "../../compenents/Pagination/Pagination";
 
 const LaporanPersediaanBarang = () => {
 
@@ -74,9 +75,10 @@ const LaporanPersediaanBarang = () => {
     const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(new Date()); // Inisialisasi dengan tanggal saat ini
     const [showCalendar, setShowCalendar] = React.useState(false);
 
-    // pagination
+    // paginataion
     const [currentPage, setCurrentPage] = React.useState<number>(1);
-    const itemsPerPage = 5; // Sesuaikan jumlah item per halaman
+    const [itemsPerPage, setItemsPerPage] = React.useState<number>(3); // Default items per page
+    const itemsPerPageOptions = [3, 5, 10, 20]; // Pilihan jumlah item per halaman
 
     const indexOfLastTransaction = currentPage * itemsPerPage;
     const indexOfFirstTransaction = indexOfLastTransaction - itemsPerPage;
@@ -85,6 +87,11 @@ const LaporanPersediaanBarang = () => {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
+    };
+
+    const handleItemsPerPageChange = (newItemsPerPage: number) => {
+        setItemsPerPage(newItemsPerPage);
+        setCurrentPage(1); // Reset to first page when items per page is changed
     };
 
     // handle open modal ekspor laporan
@@ -103,7 +110,7 @@ const LaporanPersediaanBarang = () => {
     return (
         <Layout titlePage="Laporan Persediaan Barang">
             {/* component filter */}
-            <div className="component-filter">
+            <div className="component-filter mb-3">
                 <div className="row d-flex flex-row">
                     <div className="col-6 d-flex justifiy-content-start gap-2">
                         <div className="col-4">
@@ -198,52 +205,59 @@ const LaporanPersediaanBarang = () => {
                 </div>
             </div>
             {/* tabel persediaan barang */}
-            <div className="table-responsive">
-                <table className="table table-bordered">
-                    <thead className="custom-thead">
-                        <tr className='table-head'>
-                            <th>Nama Produk</th>
-                            <th>SKU</th>
-                            <th>Kategori</th>
-                            <th>Kuantitas</th>
-                            <th>Satuan</th>
-                            <th>Harga Modal</th>
-                            <th>Total Nilai Persediaan</th>
-                        </tr>
-                    </thead>
-                    <tbody className='custom-tbody'>
-                        {transactions.length > 0 ? (
-                            currentTransactions.map((transaction, index) => (
-                                <tr key={index}>
-                                    <td>{transaction.namaProduk}</td>
-                                    <td>{transaction.sku}</td>
-                                    <td>{transaction.kategori}</td>
-                                    <td>{transaction.kuantitas}</td>
-                                    <td>{transaction.satuan}</td>
-                                    <td>{transaction.hargaModal.toLocaleString()} IDR</td>
-                                    <td>{transaction.totalNilaiPersediaan.toLocaleString()} IDR</td>
+            <div className="wrap-table-content-whitout-card">
+                <div className="overflow-table">
+                    <div className="table-responsive">
+                        <table className="table table-bordered">
+                            <thead className="custom-thead">
+                                <tr className='table-head'>
+                                    <th>Nama Produk</th>
+                                    <th>SKU</th>
+                                    <th>Kategori</th>
+                                    <th>Kuantitas</th>
+                                    <th>Satuan</th>
+                                    <th>Harga Modal</th>
+                                    <th>Total Nilai Persediaan</th>
                                 </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan={7} className="text-center">
-                                    <img src={images.notFound} alt="image not found" className='mt-5' />
-                                    <h6 className='h6-notfound'>Data tidak tersedia</h6>
-                                    <p className='p-notfound mb-5'>Belum ada data yang dapat ditampilkan di halaman ini</p>
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-                {transactions.length > 0 && (
-                    <Pagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        onPageChange={handlePageChange}
-                    />
-                )}
-            </div>
+                            </thead>
+                            <tbody className='custom-tbody'>
+                                {transactions.length > 0 ? (
+                                    currentTransactions.map((transaction, index) => (
+                                        <tr key={index}>
+                                            <td>{transaction.namaProduk}</td>
+                                            <td>{transaction.sku}</td>
+                                            <td>{transaction.kategori}</td>
+                                            <td>{transaction.kuantitas}</td>
+                                            <td>{transaction.satuan}</td>
+                                            <td>{transaction.hargaModal.toLocaleString()} IDR</td>
+                                            <td>{transaction.totalNilaiPersediaan.toLocaleString()} IDR</td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td colSpan={7} className="text-center">
+                                            <img src={images.notFound} alt="image not found" className='mt-5' />
+                                            <h6 className='h6-notfound'>Data tidak tersedia</h6>
+                                            <p className='p-notfound mb-5'>Belum ada data yang dapat ditampilkan di halaman ini</p>
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {/* Komponen PaginationWithItemsPerPage */}
+                <PaginationWithItemsPerPage
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    itemsPerPage={itemsPerPage}
+                    itemsPerPageOptions={itemsPerPageOptions}
+                    onPageChange={handlePageChange}
+                    onItemsPerPageChange={handleItemsPerPageChange}
+                />
 
+
+            </div>
             {/* modal ekspor laporan */}
             <EksporModalLaporanPersediaanBarang
                 isOpen={isModalOpen}
