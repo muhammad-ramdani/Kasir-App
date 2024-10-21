@@ -1,15 +1,28 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Layout from "../../Layout/Layout";
 import "./shift.css";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import CalenderComponent from './calenderComponent';
 
 function Shift() {
+  const [showCalendar, setShowCalendar] = useState<boolean>(false); 
+
+  // Mengatur visibilitas kalender
+  const handleCalendarClick = () => {
+    setShowCalendar(!showCalendar); 
+  };
+
+  const handleCloseCalendar = () => {
+    setShowCalendar(false); 
+  };
+
   return (
     <Layout titlePage="Shift">
       <div className="container py-4">
         <div className="row g-3">
-          {/* Bagian kiri - Info Kasir dan Shift */}
+          {/* Left Section - Info Kasir dan Shift */}
           <div className="col-md-6">
             <div className="card rounded-3 card-shift-left p-4">
               <div className="card-body">
@@ -27,7 +40,7 @@ function Shift() {
                   </div>
                 </div>
 
-                {/* Pilihan Cash Drawer dan Saldo Awal */}
+                {/* Pilih Cash Drawer dan Saldo Awal */}
                 <div className="row mb-3">
                   <div className="col-md-6">
                     <label className="form-label-shift">Pilih Cash Drawer</label>
@@ -53,14 +66,14 @@ function Shift() {
             </div>
           </div>
 
-          {/* Bagian kanan - Riwayat Shift */}
+          {/* Right Section - Riwayat Shift */}
           <div className="col-md-6">
             <div className="card rounded-3 card-shift-right p-4">
               <div className="card-body">
                 <div className="content-shift-right mb-3">
                   <h6 className="riwayat-title">Riwayat</h6>
                   <div className="btn-container">
-                    <button className="btn-long">
+                    <button className="btn-long" onClick={handleCalendarClick}>
                       <FontAwesomeIcon icon={faCalendarDays} className="icon-calender" />
                       <p>02 OKT 2024 - 03 OKT 2024</p>
                     </button>
@@ -112,6 +125,15 @@ function Shift() {
           </div>
         </div>
       </div>
+
+      {/* Kalender ditampilkan sebagai modal overlay */}
+      {showCalendar && (
+        <div className="calendar-modal-overlay" onClick={handleCloseCalendar}>
+          <div className="calendar-modal" onClick={(e) => e.stopPropagation()}>
+            <CalenderComponent open={showCalendar} onClose={handleCloseCalendar} />
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }
