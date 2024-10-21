@@ -4,7 +4,6 @@ import images from "../../Image";
 import Layout from "../../Layout/Layout";
 import { Link } from "react-router-dom";
 import CalenderPopup from "../../compenents/CalenderPopup/CalenderPopup";
-import Pagination from "../../compenents/Pagination/Pagination";
 import EksporModalLaporanPersediaanBarang from "../../compenents/ModalEksporLaporan/ModalEksporLaporanPersediaanBarang";
 import PaginationWithItemsPerPage from "../../compenents/Pagination/Pagination";
 
