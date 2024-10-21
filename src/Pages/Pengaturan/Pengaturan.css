@@ -1,7 +1,7 @@
 .wrap-card {
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: space-around;
 }
 
 .logout-btn {
@@ -24,17 +24,17 @@
 .informasi-label {
    /* margin-bottom: 23px; */
    margin-left: 35px;
-   margin-top: 33px;
+   margin-top: 25px;
 }
 
 .label-info {
-   font-size: 16px;
+   font-size: 14px;
    font-weight: 400;
    color: #646464;
 }
 
 .value-info {
-   font-size: 20px;
+   font-size: 18px;
    font-weight: 400;
    color: #000000;
 }
@@ -205,7 +205,7 @@
    margin-right: 20px;
 }
 
-.pembayaran {
+/* .pembayaran {
    width: 342px;
    height: 58px;
    background-color: #ffffff;
@@ -213,7 +213,7 @@
    margin-bottom: 24px;
    border-radius: 8px;
    padding: 12px 25px 12px 0;
-}
+} */
 
 .left-bca {
    font-size: 20px;

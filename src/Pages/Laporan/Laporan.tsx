@@ -32,7 +32,7 @@ const Laporan = () => {
 
     return (
         <Layout titlePage="Laporan">
-            <div className="container py-4">
+            <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {CardData.map((card, index) => (
                         <div className="col col-card" key={index}>
