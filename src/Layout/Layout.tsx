@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
     return (
         <div className="container-fluid container-main">
             <div className="row">
-                <div className="col-1 bg-light sidebar  d-flex justify-content-center">
+                <div className="col-auto bg-light sidebar d-flex justify-content-center">
                     <div className="icon-sidebar">
                         <section className="section-logo mb-3">
                             <img src={images.logo} alt="" className="image-logo" />
@@ -98,7 +98,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                     </div>
                 </div>
                 <div className="col">
-                    <header className="header-menu" style={{ padding: "0px 18px", margin: "5px 0px" }}>
+                    <header className="header-menu">
                         <div className="header-left">
                             {/* Hamburger Button */}
                             <button className="btn button-hamburger px-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
@@ -108,14 +108,15 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                         </div>
                         <div className="header-right">
                             <button
-                                className="btn btn-notification"
+                                className="btn btn-notification block-profile"
                                 onClick={handleNotificationClick}
                             >
                                 <img src={images.notification} alt="" className="me-2" />
-                                Notifikasi <span>(0)</span>
+
+                                <span className="hidden-text">Notifikasi</span><span>(0)</span>
                             </button>
 
-                            <img src={images.person} alt="user" className="ms-3" onClick={handleClickProfile} />
+                            <img src={images.person} alt="user" className="ms-3 block-profile" onClick={handleClickProfile} />
                         </div>
                     </header>
                     <hr style={{ margin: "0px 18px 16px 18px" }} />

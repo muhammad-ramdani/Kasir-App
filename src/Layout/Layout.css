@@ -1,10 +1,8 @@
 .container-main {
-   height: 100vh !important;
-   width: 100% !important;
-   background-color: #F2F4FA;
+   /* height: 100vh !important; */
+   /* width: 100% !important; */
+   background-color: #f2f4fa;
 }
-
-
 
 .sidebar {
    height: 100vh;
@@ -61,7 +59,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   background-color: #F2F4FA;
+   background-color: #f2f4fa;
 }
 
 .header-left {
@@ -212,4 +210,70 @@
 .button-hamburger {
    box-shadow: none !important;
    border: none !important;
+}
+
+.header-right {
+   display: flex;
+   align-items: center; /* Agar item di dalamnya sejajar secara vertikal */
+}
+
+.btn-notification {
+   display: flex;
+   align-items: center; /* Memastikan ikon dan teks sejajar di tengah secara vertikal */
+}
+
+.block-profile {
+   margin-left: 10px;
+   display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+   .header-right {
+      justify-content: space-between;
+   }
+
+   .btn-notification {
+      display: flex;
+      flex-direction: row;
+   }
+
+   img {
+      max-width: 30px;
+   }
+
+   .sidebar {
+      display: none !important;
+   }
+
+   .main-content {
+      padding-left: 0;
+   }
+
+   .hidden-text {
+      display: none;
+   }
+
+   .header-menu {
+      display: flex;
+      flex-direction: row;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .sidebar {
+      display: none !important;
+   }
+
+   .main-content {
+      padding-left: 0;
+   }
+
+   .hidden-text {
+      display: none;
+   }
+
+   .header-menu {
+      display: flex;
+      flex-direction: row;
+   }
 }
