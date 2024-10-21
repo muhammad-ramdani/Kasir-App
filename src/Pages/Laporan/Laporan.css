@@ -23,7 +23,6 @@
    transition: all 0.5s ease-in-out;
 }
 
-
 .btn-order:hover {
    display: flex;
    justify-content: space-between;
@@ -153,4 +152,32 @@
    font-size: 16px;
    font-weight: 400;
    color: #828282;
+}
+
+/* wrap table content */
+.wrap-table-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 62vh; /* Set height to 100vh */
+}
+
+.wrap-table-content-whitout-card{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 78vh;
+}
+
+.overvlow-table {
+   max-height: calc(57vh - 20px); /* Adjust this value to give space for pagination */
+   overflow-y: auto;
+}
+
+.table-responsive {
+   max-height: 100%;
+}
+
+.pagination-wrap {
+   margin-top: 10px;
 }

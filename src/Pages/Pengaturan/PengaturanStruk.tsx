@@ -138,7 +138,7 @@ const PengaturanStruk: React.FC = () => {
                                     </div>
                                     <div className="item-struk-total mt-2">
                                         <div className="row">
-                                            <p className='pembayaran text-center'>PEMBAYARAN</p>
+                                            <p className='pembayaran-label text-center'>PEMBAYARAN</p>
                                         </div>
                                         <div className="row">
                                             <div className="col-7">
