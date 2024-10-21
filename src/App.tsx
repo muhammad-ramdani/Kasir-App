@@ -31,6 +31,7 @@ import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 import DataPelanggan from "./Pages/manajemen/dataPelanggan";
 import DataSupplier from "./Pages/manajemen/dataSupplier";
 import DiskonBarang from "./Pages/manajemen/diskonBarang";
+import StokBarang from "./Pages/manajemen/stokBarang";
 
 function App() {
     return (
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/data-pelanggan" element={<DataPelanggan />} />
                 <Route path="/data-supplier" element={<DataSupplier />} />
                 <Route path="/diskon-barang" element={<DiskonBarang />} />
+                <Route path="/stok-barang" element={<StokBarang />} />
                 {/* Pages laporan */}
                 <Route path="/laporan" element={<Laporan />} />
                 <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />

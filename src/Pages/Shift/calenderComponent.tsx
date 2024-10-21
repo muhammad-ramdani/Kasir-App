@@ -9,7 +9,7 @@ const CalenderComponent: React.FC<{ open: boolean; onClose: () => void }> = ({ o
   const [month, setMonth] = useState<number>(new Date().getMonth());
 
   // Check if the calendar should be rendered
-  if (!open) return null; // Jika properti `open` false, komponen tidak akan dirender
+  if (!open) return null; 
 
   // Get today's date for comparison
   const today = new Date();

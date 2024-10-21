@@ -31,6 +31,10 @@ function Dashboard() {
         navigate("/diskon-barang");
     };
 
+    const onClickToPageManajemenStokBarang = () => {
+        navigate("/stok-barang");
+    };
+
     return (
         <>
             <Layout titlePage='Manajemen'>
@@ -161,7 +165,7 @@ function Dashboard() {
                                         </div>
                                     </div>
                                     <div className="d-grid gap-2">
-                                        <a className="btn btn-danger fw-semibold mt-2" role="button">
+                                        <a className="btn btn-danger fw-semibold mt-2" role="button" onClick={onClickToPageManajemenStokBarang}>
                                             Atur sekarang
                                         </a>
                                     </div>
