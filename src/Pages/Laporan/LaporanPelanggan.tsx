@@ -105,8 +105,8 @@ const LaporanPelanggan = () => {
             {/* component filter */}
             <div className="component-filter mb-3">
                 <div className="row d-flex flex-row">
-                    <div className="col-6 d-flex justifiy-content-start gap-2">
-                        <div className="col-6">
+                    <div className="col-12 col-md-6 d-flex justifiy-content-start gap-2">
+                        <div className="col-6 col-md-12">
                             <SearchLaporan
                                 placeholder="cari struk..."
                             />
@@ -127,8 +127,8 @@ const LaporanPelanggan = () => {
                             />
                         </div>
                     </div>
-                    <div className="col-6 d-flex justify-content-end gap-2">
-                        <div className="col-4">
+                    <div className="col-sm-12 col-md-6 d-flex justify-content-end gap-2">
+                        <div className="col-sm-12 col-md-4 mt-3">
                             <div className="dropdown w-100">
                                 <button
                                     className="btn w-100 btn-ekspor-laporan"

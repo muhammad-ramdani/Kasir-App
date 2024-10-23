@@ -11,7 +11,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description, icon, link }) => {
   return (
-    <div className="card">
+    <div className="card card-style">
       <div className="card-body">
         <div className="row">
           <div className="col-10">
@@ -38,4 +38,4 @@ const Card: React.FC<CardProps> = ({ title, description, icon, link }) => {
   )
 }
 
-export default Card
+export default Card;
