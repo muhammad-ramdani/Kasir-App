@@ -123,6 +123,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
 
                     {/* Offcanvas Sidebar */}
                     <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+
                         <div className="offcanvas-header d-flex align-items-center justify-content-start">
                             <section className="section-logo mb-3 d-flex align-items-center justify-content-center">
                                 <img src={images.logo} alt="" className="image-logo mt-0 mb-0 me-2" />
@@ -136,34 +137,34 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                                     <p className="p-section-main-offcanvas">Main</p>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/dashboard" className="text-decoration-none text-dark">
+                                    <a href="/dashboard" className="text-dark text-decoration-none">
                                         <img src={images.coin} alt="" className="img-logo" />
                                         <span className="ms-2">Manajemen</span>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/transaksi" className="text-decoration-none text-dark">
+                                    <a href="/transaksi" className="text-dark text-decoration-none">
                                         <img src={images.dollar} alt="" className="img-logo" />
                                         <span className="ms-2">Transaksi</span>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/laporan" className="text-decoration-none text-dark">
+                                    <a href="/laporan" className="text-dark text-decoration-none">
                                         <img src={images.laporan} alt="" className="img-logo" />
                                         <span className="ms-2">Laporan</span>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/shift" className="text-decoration-none text-dark">
+                                    <a href="/shift" className="text-dark text-decoration-none">
                                         <img src={images.shift} alt="" className="img-logo" />
                                         <span className="ms-2">Shifts</span>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/stock-opname" className="text-decoration-none text-dark">
+                                    <a href="/stock-opname" className="text-dark text-decoration-none">
                                         <img src={images.stock} alt="" className="img-logo" />
                                         <span className="ms-2">Stock Opname</span>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <hr />
                             </section>
@@ -171,25 +172,25 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                             <section className="section-main-offcanvas mb-2">
                                 <p className="p-section-main-offcanvas">More</p>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/" className="text-decoration-none text-dark">
+                                    <a href="/" className="text-decoration-none text-dark">
                                         <img src={images.user} alt="" className="img-logo" />
                                         <span className="ms-2">Akun Saya</span>
-                                    </Link>
+                                    </a>
                                 </div>
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/pengaturan" className="text-decoration-none text-dark">
+                                    <a href="/pengaturan" className="text-decoration-none text-dark">
                                         <img src={images.setting} alt="" className="img-logo" />
                                         <span className="ms-2">Pengaturan</span>
-                                    </Link>
+                                    </a>
                                 </div>
                             </section>
                             {/* section logout */}
                             <section className="section-main-offcanvas logout-section-offcanvas">
                                 <div className="logo-sidebar-offcanvas">
-                                    <Link to="/" className="text-decoration-none text-dark">
+                                    <a href="/" className="text-decoration-none text-dark">
                                         <img src={images.logout} alt="" className="img-logo" />
                                         <span className="ms-2">Keluar</span>
-                                    </Link>
+                                    </a>
                                 </div>
                             </section>
                         </div>
