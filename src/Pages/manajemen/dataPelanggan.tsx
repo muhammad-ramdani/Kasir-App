@@ -36,28 +36,46 @@ function DataPelanggan() {
         },
     ];
 
+    // State untuk mendeteksi apakah mobile atau tidak
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
+
+    // Gunakan useEffect untuk memantau perubahan ukuran layar
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 576);
+        };
+
+        // Tambahkan event listener untuk resize
+        window.addEventListener('resize', handleResize);
+
+        // Bersihkan event listener ketika komponen di-unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <Layout titlePage="Data Pelanggan">
             <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
                 <div className="row m-0" style={{ columnGap: "12px" }}>
-                    <div className="col-auto p-0">
+                    <div className="d-grid col-12 col-sm-auto p-0" style={{ marginBottom: "10px" }}>
                         <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahPelangganDimanajemenDataPelanggan" style={{ backgroundColor: "#FF0000", padding: "12px 26.45px" }}>
                             + Tambah Pelanggan
                         </button>
                     </div>
-                    <div className="col-auto p-0">
+                    <div className="d-grid col-12 col-sm-auto p-0" style={{ marginBottom: "10px" }}>
                         <button type="button" className="btn focus-ring-none-manajemen bg-white fw-medium rounded-3" style={{ borderColor: "#EDEDED", padding: "11px 27.66px" }}>
                             <img src={logoExportData} style={{ marginTop: "-4px", marginRight: "10px" }} />Export Data
                         </button>
                     </div>
-                    <div className="col-auto p-0">
+                    <div className="d-grid col-12 col-sm-auto p-0" style={{ marginBottom: "10px" }}>
                         <button type="button" className="btn focus-ring-none-manajemen bg-white fw-medium rounded-3" style={{ borderColor: "#EDEDED", padding: "11px 25.41px" }}>
                             <img src={logoImportData} style={{ marginTop: "-4px", marginRight: "10px" }} />Import Data
                         </button>
                     </div>
-                    <div className="col-auto p-0 ms-auto">
-                        <div className="input-group flex-nowrap mt-0" style={{ width: "350px" }}>
-                            <img src={searchNormalManajemen} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED" }} />
+                    <div className="col col-sm-auto p-0 ms-auto" style={{ marginBottom: "10px" }}>
+                        <div className="input-group flex-nowrap mt-0" style={{ width: isMobile ? "100%" : "350px" }}>
+                            <img src={searchNormalManajemen} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED", maxWidth: "46px" }} />
                             <input
                                 type="text"
                                 className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border-start-0 rounded-end-3"
@@ -67,17 +85,17 @@ function DataPelanggan() {
                         </div>
                     </div>
                 </div>
-                <div className="card rounded-4" style={{ borderColor: "#EDEDED", height: "calc(100vh - 233px)", margin: "30px 0px 4px 0px" }}>
-                    <div className="rounded-4" style={{ background: "linear-gradient(to bottom, #ECEFF8 68px, transparent 68px)", padding: "22px 31px 22px 31px" }}>
+                <div className="card rounded-4" style={{ borderColor: "#EDEDED", height: "calc(100vh - 223px)", margin: "20px 0px 4px 0px" }}>
+                    <div className="rounded-4 overflow-x-auto" style={{ background: "linear-gradient(to bottom, #ECEFF8 68px, transparent 68px)", padding: "22px 31px 22px 31px" }}>
                         <table className="table mb-0">
                             <thead>
                                 <tr>
-                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px", borderTopLeftRadius: "15px" }}>Nama</th>
-                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Email</th>
-                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>No Telepon</th>
-                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Alamat</th>
-                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Point</th>
-                                    <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Kode</th>
+                                    <th className="fw-medium" style={{ padding: "0px 15px 22px 0px", backgroundColor: "transparent", borderBottom: "0px", borderTopLeftRadius: "15px" }}>Nama</th>
+                                    <th className="fw-medium" style={{ padding: "0px 15px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Email</th>
+                                    <th className="fw-medium" style={{ padding: "0px 15px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>No Telepon</th>
+                                    <th className="fw-medium" style={{ padding: "0px 15px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Alamat</th>
+                                    <th className="fw-medium" style={{ padding: "0px 15px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Point</th>
+                                    <th className="fw-medium" style={{ padding: "0px 15px 22px 0px", backgroundColor: "transparent", borderBottom: "0px" }}>Kode</th>
                                     <th className="fw-medium" style={{ padding: "0px 0px 22px 0px", backgroundColor: "transparent", borderBottom: "0px", borderTopRightRadius: "15px" }} scope="col-auto">Aksi</th>
                                 </tr>
                             </thead>
@@ -85,12 +103,12 @@ function DataPelanggan() {
                                 {cardContents.map((content, index) => (
                                     content.namaPelangganDimanajemenDataPelanggan || content.emailDimanajemenDataPelanggan || content.noTeleponDimanajemenDataPelanggan || content.alamatDimanajemenDataPelanggan || content.pointDimanajemenDataPelanggan || content.kodeDimanajemenDataPelanggan ? (
                                         <tr key={index}>
-                                            {content.namaPelangganDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.namaPelangganDimanajemenDataPelanggan}</td>}
-                                            {content.emailDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.emailDimanajemenDataPelanggan}</td>}
-                                            {content.noTeleponDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.noTeleponDimanajemenDataPelanggan}</td>}
-                                            {content.alamatDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.alamatDimanajemenDataPelanggan}</td>}
-                                            {content.pointDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
-                                            {content.kodeDimanajemenDataPelanggan && <td className="align-middle" style={{ padding: "15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>}
+                                            {content.namaPelangganDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.namaPelangganDimanajemenDataPelanggan}</td>}
+                                            {content.emailDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.emailDimanajemenDataPelanggan}</td>}
+                                            {content.noTeleponDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.noTeleponDimanajemenDataPelanggan}</td>}
+                                            {content.alamatDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.alamatDimanajemenDataPelanggan}</td>}
+                                            {content.pointDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
+                                            {content.kodeDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>}
                                             <td className="align-middle" style={{ padding: "15px 0px", color: "#646464", whiteSpace: "nowrap", width: "1%" }}>
                                                 <button type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }} data-bs-toggle="modal" data-bs-target="#modalEditDataPelangganDimanajemenDataPelanggan">
                                                     <img src={logoEditManajemenGreen} className="me-2" />
@@ -105,7 +123,7 @@ function DataPelanggan() {
                                 ))}
 
                                 {cardContents.every(content => !content.namaPelangganDimanajemenDataPelanggan && !content.emailDimanajemenDataPelanggan && !content.noTeleponDimanajemenDataPelanggan && !content.alamatDimanajemenDataPelanggan && !content.pointDimanajemenDataPelanggan && !content.kodeDimanajemenDataPelanggan) &&
-                                    <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 305px)" }}>
+                                    <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 295px)" }}>
                                         <img src={imageNoData} />
                                         <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Data tidak ditemukan</p>
                                     </td>
@@ -118,8 +136,8 @@ function DataPelanggan() {
 
             {/* Modal Tambah Pelanggan Dimanajemen Data Pelanggan */}
             <div className="modal fade" id="modalTambahPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
-                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
                         <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
                             <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
                             <span className="fw-medium" style={{ fontSize: 18 }}>
@@ -197,8 +215,8 @@ function DataPelanggan() {
 
             {/* Modal Edit Data Pelanggan Dimanajemen Data Pelanggan */}
             <div className="modal fade" id="modalEditDataPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
-                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
                         <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
                             <img src={logoEditManajemenDark22} className="me-2" />
                             <span className="fw-medium" style={{ fontSize: 18 }}>
@@ -206,57 +224,73 @@ function DataPelanggan() {
                             </span>
                             <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
-                            <div style={{ marginBottom: 17 }}>
-                                <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
-                                <input
-                                    type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                    id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
-                                    placeholder="Masukan nama.."
-                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                    value="Irfan Satya"
-                                />
+                        <form>
+                            <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                                <div style={{ marginBottom: 17 }}>
+                                    <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
+                                    <input
+                                        type="text"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
+                                        placeholder="Masukan nama.."
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                        required
+                                        value="Irfan Satya"
+                                    />
+                                </div>
+                                <div style={{ marginBottom: 17 }}>
+                                    <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
+                                    <input
+                                        type="text"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        id="inputNoTeleponPelangganDimanajemenDataPelanggan"
+                                        placeholder="081234567890"
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                        required
+                                        onKeyDown={(e) => {
+                                            const target = e.target as HTMLInputElement; // Casting to HTMLInputElement
+                                            const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'];
+                                            const isNumberKey = /^[0-9]$/.test(e.key);
+                                            const isPlusAtStart = e.key === '+' && target.value === '';
+
+                                            // Block any other character except numbers and + only at the start
+                                            if (!isNumberKey && !isPlusAtStart && !allowedKeys.includes(e.key)) {
+                                                e.preventDefault();
+                                            }
+                                        }}
+                                        value="081328639415"
+                                    />
+                                </div>
+                                <div style={{ marginBottom: 17 }}>
+                                    <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
+                                    <input
+                                        type="text"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        id="inputAlamatPelangganDimanajemenDataPelanggan"
+                                        placeholder="Masukkan alamat.."
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                        required
+                                        value="Jl D.I. Pandjaitan No. 128, Purwokerto"
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
+                                    <input
+                                        type="email"
+                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                        id="inputEmailPelangganDimanajemenDataPelanggan"
+                                        placeholder="Masukkan email.."
+                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                        value="irfansatya75@gmail.com"
+                                    />
+                                </div>
                             </div>
-                            <div style={{ marginBottom: 17 }}>
-                                <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
-                                <input
-                                    type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                    id="inputNoTeleponPelangganDimanajemenDataPelanggan"
-                                    placeholder="000 000 000"
-                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                    value="081328639415"
-                                />
+                            <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                                <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                    Simpan
+                                </button>
                             </div>
-                            <div style={{ marginBottom: 17 }}>
-                                <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
-                                <input
-                                    type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                    id="inputAlamatPelangganDimanajemenDataPelanggan"
-                                    placeholder="Masukkan alamat.."
-                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                    value="Jl D.I. Pandjaitan No. 128, Purwokerto"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
-                                <input
-                                    type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                    id="inputEmailPelangganDimanajemenDataPelanggan"
-                                    placeholder="Masukkan email.."
-                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                    value="irfansatya75@gmail.com"
-                                />
-                            </div>
-                        </div>
-                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
-                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
-                                Simpan
-                            </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -264,17 +298,19 @@ function DataPelanggan() {
 
             {/* Modal Hapus Pelanggan Dimanajemen Data Pelanggan */}
             <div className="modal fade" id="modalHapusPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-dialog-centered" style={{ width: 473 }}>
+                <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 473 }}>
                     <div className="modal-content rounded-4 shadow">
                         <div className="modal-body" style={{ padding: 23 }}>
                             Apakah anda yakin ingin menghapus pelanggan ini?
                             <div className="text-end" style={{ marginTop: 44 }}>
-                                <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
-                                    Batalkan
-                                </button>
-                                <button type="button" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
-                                    Hapus
-                                </button>
+                                <form>
+                                    <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                        Batalkan
+                                    </button>
+                                    <button type="submit" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
+                                        Hapus
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
