@@ -25,16 +25,18 @@ const CalenderComponent: React.FC<{ open: boolean; onClose: () => void }> = ({ o
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = new Date(year, month, 1).getDay();
 
+  // Menutup dropdown setelah pemilihan
   const handleYearChange = (newYear: number) => {
     setYear(newYear);
     setDate(new Date(newYear, month, date.getDate()));
-    setShowYearDropdown(false); // Menutup dropdown setelah pemilihan
+    setShowYearDropdown(false); 
   };
 
+  // Menutup dropdown setelah pemilihan
   const handleMonthChange = (newMonth: number) => {
     setMonth(newMonth);
     setDate(new Date(year, newMonth, date.getDate()));
-    setShowMonthDropdown(false); // Menutup dropdown setelah pemilihan
+    setShowMonthDropdown(false); 
   };
 
   const generateCalendarDays = () => {
@@ -43,7 +45,8 @@ const CalenderComponent: React.FC<{ open: boolean; onClose: () => void }> = ({ o
       const day = new Date(year, month, i);
 
       const isSelected = i === date.getDate();
-      const isCurrentDay = isToday(day);  // Check if it's today
+       // Check if it's today
+      const isCurrentDay = isToday(day); 
 
       days.push(
         <div

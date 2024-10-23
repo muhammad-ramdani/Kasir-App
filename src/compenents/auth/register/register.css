@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; 
+  padding: 20px;
 }
 
 .illustration {
@@ -50,7 +50,7 @@
 }
 
 .phone-field {
-  position: relative; /* Added to make the child elements position relative to this container */
+  position: relative;
 }
 
 .phone-field input {
@@ -75,11 +75,11 @@
   align-items: center;
 }
 
-.email-field input{
+.email-field input {
   width: 100%;
   height: 48px;
   margin-top: 6px;
-  padding-right: 40px; 
+  padding-right: 40px;
   font-size: 12px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -87,8 +87,8 @@
 }
 
 input:focus {
-  border-color: #ccc; 
-  outline: none; 
+  border-color: #ccc;
+  outline: none;
 }
 
 .register-contentPasswd-field {
@@ -99,7 +99,7 @@ input:focus {
   height: 48px;
   width: 100%;
   margin-top: 6px;
-  padding-right: 40px; 
+  padding-right: 40px;
   font-size: 12px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -117,34 +117,35 @@ input:focus {
 }
 
 .terms-checkbox {
-  display: flex; 
+  display: flex;
   align-items: center;
 }
 
 .terms-checkbox input {
-  margin-right: 10px; 
-  width: 56px; 
-  height: 56px; 
+  margin-right: 10px;
+  width: 56px;
+  height: 56px;
   border-radius: 200000px;
-  accent-color: red; 
+  accent-color: red;
 }
 
 .terms-checkbox label {
-  font-size: 14px; 
-  color: #777; 
+  font-size: 14px;
+  color: #777;
 }
 
 .terms-checkbox a {
-  color: red; 
-  text-decoration: none; 
+  color: red;
+  text-decoration: none;
 }
 
 .terms-checkbox a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
-.btn-login {
-  width: 106%;
+/* Button style */
+.btn-register {
+  width: 100%;
   height: 56px;
   padding: 10px;
   background-color: #ff0000;
@@ -154,8 +155,14 @@ input:focus {
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+.btn-register:hover {
+  background-color: #e60000;
+}
+
+/* Register link styles */
 .register {
   text-align: center;
   margin-top: 20px;
@@ -166,4 +173,96 @@ input:focus {
 .register a {
   color: #FF0000;
   text-decoration: none;
+}
+
+/* Responsive for tablets (between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .content-register-content {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  .left-section-register-content {
+    padding: 20px 0;
+    order: 2;
+  }
+
+  .right-section-register-content {
+    order: 1;
+    padding: 20px 10px;
+    margin-top: 110px;
+  }
+
+  .register-content-form {
+    max-width: 350px;
+  }
+
+  /* Button for tablet */
+  .btn-register {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  /* Hide illustration on tablet */
+  .illustration {
+    display: none;
+  }
+}
+
+/* Responsive for mobile phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .content-register-content {
+    flex-direction: column;
+    padding: 0 20px;
+    height: auto;
+  }
+
+  .left-section-register-content {
+    display: none; /* Hide left section on mobile */
+  }
+
+  .right-section-register-content {
+    padding: 0;
+    width: 100%;
+    margin-top: 120px;
+  }
+
+  .register-content-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .register-content-form h1 {
+    font-size: 28px;
+  }
+
+  .register-content-form p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .phone-field input,
+  .email-field input,
+  .register-contentPasswd-field input {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  /* Button for mobile */
+  .btn-register {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .register {
+    font-size: 16px;
+  }
+
+  /* Hide illustration on mobile */
+  .illustration {
+    display: none;
+  }
 }

@@ -29,7 +29,6 @@ function Login() {
                     <img src={loginImg} alt="Team illustration" className="illustration" />
                 </div>
 
-                {/* Right section with login form */}
                 <div className="right-section">
                     <div className="login-form">
                         <h1>Masuk ke Akun Anda</h1>
@@ -46,7 +45,6 @@ function Login() {
                                 <label htmlFor="password">Password</label>
                                 <div className="password-field">
                                     <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
-
                                     <span className="password-toggle-lgn" onClick={handlePasswordToggle}>
                                         <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                     </span>

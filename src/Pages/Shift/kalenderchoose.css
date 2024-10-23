@@ -121,3 +121,73 @@
     border: 2px solid #ff0000; 
     border-radius: 20px;
 }
+
+
+@media (max-width: 768px) {
+    .calendar-container {
+      width: 100%;
+      padding: 15px;
+      margin: 10px;
+    }
+  
+    .calendar-header {
+      margin-bottom: 20px;
+    }
+  
+    .month-year {
+      font-size: 16px;
+    }
+  
+    .nav-icon {
+      font-size: 22px;
+    }
+  
+    .calendar-header-day {
+      font-size: 14px;
+    }
+  
+    .calendar-day {
+      padding: 10px;
+    }
+  
+    .calendar-day.selected {
+      border-radius: 15px;
+    }
+  }
+  
+  /* Media query for mobile phones */
+  @media (max-width: 480px) {
+    .calendar-container {
+      width: 100%;
+      padding: 10px;
+      margin: 5px;
+    }
+  
+    .calendar-header {
+      margin-bottom: 15px;
+    }
+  
+    .month-year {
+      font-size: 14px;
+    }
+  
+    .nav-icon {
+      font-size: 20px;
+    }
+  
+    .calendar-header-day {
+      font-size: 12px;
+    }
+  
+    .calendar-day {
+      padding: 8px;
+    }
+  
+    .calendar-day.selected {
+      border-radius: 10px;
+    }
+  
+    .calendar-grid {
+      gap: 3px;
+    }
+  }

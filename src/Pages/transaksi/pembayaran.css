@@ -1,158 +1,298 @@
+/* Base styles remain the same */
 
-  
-  /* right content */
-  /* .card-title-list-barang, .card-title-pembayaran {
+/* Right content */
+/* .card-title-list-barang, .card-title-pembayaran {
     font-weight: 500;
     font-size: 18px;
-  } */
-  
-  .content-list-barang-left {
-    margin-top: 16px;
-    border-top: 1px solid #e6e6e6;
-    border-bottom: 1px solid #e6e6e6;
+} */
+
+.content-list-barang-left {
+  margin-top: 16px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.quantity-product-list-barang {
+  font-weight: 700;
+  font-size: 28px;
+  margin-left: 12px;
+  margin-top: 7px;
+}
+
+.barang-item-list-barang {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+  margin-top: 16px;
+}
+
+.img-barang {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-left: 44px;
+  margin-left: -30px;
+}
+
+.name-product-list-barang {
+  font-size: 18px;
+  margin-left: -40px;
+  margin-right: 60px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.price-product-list-barang {
+  margin-top: 10px;
+  font-size: 18px;
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+.total-price-list-barang {
+  margin-top: 12rem;
+}
+
+.total-price-list-barang, .discount span {
+  font-weight: 500;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.final-total {
+  margin-top: 1.6rem;
+  border-top: 2px dashed #494949;
+  padding-top: 2.2rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.payment-method h6 {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: #646464;
+}
+
+.btn-payment {
+  border: 2px solid red;
+  color: black;
+  background-color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-payment:hover,
+.btn-payment:active {
+  background-color: red;
+  color: white;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.btn-keypad {
+  font-size: 1.5rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn-keypad img {
+  max-width: 55%;
+  display: inline-block;
+}
+
+.btn-keypad {
+width: 92px !important; 
+height: 92px !important; 
+font-size: 1.5rem !important;
+}
+
+
+.btn-keypad:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-keypad:active {
+  transform: translateY(2px);
+}
+
+.payment-input {
+  margin-top: 16px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.total-amount {
+  margin-top: 4rem;
+  margin-left: 5.7rem;
+  border: 1px solid #ccc;
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  width: 70%;
+}
+
+.custom-keypad-button {
+  font-weight: bold;
+  color: #333;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+
+  .card-right-keypad-pembayaran {
+    padding-top: 20px !important;
   }
   
+  .content-list-barang-left {
+      margin-top: 12px; /* Reduced margin for smaller screens */
+  }
+
   .quantity-product-list-barang {
-    font-weight: 700;
-    font-size: 28px;
-    margin-left: 12px;
-    margin-top: 7px;
+      font-size: 24px; /* Slightly smaller font size */
+      margin-left: 8px; /* Adjusted margin */
   }
 
   .barang-item-list-barang {
-    font-size: 1.2rem;
-    margin-bottom: 2px;
-    margin-top: 16px;
+      font-size: 1rem; /* Smaller font size */
+      margin-bottom: 1px; /* Reduced margin */
+      margin-top: 12px; /* Reduced margin */
   }
-  
-  .img-barang {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    margin-left: 44px;
-    margin-left: -30px;
-  }
-  
 
+  .img-barang {
+      width: 40px; /* Smaller image size */
+      height: 40px; /* Smaller image size */
+      margin-left: 20px; /* Adjusted margin */
+  }
 
   .name-product-list-barang {
-    font-size: 18px;
-    margin-left: -40px;
-    margin-right: 60px;
-    margin-top: 10px;
-    font-weight: 500;
+      font-size: 16px; /* Smaller font size */
+      margin-left: -20px; /* Adjusted margin */
+      margin-right: 30px; /* Adjusted margin */
   }
 
   .price-product-list-barang {
-    margin-top: 10px;
-    font-size: 18px;
-    margin-right: 12px;
-    font-weight: 500;
+      font-size: 16px; /* Smaller font size */
+      margin-right: 10px; /* Adjusted margin */
   }
 
-  .total-price-list-barang  {
-    margin-top: 12rem;
-  }
-
-  .total-price-list-barang , .discount span {
-    font-weight: 500;
-    margin-left: 10px;
-    margin-right: 10px;
+  .total-price-list-barang {
+      margin-top: 8rem; /* Adjusted margin */
   }
 
   .final-total {
-    margin-top: 1.6rem;
-    border-top: 2px dashed #494949; 
-    padding-top: 2.2rem; 
-    margin-left: 10px;
-    margin-right: 10px;          
+      margin-top: 1rem; /* Adjusted margin */
   }
 
-  .payment-method h6  {
-    margin-bottom: 20px;
-    margin-left: 10px;
-    color: #646464;
+  .payment-method h6 {
+      margin-bottom: 10px; /* Adjusted margin */
+      margin-left: 5px; /* Adjusted margin */
   }
-  
-  .btn-payment {
-    border: 2px solid red;
-    color: black;
-    background-color: white; 
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+  .total-amount {
+      margin-left: 2rem; /* Adjusted margin */
+      width: 90%; /* Wider on smaller screens */
   }
-  
-  .btn-payment:hover,
-  .btn-payment:active { 
-    background-color: red;
-    color: white; 
-  }
-  
-
-
-  
-
-   
 
   .keypad {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    padding-top: 20px;
+      grid-template-columns: repeat(4, 1fr); /* Keep grid layout */
+      gap: 15px; /* Reduced gap */
+      padding-top: 10px; /* Reduced padding */
   }
 
   .btn-keypad {
-    font-size: 1.5rem;
-    background-color: white;
-    color: black;
-    border: none; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+      font-size: 1.2rem; /* Smaller font size */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+
+  .card-right-keypad-pembayaran {
+    padding-top: 20px !important;
   }
 
-  .btn-keypad img {
-    max-width: 55%;
-    display: inline-block;
-  }
-  
-  .btn-keypad:hover {
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .btn-keypad:active {
-    transform: translateY(2px); 
-  }
-  
-  
-  .payment-input {
-    margin-top: 16px;
-    border-top: 1px solid #e6e6e6;
+  .quantity-product-list-barang {
+      font-size: 22px; /* Smaller font size */
+      margin-left: 4px; /* Adjusted margin */
   }
 
+  .barang-item-list-barang {
+      font-size: 0.9rem; /* Smaller font size */
+      margin-top: 8px; /* Reduced margin */
+  }
+
+  .img-barang {
+      width: 30px; /* Even smaller image size */
+      height: 30px; /* Even smaller image size */
+      margin-left: 10px; /* Adjusted margin */
+  }
+
+  .name-product-list-barang {
+      font-size: 14px; /* Smaller font size */
+      margin-left: 0; /* Removed margin */
+      margin-right: 20px; /* Adjusted margin */
+  }
+
+  .price-product-list-barang {
+      font-size: 14px; /* Smaller font size */
+      margin-right: 5px; /* Adjusted margin */
+  }
+
+  .total-price-list-barang {
+      margin-top: 6rem; /* Adjusted margin */
+  }
+
+  .final-total {
+      margin-top: 0.5rem; /* Adjusted margin */
+  }
+
+  .payment-method h6 {
+      margin-bottom: 5px; /* Adjusted margin */
+      margin-left: 2px; /* Adjusted margin */
+  }
 
   .total-amount {
-    margin-top: 4rem;
-    margin-left: 5.7rem;
-    border: 1px solid #ccc;
-    padding: 16px 20px; 
-    border-radius: 12px;
-    text-align: center;
-    align-items: center; 
-    background-color: #ffffff; 
-    font-size: 20px; 
-    font-weight: 500; 
-    width:70%; 
-   
-
+      margin-left: 1rem; /* Adjusted margin */
+      width: 95%; /* Wider on mobile screens */
   }
 
-  .custom-keypad-button {
-    font-weight: bold; 
-    color: #333;       
-    background-color: white; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    
+  .keypad {
+      grid-template-columns: repeat(4, fr); /* Stack buttons for mobile */
+      gap: 5px; /* Reduced gap */
+      padding-top: 5px; /* Reduced padding */
   }
-  
 
+  .btn-payment {
+    width: 84px !important;
+    height: 50px !important;
+    font-size: 10px;
+  }
+
+  .btn-keypad {
+      width: 60px !important; 
+      height: 60px !important; 
+      font-size: 14px !important;
+      padding: 10px; 
+  }
+}
+
+
+@media (max-width: 380px) { 
+  .card-right-keypad-pembayaran {
+    padding-top: 8rem !important;
+  }
+
+}

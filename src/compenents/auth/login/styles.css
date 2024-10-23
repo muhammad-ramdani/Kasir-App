@@ -1,13 +1,4 @@
-
-/* body {
-  background-color: #ffffff;
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-/* Header containing logo */
+/* Default styles for desktop */
 .header-auth {
   position: absolute;
   top: 20px;
@@ -28,7 +19,6 @@
   color: #ff0000;
 }
 
-/* Main container to align left and right sections */
 .content-lgn {
   display: flex;
   justify-content: space-between;
@@ -38,13 +28,12 @@
   margin: 0 auto;
 }
 
-
 .left-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; 
+  padding: 20px;
 }
 
 .illustration {
@@ -53,13 +42,13 @@
   height: auto;
 }
 
-/* Right section with login form */
 .right-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-top: 80px; /* Jarak antara logo dan form login */
 }
 
 .login-form {
@@ -80,11 +69,9 @@
   margin-top: 1px;
 }
 
-
-
 .email-field input {
   width: 100%;
-  height: 48px; 
+  height: 48px;
   margin-top: 6px;
   padding-right: 40px;
   font-size: 12px;
@@ -93,11 +80,9 @@
   border-radius: 12px;
 }
 
-
 input:focus {
-  border-color: #ccc; 
-  outline: none; 
-
+  border-color: #ccc;
+  outline: none;
 }
 
 .password-field {
@@ -108,7 +93,7 @@ input:focus {
   height: 48px;
   width: 100%;
   margin-top: 6px;
-  padding-right: 40px; 
+  padding-right: 40px;
   font-size: 12px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -125,10 +110,9 @@ input:focus {
   color: #000000;
 }
 
-
 .forgot-password {
   text-align: right;
-  margin-bottom:58px;
+  margin-bottom: 58px;
   margin-top: 16px;
 }
 
@@ -139,8 +123,9 @@ input:focus {
   font-weight: 500;
 }
 
+/* Button styles for desktop (default) */
 .btn-login {
-  width: 106%;
+  width: 100%;
   height: 56px;
   padding: 10px;
   background-color: #ff0000;
@@ -150,10 +135,14 @@ input:focus {
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+.btn-login:hover {
+  background-color: #e60000;
+}
 
-
+/* Register link styles */
 .register {
   text-align: center;
   margin-top: 20px;
@@ -164,4 +153,94 @@ input:focus {
 .register a {
   color: #FF0000;
   text-decoration: none;
+}
+
+/* Responsive for tablets (between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .content-lgn {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  .left-section {
+    padding: 20px 0;
+    order: 2;
+  }
+
+  .right-section {
+    order: 1;
+    padding: 20px 10px;
+    margin-top: 160px;
+  }
+
+  .login-form {
+    max-width: 350px;
+  }
+
+  /* Button for tablet */
+  .btn-login {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .illustration {
+    display: none;
+  }
+}
+
+/* Responsive for mobile phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .content-lgn {
+    flex-direction: column;
+    padding: 0 20px;
+    height: auto;
+  }
+
+  .left-section {
+    display: none;
+  }
+
+  .right-section {
+    padding: 0;
+    width: 100%;
+    margin-top: 200px;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .login-form h1 {
+    font-size: 28px;
+  }
+
+  .login-form p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .email-field input,
+  .password-field input {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  /* Button for mobile */
+  .btn-login {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .register {
+    font-size: 16px;
+  }
+
+  /* Hide illustration on mobile */
+  .illustration {
+    display: none;
+  }
 }

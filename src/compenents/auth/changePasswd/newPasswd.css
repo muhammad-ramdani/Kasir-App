@@ -1,5 +1,3 @@
-
-
 /* Main container to align left and right sections */
 .content-newPasswd {
   display: flex;
@@ -7,19 +5,19 @@
   align-items: center;
   height: 100vh;
   max-width: 1200px;
-  margin: 0 auto; 
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-
+/* Left section */
 .left-section-newPasswd {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px; 
+  padding: 20px;
+  min-width: 300px; /* Ensure it doesn't get too narrow */
 }
-
-
 
 /* Right section with login form */
 .right-section-newPasswd {
@@ -28,50 +26,55 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  min-width: 300px; /* Ensure it doesn't get too narrow */
 }
 
+/* Form container */
 .newPasswd-form {
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Ensure form width stays within reasonable limits */
 }
 
+/* Form heading */
 .newPasswd-form h1 {
   font-size: 30px;
   margin-bottom: 1px;
   font-weight: 600;
+  text-align: center;
 }
 
+/* Form paragraph */
 .newPasswd-form p {
   font-size: 16px;
   color: #888;
   margin-bottom: 50px;
-  margin-top: 1px;
+  text-align: center;
 }
 
-
-
-
+/* Input focus styles */
 input:focus {
-  border-color: #ccc; 
-  outline: none; 
-
+  border-color: #ccc;
+  outline: none;
 }
 
+/* New password field */
 .newPasswd-field {
   position: relative;
 }
 
+/* Input field styling */
 .newPasswd-field input {
   height: 48px;
   width: 100%;
   margin-top: 6px;
-  padding-right: 40px; 
+  padding-right: 40px;
   font-size: 12px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 12px;
 }
 
+/* Password toggle icon */
 .newPasswd-toggle {
   position: absolute;
   right: 10px;
@@ -79,20 +82,105 @@ input:focus {
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 18px;
-  color: #000000;
+  color: #000;
 }
 
+/* Responsive Styles */
 
+/* For tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .content-newPasswd {
+    flex-direction: column; 
+    height: auto;
+  }
 
-.btn-login {
-  width: 106%;
-  height: 56px;
-  padding: 10px;
-  background-color: #ff0000;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
+  .left-section-newPasswd, .right-section-newPasswd {
+    flex: none; 
+    min-width: 100%;
+    padding: 10px;
+  }
+
+  .right-section-newPasswd {
+    margin-top: 120px;
+  }
+
+  .newPasswd-form {
+    max-width: 90%;
+  }
+
+  .newPasswd-form h1 {
+    font-size: 24px; 
+  }
+
+  .newPasswd-form p {
+    font-size: 14px; 
+  }
+}
+
+/* For mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .content-newPasswd {
+    flex-direction: column; 
+    height: auto;
+  }
+
+  .left-section-newPasswd, .right-section-newPasswd {
+    flex: none;
+    min-width: 100%;
+    padding: 10px;
+  }
+
+  .newPasswd-form {
+    max-width: 90%; 
+  }
+
+  .newPasswd-form h1 {
+    font-size: 22px; 
+  }
+
+  .newPasswd-form p {
+    font-size: 12px; 
+  }
+
+  .newPasswd-field input {
+    font-size: 14px; 
+  }
+
+  .newPasswd-toggle {
+    font-size: 16px;
+  }
+}
+
+/* For smaller mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .content-newPasswd {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section-newPasswd, .right-section-newPasswd {
+    flex: none;
+    min-width: 100%;
+    padding: 8px;
+  }
+
+  .newPasswd-form {
+    max-width: 90%;
+  }
+
+  .newPasswd-form h1 {
+    font-size: 20px; /* Even smaller heading */
+  }
+
+  .newPasswd-form p {
+    font-size: 12px; /* Small text on mobile */
+  }
+
+  .newPasswd-field input {
+    font-size: 14px;
+  }
+
+  .newPasswd-toggle {
+    font-size: 14px;
+  }
 }

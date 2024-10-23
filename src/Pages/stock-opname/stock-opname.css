@@ -169,3 +169,96 @@ padding-right: 4px;
 .detail-stock-opname button {
   margin-right: 5px;
 }
+
+
+/* @media (max-width: 1024px) {
+  .container-stock-opname {
+    padding: 15px;
+  }
+
+  .card-stock-opname {
+    margin: 0 20px;
+    height: auto; 
+  }
+
+  .btn-tambah-stok-stock-opname {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .filter-stock-opname {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-date-range-stock-opname, 
+  .btn-kalender-stock-opname {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .table-stock-opname th, 
+  .table-stock-opname td {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .actions-stock-opname button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container-stock-opname {
+    padding: 10px;
+  }
+
+  .btn-tambah-stok-stock-opname {
+    font-size: 12px;
+    padding: 8px 15px;
+    width: 100%;
+  }
+
+  .filter-stock-opname {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-date-range-stock-opname, 
+  .btn-kalender-stock-opname {
+    font-size: 12px;
+    padding: 6px 10px;
+    width: 100%;
+    margin-bottom: 10px; 
+  }
+
+  .btn-kalender-stock-opname {
+    margin-right: 16px;
+  }
+
+  .table-stock-opname {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .table-stock-opname th, 
+  .table-stock-opname td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .actions-stock-opname button {
+    font-size: 12px;
+    padding: 5px 8px;
+    margin-bottom: 5px; 
+    width: 100%; 
+  }
+
+  .card-stock-opname {
+    margin: 0 10px;
+    height: auto; 
+    padding: 10px; 
+  }
+} */

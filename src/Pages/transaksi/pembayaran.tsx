@@ -99,7 +99,7 @@ function Pembayaran() {
               </div>
             </div>
           </div>
-          <div className="col p-0">
+          <div className="col p-0 card-right-keypad-pembayaran">
             <div className="card rounded-4 height-calc-100vh-151px">
               <div className="card-body card-body-padding-23px">
                 <h5 className="card-title-pembayaran">Pembayaran</h5>
@@ -111,7 +111,6 @@ function Pembayaran() {
                         <button
                           key={key}
                           className="btn btn-keypad btn-lg mb-1 custom-keypad-button"
-                          style={{ width: "92px", height: "92px", fontSize: "1.5rem" }}
                           onClick={() => handleKeyPress(key)}
                           {...(key === "✓" && { "data-bs-toggle": "modal", "data-bs-target": "#staticBackdrop" })}
                         >
