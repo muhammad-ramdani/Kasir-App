@@ -22,10 +22,13 @@ function Login() {
         event.preventDefault();
 
         try {
-            const response = await apiName.post("/sessions", {
+            const requestData = {
                 email,
                 password
-            });
+            }
+            console.log(requestData);
+
+            const response = await apiName.post("/sessions", requestData)
 
             if (response.status === 200) {
                 alert("Login berhasil!");
@@ -39,7 +42,7 @@ function Login() {
             }
         } catch (error) {
             console.log("error saat login:", error);
-            alert("Login gagal. Silakan coba lagi.");
+            alert("Login gagal. Silakan periksa email dan password Anda.");
         }
     };
 
