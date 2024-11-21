@@ -22,7 +22,7 @@ const LaporanPelanggan = () => {
         {
             nama: 'PT Maju Jaya',
             alamat: 'Jl. Merdeka No. 10, Jakarta',
-            noTelepon: '081234567890',
+            noTelepon: '081234567890',                                                                                                                                                                                                                                                                                 
             totalTransaksi: '10',
             totalPenjualan: 'Rp 50.000.000',
             kunjunganTerakhir: '2024-09-25'
@@ -103,32 +103,32 @@ const LaporanPelanggan = () => {
     return (
         <Layout titlePage="Laporan Pelanggan">
             {/* component filter */}
-            <div className="component-filter mb-3">
+            <div className="component-filter mb-2">
                 <div className="row d-flex flex-row">
-                    <div className="col-12 col-md-6 d-flex justifiy-content-start gap-2">
-                        <div className="col-6 col-md-12">
-                            <SearchLaporan
-                                placeholder="cari struk..."
-                            />
-                        </div>
-                        <div className="col-6">
-                            <button
-                                className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
-                                onClick={() => setPopupOpen(true)}
-                            >
-                                <img src={images.calender} alt="" />
-                                {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
-                            </button>
-                            {/* Pass fungsi handleDateRangeChange sebagai prop */}
-                            <PopupDateRange
-                                isOpen={isPopupOpen}
-                                onClose={() => setPopupOpen(false)}
-                                onDateRangeChange={handleDateRangeChange}
-                            />
-                        </div>
+                    {/* <div className="col-12 col-md-6 d-flex justifiy-content-start gap-2"> */}
+                    <div className="col-12 col-md-3 mb-2">
+                        <SearchLaporan
+                            placeholder="cari struk..."
+                        />
                     </div>
-                    <div className="col-sm-12 col-md-6 d-flex justify-content-end gap-2">
-                        <div className="col-sm-12 col-md-4 mt-3">
+                    <div className="col-12 col-md-3 mb-2">
+                        <button
+                            className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
+                            onClick={() => setPopupOpen(true)}
+                        >
+                            <img src={images.calender} alt="" />
+                            {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
+                        </button>
+                        {/* Pass fungsi handleDateRangeChange sebagai prop */}
+                        <PopupDateRange
+                            isOpen={isPopupOpen}
+                            onClose={() => setPopupOpen(false)}
+                            onDateRangeChange={handleDateRangeChange}
+                        />
+                    </div>
+                    {/* </div> */}
+                    <div className="col-12 col-md-6 mb-2 d-flex justify-content-end gap-2">
+                        <div className="col-12 col-md-4">
                             <div className="dropdown w-100">
                                 <button
                                     className="btn w-100 btn-ekspor-laporan"
