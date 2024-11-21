@@ -1,6 +1,5 @@
 import { useEffect, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import apiName from "../../api/api";
 
 interface ProtectedProps {
   children: ReactNode;
@@ -8,28 +7,16 @@ interface ProtectedProps {
 
 const Protected: React.FC<ProtectedProps> = ({ children }) => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    const validateToken = async () => {
-      try {
-        await apiName.get("/auth/me");
-      } catch (error) {
-        localStorage.removeItem("token"); // Hapus token jika tidak valid
-        alert("Sesi Anda telah habis. Silakan login kembali.");
-        navigate("/"); // Redirect ke login
-      }
-    };
-
-    const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/"); // Jika tidak ada token, redirect ke login
-      return;
+      alert("Sesi Anda telah habis. Silakan login kembali.");
+      navigate("/"); // Redirect ke halaman login jika tidak ada token
     }
+  }, [navigate, token]);
 
-    validateToken();
-  }, [navigate]);
-
-  return <>{children}</>;
+  return <>{token ? children : null}</>;
 };
 
 export default Protected;
