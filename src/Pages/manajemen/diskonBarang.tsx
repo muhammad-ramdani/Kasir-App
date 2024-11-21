@@ -27,15 +27,43 @@ function DiskonBarang() {
     const cardContents = [
         {
             namaDiskonDimanajemenDiskonBarang: "Diskon Ramadhan",
-            persentaseDiskonDimanajemenDiskonBarang: "20%",
+            persentaseDiskonDimanajemenDiskonBarang: "10",
         },
     ];
+
+    // State untuk menyimpan nilai input tambah dan edit
+    const [tambahDiskon, setTambahDiskon] = useState('');
+    const [tambahPersentase, setTambahPersentase] = useState(''); // State untuk persentase tambah
+    const [editDiskon, setEditDiskon] = useState('Diskon Ramadhan');
+    const [editPersentase, setEditPersentase] = useState('10'); // Ambil dari state atau prop
+
+    // Fungsi untuk menangani perubahan input tambah
+    const handleTambahDiskonChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setTambahDiskon(e.target.value);
+    };
+
+    // Fungsi untuk menangani perubahan input tambah dan edit persentase
+    const handleTambahPersentaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/[^0-9]/g, ''); // Hanya izinkan angka 0-9
+        setTambahPersentase(value);
+    };
+
+    // Fungsi untuk menangani perubahan input edit
+    const handleEditDiskonChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEditDiskon(e.target.value);
+    };
+
+    // Fungsi untuk menangani perubahan input edit persentase
+    const handleEditPersentaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/[^0-9]/g, ''); // Hanya izinkan angka 0-9
+        setEditPersentase(value);
+    };
 
     return (
         <Layout titlePage="Diskon Barang">
             <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
                 <div className="card rounded-4" style={{ borderColor: "#EDEDED", height: "calc(100vh - 154px)", margin: "0px 0px 3px 0px" }}>
-                    <div className="card-header bg-white border-0 rounded-4" style={{ padding: "23px 23px 30px 23px" }}>
+                    <div className="card-header bg-white border-0 rounded-4" style={{ padding: "23px 23px 20px 23px" }}>
                         <div className="row m-0" style={{ columnGap: "15px" }}>
                             <div className="col-auto p-0">
                                 <div className="dropdown">
@@ -62,9 +90,9 @@ function DiskonBarang() {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col p-0">
+                            <div className="col p-0" style={{ marginBottom: "10px" }}>
                                 <div className="input-group flex-nowrap mt-0" style={{ maxWidth: "593px" }}>
-                                    <img src={searchNormalManajemen} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED" }} />
+                                    <img src={searchNormalManajemen} className="input-group-text bg-white rounded-start-3" style={{ borderColor: "#EDEDED", maxWidth: "46px" }} />
                                     <input
                                         type="text"
                                         className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border-start-0 rounded-end-3"
@@ -73,7 +101,7 @@ function DiskonBarang() {
                                     />
                                 </div>
                             </div>
-                            <div className="col-auto p-0">
+                            <div className="d-grid col-12 col-sm-auto p-0" style={{ marginBottom: "10px" }}>
                                 <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahPotonganAtauDiskonDimanajemenDiskonBarang" style={{ backgroundColor: "#FF0000", padding: "10.5px 22.88px" }}>
                                     + Tambah Potongan/Diskon
                                 </button>
@@ -88,13 +116,13 @@ function DiskonBarang() {
                                         <div className="col-auto fs-5 fw-bold text-white d-flex align-items-center justify-content-center rounded-start-4" style={{ padding: "0px 16.3px", backgroundColor: "#FF0000" }}>
                                             %
                                         </div>
-                                        <div className="col" style={{ padding: "15px 20px" }}>
+                                        <div className="col" style={{ padding: "15px 20px 0px 20px" }}>
                                             <div className="row m-0">
-                                                <div className="col p-0">
+                                                <div className="col p-0" style={{ marginBottom: "15px" }}>
                                                     {content.namaDiskonDimanajemenDiskonBarang && <p className="fw-medium" style={{ marginBottom: "5px" }}>{content.namaDiskonDimanajemenDiskonBarang}</p>}
                                                     {content.persentaseDiskonDimanajemenDiskonBarang && <p className="m-0 fw-medium" style={{ color: "#FF0000" }}>{content.persentaseDiskonDimanajemenDiskonBarang}</p>}
                                                 </div>
-                                                <div className="col-auto p-0 d-flex align-items-center">
+                                                <div className="col-auto p-0 d-flex align-items-center" style={{ marginBottom: "15px" }}>
                                                     <button type="button" className="btn p-0 border-0" style={{ marginRight: "25px" }} data-bs-toggle="modal" data-bs-target="#modalEditPotonganAtauDiskonDimanajemenDiskonBarang">
                                                         <img src={logoEditManajemenDark24} />
                                                     </button>
@@ -123,8 +151,8 @@ function DiskonBarang() {
 
             {/* Modal Tambah Potongan / Diskon Dimanajemen Diskon Barang */}
             <div className="modal fade" id="modalTambahPotonganAtauDiskonDimanajemenDiskonBarang" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
-                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
                         <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
                             <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
                             <span className="fw-medium" style={{ fontSize: 18 }}>
@@ -132,68 +160,76 @@ function DiskonBarang() {
                             </span>
                             <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
-                            <div style={{ marginBottom: 17 }}>
-                                <label htmlFor="inputNamaDiskonDimanajemenDiskonBarang" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Diskon</label>
-                                <input
-                                    type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                    id="inputNamaDiskonDimanajemenDiskonBarang"
-                                    placeholder="Masukan nama.."
-                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                />
-                            </div>
-                            <div className="row m-0" style={{ columnGap: "10px" }}>
-                                <div className="col p-0">
-                                    <label htmlFor="inputJumlahPersentaseDiskonAtauPotonganBarang" className="form-label mt-0">
-                                        Jumlah Diskon
-                                    </label>
+                        <form>
+                            <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                                <div style={{ marginBottom: 17 }}>
+                                    <label htmlFor="inputNamaDiskonDimanajemenDiskonBarang" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Diskon</label>
                                     <input
                                         type="text"
                                         className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputJumlahPersentaseDiskonAtauPotonganBarang"
-                                        placeholder="0"
+                                        id="inputNamaDiskonDimanajemenDiskonBarang"
+                                        placeholder="Masukan nama.."
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                        value={tambahDiskon}
+                                        onChange={handleTambahDiskonChange}
+                                        required
                                     />
                                 </div>
-                                <div className="col-auto p-0 align-self-end">
-                                    <input
-                                        type="radio"
-                                        className="btn-check"
-                                        name="options-outlined-diskon-persen-atau-rp-tambah"
-                                        id="radioDiskonPersenAtauRp-tambah-1"
-                                        autoComplete="off"
-                                        defaultChecked
-                                    />
-                                    <label
-                                        className="btn fw-medium rounded-start-3 border-end-0 rounded-end-0 class-diskon-persen-atau-rp my-0"
-                                        htmlFor="radioDiskonPersenAtauRp-tambah-1"
-                                        style={{ marginRight: "-5px", padding: "9.5px 18.15px" }}
-                                    >
-                                        %
-                                    </label>
-                                    <input
-                                        type="radio"
-                                        className="btn-check"
-                                        name="options-outlined-diskon-persen-atau-rp-tambah"
-                                        id="radioDiskonPersenAtauRp-tambah-2"
-                                        autoComplete="off"
-                                    />
-                                    <label
-                                        className="btn fw-medium rounded-end-3 border-start-0 rounded-start-0 class-diskon-persen-atau-rp my-0"
-                                        htmlFor="radioDiskonPersenAtauRp-tambah-2"
-                                        style={{ padding: "9.5px 14.02px" }}
-                                    >
-                                        Rp
-                                    </label>
+                                <div className="row m-0" style={{ columnGap: "10px" }}>
+                                    <div className="col p-0">
+                                        <label htmlFor="inputJumlahPersentaseDiskonAtauPotonganBarang" className="form-label mt-0">
+                                            Jumlah Diskon
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputJumlahPersentaseDiskonAtauPotonganBarang"
+                                            placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            value={tambahPersentase} // Nilai dari state tambahPersentase
+                                            onChange={handleTambahPersentaseChange} // Handle perubahan persentase
+                                            required
+                                        />
+                                    </div>
+                                    <div className="col-auto p-0 align-self-end">
+                                        <input
+                                            type="radio"
+                                            className="btn-check"
+                                            name="options-outlined-diskon-persen-atau-rp-tambah"
+                                            id="radioDiskonPersenAtauRp-tambah-1"
+                                            autoComplete="off"
+                                            defaultChecked
+                                        />
+                                        <label
+                                            className="btn fw-medium rounded-start-3 border-end-0 rounded-end-0 class-diskon-persen-atau-rp my-0"
+                                            htmlFor="radioDiskonPersenAtauRp-tambah-1"
+                                            style={{ marginRight: "-5px", padding: "9.5px 18.15px" }}
+                                        >
+                                            %
+                                        </label>
+                                        <input
+                                            type="radio"
+                                            className="btn-check"
+                                            name="options-outlined-diskon-persen-atau-rp-tambah"
+                                            id="radioDiskonPersenAtauRp-tambah-2"
+                                            autoComplete="off"
+                                        />
+                                        <label
+                                            className="btn fw-medium rounded-end-3 border-start-0 rounded-start-0 class-diskon-persen-atau-rp my-0"
+                                            htmlFor="radioDiskonPersenAtauRp-tambah-2"
+                                            style={{ padding: "9.5px 14.02px" }}
+                                        >
+                                            Rp
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
-                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
-                                Tambah
-                            </button>
-                        </div>
+                            <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                                <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                    Tambah
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -201,8 +237,8 @@ function DiskonBarang() {
 
             {/* Modal Edit Potongan / Diskon Dimanajemen Diskon Barang */}
             <div className="modal fade" id="modalEditPotonganAtauDiskonDimanajemenDiskonBarang" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ width: 605 }}>
-                    <div className="modal-content shadow rounded-4" style={{ width: 605 }}>
+                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
+                    <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
                         <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
                             <img src={logoEditManajemenDark22} className="me-2" />
                             <span className="fw-medium" style={{ fontSize: 18 }}>
@@ -210,70 +246,76 @@ function DiskonBarang() {
                             </span>
                             <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
-                            <div style={{ marginBottom: 17 }}>
-                                <label htmlFor="inputNamaDiskonDimanajemenDiskonBarang" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Diskon</label>
-                                <input
-                                    type="text"
-                                    className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                    id="inputNamaDiskonDimanajemenDiskonBarang"
-                                    placeholder="Masukan nama.."
-                                    style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                    value="Diskon Ramadhan"
-                                />
-                            </div>
-                            <div className="row m-0" style={{ columnGap: "10px" }}>
-                                <div className="col p-0">
-                                    <label htmlFor="inputJumlahPersentaseDiskonAtauPotonganBarang" className="form-label mt-0">
-                                        Jumlah Diskon
-                                    </label>
+                        <form>
+                            <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                                <div style={{ marginBottom: 17 }}>
+                                    <label htmlFor="inputNamaDiskonDimanajemenDiskonBarang" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Diskon</label>
                                     <input
                                         type="text"
                                         className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputJumlahPersentaseDiskonAtauPotonganBarang"
-                                        placeholder="0"
+                                        id="inputNamaDiskonDimanajemenDiskonBarang"
+                                        placeholder="Masukan nama.."
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        value="20"
+                                        value={editDiskon}
+                                        onChange={handleEditDiskonChange}
+                                        required
                                     />
                                 </div>
-                                <div className="col-auto p-0 align-self-end">
-                                    <input
-                                        type="radio"
-                                        className="btn-check"
-                                        name="options-outlined-diskon-persen-atau-rp-edit"
-                                        id="radioDiskonPersenAtauRp-edit-1"
-                                        autoComplete="off"
-                                        defaultChecked
-                                    />
-                                    <label
-                                        className="btn fw-medium rounded-start-3 border-end-0 rounded-end-0 class-diskon-persen-atau-rp my-0"
-                                        htmlFor="radioDiskonPersenAtauRp-edit-1"
-                                        style={{ marginRight: "-5px", padding: "9.5px 18.15px" }}
-                                    >
-                                        %
-                                    </label>
-                                    <input
-                                        type="radio"
-                                        className="btn-check"
-                                        name="options-outlined-diskon-persen-atau-rp-edit"
-                                        id="radioDiskonPersenAtauRp-edit-2"
-                                        autoComplete="off"
-                                    />
-                                    <label
-                                        className="btn fw-medium rounded-end-3 border-start-0 rounded-start-0 class-diskon-persen-atau-rp my-0"
-                                        htmlFor="radioDiskonPersenAtauRp-edit-2"
-                                        style={{ padding: "9.5px 14.02px" }}
-                                    >
-                                        Rp
-                                    </label>
+                                <div className="row m-0" style={{ columnGap: "10px" }}>
+                                    <div className="col p-0">
+                                        <label htmlFor="inputJumlahPersentaseDiskonAtauPotonganBarang" className="form-label mt-0">
+                                            Jumlah Diskon
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputJumlahPersentaseDiskonAtauPotonganBarang"
+                                            placeholder="0"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            value={editPersentase}
+                                            onChange={handleEditPersentaseChange}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="col-auto p-0 align-self-end">
+                                        <input
+                                            type="radio"
+                                            className="btn-check"
+                                            name="options-outlined-diskon-persen-atau-rp-edit"
+                                            id="radioDiskonPersenAtauRp-edit-1"
+                                            autoComplete="off"
+                                            defaultChecked
+                                        />
+                                        <label
+                                            className="btn fw-medium rounded-start-3 border-end-0 rounded-end-0 class-diskon-persen-atau-rp my-0"
+                                            htmlFor="radioDiskonPersenAtauRp-edit-1"
+                                            style={{ marginRight: "-5px", padding: "9.5px 18.15px" }}
+                                        >
+                                            %
+                                        </label>
+                                        <input
+                                            type="radio"
+                                            className="btn-check"
+                                            name="options-outlined-diskon-persen-atau-rp-edit"
+                                            id="radioDiskonPersenAtauRp-edit-2"
+                                            autoComplete="off"
+                                        />
+                                        <label
+                                            className="btn fw-medium rounded-end-3 border-start-0 rounded-start-0 class-diskon-persen-atau-rp my-0"
+                                            htmlFor="radioDiskonPersenAtauRp-edit-2"
+                                            style={{ padding: "9.5px 14.02px" }}
+                                        >
+                                            Rp
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
-                            <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
-                                Simpan
-                            </button>
-                        </div>
+                            <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                                <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                    Simpan
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -281,17 +323,19 @@ function DiskonBarang() {
 
             {/* Modal Hapus Potongan / Diskon Dimanajemen Diskon Barang */}
             <div className="modal fade" id="modalHapusPoptonganAtauDiskonDimanajemenDiskonBarang" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-dialog-centered" style={{ width: 436 }}>
+                <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 436 }}>
                     <div className="modal-content rounded-4 shadow">
                         <div className="modal-body" style={{ padding: 23 }}>
                             Apakah anda yakin ingin menghapus diskon ini?
                             <div className="text-end" style={{ marginTop: 44 }}>
-                                <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
-                                    Batalkan
-                                </button>
-                                <button type="button" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
-                                    Hapus
-                                </button>
+                                <form>
+                                    <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                        Batalkan
+                                    </button>
+                                    <button type="submit" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
+                                        Hapus
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
