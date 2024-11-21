@@ -1,5 +1,5 @@
-import CardPengaturan from "../../compenents/CardPengaturan/CardPengaturan";
-import LogoutButton from "../../compenents/LogoutButton/LogoutButton";
+import CardPengaturan from "../../components/CardPengaturan/CardPengaturan";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 import './Pengaturan.css'

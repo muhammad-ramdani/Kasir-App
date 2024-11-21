@@ -1,6 +1,6 @@
 import './Pengaturan.css'
 import Layout from '../../Layout/Layout';
-import ToggleSwitch from '../../compenents/ToogleSwitch/ToogleSwitch';
+import ToggleSwitch from '../../components/ToogleSwitch/ToogleSwitch';
 
 const PengaturanStruk: React.FC = () => {
     return (

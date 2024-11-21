@@ -1,4 +1,4 @@
-import LogoutButton from "../../compenents/LogoutButton/LogoutButton";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 

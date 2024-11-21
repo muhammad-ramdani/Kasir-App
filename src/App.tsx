@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Login from "./compenents/auth/login/login";
-import ChangePassword from "./compenents/auth/changePasswd/changePassword";
-import VerifyEmail from "./compenents/auth/changePasswd/verifyEmail";
-import NewPasswd from "./compenents/auth/changePasswd/newPasswd";
+import Login from "./components/auth/login/login";
+import ChangePassword from "./components/auth/changePasswd/changePassword";
+import VerifyEmail from "./components/auth/changePasswd/verifyEmail";
+import NewPasswd from "./components/auth/changePasswd/newPasswd";
 import Dashboard from "./Pages/manajemen/dashboard";
-import ResetBerhasil from "./compenents/auth/changePasswd/resetBerhasil";
-import Register from "./compenents/auth/register/register";
+import ResetBerhasil from "./components/auth/changePasswd/resetBerhasil";
+import Register from "./components/auth/register/register";
 import Laporan from "./Pages/Laporan/Laporan";
 import LaporanTransaksi from "./Pages/Laporan/LaporanTransaksi";
 import LaporanPembelianBarang from "./Pages/Laporan/LaporanPembelianBarang";
@@ -31,7 +31,7 @@ import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 import DataPelanggan from "./Pages/manajemen/dataPelanggan";
 import DataSupplier from "./Pages/manajemen/dataSupplier";
 import DiskonBarang from "./Pages/manajemen/diskonBarang";
-import Protected from "./compenents/auth/protected";
+import Protected from "./components/auth/protected";
 
 function App() {
     return (

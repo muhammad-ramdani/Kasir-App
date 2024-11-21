@@ -1,13 +1,13 @@
 import React from 'react';
 import './Laporan.css'
 import Layout from "../../Layout/Layout"
-import CardTotal from '../../compenents/CardTotal/CardTotal';
-import SearchLaporan from '../../compenents/SearchLaporan/SearchLaporan';
+import CardTotal from '../../components/CardTotal/CardTotal';
+import SearchLaporan from '../../components/SearchLaporan/SearchLaporan';
 import { Link } from 'react-router-dom';
 import images from '../../Image';
-import PopupDateRange from '../../compenents/PopUpDateRange/PopUpDateRange';
-import EksporModalLaporan from '../../compenents/ModalEksporLaporan/ModalEksporLaporan';
-import PaginationWithItemsPerPage from '../../compenents/Pagination/Pagination';
+import PopupDateRange from '../../components/PopUpDateRange/PopUpDateRange';
+import EksporModalLaporan from '../../components/ModalEksporLaporan/ModalEksporLaporan';
+import PaginationWithItemsPerPage from '../../components/Pagination/Pagination';
 
 
 const LaporanTransaksi = () => {

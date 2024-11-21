@@ -1,4 +1,4 @@
-import ToggleSwitch from "../../compenents/ToogleSwitch/ToogleSwitch";
+import ToggleSwitch from "../../components/ToogleSwitch/ToogleSwitch";
 import Layout from "../../Layout/Layout";
 
 const MetodePembayaran = () => {
