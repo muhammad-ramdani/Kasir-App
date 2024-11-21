@@ -31,8 +31,6 @@ function Login() {
             const response = await apiName.post("/sessions", requestData)
 
             if (response.status === 200) {
-                alert("Login berhasil!");
-
                 // simpan token di local storage
                 const { token, name } = response.data.data;
                 localStorage.setItem("token", token);
