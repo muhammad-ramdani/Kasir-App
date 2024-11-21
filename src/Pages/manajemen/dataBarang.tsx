@@ -37,47 +37,27 @@ function DataBarang() {
                                                 </button>
                                                 <ul className="dropdown-menu shadow dropdown-menu-filter-data-barang" style={{ borderColor: "#E6E6E6" }}>
                                                     <li>
-                                                        <a
-                                                            className="dropdown-item dropdown-item-filter-data-barang"
-                                                            href="#"
-                                                            style={{ padding: "10px 21px" }}
-                                                        >
+                                                        <a className="dropdown-item dropdown-item-filter-data-barang" href="#" style={{ padding: "10px 21px" }}>
                                                             Barang
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a
-                                                            className="dropdown-item dropdown-item-filter-data-barang"
-                                                            href="#"
-                                                            style={{ padding: "10px 21px" }}
-                                                        >
+                                                        <a className="dropdown-item dropdown-item-filter-data-barang" href="#" style={{ padding: "10px 21px" }}>
                                                             Kode
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a
-                                                            className="dropdown-item dropdown-item-filter-data-barang"
-                                                            href="#"
-                                                            style={{ padding: "10px 21px" }}
-                                                        >
+                                                        <a className="dropdown-item dropdown-item-filter-data-barang" href="#" style={{ padding: "10px 21px" }}>
                                                             Harga jual
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a
-                                                            className="dropdown-item dropdown-item-filter-data-barang"
-                                                            href="#"
-                                                            style={{ padding: "10px 21px" }}
-                                                        >
+                                                        <a className="dropdown-item dropdown-item-filter-data-barang" href="#" style={{ padding: "10px 21px" }}>
                                                             Stok
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a
-                                                            className="dropdown-item dropdown-item-filter-data-barang"
-                                                            href="#"
-                                                            style={{ padding: "10px 21px" }}
-                                                        >
+                                                        <a className="dropdown-item dropdown-item-filter-data-barang" href="#" style={{ padding: "10px 21px" }}>
                                                             Produk terbaru
                                                         </a>
                                                     </li>
@@ -86,11 +66,7 @@ function DataBarang() {
                                         </div>
                                         <div className="col ps-0">
                                             <div className="input-group flex-nowrap mt-0">
-                                                <img
-                                                    src={searchNormal}
-                                                    className="input-group-text bg-white rounded-start-3"
-                                                    alt=""
-                                                />
+                                                <img src={searchNormal} className="input-group-text bg-white rounded-start-3" style={{ maxWidth: "46px" }} />
                                                 <input
                                                     type="text"
                                                     className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border border-start-0 rounded-end-3"
@@ -108,23 +84,14 @@ function DataBarang() {
                                             </div>
                                         </div> */}
                                     {/* ketika content terisi */}
-                                    <div className="group-button-filter-kategori-barang">
-                                        <button
-                                            type="button"
-                                            className="btn rounded-3 button-filter-kategori-barang-active"
-                                        >
+                                    <div style={{ margin: "20px 0 20px 0" }}>
+                                        <button type="button" className="col-12 col-lg-auto btn rounded-3 button-filter-kategori-barang-active">
                                             Semua
                                         </button>
-                                        <button
-                                            type="button"
-                                            className="btn rounded-3 button-filter-kategori-barang"
-                                        >
+                                        <button type="button" className="col-12 col-lg-auto btn rounded-3 button-filter-kategori-barang">
                                             Snack
                                         </button>
-                                        <button
-                                            type="button"
-                                            className="btn rounded-3 button-filter-kategori-barang"
-                                        >
+                                        <button type="button" className="col-12 col-lg-auto btn rounded-3 button-filter-kategori-barang">
                                             Alat Rumah Tangga
                                         </button>
                                     </div>
@@ -132,15 +99,12 @@ function DataBarang() {
                                         <div className="card rounded-4 mb-3">
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
-                                                    <img
-                                                        src={chitato}
-                                                        className="images-card-barang"
-                                                    />
+                                                    <img src={chitato} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px" }} />
                                                 </div>
                                                 <div className="col p-0">
                                                     <div className="card-body ps-0">
                                                         <div className="row">
-                                                            <div className="col">
+                                                            <div className="col-12 col-lg">
                                                                 <span className="fw-medium">
                                                                     Chitato Rasa Sapi Panggang 68 gr
                                                                 </span>
@@ -149,7 +113,7 @@ function DataBarang() {
                                                                     000001
                                                                 </span>
                                                             </div>
-                                                            <div className="col-auto text-end">
+                                                            <div className="col-12 col-lg-auto text-end">
                                                                 <span
                                                                     className="fw-medium"
                                                                     style={{ color: "#FF0000" }}
@@ -171,15 +135,12 @@ function DataBarang() {
                                         <div className="card rounded-4 mb-3 card-barang-active" style={{ borderColor: "#FF0000" }}>
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
-                                                    <img
-                                                        src={tisuPaseo}
-                                                        className="images-card-barang"
-                                                    />
+                                                    <img src={tisuPaseo} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px" }} />
                                                 </div>
                                                 <div className="col p-0">
                                                     <div className="card-body ps-0">
                                                         <div className="row">
-                                                            <div className="col">
+                                                            <div className="col-12 col-lg">
                                                                 <span className="fw-medium">
                                                                     Tisu Paseo 2 Lapis 250 Lembar
                                                                 </span>
@@ -188,7 +149,7 @@ function DataBarang() {
                                                                     000002
                                                                 </span>
                                                             </div>
-                                                            <div className="col-auto text-end">
+                                                            <div className="col-12 col-lg-auto text-end">
                                                                 <span
                                                                     className="fw-medium"
                                                                     style={{ color: "#FF0000" }}
@@ -210,15 +171,12 @@ function DataBarang() {
                                         <div className="card rounded-4 mb-3">
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
-                                                    <img
-                                                        src={chitato}
-                                                        className="images-card-barang"
-                                                    />
+                                                    <img src={chitato} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px" }} />
                                                 </div>
                                                 <div className="col p-0">
                                                     <div className="card-body ps-0">
                                                         <div className="row">
-                                                            <div className="col">
+                                                            <div className="col-12 col-lg">
                                                                 <span className="fw-medium">
                                                                     Chitato Rasa Sapi Panggang 68 gr
                                                                 </span>
@@ -227,7 +185,7 @@ function DataBarang() {
                                                                     000001
                                                                 </span>
                                                             </div>
-                                                            <div className="col-auto text-end">
+                                                            <div className="col-12 col-lg-auto text-end">
                                                                 <span
                                                                     className="fw-medium"
                                                                     style={{ color: "#FF0000" }}
@@ -249,15 +207,12 @@ function DataBarang() {
                                         <div className="card rounded-4 mb-3">
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
-                                                    <img
-                                                        src={chitato}
-                                                        className="images-card-barang"
-                                                    />
+                                                    <img src={chitato} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px" }} />
                                                 </div>
                                                 <div className="col p-0">
                                                     <div className="card-body ps-0">
                                                         <div className="row">
-                                                            <div className="col">
+                                                            <div className="col-12 col-lg">
                                                                 <span className="fw-medium">
                                                                     Chitato Rasa Sapi Panggang 68 gr
                                                                 </span>
@@ -266,7 +221,7 @@ function DataBarang() {
                                                                     000001
                                                                 </span>
                                                             </div>
-                                                            <div className="col-auto text-end">
+                                                            <div className="col-12 col-lg-auto text-end">
                                                                 <span
                                                                     className="fw-medium"
                                                                     style={{ color: "#FF0000" }}
@@ -288,15 +243,12 @@ function DataBarang() {
                                         <div className="card rounded-4 mb-3">
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
-                                                    <img
-                                                        src={chitato}
-                                                        className="images-card-barang"
-                                                    />
+                                                    <img src={chitato} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px" }} />
                                                 </div>
                                                 <div className="col p-0">
                                                     <div className="card-body ps-0">
                                                         <div className="row">
-                                                            <div className="col">
+                                                            <div className="col-12 col-lg">
                                                                 <span className="fw-medium">
                                                                     Chitato Rasa Sapi Panggang 68 gr
                                                                 </span>
@@ -305,7 +257,7 @@ function DataBarang() {
                                                                     000001
                                                                 </span>
                                                             </div>
-                                                            <div className="col-auto text-end">
+                                                            <div className="col-12 col-lg-auto text-end">
                                                                 <span
                                                                     className="fw-medium"
                                                                     style={{ color: "#FF0000" }}
@@ -327,15 +279,12 @@ function DataBarang() {
                                         <div className="card rounded-4 mb-3">
                                             <div className="row m-0">
                                                 <div className="col-auto p-0">
-                                                    <img
-                                                        src={chitato}
-                                                        className="images-card-barang"
-                                                    />
+                                                    <img src={chitato} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px" }} />
                                                 </div>
                                                 <div className="col p-0">
                                                     <div className="card-body ps-0">
                                                         <div className="row">
-                                                            <div className="col">
+                                                            <div className="col-12 col-lg">
                                                                 <span className="fw-medium">
                                                                     Chitato Rasa Sapi Panggang 68 gr
                                                                 </span>
@@ -344,7 +293,7 @@ function DataBarang() {
                                                                     000001
                                                                 </span>
                                                             </div>
-                                                            <div className="col-auto text-end">
+                                                            <div className="col-12 col-lg-auto text-end">
                                                                 <span
                                                                     className="fw-medium"
                                                                     style={{ color: "#FF0000" }}
@@ -387,10 +336,10 @@ function DataBarang() {
                                 {/* card-body ketika memilih rincian */}
                                 <div className="card-body card-body-rincian-barang">
                                     <div className="row">
-                                        <div className="col">
+                                        <div className="col-12 col-lg">
                                             <h5 className="card-title">Rincian Barang :</h5>
                                         </div>
-                                        <div className="col text-end">
+                                        <div className="col-12 col-lg-auto text-center">
                                             <button type="button" className="btn button-edit-rincian-barang rounded-pill border-0" data-bs-toggle="modal" data-bs-target="#modalEditRincianDataBarang">
                                                 <img src={logoEditRincianBarang} className="me-2" />
                                                 <span className="small fw-medium">Edit rincian</span>
@@ -402,7 +351,7 @@ function DataBarang() {
                                     </div>
                                     <div className="row" style={{ marginTop: 15 }}>
                                         <div className="col-auto pe-0" style={{ marginRight: 30 }}>
-                                            <img src={tisuPaseo} className="images-card-rincian-barang" style={{ width: 125 }} />
+                                            <img src={tisuPaseo} className="images-card-rincian-barang" style={{ maxWidth: 125, minWidth: 125, maxHeight: 125, minHeight: 125 }} />
                                         </div>
                                         <div className="col ps-0" style={{ display: "table" }}>
                                             <div style={{ display: "table-cell", verticalAlign: "middle" }}>

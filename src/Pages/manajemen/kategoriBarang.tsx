@@ -95,16 +95,13 @@ function KategoriBarang() {
 
     return (
         <Layout titlePage="Kategori Barang">
-            <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
+            <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 0px 18px" }}>
                 <div className="row m-0" style={{ columnGap: "30px" }}>
                     <div className="col p-0">
-                        <div className="card rounded-4 height-calc-100vh-151px">
+                        <div className="card rounded-4 height-calc-100vh-141px" style={{ marginBottom: "30px" }}>
                             <div className="card-header border-0 bg-white rounded-top-4" style={{ padding: "23px 23px 30px 23px" }}>
                                 <div className="input-group flex-nowrap mt-0">
-                                    <img
-                                        src={searchNormal}
-                                        className="input-group-text bg-white rounded-start-3"
-                                    />
+                                    <img src={searchNormal} className="input-group-text bg-white rounded-start-3" style={{ maxWidth: "46px" }} />
                                     <input
                                         type="text"
                                         className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border border-start-0 rounded-end-3"
@@ -161,7 +158,7 @@ function KategoriBarang() {
                         </div>
                     </div>
                     <div className="col p-0">
-                        <div className="card rounded-4 height-calc-100vh-151px">
+                        <div className="card rounded-4 height-calc-100vh-141px" style={{ marginBottom: "30px" }}>
                             <div className="card-header border-0 bg-white rounded-top-4" style={{ padding: "23px 23px 40px 23px" }}>
                                 <p className="fs-5 fw-medium mb-0">Barang / Produk :</p>
                             </div>
@@ -173,7 +170,7 @@ function KategoriBarang() {
                                     content.gambarBarang || content.namaBarangProduk || content.kodeBarang || content.stokBarang || content.hargaDasar || content.hargaJual ? (
                                         <div key={index} className="row mx-0 mt-0 border-bottom" style={{ marginBottom: "20px", paddingBottom: "15px" }}>
                                             <div className="col-auto p-0">
-                                                {content.gambarBarang && <img src={content.gambarBarang} width={55} height={55} style={{ marginRight: "15px" }} />}
+                                                {content.gambarBarang && <img src={content.gambarBarang} height={55} style={{ marginRight: "15px", maxWidth: "55px", minWidth: "55px" }} />}
                                             </div>
                                             <div className="col p-0">
                                                 {content.namaBarangProduk && <p className="fw-medium m-0" style={{ padding: "0 0 5px 0" }}>{content.namaBarangProduk}</p>}

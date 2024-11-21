@@ -42,7 +42,7 @@ function DiskonBarang() {
         setTambahDiskon(e.target.value);
     };
 
-    // Fungsi untuk menangani perubahan input tambah persentase
+    // Fungsi untuk menangani perubahan input tambah dan edit persentase
     const handleTambahPersentaseChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value.replace(/[^0-9]/g, ''); // Hanya izinkan angka 0-9
         setTambahPersentase(value);
@@ -323,17 +323,19 @@ function DiskonBarang() {
 
             {/* Modal Hapus Potongan / Diskon Dimanajemen Diskon Barang */}
             <div className="modal fade" id="modalHapusPoptonganAtauDiskonDimanajemenDiskonBarang" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-dialog-centered" style={{ width: 436 }}>
+                <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 436 }}>
                     <div className="modal-content rounded-4 shadow">
                         <div className="modal-body" style={{ padding: 23 }}>
                             Apakah anda yakin ingin menghapus diskon ini?
                             <div className="text-end" style={{ marginTop: 44 }}>
-                                <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
-                                    Batalkan
-                                </button>
-                                <button type="button" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
-                                    Hapus
-                                </button>
+                                <form>
+                                    <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                        Batalkan
+                                    </button>
+                                    <button type="submit" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
+                                        Hapus
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

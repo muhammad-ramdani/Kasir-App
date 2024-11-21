@@ -8,7 +8,7 @@
 }
 
 .card-data-barang-100vh {
-    min-height: calc(100vh - 161px);
+    min-height: calc(100vh - 145px);
 }
 
 .content-fill-manajemen-data-barang-tidak-ada {
@@ -37,10 +37,6 @@
     color: #CECECE;
 }
 
-.group-button-filter-kategori-barang {
-    margin: 20px 0 35px 0;
-}
-
 .button-filter-kategori-barang {
     color: #FF0000 !important;
     border-color: #FF0000 !important;
@@ -48,6 +44,7 @@
     padding-top: 7.75px !important;
     padding-bottom: 7.75px !important;
     margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .button-filter-kategori-barang-active {
@@ -58,6 +55,7 @@
     padding-top: 7.75px !important;
     padding-bottom: 7.75px !important;
     margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .card-body-data-barang,
