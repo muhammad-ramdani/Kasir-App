@@ -8,9 +8,39 @@ import logoEditManajemenDark24 from "../../assets/imagesAllManajemen/logo-edit-m
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
+import apiName from "../../api/api";
+
+interface Discount {
+    id: number;
+    name: string;
+    percentage: number;
+    created_at: string;
+    updated_at: string;
+}
 
 function DiskonBarang() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
+    const [discounts, setDiscounts] = useState<Discount[]>([]);
+    const [error, setError] = useState<string | null>(null);
+
+
+    const fetchDiscounts = async () => {
+        try {
+            const response = await apiName.get("/discounts");
+            console.log("response data:", response.data);
+            setDiscounts(response.data.data);
+        } catch (err) {
+            if (err instanceof Error) {
+                setError(err.message);
+            } else {
+                setError("Terjadi kesalahan.");
+            }
+        }
+    };
+
+    useEffect(() => {
+        fetchDiscounts();
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -24,12 +54,12 @@ function DiskonBarang() {
         };
     }, []);
 
-    const cardContents = [
-        {
-            namaDiskonDimanajemenDiskonBarang: "Diskon Ramadhan",
-            persentaseDiskonDimanajemenDiskonBarang: "10",
-        },
-    ];
+    // const cardContents = [
+    //     {
+    //         namaDiskonDimanajemenDiskonBarang: "Diskon Ramadhan",
+    //         persentaseDiskonDimanajemenDiskonBarang: "10",
+    //     },
+    // ];
 
     // State untuk menyimpan nilai input tambah dan edit
     const [tambahDiskon, setTambahDiskon] = useState('');
@@ -109,8 +139,8 @@ function DiskonBarang() {
                         </div>
                     </div>
                     <div className="card-body overflow-auto overflow-auto-custom-card-manajemen" style={{ padding: "0px 20px 0px 23px", margin: "0px 3px 23px 0px" }}>
-                        {cardContents.map((content, index) => (
-                            content.namaDiskonDimanajemenDiskonBarang || content.persentaseDiskonDimanajemenDiskonBarang ? (
+                        {discounts.map((content, index) => (
+                            content.name || content.percentage ? (
                                 <div key={index} className="card rounded-4" style={{ marginBottom: "15px" }}>
                                     <div className="row m-0 d-flex align-items-stretch">
                                         <div className="col-auto fs-5 fw-bold text-white d-flex align-items-center justify-content-center rounded-start-4" style={{ padding: "0px 16.3px", backgroundColor: "#FF0000" }}>
@@ -119,8 +149,8 @@ function DiskonBarang() {
                                         <div className="col" style={{ padding: "15px 20px 0px 20px" }}>
                                             <div className="row m-0">
                                                 <div className="col p-0" style={{ marginBottom: "15px" }}>
-                                                    {content.namaDiskonDimanajemenDiskonBarang && <p className="fw-medium" style={{ marginBottom: "5px" }}>{content.namaDiskonDimanajemenDiskonBarang}</p>}
-                                                    {content.persentaseDiskonDimanajemenDiskonBarang && <p className="m-0 fw-medium" style={{ color: "#FF0000" }}>{content.persentaseDiskonDimanajemenDiskonBarang}</p>}
+                                                    <p className="fw-medium" style={{ marginBottom: "5px" }}>{content.name}</p>
+                                                    <p className="m-0 fw-medium" style={{ color: "#FF0000" }}>{content.percentage}%</p>
                                                 </div>
                                                 <div className="col-auto p-0 d-flex align-items-center" style={{ marginBottom: "15px" }}>
                                                     <button type="button" className="btn p-0 border-0" style={{ marginRight: "25px" }} data-bs-toggle="modal" data-bs-target="#modalEditPotonganAtauDiskonDimanajemenDiskonBarang">
@@ -136,8 +166,14 @@ function DiskonBarang() {
                                 </div>
                             ) : null
                         ))}
+                        {error && (
+                            <div className="alert alert-danger">
+                                {error}
+                            </div>
+                        )}
 
-                        {cardContents.every(content => !content.namaDiskonDimanajemenDiskonBarang && !content.persentaseDiskonDimanajemenDiskonBarang) &&
+
+                        {discounts.every(content => !content.name && !content.percentage) &&
                             <div className="d-flex justify-content-center align-items-center" style={{ height: "100%" }}>
                                 <div className="text-center">
                                     <img src={imageNoData} />
