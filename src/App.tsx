@@ -31,54 +31,236 @@ import DetailStockOpname from "./Pages/stock-opname/detail-stock-opname";
 import DataPelanggan from "./Pages/manajemen/dataPelanggan";
 import DataSupplier from "./Pages/manajemen/dataSupplier";
 import DiskonBarang from "./Pages/manajemen/diskonBarang";
+import Protected from "./compenents/auth/protected";
 
 function App() {
     return (
 
         <>
             <Routes>
+                {/* public route */}
                 <Route path="/" element={<Login />} />
                 <Route path="/change-password" element={<ChangePassword />} />
                 <Route path="/verify-email" element={<VerifyEmail />} />
                 <Route path="/new-passwd" element={<NewPasswd />} />
                 <Route path="/reset-berhasil" element={<ResetBerhasil />} />
                 <Route path="/register" element={<Register />} />
-                {/* Pages Manajemen */}
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/databarang" element={<DataBarang />} />
-                <Route path="/kategori-barang" element={<KategoriBarang />} />
-                <Route path="/data-pelanggan" element={<DataPelanggan />} />
-                <Route path="/data-supplier" element={<DataSupplier />} />
-                <Route path="/diskon-barang" element={<DiskonBarang />} />
-                {/* Pages laporan */}
-                <Route path="/laporan" element={<Laporan />} />
-                <Route path="/laporan-transaksi" element={<LaporanTransaksi />} />
-                <Route path="/laporan-pembelian-barang" element={<LaporanPembelianBarang />} />
-                <Route path="/laporan-pelanggan" element={<LaporanPelanggan />} />
-                <Route path="/laporan-persediaan-barang" element={<LaporanPersediaanBarang />} />
-                {/* Pages Transaksi */}
-                <Route path="/transaksi" element={<Transaksi />} />
-                <Route path="/transaksi/pembayaran" element={<Pembayaran />} />
-                <Route path="/transaksi/struk" element={<StrukPage />} />
-                {/* Pages Shift */}
-                <Route path="/shift" element={<Shift />} />
-                <Route path="/shift/start-shift" element={<MulaiShift />} />
-                <Route path="/shift/detail-shift" element={<DetailRekapShift />} />
-                {/* Pengaturan */}
-                <Route path="/pengaturan" element={<Pengaturan />} />
-                <Route path="/informasi-toko" element={<InformasiToko />} />
-                <Route path="/metode-pembayaran" element={<MetodePembayaran />} />
-                <Route path="/metode-pembayaran" element={<MetodePembayaran />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/perangkat-edc" element={<PerangkatEdc />} />
-                <Route path="pengaturan-struk" element={<PengaturanStruk />} />
-                {/* Pengaturan */}
-                <Route path="/stock-opname" element={<StockOpname />} />
-                <Route path="/detail-stock-opname" element={<DetailStockOpname />} />
+                
+                {/* Private Route */}
+                {/* Pages Management */}
+                <Route
+                    path="/dashboard"
+                    element={
+                        <Protected>
+                            <Dashboard />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/databarang"
+                    element={
+                        <Protected>
+                            <DataBarang />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/kategori-barang"
+                    element={
+                        <Protected>
+                            <KategoriBarang />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/data-pelanggan"
+                    element={
+                        <Protected>
+                            <DataPelanggan />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/data-supplier"
+                    element={
+                        <Protected>
+                            <DataSupplier />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/diskon-barang"
+                    element={
+                        <Protected>
+                            <DiskonBarang />
+                        </Protected>
+                    }
+                />
 
+                {/* Pages Laporan */}
+                <Route
+                    path="/laporan"
+                    element={
+                        <Protected>
+                            <Laporan />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/laporan-transaksi"
+                    element={
+                        <Protected>
+                            <LaporanTransaksi />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/laporan-pembelian-barang"
+                    element={
+                        <Protected>
+                            <LaporanPembelianBarang />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/laporan-pelanggan"
+                    element={
+                        <Protected>
+                            <LaporanPelanggan />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/laporan-persediaan-barang"
+                    element={
+                        <Protected>
+                            <LaporanPersediaanBarang />
+                        </Protected>
+                    }
+                />
+
+                {/* Pages Transaksi */}
+                <Route
+                    path="/transaksi"
+                    element={
+                        <Protected>
+                            <Transaksi />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/transaksi/pembayaran"
+                    element={
+                        <Protected>
+                            <Pembayaran />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/transaksi/struk"
+                    element={
+                        <Protected>
+                            <StrukPage />
+                        </Protected>
+                    }
+                />
+
+                {/* Pages Shift */}
+                <Route
+                    path="/shift"
+                    element={
+                        <Protected>
+                            <Shift />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/shift/start-shift"
+                    element={
+                        <Protected>
+                            <MulaiShift />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/shift/detail-shift"
+                    element={
+                        <Protected>
+                            <DetailRekapShift />
+                        </Protected>
+                    }
+                />
+
+                {/* Pengaturan */}
+                <Route
+                    path="/pengaturan"
+                    element={
+                        <Protected>
+                            <Pengaturan />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/informasi-toko"
+                    element={
+                        <Protected>
+                            <InformasiToko />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/metode-pembayaran"
+                    element={
+                        <Protected>
+                            <MetodePembayaran />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/profile"
+                    element={
+                        <Protected>
+                            <Profile />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/perangkat-edc"
+                    element={
+                        <Protected>
+                            <PerangkatEdc />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/pengaturan-struk"
+                    element={
+                        <Protected>
+                            <PengaturanStruk />
+                        </Protected>
+                    }
+                />
+
+                {/* Stock Opname */}
+                <Route
+                    path="/stock-opname"
+                    element={
+                        <Protected>
+                            <StockOpname />
+                        </Protected>
+                    }
+                />
+                <Route
+                    path="/detail-stock-opname"
+                    element={
+                        <Protected>
+                            <DetailStockOpname />
+                        </Protected>
+                    }
+                />
 
                 {/* coba */}
-        
+
             </Routes>
         </>
     );

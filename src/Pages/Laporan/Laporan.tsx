@@ -1,4 +1,4 @@
-import Card from "../../compenents/card/card";
+import Card from "../../compenents/Card/Card";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 
@@ -33,9 +33,10 @@ const Laporan = () => {
     return (
         <Layout titlePage="Laporan">
             <div className="container">
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                {/* Grid system Bootstrap */}
+                <div className="row g-4">
                     {CardData.map((card, index) => (
-                        <div className="col col-card" key={index}>
+                        <div className="col-12 col-md-6 col-lg-4" key={index}>
                             <Card
                                 title={card.title}
                                 description={card.description}

@@ -5,13 +5,22 @@ import { faEye, faEyeSlash, faCheckCircle } from "@fortawesome/free-solid-svg-ic
 
 import { useState } from "react";
 import "./register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import apiName from "../../../api/api";
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phone, setPhone] = useState("");
   const [isPhoneValid, setIsPhoneValid] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState({
+    phone: "",
+    confirmPassword: ""
+  });
+  const navigate = useNavigate();
 
   const handlePasswordToggle = () => {
     setShowPassword(!showPassword);
@@ -21,17 +30,50 @@ function Register() {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
+  // Handle phone input (hanya angka yang diperbolehkan)
   const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
-    setPhoneNumber(input);
 
-    // Validate if the input contains only numbers and is at least 10 digits long
-    const phoneValid = /^\d{10,}$/.test(input);
-    setIsPhoneValid(phoneValid);
+    // Validasi hanya angka
+    if (/^\d*$/.test(input)) {
+      setPhone(input);
+      setIsPhoneValid(input.length >= 10); // Perbarui status validasi
+      setErrors({ ...errors, phone: "" }); // Hapus error jika valid
+    } else {
+      setErrors({ ...errors, phone: "Nomor telepon hanya boleh berisi angka." });
+      setIsPhoneValid(false); // Set isPhoneValid ke false jika tidak valid
+    }
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (password !== confirmPassword) {
+      setErrors({ ...errors, confirmPassword: "Password dan konfirmasi password tidak cocok." });
+      // alert("Password dan konfirmasi password tidak cocok.");
+      return;
+    }
+
+    try {
+      const requestData = {
+        email,
+        password,
+        phone
+      };
+      console.log(requestData);
+
+      const response = await apiName.post("/users", requestData)
+
+      if (response.status === 200) {
+        alert("Registrasi berhasil!");
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.log("error saat registrasi:", error);
+      alert("Registrasi gagal. Silakan coba lagi.");
+    }
+
   };
 
   return (
@@ -54,22 +96,43 @@ function Register() {
                 <div className="content-form-email-register mt-4">
                   <label htmlFor="email">Email</label>
                   <div className="email-field">
-                    <input type="email" id="email" placeholder="Email" required />
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value)
+                      }}
+
+                      required />
                   </div>
                 </div>
 
                 <div className="content-form-nomor-telepon mt-4">
                   <label htmlFor="phone">Nomor Telepon</label>
                   <div className="phone-field">
-                    <input type="text" id="phone" placeholder="Nomor Telepon" value={phoneNumber} onChange={handlePhoneChange} required />
+                    <input type="text"
+                      id="phone"
+                      placeholder="Nomor Telepon"
+                      value={phone}
+                      onChange={handlePhoneChange}
+                      required />
                     {isPhoneValid && <FontAwesomeIcon icon={faCheckCircle} className="phone-check-icon" />}
+                    {errors.phone && <small className="error-message">{errors.phone}</small>}
                   </div>
                 </div>
 
                 <div className="content-form-password-regis mt-4">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password">Kata Sandi</label>
                   <div className="register-contentPasswd-field">
-                    <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
+                    <input type={showPassword ? "text" : "password"}
+                      id="password"
+                      placeholder="Password"
+                      required
+                      className="text-password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)} />
                     <span className="register-contentPasswd-toggle" onClick={handlePasswordToggle}>
                       <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                     </span>
@@ -79,10 +142,26 @@ function Register() {
                 <div className="content-form-newpassword-regis mt-4">
                   <label htmlFor="confirmPassword">Konfirmasi Kata Sandi</label>
                   <div className="register-contentPasswd-field">
-                    <input type={showConfirmPassword ? "text" : "password"} id="confirmPassword" placeholder="Masukkan kata sandi baru" required className="text-password" />
-                    <span className="register-contentPasswd-toggle" onClick={handleConfirmPasswordToggle}>
+                    <input
+                      type={showConfirmPassword ? "text" : "password"}
+                      id="confirmPassword"
+                      placeholder="Masukkan kata sandi baru"
+                      required
+                      value={confirmPassword}
+                      onChange={(e) => {
+                        setConfirmPassword(e.target.value);
+                        setErrors({ ...errors, confirmPassword: "" }); // Reset error jika input berubah
+                      }}
+                    />
+                    <span
+                      className="register-contentPasswd-toggle"
+                      onClick={handleConfirmPasswordToggle}
+                    >
                       <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
                     </span>
+                    {errors.confirmPassword && (
+                      <small className="error-message">{errors.confirmPassword}</small>
+                    )}
                   </div>
                 </div>
 
@@ -95,7 +174,7 @@ function Register() {
                 </div>
 
                 <button type="submit" className="btn-login">
-                  Login
+                  Daftar
                 </button>
               </form>
 

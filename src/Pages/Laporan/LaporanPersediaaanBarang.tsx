@@ -111,69 +111,70 @@ const LaporanPersediaanBarang = () => {
             {/* component filter */}
             <div className="component-filter mb-3">
                 <div className="row d-flex flex-row">
-                    <div className="col-6 d-flex justifiy-content-start gap-2">
-                        <div className="col-4">
-                            <SearchLaporan
-                                placeholder="cari struk..."
-                            />
-                        </div>
-                        <div className="col-4">
-                            <button
-                                className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
-                                onClick={() => setShowCalendar(!showCalendar)} // Toggle tampilkan kalender
-                            >
-                                <img src={images.calender} alt="" />
-                                {selectedDate ? ` ${selectedDate.toLocaleDateString()}` : 'Pilih Tanggal'}
-                            </button>
-                        </div>
-                        <div className="col-4">
-                            <div className="dropdown">
-                                <button
-                                    className="btn dropdown-toggle w-100 btn-order"
-                                    type="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    Waktu Order
-                                </button>
-                                <ul className="dropdown-menu w-100">
-                                    <li>
-                                        <Link to="/" className="dropdown-item">
-                                            Semua Kategori
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" className="dropdown-item">
-                                            Minuman
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" className="dropdown-item">
-                                            Makanan Instan
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" className="dropdown-item">
-                                            Snack
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" className="dropdown-item">
-                                            Sembako
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" className="dropdown-item">
-                                            Perawatan Tubuh
-                                        </Link>
-                                    </li>
-                                </ul>
+                    <div className="col-sm-12 col-md-6 d-flex justifiy-content-start gap-2">
+                        <div className="w-100">
+                            <div className="col-sm-12 col-md-4 mb-2">
+                                <SearchLaporan
+                                    placeholder="cari struk..."
+                                />
                             </div>
-
+                            <div className="col-sm-12 col-md-4 mb-2">
+                                <button
+                                    className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
+                                    onClick={() => setShowCalendar(!showCalendar)} // Toggle tampilkan kalender
+                                >
+                                    <img src={images.calender} alt="" />
+                                    {selectedDate ? ` ${selectedDate.toLocaleDateString()}` : 'Pilih Tanggal'}
+                                </button>
+                            </div>
+                            <div className="col-sm-12 col-md-4 mb-2">
+                                <div className="dropdown">
+                                    <button
+                                        className="btn dropdown-toggle w-100 btn-order"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Waktu Order
+                                    </button>
+                                    <ul className="dropdown-menu w-100">
+                                        <li>
+                                            <Link to="/" className="dropdown-item">
+                                                Semua Kategori
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/" className="dropdown-item">
+                                                Minuman
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/" className="dropdown-item">
+                                                Makanan Instan
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/" className="dropdown-item">
+                                                Snack
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/" className="dropdown-item">
+                                                Sembako
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/" className="dropdown-item">
+                                                Perawatan Tubuh
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-6 d-flex justify-content-end gap-2">
-                        <div className="col-4">
+                    <div className=" col-sm-12 col-md-6 d-flex justify-content-end gap-2 mt-2">
+                        <div className="col-12 col-md-4">
                             <div className="dropdown w-100">
                                 <button
                                     className="btn w-100 btn-ekspor-laporan"

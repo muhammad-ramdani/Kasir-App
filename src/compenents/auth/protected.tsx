@@ -1,6 +1,6 @@
 import { useEffect, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import apiName from "../../api/api";
 
 interface ProtectedProps {
   children: ReactNode;
@@ -10,37 +10,23 @@ const Protected: React.FC<ProtectedProps> = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getMe = async (token: string) => {
+    const validateToken = async () => {
       try {
-        await axios.get(`${import.meta.env.VITE_BASE_URL}/v1/auth/me`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        await apiName.get("/auth/me");
       } catch (error) {
-        if (axios.isAxiosError(error) && error.response) {
-          // If token is not valid (401 Unauthorized)
-          if (error.response.status === 401) {
-            localStorage.removeItem("token");
-            window.location.href = "/";
-            return;
-          }
-          alert(error.response.data.message); // Show error message using alert
-          return;
-        }
-        console.error("An error occurred:", (error as Error).message); // Log generic errors to the console
+        localStorage.removeItem("token"); // Hapus token jika tidak valid
+        alert("Sesi Anda telah habis. Silakan login kembali.");
+        navigate("/"); // Redirect ke login
       }
     };
 
     const token = localStorage.getItem("token");
-
     if (!token) {
-      navigate("/");
+      navigate("/"); // Jika tidak ada token, redirect ke login
       return;
     }
 
-    // Fetch user information
-    getMe(token);
+    validateToken();
   }, [navigate]);
 
   return <>{children}</>;

@@ -214,12 +214,12 @@
 
 .header-right {
    display: flex;
-   align-items: center; /* Agar item di dalamnya sejajar secara vertikal */
+   align-items: center; 
 }
 
 .btn-notification {
    display: flex;
-   align-items: center; /* Memastikan ikon dan teks sejajar di tengah secara vertikal */
+   align-items: center; 
 }
 
 .block-profile {
