@@ -1,10 +1,10 @@
 import React from "react"
-import PopupDateRange from "../../compenents/PopUpDateRange/PopUpDateRange"
-import EksporModalLaporan from "../../compenents/ModalEksporLaporan/ModalEksporLaporan"
-import SearchLaporan from "../../compenents/SearchLaporan/SearchLaporan"
+import PopupDateRange from "../../components/PopUpDateRange/PopUpDateRange"
+import EksporModalLaporan from "../../components/ModalEksporLaporan/ModalEksporLaporan"
+import SearchLaporan from "../../components/SearchLaporan/SearchLaporan"
 import images from "../../Image"
 import Layout from "../../Layout/Layout"
-import PaginationWithItemsPerPage from "../../compenents/Pagination/Pagination"
+import PaginationWithItemsPerPage from "../../components/Pagination/Pagination"
 
 const LaporanPelanggan = () => {
     // state popup datePicker

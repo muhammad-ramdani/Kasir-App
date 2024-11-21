@@ -1,11 +1,11 @@
 import React from "react";
-import SearchLaporan from "../../compenents/SearchLaporan/SearchLaporan";
+import SearchLaporan from "../../components/SearchLaporan/SearchLaporan";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 import { Link } from "react-router-dom";
-import CalenderPopup from "../../compenents/CalenderPopup/CalenderPopup";
-import EksporModalLaporanPersediaanBarang from "../../compenents/ModalEksporLaporan/ModalEksporLaporanPersediaanBarang";
-import PaginationWithItemsPerPage from "../../compenents/Pagination/Pagination";
+import CalenderPopup from "../../components/CalenderPopup/CalenderPopup";
+import EksporModalLaporanPersediaanBarang from "../../components/ModalEksporLaporan/ModalEksporLaporanPersediaanBarang";
+import PaginationWithItemsPerPage from "../../components/Pagination/Pagination";
 
 const LaporanPersediaanBarang = () => {
 
