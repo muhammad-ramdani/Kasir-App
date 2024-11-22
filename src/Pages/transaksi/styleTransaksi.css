@@ -215,21 +215,33 @@
   .product-card-transaksi {
     border: 1px solid #e6e6e6;
     border-radius: 12px;
-    height: 100% !important;
+    /* height: 100% !important;
+    width: 40% !important; */
     cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
   }  
 
+  .transaksi-pages-scan-icon i {
+    width: 152px !important; 
+    height: 152px !important; 
+  }
+
   .card-img-top {
-    width: 400% !important;
-    height: 400% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .input-group-search-transaksi-pages {
+    margin-top: 20px;
+    width: 100%;
   }
 
   .transaksi-pages-input-search {
     font-size: 14px;
     width: 100%;
-    margin-left: 2rem;
+    align-items: center;
+    margin-left: 10px;
   }
   
   .product-grid-transaksi-pages {
@@ -248,20 +260,34 @@
   .btn-proses-pembayaran {
     width: 100% !important;
     font-size: 10px;
+    /* width: 100px !important;
+    height: 100px !important; */
   }
 
+  .overflow-product-scroll {
+    margin: 10px 0;
+  }
+  
+  .overflow-product-scroll::-webkit-scrollbar {
+    width: 1px; /* Narrower scrollbar */
+  }
+  
+  .overflow-product-scroll::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0; /* Darker scrollbar thumb */
+  }
+  
 
 }
 
 /* Additional scroll styles */
-.overflow-product-scroll {
+/* .overflow-product-scroll {
   margin: 10px 0;
 }
 
 .overflow-product-scroll::-webkit-scrollbar {
-  width: 4px; /* Narrower scrollbar */
+  width: 4px;
 }
 
 .overflow-product-scroll::-webkit-scrollbar-thumb {
-  background-color: #c0c0c0; /* Darker scrollbar thumb */
-}
+  background-color: #c0c0c0; 
+} */

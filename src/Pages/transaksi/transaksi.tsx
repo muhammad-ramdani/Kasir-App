@@ -137,7 +137,7 @@ function Transaksi() {
                       {/* Search and Barcode Buttons */}
 
                       {/* Scan Input */}
-                      <div className="col col-lg-auto p-0 input-group input-group-transaksi flex-nowrap ">
+                      <div className="col col-lg-auto p-0 input-group input-group-search-transaksi-pages flex-nowrap">
                         <img src={scanner} className="input-group-text transaksi-pages-scan-icon bg-white rounded-start-3" alt="scanner" />
                         <input
                           type="text"
@@ -226,7 +226,7 @@ function Transaksi() {
                 <div className="voucher-content-input mb-5 mx-2 d-flex align-items-center">
                   <img src={voucher} className="voucher-img me" alt="Voucher" /> {/* Tambahkan margin-end di sini */}
                   <span className=" voucher-text ms-4">Lihat Diskon</span>
-                  <img src={arrow} className="arrow-img-list-barang ms-auto" alt="Arrow" /> {/* ms-auto untuk memindahkan ke posisi akhir */}
+                  <img src={arrow} className="arrow-img-list-barang ms-auto" alt="Arrow" /> 
                 </div>
                 <div className="content-btn-proses-pembayaran-list-barang d-grid gap-2 col-6 mx-auto">
                   <Link to="/transaksi/pembayaran">

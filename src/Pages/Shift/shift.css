@@ -294,14 +294,12 @@
     padding: 1rem;
   }
 
-  .row {
-    flex-direction: column;
-  }
 
-  .col-md-6 {
+
+  /* .col-md-6 {
     width: 100%;
     margin-bottom: 20px;
-  }
+  } */
 
   .custom-card-kasir {
     padding: 10px;

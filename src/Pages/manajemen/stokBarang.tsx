@@ -1,4 +1,4 @@
-import "./stokBarang.css";
+// import "./styleAllManajemen.css";
 import { useState, useEffect } from "react";
 import Layout from "../../Layout/Layout";
 import logoExportDataWhite from "../../assets/imagesAllManajemen/logo-export-data-white.svg";

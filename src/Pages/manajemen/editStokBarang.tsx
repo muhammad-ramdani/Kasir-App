@@ -1,6 +1,6 @@
 import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
 import chitato from "../../assets/imagesAllManajemen/chitato-svg.svg";
-import "./editStokBarang.css";
+import "./styleAllManajemen.css";
 
 function EditStokBarang() {
   return (
