@@ -4,17 +4,44 @@ import loginImg from "../../../assets/login.png";
 import logoKasir from "../../../assets/kasir-jempol.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import apiName from "../../../api/api";
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
 
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
+        try {
+            const requestData = {
+                email,
+                password
+            }
+            console.log(requestData);
+
+            const response = await apiName.post("/sessions", requestData)
+
+            if (response.status === 200) {
+                // simpan token di local storage
+                const { token, name } = response.data.data;
+                localStorage.setItem("token", token);
+                localStorage.setItem("name", name);
+
+                navigate("/dashboard");
+            }
+        } catch (error) {
+            console.log("error saat login:", error);
+            alert("Login gagal. Silakan periksa email dan password Anda.");
+        }
     };
 
     return (
@@ -29,6 +56,7 @@ function Login() {
                     <img src={loginImg} alt="Team illustration" className="illustration" />
                 </div>
 
+                {/* Right section with login form */}
                 <div className="right-section">
                     <div className="login-form">
                         <h1>Masuk ke Akun Anda</h1>
@@ -37,14 +65,29 @@ function Login() {
                             <div className="content-form-email-login">
                                 <label htmlFor="email">Email</label>
                                 <div className="email-field">
-                                    <input type="email" id="email" placeholder="Email" required />
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="Email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                    />
                                 </div>
                             </div>
 
                             <div className="content-form-password-login mt-4">
                                 <label htmlFor="password">Password</label>
                                 <div className="password-field">
-                                    <input type={showPassword ? "text" : "password"} id="password" placeholder="Password" required className="text-password" />
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        id="password"
+                                        placeholder="Password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                        className="text-password" />
+
                                     <span className="password-toggle-lgn" onClick={handlePasswordToggle}>
                                         <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
                                     </span>
@@ -56,7 +99,7 @@ function Login() {
                             </div>
 
                             <button type="submit" className="btn-login">
-                                <Link to="/dashboard" className="text-decoration-none text-white">Login</Link>
+                                Login
                             </button>
                         </form>
 

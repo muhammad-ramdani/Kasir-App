@@ -1,11 +1,8 @@
-.wrap-card {
+.container-pengaturan {
+   height: 80vh;
    display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-}
-
-.logout-btn {
-   margin-top: 30%;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 /* informasi toko */
@@ -225,7 +222,7 @@
 
 .btn-metode-pembayaran {
    width: 545px !important;
-   height: 74px  !important;
+   height: 74px !important;
    background-color: #ff0000;
    border-radius: 8px;
    font-size: 24px;
@@ -245,4 +242,22 @@
 
 .metode-tambahan {
    margin-bottom: 176px;
+}
+
+@media only screen and (max-width: 768px) {
+   .container-pengaturan {
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .container-pengaturan {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+   }
 }

@@ -162,7 +162,7 @@
    height: 62vh; /* Set height to 100vh */
 }
 
-.wrap-table-content-whitout-card{
+.wrap-table-content-whitout-card {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -181,3 +181,16 @@
 .pagination-wrap {
    margin-top: 10px;
 }
+
+@media only screen and (max-width: 768px) {
+   .card-total-penjualan {
+      width: 100%;
+      margin-bottom: 5px;
+   }
+
+   .btn-rentan-tanggal {
+      display: flex !important;
+      justify-content: flex-start !important;
+   }
+}
+

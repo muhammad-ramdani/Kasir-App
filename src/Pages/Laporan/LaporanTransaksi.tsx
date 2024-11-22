@@ -1,13 +1,13 @@
 import React from 'react';
 import './Laporan.css'
 import Layout from "../../Layout/Layout"
-import CardTotal from '../../compenents/CardTotal/CardTotal';
-import SearchLaporan from '../../compenents/SearchLaporan/SearchLaporan';
+import CardTotal from '../../components/CardTotal/CardTotal';
+import SearchLaporan from '../../components/SearchLaporan/SearchLaporan';
 import { Link } from 'react-router-dom';
 import images from '../../Image';
-import PopupDateRange from '../../compenents/PopUpDateRange/PopUpDateRange';
-import EksporModalLaporan from '../../compenents/ModalEksporLaporan/ModalEksporLaporan';
-import PaginationWithItemsPerPage from '../../compenents/Pagination/Pagination';
+import PopupDateRange from '../../components/PopUpDateRange/PopUpDateRange';
+import EksporModalLaporan from '../../components/ModalEksporLaporan/ModalEksporLaporan';
+import PaginationWithItemsPerPage from '../../components/Pagination/Pagination';
 
 
 const LaporanTransaksi = () => {
@@ -146,17 +146,17 @@ const LaporanTransaksi = () => {
             </div>
             <div className="component-filter mb-3">
                 <div className="row d-flex justify-content-center align-items-center">
-                    <div className="col-2">
+                    <div className="col-sm-12 col-md-2 mb-2">
                         <SearchLaporan
                             placeholder='cari struk...'
                         />
                     </div>
-                    <div className="col-3">
+                    <div className="col-sm-12 col-md-3 mb-2">
                         <button
                             className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
                             onClick={() => setPopupOpen(true)}
                         >
-                            <img src={images.calender} alt="" />
+                            <img src={images.calender} alt="" className='me-3'/>
                             {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
                         </button>
                         {/* Pass fungsi handleDateRangeChange sebagai prop */}
@@ -166,7 +166,7 @@ const LaporanTransaksi = () => {
                             onDateRangeChange={handleDateRangeChange}
                         />
                     </div>
-                    <div className="col-2">
+                    <div className="col-sm-12 col-md-2 mb-2">
                         <div className="dropdown">
                             <button
                                 className="btn dropdown-toggle w-100 btn-order"
@@ -191,7 +191,7 @@ const LaporanTransaksi = () => {
                         </div>
 
                     </div>
-                    <div className="col-3">
+                    <div className="col-sm-12 col-md-3 mb-2">
                         <div className="dropdown w-100">
                             <button
                                 className="btn w-100 btn-status-pembayaran"
@@ -218,7 +218,7 @@ const LaporanTransaksi = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-sm-12 col-md-2 mb-2">
                         <div className="dropdown w-100">
                             <button
                                 className="btn w-100 btn-ekspor-laporan"

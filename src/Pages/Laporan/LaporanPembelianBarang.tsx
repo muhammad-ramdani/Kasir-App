@@ -1,11 +1,11 @@
 import React from "react";
-import PopupDateRange from "../../compenents/PopUpDateRange/PopUpDateRange";
-import CardTotal from "../../compenents/CardTotal/CardTotal";
-import EksporModalLaporan from "../../compenents/ModalEksporLaporan/ModalEksporLaporan";
-import SearchLaporan from "../../compenents/SearchLaporan/SearchLaporan";
+import PopupDateRange from "../../components/PopUpDateRange/PopUpDateRange";
+import CardTotal from "../../components/CardTotal/CardTotal";
+import EksporModalLaporan from "../../components/ModalEksporLaporan/ModalEksporLaporan";
+import SearchLaporan from "../../components/SearchLaporan/SearchLaporan";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
-import PaginationWithItemsPerPage from "../../compenents/Pagination/Pagination";
+import PaginationWithItemsPerPage from "../../components/Pagination/Pagination";
 
 const LaporanPembelianBarang = () => {
     // state popup datePicker
@@ -98,7 +98,7 @@ const LaporanPembelianBarang = () => {
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
     };
-    
+
     const handleItemsPerPageChange = (newItemsPerPage: number) => {
         setItemsPerPage(newItemsPerPage);
         setCurrentPage(1); // Reset to first page when items per page is changed
@@ -128,7 +128,7 @@ const LaporanPembelianBarang = () => {
         <Layout titlePage="Laporan Pembelian Barang">
             <div className="row">
                 {CardTotalPembelian.map((item, index) => (
-                    <div className="col-4" key={index}>
+                    <div className="col-sm-12 col-md-4 mb-2" key={index}>
                         <CardTotal
                             title={item.title}
                             value={item.value}
@@ -139,82 +139,78 @@ const LaporanPembelianBarang = () => {
             {/* component filter */}
             <div className="component-filter mb-3">
                 <div className="row d-flex flex-row">
-                    <div className="col-6 d-flex justifiy-content-start gap-2">
-                        <div className="col-5">
-                            <SearchLaporan
-                                placeholder="cari struk..."
-                            />
-                        </div>
-                        <div className="col-5">
+                    <div className="col-sm-12 col-md-3 mb-2">
+                        <SearchLaporan
+                            placeholder="cari struk..."
+                        />
+                    </div>
+                    <div className="col-sm-12 col-md-3 mb-2">
+                        <button
+                            className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
+                            onClick={() => setPopupOpen(true)}
+                        >
+                            <img src={images.calender} alt="" className="me-3"/>
+                            {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
+                        </button>
+                        {/* Pass fungsi handleDateRangeChange sebagai prop */}
+                        <PopupDateRange
+                            isOpen={isPopupOpen}
+                            onClose={() => setPopupOpen(false)}
+                            onDateRangeChange={handleDateRangeChange}
+                        />
+                    </div>
+                    <div className="col-sm-12 col-md-3 mb-2">
+                        <div className="dropdown w-100">
                             <button
-                                className='btn btn-rentan-tanggal w-100 d-flex justify-content-around align-items-center'
-                                onClick={() => setPopupOpen(true)}
+                                className="btn w-100 btn-status-pembayaran"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
                             >
-                                <img src={images.calender} alt="" />
-                                {`${selectedDateRange.startDate} - ${selectedDateRange.endDate}`}
+                                <img src={images.redFilter} alt="" className='me-3' />
+                                <span className='label-status-pembayaran'>Status Pembayaran</span>
                             </button>
-                            {/* Pass fungsi handleDateRangeChange sebagai prop */}
-                            <PopupDateRange
-                                isOpen={isPopupOpen}
-                                onClose={() => setPopupOpen(false)}
-                                onDateRangeChange={handleDateRangeChange}
-                            />
+                            <ul className="dropdown-menu w-100">
+                                <li className="dropdown-item item-status">
+                                    <input type="checkbox" id="statusSemua" className='me-2' />
+                                    <label htmlFor="statusSemua" className='mt-0 mb-0 label-status'>Semua status pembayaran</label>
+                                </li>
+                                <li className="dropdown-item item-status">
+                                    <input type="checkbox" id="statusBelumLunas" className='me-2' />
+                                    <label htmlFor="statusBelumLunas" className='mt-0 mb-0 label-status'>Belum lunas</label>
+                                </li>
+                                <li className="dropdown-item item-status">
+                                    <input type="checkbox" id="statusLunas" className='me-2' />
+                                    <label htmlFor="statusLunas" className='mt-0 mb-0 label-status'>Lunas</label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div className="col-6 d-flex justify-content-end gap-2">
-                        <div className="col-5">
-                            <div className="dropdown w-100">
-                                <button
-                                    className="btn w-100 btn-status-pembayaran"
-                                    type="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    <img src={images.redFilter} alt="" className='me-3' />
-                                    <span className='label-status-pembayaran'>Status Pembayaran</span>
-                                </button>
-                                <ul className="dropdown-menu w-100">
-                                    <li className="dropdown-item item-status">
-                                        <input type="checkbox" id="statusSemua" className='me-2' />
-                                        <label htmlFor="statusSemua" className='mt-0 mb-0 label-status'>Semua status pembayaran</label>
-                                    </li>
-                                    <li className="dropdown-item item-status">
-                                        <input type="checkbox" id="statusBelumLunas" className='me-2' />
-                                        <label htmlFor="statusBelumLunas" className='mt-0 mb-0 label-status'>Belum lunas</label>
-                                    </li>
-                                    <li className="dropdown-item item-status">
-                                        <input type="checkbox" id="statusLunas" className='me-2' />
-                                        <label htmlFor="statusLunas" className='mt-0 mb-0 label-status'>Lunas</label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="col-4">
-                            <div className="dropdown w-100">
-                                <button
-                                    className="btn w-100 btn-ekspor-laporan"
-                                    type="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                >
-                                    <img src={images.ekspor} alt="" className='me-3' />
-                                    <span className='label-ekspor-laporan'>Ekspor Laporan</span>
-                                </button>
-                                <ul className="dropdown-menu w-100">
-                                    <li>
-                                        <button type='button' className="dropdown-item"
-                                            onClick={() => handleOpenModal('PDF')}>
-                                            PDF
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button type='button' className='dropdown-item'
-                                            onClick={() => handleOpenModal('Excel')}>
-                                            Excel
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div className="col-sm-12 col-md-3 mb-2">
+                        <div className="dropdown w-100">
+                            <button
+                                className="btn w-100 btn-ekspor-laporan"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <img src={images.ekspor} alt="" className='me-3' />
+                                <span className='label-ekspor-laporan'>Ekspor Laporan</span>
+                            </button>
+                            <ul className="dropdown-menu w-100">
+                                <li>
+                                    <button type='button' className="dropdown-item"
+                                        onClick={() => handleOpenModal('PDF')}>
+                                        PDF
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type='button' className='dropdown-item'
+                                        onClick={() => handleOpenModal('Excel')}>
+                                        Excel
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

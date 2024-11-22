@@ -8,10 +8,10 @@ import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-ma
 import chitato from "../../assets/imagesAllManajemen/chitato.png";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 import EditStokBarang from "./editStokBarang";
-import PaginationFix from "../../compenents/pagination-fix/paginationFix";
+// import PaginationFix from "../../compenents/pagination-fix/paginationFix";
 
 
-function StokBarang() {
+function StockBarang() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
 
   useEffect(() => {
@@ -139,7 +139,7 @@ function StokBarang() {
               </tbody>
             </table>
           </div>
-          <PaginationFix/>
+          {/* <PaginationFix/> */}
         </div>
       </div>
       <EditStokBarang />
@@ -147,4 +147,4 @@ function StokBarang() {
   );
 }
 
-export default StokBarang;
+export default StockBarang;

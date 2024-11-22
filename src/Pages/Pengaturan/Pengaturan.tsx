@@ -1,5 +1,5 @@
-import CardPengaturan from "../../compenents/CardPengaturan/CardPengaturan";
-import LogoutButton from "../../compenents/LogoutButton/LogoutButton";
+import CardPengaturan from "../../components/CardPengaturan/CardPengaturan";
+import LogoutButton from "../../components/LogoutButton/LogoutButton";
 import images from "../../Image";
 import Layout from "../../Layout/Layout";
 import './Pengaturan.css'
@@ -35,21 +35,25 @@ const Pengaturan = () => {
     ]
     return (
         <Layout titlePage="Pengaturan">
-            <div className="wrap-card">
-                {DataCardPengaturan.map((item, index) => (
-                    <CardPengaturan
-                        key={index}
-                        iconPengaturan={item.iconPengaturan}
-                        description={item.description}
-                        link={item.link}
-                    />
-                ))}
-            </div>
-            <div className="logout-btn">
-                <LogoutButton />
+            <div className="container container-pengaturan mt-4">
+                <div className="row">
+                    {DataCardPengaturan.map((item, index) => (
+                        <div className="col-sm-12 col-md-6 col-lg-4 mb-4" key={index}>
+                            <CardPengaturan
+                                iconPengaturan={item.iconPengaturan}
+                                description={item.description}
+                                link={item.link}
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                <div className="logout-btn mt-4">
+                    <LogoutButton />
+                </div>
             </div>
         </Layout>
-    )
+    );
 }
 
 export default Pengaturan;
