@@ -109,7 +109,7 @@ function StockBarang() {
                   <tr key={index}>
                     <td style={{ padding: "15px 0", display: "flex", alignItems: "center" }}>
                       {/* Menampilkan gambar di samping nama barang */}
-                      <img src={item.gambar} alt={item.namaBarang} style={{ width: "40px", height: "40px", marginRight: "10px" }} />
+                      <img alt={item.namaBarang} style={{ width: "40px", height: "40px", marginRight: "10px" }} />
                       {item.namaBarang}
                     </td>
                     <td style={{ padding: "15px 0" }}>{item.kodeBarang}</td>
