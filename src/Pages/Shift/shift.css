@@ -289,3 +289,112 @@
 
 
 
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+
+
+  /* .col-md-6 {
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+
+  .custom-card-kasir {
+    padding: 10px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .form-select-pilih-cash-drawer, 
+  .form-control-masukan-saldo {
+    font-size: 14px;
+  }
+
+  .btn-start-shift {
+    font-size: 16px;
+    height: 50px;
+  }
+
+  .content-shift-right h6 {
+    font-size: 16px;
+  }
+
+  .table th, .table td {
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .btn-long p {
+    font-size: 12px;
+  }
+
+  .btn-long {
+    padding: 8px 10px;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .icon-calender {
+    width: 16px;
+    height: 16px;
+  }
+
+  .calendar-modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .btn-long {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .btn-start-shift {
+    font-size: 14px;
+    height: 45px;
+  }
+
+  .table th, .table td {
+    font-size: 12px;
+  }
+
+  .text-date-intime p {
+    font-size: 14px;
+  }
+
+  .btn-detail {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .calendar-modal-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .btn-long {
+    padding: 6px 8px;
+    font-size: 10px;
+    margin-left: 12px;
+  }
+
+  .btn-long p {
+    font-size: 11px;
+  }
+  
+}

@@ -118,25 +118,25 @@ function DetailRekapShift() {
                   <div className="form-check content-checkbox d-flex flex-wrap mb-3">
                     <div className="col-6 mb-2">
                       <input className="form-check-input input-checkbox" type="checkbox" id="flexCheckDefault1" />
-                      <label className="form-check-label label-checkbox" htmlFor="flexCheckDefault1">
+                      <label className="form-check-label-checkbox label-checkbox" htmlFor="flexCheckDefault1">
                         Kas masuk
                       </label>
                     </div>
                     <div className="col-6 mb-2">
                       <input className="form-check-input input-checkbox" type="checkbox" id="flexCheckDefault2" />
-                      <label className="form-check-label label-checkbox" htmlFor="flexCheckDefault2">
+                      <label className="form-check-label-checkbox label-checkbox" htmlFor="flexCheckDefault2">
                         Kas keluar
                       </label>
                     </div>
                     <div className="col-6 mb-2">
                       <input className="form-check-input input-checkbox" type="checkbox" id="flexCheckDefault3" />
-                      <label className="form-check-label label-checkbox" htmlFor="flexCheckDefault3">
+                      <label className="form-check-label-checkbox label-checkbox" htmlFor="flexCheckDefault3">
                         Kas masuk lain
                       </label>
                     </div>
                     <div className="col-6 mb-2">
                       <input className="form-check-input input-checkbox" type="checkbox" id="flexCheckDefault4" />
-                      <label className="form-check-label label-checkbox" htmlFor="flexCheckDefault4">
+                      <label className="form-check-label-checkbox label-checkbox" htmlFor="flexCheckDefault4">
                         Kas keluar lain
                       </label>
                     </div>

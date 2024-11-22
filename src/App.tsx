@@ -32,6 +32,7 @@ import DataPelanggan from "./Pages/manajemen/dataPelanggan";
 import DataSupplier from "./Pages/manajemen/dataSupplier";
 import DiskonBarang from "./Pages/manajemen/diskonBarang";
 import Protected from "./components/auth/protected";
+import StockBarang from "./Pages/manajemen/stokBarang";
 
 function App() {
     return (
@@ -45,6 +46,7 @@ function App() {
                 <Route path="/new-passwd" element={<NewPasswd />} />
                 <Route path="/reset-berhasil" element={<ResetBerhasil />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/stok-barang" element={<StockBarang/>} />
                 
                 {/* Private Route */}
                 {/* Pages Management */}

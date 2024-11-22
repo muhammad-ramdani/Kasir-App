@@ -105,4 +105,52 @@
   }
   
 
+  @media (min-width: 768px) {
+    .modal-dialog {
+      width: 605px;
+    }
   
+    .form-control-saldo {
+      width: 60%;
+    }
+  
+    .form-control-catatan {
+      width: 100%;
+      padding-bottom: 5rem;
+    }
+  }
+  
+  /* Tablet and Mobile */
+  @media (max-width: 768px) {
+    .modal-dialog {
+      width: 92% !important;
+      margin: 0 1rem;
+    }
+  
+    .form-control-saldo {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .form-control-catatan {
+      width: 100%;
+      padding: 15px;
+      padding-bottom: 4rem;
+    }
+  
+    .btn-akhiri-shift-merah {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    /* Adjust text and input for better readability */
+    .text-akhiri-shift-one h6,
+    .text-akhiri-shift-twoe h6,
+    .text-shift-pone p {
+      font-size: 14px;
+    }
+  
+    .text-bottom-saldo p {
+      font-size: 12px;
+    }
+  }

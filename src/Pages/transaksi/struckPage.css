@@ -1,122 +1,183 @@
 /* Container for the entire page */
 /* .content-struk {
     background-color: #f5f5f5;
-  } */
-  
-  .struck-list {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+} */
+
+.struck-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Receipt Container */
+.struk-container {
+  width: 420px; /* Default width for larger screens */
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.struk-container h5 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.text-alamat {
+  text-align: center;
+  border-bottom: 2px dashed rgb(128, 128, 128);
+  margin-bottom: 10px;
+  padding-bottom: 22px;
+}
+
+.back-pages {
+  margin-top: 40px;
+}
+
+.text-back {
+  font-weight: 800;
+}
+
+/* .text-alamat p {
+  margin: 0;
+} */
+
+.text-date-shift {
+  text-align: start;
+  border-bottom: 2px dashed rgb(128, 128, 128);
+  margin-bottom: 10px;
+}
+
+.text-date-shift .flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-info-product {
+  text-align: left;
+  border-bottom: 2px dashed rgb(128, 128, 128);
+  margin-bottom: 10px;
+}
+
+.text-info-product .flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-summary {
+  margin-bottom: 10px;
+}
+
+.price-summary .flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.icon-back {
+  color: black;
+}
+
+.pembayaran-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.pembayaran-text {
+  font-weight: 500;
+  background-color: #fff;
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.pembayaran-section::before,
+.pembayaran-section::after {
+  content: "";
+  flex-grow: 1;
+  border-bottom: 2px dashed #808080;
+  margin: 0 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.text-prounact {
+  font-weight: 700;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Responsive Styles */
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .struk-container {
+      width: 90%; /* Wider on smaller screens */
+      padding: 15px; /* Adjust padding for smaller screens */
   }
 
-  
-  
-  /* Receipt Container */
-  .struk-container {
-    width: 420px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  }
-  
   .struk-container h5 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 18px;
+      font-size: 16px; /* Slightly smaller font size */
   }
-  
-  .text-alamat {
-    text-align: center;
-    border-bottom: 2px dashed rgb(128, 128, 128);
-    margin-bottom: 10px;
-    padding-bottom: 22px;
+
+  .text-alamat, 
+  .text-date-shift,
+  .text-info-product {
+      font-size: 14px; /* Smaller font size */
+  }
+
+  .price-summary {
+      font-size: 14px; /* Smaller font size */
+  }
+
+  .pembayaran-text {
+      font-size: 14px; /* Smaller font size */
+  }
+
+  .text-prounact {
+      font-size: 16px; /* Smaller font size */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .struk-container {
+      width: 95%; /* Full width on mobile */
+      padding: 10px; /* Reduced padding */
+  }
+
+  .struk-container h5 {
+      font-size: 14px; /* Smaller font size */
+  }
+
+  .text-alamat, 
+  .text-date-shift,
+  .text-info-product {
+      font-size: 12px; /* Smaller font size */
+  }
+
+  .price-summary {
+      font-size: 12px; /* Smaller font size */
+  }
+
+  .pembayaran-text {
+      font-size: 12px; /* Smaller font size */
+  }
+
+  .text-prounact {
+      font-size: 14px; /* Smaller font size */
   }
 
   .back-pages {
-    margin-top: 40px;
+      margin-top: 20px; /* Reduced margin */
   }
-  
-  .text-back {
-    font-weight: 800;
-  }
-  /* .text-alamat p {
-    margin: 0;
-  }
-   */
-  .text-date-shift {
-    text-align: start;
-    border-bottom: 2px dashed rgb(128, 128, 128);
-    margin-bottom: 10px;
-  }
-  
-  .text-date-shift .flex-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .text-info-product {
-    text-align: left;
-    border-bottom: 2px dashed rgb(128, 128, 128);
-    margin-bottom: 10px;
-  }
-  
-  .text-info-product .flex-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  
-  .price-summary {
-    margin-bottom: 10px;
-  }
-  
-  .price-summary .flex-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .center-text {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .icon-back {
-    color: black;
-  }
-  
-
-  .pembayaran-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 20px 0;
-  }
-  
-  .pembayaran-text {
-    font-weight: 500;
-    background-color: #fff;
-    padding: 0 8px;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .pembayaran-section::before,
-  .pembayaran-section::after {
-    content: "";
-    flex-grow: 1;
-    border-bottom: 2px dashed #808080;
-    margin: 0 10px;
-    position: relative;
-    /* top: 50%; */
-    z-index: 0;
-  }
-  
-
-  .text-prounact {
-    font-weight: 700;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+}

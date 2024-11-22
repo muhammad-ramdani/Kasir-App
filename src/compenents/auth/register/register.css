@@ -1,25 +1,5 @@
-/* Default styles for desktop */
-.header-auth {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-.brand-name {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff0000;
-}
-
-.content-lgn {
+/* Main container to align left and right sections */
+.content-register-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +8,7 @@
   margin: 0 auto;
 }
 
-.left-section {
+.left-section-register-content {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -42,31 +22,57 @@
   height: auto;
 }
 
-.right-section {
+/* Right section with register form */
+.right-section-register-content {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-top: 80px; /* Jarak antara logo dan form login */
 }
 
-.login-form {
+.register-content-form {
   width: 100%;
   max-width: 400px;
 }
 
-.login-form h1 {
+.register-content-form h1 {
   font-size: 34px;
   margin-bottom: 1px;
   font-weight: 600;
 }
 
-.login-form p {
+.register-content-form p {
   font-size: 16px;
   color: #888;
   margin-bottom: 50px;
   margin-top: 1px;
+}
+
+.phone-field {
+  position: relative;
+}
+
+.phone-field input {
+  width: 100%;
+  height: 48px;
+  margin-top: 6px;
+  padding-right: 40px; /* Leave space for the icon */
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.phone-check-icon {
+  position: absolute;
+  right: 10px;
+  top: 56%;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .email-field input {
@@ -85,11 +91,11 @@ input:focus {
   outline: none;
 }
 
-.password-field {
+.register-contentPasswd-field {
   position: relative;
 }
 
-.password-field input {
+.register-contentPasswd-field input {
   height: 48px;
   width: 100%;
   margin-top: 6px;
@@ -100,7 +106,7 @@ input:focus {
   border-radius: 12px;
 }
 
-.password-toggle-lgn {
+.register-contentPasswd-toggle {
   position: absolute;
   right: 10px;
   top: 56%;
@@ -110,21 +116,35 @@ input:focus {
   color: #000000;
 }
 
-.forgot-password {
-  text-align: right;
-  margin-bottom: 58px;
-  margin-top: 16px;
+.terms-checkbox {
+  display: flex;
+  align-items: center;
 }
 
-.forgot-password a {
-  color: #FF0000;
-  text-decoration: none;
+.terms-checkbox input {
+  margin-right: 10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 200000px;
+  accent-color: red;
+}
+
+.terms-checkbox label {
   font-size: 14px;
-  font-weight: 500;
+  color: #777;
 }
 
-/* Button styles for desktop (default) */
-.btn-login {
+.terms-checkbox a {
+  color: red;
+  text-decoration: none;
+}
+
+.terms-checkbox a:hover {
+  text-decoration: underline;
+}
+
+/* Button style */
+.btn-register {
   width: 100%;
   height: 56px;
   padding: 10px;
@@ -138,7 +158,7 @@ input:focus {
   transition: all 0.3s ease;
 }
 
-.btn-login:hover {
+.btn-register:hover {
   background-color: #e60000;
 }
 
@@ -157,34 +177,35 @@ input:focus {
 
 /* Responsive for tablets (between 768px and 1024px) */
 @media (max-width: 1024px) {
-  .content-lgn {
+  .content-register-content {
     flex-direction: column;
     justify-content: center;
     height: auto;
   }
 
-  .left-section {
+  .left-section-register-content {
     padding: 20px 0;
     order: 2;
   }
 
-  .right-section {
+  .right-section-register-content {
     order: 1;
     padding: 20px 10px;
-    margin-top: 160px;
+    margin-top: 110px;
   }
 
-  .login-form {
+  .register-content-form {
     max-width: 350px;
   }
 
   /* Button for tablet */
-  .btn-login {
+  .btn-register {
     width: 100%;
     height: 50px;
     font-size: 16px;
   }
 
+  /* Hide illustration on tablet */
   .illustration {
     display: none;
   }
@@ -192,44 +213,45 @@ input:focus {
 
 /* Responsive for mobile phones (max-width: 768px) */
 @media (max-width: 768px) {
-  .content-lgn {
+  .content-register-content {
     flex-direction: column;
     padding: 0 20px;
     height: auto;
   }
 
-  .left-section {
-    display: none;
+  .left-section-register-content {
+    display: none; /* Hide left section on mobile */
   }
 
-  .right-section {
+  .right-section-register-content {
     padding: 0;
     width: 100%;
-    margin-top: 200px;
+    margin-top: 120px;
   }
 
-  .login-form {
+  .register-content-form {
     width: 100%;
     max-width: 100%;
   }
 
-  .login-form h1 {
+  .register-content-form h1 {
     font-size: 28px;
   }
 
-  .login-form p {
+  .register-content-form p {
     font-size: 14px;
     margin-bottom: 30px;
   }
 
+  .phone-field input,
   .email-field input,
-  .password-field input {
+  .register-contentPasswd-field input {
     height: 44px;
     font-size: 14px;
   }
 
   /* Button for mobile */
-  .btn-login {
+  .btn-register {
     width: 100%;
     height: 45px;
     font-size: 14px;

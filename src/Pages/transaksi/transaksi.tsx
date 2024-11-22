@@ -108,7 +108,6 @@ function Transaksi() {
       image: chitato,
     },
   ];
-  
 
   return (
     <Layout titlePage="Transaksi">
@@ -134,15 +133,20 @@ function Transaksi() {
                   </div>
                   {/* Scan Input */}
                   <div className="col ps-0">
-                    <div className="input-group flex-nowrap mt-0">
-                      <img src={scanner} className="input-group-text transaksi-pages-scan-icon bg-white rounded-start-3" alt="" />
-                      <input
-                        type="text"
-                        className="form-control form-control-cari-barang border border-start-0 rounded-end-3 transaksi-pages-input-search"
-                        placeholder="Cari barang.."
-                        aria-label="Username"
-                        aria-describedby="addon-wrapping"
-                      />
+                    <div className="d-flex flex-column flex-sm-row flex-nowrap mt-0">
+                      {/* Search and Barcode Buttons */}
+
+                      {/* Scan Input */}
+                      <div className="col col-lg-auto p-0 input-group input-group-search-transaksi-pages flex-nowrap">
+                        <img src={scanner} className="input-group-text transaksi-pages-scan-icon bg-white rounded-start-3" alt="scanner" />
+                        <input
+                          type="text"
+                          className="form-control form-control-cari-barang border border-start-0 rounded-end-3 transaksi-pages-input-search"
+                          placeholder="Cari barang.."
+                          aria-label="Search items"
+                          aria-describedby="addon-wrapping"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -185,9 +189,9 @@ function Transaksi() {
           </div>
 
           {/* Right content (Cart or List) */}
-          <div className="col p-0">
+          <div className="card-body-transaksi-right col p-0 ">
             <div className="card rounded-4 height-calc-100vh-151px">
-              <div className="card-body" style={{ height: "calc(100vh - 351px)" }}>
+              <div className="card-body " style={{ height: "calc(100vh - 351px)" }}>
                 <div>
                   <h5 className="card-title-transaksi-right">List Barang</h5>
                 </div>
@@ -222,7 +226,7 @@ function Transaksi() {
                 <div className="voucher-content-input mb-5 mx-2 d-flex align-items-center">
                   <img src={voucher} className="voucher-img me" alt="Voucher" /> {/* Tambahkan margin-end di sini */}
                   <span className=" voucher-text ms-4">Lihat Diskon</span>
-                  <img src={arrow} className="arrow-img-list-barang ms-auto" alt="Arrow" /> {/* ms-auto untuk memindahkan ke posisi akhir */}
+                  <img src={arrow} className="arrow-img-list-barang ms-auto" alt="Arrow" /> 
                 </div>
                 <div className="content-btn-proses-pembayaran-list-barang d-grid gap-2 col-6 mx-auto">
                   <Link to="/transaksi/pembayaran">

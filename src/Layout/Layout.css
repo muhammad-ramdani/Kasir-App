@@ -237,9 +237,9 @@
       flex-direction: row;
    }
 
-   img {
+   /* img {
       max-width: 30px;
-   }
+   } */
 
    .sidebar {
       display: none !important;

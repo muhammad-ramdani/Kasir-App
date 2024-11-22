@@ -56,6 +56,10 @@
     /* padding-right: auto; */
   }
 
+  .form-check-label-checkbox {
+    font-size: 18px;
+  }
+
 
   
 
@@ -160,7 +164,93 @@
 }
 
 
+@media (max-width: 991px) {
+  .card-detail-shift-left, .card-detail-shift-right {
+      min-height: auto;
+      margin-bottom: 20px;
+  }
 
+  .content-detail-shift-left h6,
+  .content-detail-shift-right h6 {
+      font-size: 16px;
+  }
+
+  .input-checkbox {
+      width: 18px;
+      height: 18px;
+  }
+
+  .btn-akhiri-shift-rekap {
+      margin-top: 4rem;
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .text-kiri, .text-kanan {
+      font-size: 14px;
+  }
+
+  .shift-history-item p {
+      font-size: 14px;
+  }
+  .form-check-label-checkbox {
+      font-size: 18px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  .row.g-3 {
+      flex-direction: column;
+  }
+
+  .card-detail-shift-left, .card-detail-shift-right {
+      width: 100%;
+      min-height: auto;
+      padding: 10px;
+  }
+
+  .content-detail-shift-left h6,
+  .content-detail-shift-right h6 {
+      font-size: 14px;
+  }
+
+  .input-checkbox {
+      width: 14px;
+      height: 14px;
+  }
+
+  .text-kiri, .text-kanan, .text-info-saldo-shift p {
+      font-size: 12px;
+  }
+
+  .shift-history-item p {
+      font-size: 12px;
+  }
+
+  .btn-akhiri-shift-rekap {
+      width: 100%;
+      margin-top: 2rem;
+      padding: 12px;
+      font-size: 14px;
+  }
+
+  .btn-akhiri-shift-rekap {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  .form-check-label-checkbox {
+    font-size: 10px;
+    margin-top: -50px;
+    /* padding-top: -20px; */
+}
+}
 
   
 

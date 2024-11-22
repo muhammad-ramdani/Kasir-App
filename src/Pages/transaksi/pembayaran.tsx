@@ -99,7 +99,7 @@ function Pembayaran() {
               </div>
             </div>
           </div>
-          <div className="col p-0">
+          <div className="col p-0 card-body-transaksi-pembayaran-right">
             <div className="card rounded-4 height-calc-100vh-151px">
               <div className="card-body card-body-padding-23px">
                 <h5 className="card-title-pembayaran">Pembayaran</h5>
