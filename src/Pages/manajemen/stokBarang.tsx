@@ -8,7 +8,6 @@ import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-ma
 import chitato from "../../assets/imagesAllManajemen/chitato.png";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 import EditStokBarang from "./editStokBarang";
-// import PaginationFix from "../../compenents/pagination-fix/paginationFix";
 
 
 function StockBarang() {
