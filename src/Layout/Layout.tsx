@@ -34,67 +34,71 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
         <div className="container-fluid container-main">
             <div className="row">
                 <div className="col-auto bg-light sidebar d-flex justify-content-center">
-                    <div className="icon-sidebar">
-                        <section className="section-logo mb-3">
-                            <img src={images.logo} alt="" className="image-logo" />
-                        </section>
-                        {/* section main */}
-                        <section className="section-main mb-3">
-                            <p className="p-section-main">Main</p>
+                    <div className="icon-sidebar d-flex flex-column justify-content-between">
+                        <div className="up-section">
+                            <section className="section-logo mb-3">
+                                <img src={images.logo} alt="" className="image-logo" />
+                            </section>
+                            {/* section main */}
+                            <section className="section-main mb-3">
+                                <p className="p-section-main">Main</p>
 
-                            <div className="logo-sidebar">
-                                <Link to="/dashboard">
-                                    <img src={images.coin} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                            <div className="logo-sidebar">
-                                <Link to="/transaksi">
-                                    <img src={images.dollar} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                            <div className="logo-sidebar">
-                                <Link to="/laporan">
-                                    <img src={images.laporan} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                            <div className="logo-sidebar">
-                                <Link to="/shift">
-                                    <img src={images.shift} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                            <div className="logo-sidebar">
-                                <Link to="/stock-opname">
-                                    <img src={images.stock} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                        </section>
-                        <hr />
+                                <div className="logo-sidebar">
+                                    <Link to="/dashboard">
+                                        <img src={images.coin} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar">
+                                    <Link to="/transaksi">
+                                        <img src={images.dollar} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar">
+                                    <Link to="/laporan">
+                                        <img src={images.laporan} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar">
+                                    <Link to="/shift">
+                                        <img src={images.shift} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                                <div className="logo-sidebar">
+                                    <Link to="/stock-opname">
+                                        <img src={images.stock} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                            </section>
+                            <hr />
 
-                        {/* section more */}
-                        <section className="section-main mb-2">
-                            <p className="p-section-main">More</p>
+                            {/* section more */}
+                            <section className="section-main mb-2">
+                                <p className="p-section-main">More</p>
 
-                            <div className="logo-sidebar">
-                                <Link to="/">
-                                    <img src={images.user} alt="" className="img-logo" />
-                                </Link>
-                            </div>
+                                <div className="logo-sidebar">
+                                    <Link to="/">
+                                        <img src={images.user} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
 
-                            <div className="logo-sidebar">
-                                <Link to="/pengaturan">
-                                    <img src={images.setting} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                        </section>
+                                <div className="logo-sidebar">
+                                    <Link to="/pengaturan">
+                                        <img src={images.setting} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                            </section>
+                        </div>
 
-                        {/* section logout */}
-                        <section className="section-main logout-section">
-                            <div className="logo-sidebar">
-                                <Link to="/">
-                                    <img src={images.logout} alt="" className="img-logo" />
-                                </Link>
-                            </div>
-                        </section>
+                        <div className="down-section">
+                            {/* section logout */}
+                            <section className="section-main logout-section">
+                                <div className="logo-sidebar">
+                                    <Link to="/">
+                                        <img src={images.logout} alt="" className="img-logo" />
+                                    </Link>
+                                </div>
+                            </section>
+                        </div>
                     </div>
                 </div>
                 <div className="col">
@@ -185,7 +189,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                                 </div>
                             </section>
                             {/* section logout */}
-                            <section className="section-main-offcanvas logout-section-offcanvas">
+                            <section className="section-main-offcanvas logout-section-offcanvas mt-auto">
                                 <div className="logo-sidebar-offcanvas">
                                     <a href="/" className="text-decoration-none text-dark">
                                         <img src={images.logout} alt="" className="img-logo" />
