@@ -10,41 +10,173 @@ import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajeme
 import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
 import apiName from "../../api/api";
+import PaginationFix from "../../components/pagination-fix/paginationFix";
 
 interface Customer {
+    ID: number;
     Name: string;
     Email: string;
-    phoneNumber: string;
     Address: string;
     Phone: string;
 }
 
+
 function DataPelanggan() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
     const [dataCustomer, setDataCustomer] = useState<Customer[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [customerToDelete, setCustomerToDelete] = useState<number | null>(null);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [isModalDelete, setIsModalDelete] = useState(false);
+    const [customerToEdit, setCustomerToEdit] = useState<Customer | null>(null);
+    const [isModalEditOpen, setIsModalEditOpen] = useState(false);
+
+    const [searchQuery, setSearchQuery] = useState(""); // State untuk pencarian
+    const [filteredData, setFilteredData] = useState<Customer[]>([]);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [dataPerPage, setDataPerPage] = useState(10); // Default data per page
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
 
     // fetching add customers
-    // const handleSubmitAdd = (e) => {
-    //     e.preventDefault();
-        
-    // }
+    const handleSubmitAdd = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        try {
+            const requestData = {
+                Name: name,
+                Email: email,
+                Address: address,
+                Phone: phone,
+            };
+
+            console.log("Sending data:", requestData); // Debugging log
+
+            const response = await apiName.post('/customers', requestData);
+
+            console.log("Response from API:", response.data); // Debugging log
+
+            // Tambahkan data baru ke state
+            setDataCustomer([...dataCustomer, response.data.data]);
+
+            alert("Data customer berhasil ditambahkan");
+
+            // Tutup modal dan reset input
+            setIsModalOpen(false);
+            setName("");
+            setEmail("");
+            setAddress("");
+            setPhone("");
+        } catch (err: any) {
+            console.error("Error adding customer:", err.response?.data || err.message);
+            alert("Gagal menambahkan data. Silakan cek kembali.");
+        }
+    };
+
 
     // fetching data from api
     useEffect(() => {
         const fetchingData = async () => {
             try {
-                const response = await apiName.get("/customers");
-                setDataCustomer(response.data.data);
+                const response = await apiName.get("/customers", {
+                    params: {
+                        limit: dataPerPage,
+                        offset: (currentPage - 1) * dataPerPage,
+                    },
+                });
+                const { data, page_info } = response.data;
+                setDataCustomer(data);
+                setTotalPages(page_info.total_pages);
             } catch (err) {
                 console.error("Error fetching profile:", err);
             }
         };
         fetchingData();
-    }, [])
+    }, [currentPage, dataPerPage]); // Refetch data ketika page atau limit berubah
+
+    // Delete Customer
+    const handleSubmitDelete = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsDeleting(true);
+
+        if (!customerToDelete) {
+            alert("Pelanggan tidak ditemukan.");
+            setIsDeleting(false);
+            return;
+        }
+
+        try {
+            await apiName.delete(`/customers/${customerToDelete}`);
+            setDataCustomer(dataCustomer.filter(customer => customer.ID !== customerToDelete));
+            setIsModalDelete(false);
+            setCustomerToDelete(null);
+        } catch (err) {
+            console.error("Error deleting customer:", err);
+            alert("Gagal menghapus data. Silakan coba lagi.");
+        } finally {
+            setIsDeleting(false);
+        }
+    };
+
+    // edit customer
+    // Menangani pembukaan modal edit pelanggan
+    const handleEditCustomer = (customer: Customer) => {
+        setCustomerToEdit(customer);
+        setIsModalEditOpen(true);
+    };
+
+    // Menyimpan perubahan pelanggan
+    const handleSubmitEdit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (!customerToEdit) return;
+
+        try {
+            // Kirim data yang diubah ke API
+            const response = await apiName.put(`/customers/${customerToEdit.ID}`, customerToEdit);
+
+            // Dapatkan data yang diperbarui dari API
+            const updatedCustomer = response.data.data;
+
+            // Perbarui state dataCustomer dengan data yang diperbarui
+            setDataCustomer((prevData) =>
+                prevData.map((customer) =>
+                    customer.ID === updatedCustomer.ID ? updatedCustomer : customer
+                )
+            );
+
+            // Tutup modal
+            setIsModalEditOpen(false);
+            setCustomerToEdit(null);
+
+            // Berikan notifikasi sukses
+            alert("Data berhasil diperbarui!");
+        } catch (error) {
+            console.error("Error updating data:", error);
+            alert("Gagal memperbarui data.");
+        }
+    };
+
+    // handle search
+    useEffect(() => {
+        if (searchQuery.trim() === "") {
+            setFilteredData(dataCustomer);
+        } else {
+            const lowercasedQuery = searchQuery.toLowerCase();
+            const filtered = dataCustomer.filter((customer) =>
+                customer.Name.toLowerCase().includes(lowercasedQuery) ||
+                customer.Email.toLowerCase().includes(lowercasedQuery) ||
+                customer.Phone.includes(lowercasedQuery) ||
+                customer.Address.toLowerCase().includes(lowercasedQuery)
+            );
+            setFilteredData(filtered);
+        }
+    }, [searchQuery, dataCustomer]);
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -81,7 +213,9 @@ function DataPelanggan() {
             <div className={isLargeScreen ? "container" : "container-fluid"} style={{ padding: "14px 18px 30px 18px" }}>
                 <div className="row m-0" style={{ columnGap: "12px" }}>
                     <div className="d-grid col-12 col-sm-auto p-0" style={{ marginBottom: "10px" }}>
-                        <button type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahPelangganDimanajemenDataPelanggan" style={{ backgroundColor: "#FF0000", padding: "12px 26.45px" }}>
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            type="button" className="btn focus-ring-none-manajemen border-0 text-white fw-semibold rounded-3" data-bs-toggle="modal" data-bs-target="#modalTambahPelangganDimanajemenDataPelanggan" style={{ backgroundColor: "#FF0000", padding: "12px 26.45px" }}>
                             + Tambah Pelanggan
                         </button>
                     </div>
@@ -102,6 +236,8 @@ function DataPelanggan() {
                                 type="text"
                                 className="form-control focus-ring-none-manajemen font-size-16px-manajemen placeholder-font-size-16px-color-8E8E8E-manajemen border-start-0 rounded-end-3"
                                 placeholder="Cari pelanggan.."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                                 style={{ borderColor: "#EDEDED", padding: "11px 12px 11px 0px" }}
                             />
                         </div>
@@ -122,7 +258,7 @@ function DataPelanggan() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {dataCustomer.map((content, index) => (
+                                {filteredData.map((content, index) => (
                                     content.Name || content.Email || content.Phone || content.Address ? ( // poin dan kode belum tau dari mana 
                                         <tr key={index}>
                                             {content.Name && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Name}</td>}
@@ -131,12 +267,22 @@ function DataPelanggan() {
                                             {content.Address && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Address}</td>}
                                             {/* {content.pointDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
                                             {content.kodeDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>} */}
+                                            <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}></td>
+                                            <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}></td>
+
                                             <td className="align-middle" style={{ padding: "15px 0px", color: "#646464", whiteSpace: "nowrap", width: "1%" }}>
-                                                <button type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }} data-bs-toggle="modal" data-bs-target="#modalEditDataPelangganDimanajemenDataPelanggan">
+                                                <button
+                                                    onClick={() => { handleEditCustomer(content) }}
+                                                    type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }} data-bs-toggle="modal" data-bs-target="#modalEditDataPelangganDimanajemenDataPelanggan">
                                                     <img src={logoEditManajemenGreen} className="me-2" />
                                                     <span>Edit</span>
                                                 </button>
-                                                <button type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }} data-bs-toggle="modal" data-bs-target="#modalHapusPelangganDimanajemenDataPelanggan">
+                                                <button
+                                                    onClick={() => {
+                                                        setCustomerToDelete(content.ID);
+                                                        setIsModalDelete(true)
+                                                    }}
+                                                    type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }} data-bs-toggle="modal" data-bs-target="#modalHapusPelangganDimanajemenDataPelanggan">
                                                     <img src={logoHapusManajemenRed} />
                                                 </button>
                                             </td>
@@ -144,7 +290,7 @@ function DataPelanggan() {
                                     ) : null
                                 ))}
 
-                                {dataCustomer.every(content => !content.Name && !content.Email && !content.Phone && !content.Address) &&
+                                {filteredData.every(content => !content.Name && !content.Email && !content.Phone && !content.Address) &&
                                     <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 295px)" }}>
                                         <img src={imageNoData} />
                                         <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Data tidak ditemukan</p>
@@ -153,199 +299,281 @@ function DataPelanggan() {
                             </tbody>
                         </table>
                     </div>
+                    {/* pagination */}
+                    <PaginationFix
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        dataPerPage={dataPerPage} // Pass the dataPerPage state
+                        onPageChange={(page) => setCurrentPage(page)} // Handler for changing the page
+                        onDataPerPageChange={(limit) => {
+                            setDataPerPage(limit); // Handler for changing the limit per page
+                            setCurrentPage(1); // Reset to page 1 when limit changes
+                        }}
+                    />
+
                 </div>
             </div>
 
             {/* Modal Tambah Pelanggan Dimanajemen Data Pelanggan */}
-            <div className="modal fade" id="modalTambahPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
-                    <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
-                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
-                            <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
-                            <span className="fw-medium" style={{ fontSize: 18 }}>
-                                Tambah Pelanggan
-                            </span>
-                            <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form>
-                            <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
-                                <div style={{ marginBottom: 17 }}>
-                                    <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
-                                    <input
-                                        type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
-                                        placeholder="Masukan nama.."
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        required
-                                    />
-                                </div>
-                                <div style={{ marginBottom: 17 }}>
-                                    <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
-                                    <input
-                                        type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputNoTeleponPelangganDimanajemenDataPelanggan"
-                                        placeholder="081234567890"
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
-                                        required
-                                        onKeyDown={(e) => {
-                                            const target = e.target as HTMLInputElement; // Casting to HTMLInputElement
-                                            const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'];
-                                            const isNumberKey = /^[0-9]$/.test(e.key);
-                                            const isPlusAtStart = e.key === '+' && target.value === '';
+            {isModalOpen && (
+                <div className="modal fade" id="modalTambahPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
+                    <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
+                        <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
+                            <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                                <img src={logoTambahDipopupTambahManajemenBlack22} className="me-2" />
+                                <span className="fw-medium" style={{ fontSize: 18 }}>
+                                    Tambah Pelanggan
+                                </span>
+                                <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form onSubmit={handleSubmitAdd}>
+                                <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                                    <div style={{ marginBottom: 17 }}>
+                                        <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
+                                            placeholder="Masukan nama.."
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div style={{ marginBottom: 17 }}>
+                                        <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputNoTeleponPelangganDimanajemenDataPelanggan"
+                                            placeholder="081234567890"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            required
+                                            onKeyDown={(e) => {
+                                                const target = e.target as HTMLInputElement; // Casting to HTMLInputElement
+                                                const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'];
+                                                const isNumberKey = /^[0-9]$/.test(e.key);
+                                                const isPlusAtStart = e.key === '+' && target.value === '';
 
-                                            // Block any other character except numbers and + only at the start
-                                            if (!isNumberKey && !isPlusAtStart && !allowedKeys.includes(e.key)) {
-                                                e.preventDefault();
-                                            }
-                                        }}
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)}
-                                    />
+                                                // Block any other character except numbers and + only at the start
+                                                if (!isNumberKey && !isPlusAtStart && !allowedKeys.includes(e.key)) {
+                                                    e.preventDefault();
+                                                }
+                                            }}
+                                            value={phone}
+                                            onChange={(e) => setPhone(e.target.value)}
+                                        />
+                                    </div>
+                                    <div style={{ marginBottom: 17 }}>
+                                        <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputAlamatPelangganDimanajemenDataPelanggan"
+                                            placeholder="Masukkan alamat.."
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                            required
+                                            value={address}
+                                            onChange={(e) => setAddress(e.target.value)}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
+                                        <input
+                                            type="email"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputEmailPelangganDimanajemenDataPelanggan"
+                                            placeholder="Masukkan email.."
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
-                                <div style={{ marginBottom: 17 }}>
-                                    <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
-                                    <input
-                                        type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputAlamatPelangganDimanajemenDataPelanggan"
-                                        placeholder="Masukkan alamat.."
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        required
-                                        value={address}
-                                        onChange={(e) => setAddress(e.target.value)}
-                                    />
+                                <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                                    <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
+                                        Tambah
+                                    </button>
                                 </div>
-                                <div>
-                                    <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
-                                    <input
-                                        type="email"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputEmailPelangganDimanajemenDataPelanggan"
-                                        placeholder="Masukkan email.."
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
-                                </div>
-                            </div>
-                            <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
-                                <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
-                                    Tambah
-                                </button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
             {/* Akhir --- Modal Tambah Pelanggan Dimanajemen Data Pelanggan */}
 
             {/* Modal Edit Data Pelanggan Dimanajemen Data Pelanggan */}
-            <div className="modal fade" id="modalEditDataPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
-                    <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
-                        <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
-                            <img src={logoEditManajemenDark22} className="me-2" />
-                            <span className="fw-medium" style={{ fontSize: 18 }}>
-                                Edit Data Pelanggan
-                            </span>
-                            <button type="button" className="btn-close focus-ring-none-manajemen" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form>
-                            <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
-                                <div style={{ marginBottom: 17 }}>
-                                    <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Nama Lengkap</label>
-                                    <input
-                                        type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
-                                        placeholder="Masukan nama.."
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        required
-                                        value="Irfan Satya"
-                                    />
-                                </div>
-                                <div style={{ marginBottom: 17 }}>
-                                    <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>No Telepon</label>
-                                    <input
-                                        type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputNoTeleponPelangganDimanajemenDataPelanggan"
-                                        placeholder="081234567890"
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
-                                        required
-                                        onKeyDown={(e) => {
-                                            const target = e.target as HTMLInputElement; // Casting to HTMLInputElement
-                                            const allowedKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'];
-                                            const isNumberKey = /^[0-9]$/.test(e.key);
-                                            const isPlusAtStart = e.key === '+' && target.value === '';
-
-                                            // Block any other character except numbers and + only at the start
-                                            if (!isNumberKey && !isPlusAtStart && !allowedKeys.includes(e.key)) {
-                                                e.preventDefault();
+            {isModalEditOpen && customerToEdit && (
+                <div className="modal fade show" id="modalEditDataPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false" style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+                    <div className="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" style={{ maxWidth: 605 }}>
+                        <div className="modal-content shadow rounded-4" style={{ maxWidth: 605 }}>
+                            <div className="modal-header" style={{ margin: "19px 32px 0 32px", padding: "0 0 18px 0" }}>
+                                <img src={logoEditManajemenDark22} className="me-2" />
+                                <span className="fw-medium" style={{ fontSize: 18 }}>
+                                    Edit Data Pelanggan
+                                </span>
+                                <button
+                                    onClick={() => setCustomerToEdit(null)}
+                                    type="button"
+                                    className="btn-close focus-ring-none-manajemen"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <form onSubmit={handleSubmitEdit}>
+                                <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 29px 0px 32px", margin: "0px 3px 0px 0px" }}>
+                                    <div style={{ marginBottom: 17 }}>
+                                        <label htmlFor="inputNamaLengkapPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>
+                                            Nama Lengkap
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
+                                            placeholder="Masukan nama.."
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            required
+                                            value={customerToEdit.Name}
+                                            onChange={(e) =>
+                                                setCustomerToEdit({
+                                                    ...customerToEdit,
+                                                    Name: e.target.value,
+                                                })
                                             }
-                                        }}
-                                        value="081328639415"
-                                    />
-                                </div>
-                                <div style={{ marginBottom: 17 }}>
-                                    <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Alamat</label>
-                                    <input
-                                        type="text"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputAlamatPelangganDimanajemenDataPelanggan"
-                                        placeholder="Masukkan alamat.."
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        required
-                                        value="Jl D.I. Pandjaitan No. 128, Purwokerto"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>Email (Opsional)</label>
-                                    <input
-                                        type="email"
-                                        className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
-                                        id="inputEmailPelangganDimanajemenDataPelanggan"
-                                        placeholder="Masukkan email.."
-                                        style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
-                                        value="irfansatya75@gmail.com"
-                                    />
-                                </div>
-                            </div>
-                            <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
-                                <button type="submit" className="btn fw-semibold w-100 border-0 rounded-3 m-0 text-white p-0" style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}>
-                                    Simpan
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            {/* Akhir --- Modal Edit Data Pelanggan Dimanajemen Data Pelanggan */}
+                                        />
+                                    </div>
+                                    <div style={{ marginBottom: 17 }}>
+                                        <label htmlFor="inputNoTeleponPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>
+                                            No Telepon
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputNoTeleponPelangganDimanajemenDataPelanggan"
+                                            placeholder="081234567890"
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            required
+                                            value={customerToEdit.Phone}
+                                            onChange={(e) =>
+                                                setCustomerToEdit({
+                                                    ...customerToEdit,
+                                                    Phone: e.target.value,
+                                                })
+                                            }
+                                            onKeyDown={(e) => {
+                                                const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Delete", "Tab"];
+                                                const isNumberKey = /^[0-9]$/.test(e.key);
+                                                const isPlusAtStart = e.key === "+" && customerToEdit.Phone === "";
 
-            {/* Modal Hapus Pelanggan Dimanajemen Data Pelanggan */}
-            <div className="modal fade" id="modalHapusPelangganDimanajemenDataPelanggan" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false">
-                <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 473 }}>
-                    <div className="modal-content rounded-4 shadow">
-                        <div className="modal-body" style={{ padding: 23 }}>
-                            Apakah anda yakin ingin menghapus pelanggan ini?
-                            <div className="text-end" style={{ marginTop: 44 }}>
-                                <form>
-                                    <button type="button" className="btn border-0 fw-medium me-2" data-bs-dismiss="modal">
+                                                if (!isNumberKey && !isPlusAtStart && !allowedKeys.includes(e.key)) {
+                                                    e.preventDefault();
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                    <div style={{ marginBottom: 17 }}>
+                                        <label htmlFor="inputAlamatPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>
+                                            Alamat
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputAlamatPelangganDimanajemenDataPelanggan"
+                                            placeholder="Masukkan alamat.."
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            required
+                                            value={customerToEdit.Address}
+                                            onChange={(e) =>
+                                                setCustomerToEdit({
+                                                    ...customerToEdit,
+                                                    Address: e.target.value,
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputEmailPelangganDimanajemenDataPelanggan" className="form-label mt-0" style={{ marginBottom: 10, color: "#252525" }}>
+                                            Email (Opsional)
+                                        </label>
+                                        <input
+                                            type="email"
+                                            className="form-control rounded-3 placeholder-font-size-16px-color-8E8E8E-manajemen font-size-16px-manajemen focus-ring-none-manajemen"
+                                            id="inputEmailPelangganDimanajemenDataPelanggan"
+                                            placeholder="Masukkan email.."
+                                            style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
+                                            value={customerToEdit.Email}
+                                            onChange={(e) =>
+                                                setCustomerToEdit({
+                                                    ...customerToEdit,
+                                                    Email: e.target.value,
+                                                })
+                                            }
+                                        />
+                                    </div>
+                                </div>
+                                <div className="modal-footer border-0" style={{ padding: "50px 32px 27px 32px" }}>
+                                    <button
+                                        type="button"
+                                        className="btn fw-medium w-50 border-0 rounded-3 m-0 text-black"
+                                        style={{ backgroundColor: "#EDEDED", fontSize: "18px", height: "50px" }}
+                                        onClick={() => setCustomerToEdit(null)}
+                                    >
                                         Batalkan
                                     </button>
-                                    <button type="submit" className="btn border-0 fw-semibold rounded-3 text-white" style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}>
-                                        Hapus
+                                    <button
+                                        type="submit"
+                                        className="btn fw-semibold w-50 border-0 rounded-3 m-0 text-white"
+                                        style={{ backgroundColor: "#FF0000", fontSize: "18px", height: "50px" }}
+                                    >
+                                        Simpan
                                     </button>
-                                </form>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Akhir --- Modal Edit Data Pelanggan Dimanajemen Data Pelanggan */}
+
+            {/* Modal Hapus Pelanggan */}
+            {isModalDelete && (
+                <div
+                    className="modal fade show"
+                    tabIndex={-1}
+                    role="dialog"
+                    style={{ display: "block", backgroundColor: "rgba(0, 0, 0, 0.5)" }} // Overlay manual karena modal tidak ditutup otomatis
+                >
+                    <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: 473 }}>
+                        <div className="modal-content rounded-4 shadow">
+                            <div className="modal-body" style={{ padding: 23 }}>
+                                <p>Apakah Anda yakin ingin menghapus pelanggan ini?</p>
+                                <div className="text-end" style={{ marginTop: 44 }}>
+                                    <form onSubmit={handleSubmitDelete}>
+                                        <button
+                                            onClick={() => setIsModalDelete(false)}
+                                            type="button"
+                                            className="btn border-0 fw-medium me-2"
+                                        >
+                                            Batalkan
+                                        </button>
+                                        <button
+                                            disabled={isDeleting}
+                                            type="submit"
+                                            className="btn border-0 fw-semibold rounded-3 text-white"
+                                            style={{ backgroundColor: "#FF0000", padding: "8px 23.78px" }}
+                                        >
+                                            {isDeleting ? "Menghapus..." : "Hapus"}
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
+
             {/* Akhir --- Modal Hapus Pelanggan Dimanajemen Data Pelanggan */}
         </Layout>
     );
