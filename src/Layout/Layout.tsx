@@ -202,19 +202,22 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
 
                     {/* Modal Notifikasi */}
                     <div className={`modal fade ${isModalVisible ? "show" : ""}`} style={{ display: isModalVisible ? "block" : "none" }} tabIndex={-1}>
-                        <div className="modal-dialog modal-dialog-scrollable modal-notification" style={{ position: "absolute", top: "60px", right: "20px" }}>
-                            <div className="modal-content">
+                        <div className="modal-dialog modal-dialog-scrollable modal-notification">
+                            <div className="modal-content modal-content-notification">
                                 <div className="modal-header">
-                                    <h5 className="modal-title">
+                                    <h5 className="modal-title modal-title-notification">
                                         <img src={images.notification} alt="" className="me-2" />
                                         Notifikasi Anda<span>(0)</span>
                                     </h5>
                                 </div>
-                                <div className="modal-body">
-                                    <p>Ini adalah contoh notifikasi.</p>
-                                    <p>Notifikasi lain dapat ditambahkan di sini.</p>
+                                <div className="modal-body modal-body-notification">
+
+                                    <img src={images.kosong} alt="" className="text-center img-notif mt-2" />
+                                    <h2 className="text-center h2-notif mt-4">Tidak Ada Notifikasi </h2>
+
+                                    <p className="text-center p-notif mt-2">Informasi terkait layanan darurat akan muncul disini.</p>
                                 </div>
-                                <div className="modal-footer footer-modal-notification">
+                                <div className="modal-footer footer-modal-notification d-flex justify-content-start">
                                     <button type="button" className="btn-close" onClick={handleNotificationClick}></button> Tutup
                                 </div>
                             </div>
@@ -228,7 +231,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                         tabIndex={-1}
                         onClick={handleCloseModal} // Add this line
                     >
-                        <div className="modal-dialog modal-dialog-scrollable modal-profile" style={{ position: "absolute", top: "60px", right: "20px" }}>
+                        <div className="modal-dialog modal-profile" style={{ position: "absolute", top: "60px", right: "20px" }}>
                             <div className="modal-content">
                                 <div className="modal-body">
                                     <div className="mb-3 profile-wrap">
@@ -237,15 +240,15 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                                         <p className="mb-0 name-profile">John Doe</p>
                                         <p className="mb-0">johndoe@example.com</p>
                                     </div>
-                                    <div className="modal-footer">
-                                        <Link to="/" className="text-decoration-none text-dark">
+                                    <div className="modal-footer modal-footer-profile">
+                                        <Link to="/" className="text-decoration-none text-dark d-flex flex-start">
                                             <div className="edit-modal">
                                                 <img src={images.edit} alt="edit icon" className="me-3" />
                                                 <p className="mt-0 mb-0">Edit Profile</p>
                                             </div>
                                         </Link>
                                     </div>
-                                    <div className="modal-footer">
+                                    <div className="modal-footer modal-footer-profile">
                                         <Link to="/" className="text-decoration-none text-dark">
                                             <div className="logout-modal">
                                                 <img src={images.logout} alt="logout icon" className="me-3" />
@@ -261,7 +264,7 @@ const Layout: React.FC<LayoutProps> = ({ children, titlePage }) => {
                     <div className="main-content">{children}</div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
