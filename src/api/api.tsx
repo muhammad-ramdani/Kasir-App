@@ -1,8 +1,16 @@
 import axios from "axios";
 
+const baseURL = window.location.hostname === "localhost"
+    ? "http://68.183.103.154:8080/api/v1" // URL lokal
+    : "/api"; // Proxy di Vercel
+
 const apiName = axios.create({
-    baseURL: "http://68.183.103.154:8080/api/v1",
-})
+    baseURL: baseURL,
+});
+
+
+console.log(baseURL);
+
 
 // tambahkan token ke setiap request secara otomatis
 apiName.interceptors.request.use(
