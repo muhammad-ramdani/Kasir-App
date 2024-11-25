@@ -30,6 +30,7 @@ import profileToko from '../src/assets/profile-toko.svg';
 import logoutButtonImg from '../src/assets/logout.svg';
 import edc from '../src/assets/edc.svg';
 import calender from '../src/assets/calender.svg'
+import kosong from "../src/assets/kosong.png"
 
 const images = {
     logo,
@@ -63,7 +64,8 @@ const images = {
     profileToko,
     logoutButtonImg,
     edc,
-    calender
+    calender,
+    kosong
     
 
 }

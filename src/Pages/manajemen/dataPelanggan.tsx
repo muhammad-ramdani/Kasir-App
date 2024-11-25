@@ -9,9 +9,42 @@ import logoHapusManajemenRed from "../../assets/imagesAllManajemen/logo-hapus-ma
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 import logoTambahDipopupTambahManajemenBlack22 from "../../assets/imagesAllManajemen/logo-tambah-di-popup-tambah-manajemen-black-22.svg";
 import logoEditManajemenDark22 from "../../assets/imagesAllManajemen/logo-edit-manajemen-dark-22.svg";
+import apiName from "../../api/api";
+
+interface Customer {
+    Name: string;
+    Email: string;
+    phoneNumber: string;
+    Address: string;
+    Phone: string;
+}
 
 function DataPelanggan() {
     const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1440);
+    const [dataCustomer, setDataCustomer] = useState<Customer[]>([]);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
+    const [phone, setPhone] = useState("");
+
+    // fetching add customers
+    // const handleSubmitAdd = (e) => {
+    //     e.preventDefault();
+        
+    // }
+
+    // fetching data from api
+    useEffect(() => {
+        const fetchingData = async () => {
+            try {
+                const response = await apiName.get("/customers");
+                setDataCustomer(response.data.data);
+            } catch (err) {
+                console.error("Error fetching profile:", err);
+            }
+        };
+        fetchingData();
+    }, [])
 
     useEffect(() => {
         const handleResize = () => {
@@ -24,17 +57,6 @@ function DataPelanggan() {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
-
-    const cardContents = [
-        {
-            namaPelangganDimanajemenDataPelanggan: "Irfan Satya",
-            emailDimanajemenDataPelanggan: "irfansatya75@gmail.com",
-            noTeleponDimanajemenDataPelanggan: "081328639415",
-            alamatDimanajemenDataPelanggan: "Jl. D.I. Pandjaitan No. 128, Purwokerto",
-            pointDimanajemenDataPelanggan: "0",
-            kodeDimanajemenDataPelanggan: "069751",
-        },
-    ];
 
     // State untuk mendeteksi apakah mobile atau tidak
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
@@ -100,15 +122,15 @@ function DataPelanggan() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {cardContents.map((content, index) => (
-                                    content.namaPelangganDimanajemenDataPelanggan || content.emailDimanajemenDataPelanggan || content.noTeleponDimanajemenDataPelanggan || content.alamatDimanajemenDataPelanggan || content.pointDimanajemenDataPelanggan || content.kodeDimanajemenDataPelanggan ? (
+                                {dataCustomer.map((content, index) => (
+                                    content.Name || content.Email || content.Phone || content.Address ? ( // poin dan kode belum tau dari mana 
                                         <tr key={index}>
-                                            {content.namaPelangganDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.namaPelangganDimanajemenDataPelanggan}</td>}
-                                            {content.emailDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.emailDimanajemenDataPelanggan}</td>}
-                                            {content.noTeleponDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.noTeleponDimanajemenDataPelanggan}</td>}
-                                            {content.alamatDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.alamatDimanajemenDataPelanggan}</td>}
-                                            {content.pointDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
-                                            {content.kodeDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>}
+                                            {content.Name && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Name}</td>}
+                                            {content.Email && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Email}</td>}
+                                            {content.Phone && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Phone}</td>}
+                                            {content.Address && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Address}</td>}
+                                            {/* {content.pointDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
+                                            {content.kodeDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>} */}
                                             <td className="align-middle" style={{ padding: "15px 0px", color: "#646464", whiteSpace: "nowrap", width: "1%" }}>
                                                 <button type="button" className="btn border-0 rounded-3 fw-medium" style={{ fontSize: "14px", color: "#00C17A", backgroundColor: "#E6FDF4", padding: "7px 11.641px" }} data-bs-toggle="modal" data-bs-target="#modalEditDataPelangganDimanajemenDataPelanggan">
                                                     <img src={logoEditManajemenGreen} className="me-2" />
@@ -122,7 +144,7 @@ function DataPelanggan() {
                                     ) : null
                                 ))}
 
-                                {cardContents.every(content => !content.namaPelangganDimanajemenDataPelanggan && !content.emailDimanajemenDataPelanggan && !content.noTeleponDimanajemenDataPelanggan && !content.alamatDimanajemenDataPelanggan && !content.pointDimanajemenDataPelanggan && !content.kodeDimanajemenDataPelanggan) &&
+                                {dataCustomer.every(content => !content.Name && !content.Email && !content.Phone && !content.Address) &&
                                     <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 295px)" }}>
                                         <img src={imageNoData} />
                                         <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Data tidak ditemukan</p>
@@ -155,6 +177,8 @@ function DataPelanggan() {
                                         id="inputNamaLengkapPelangganDimanajemenDataPelanggan"
                                         placeholder="Masukan nama.."
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                         required
                                     />
                                 </div>
@@ -178,6 +202,8 @@ function DataPelanggan() {
                                                 e.preventDefault();
                                             }
                                         }}
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
                                     />
                                 </div>
                                 <div style={{ marginBottom: 17 }}>
@@ -189,6 +215,8 @@ function DataPelanggan() {
                                         placeholder="Masukkan alamat.."
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
                                         required
+                                        value={address}
+                                        onChange={(e) => setAddress(e.target.value)}
                                     />
                                 </div>
                                 <div>
@@ -199,6 +227,8 @@ function DataPelanggan() {
                                         id="inputEmailPelangganDimanajemenDataPelanggan"
                                         placeholder="Masukkan email.."
                                         style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px", }}
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                             </div>
