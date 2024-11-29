@@ -125,7 +125,7 @@ function DataBarang() {
         const product = dataProduct.find((item) => item.id === id);
         if (product) {
             setEditData(product);
-            setPreviewImage(`http://68.183.103.154/${product.image_url}`); // Update gambar preview
+            setPreviewImage(`https://kasirapp.duckdns.org/${product.image_url}`); // Update gambar preview
             setSelectedImage(null); // Reset file gambar sebelumnya
         }
     };
@@ -399,7 +399,7 @@ function DataBarang() {
                                                 {sortedItems.map(item => (
                                                     <div key={item.id} className="card rounded-4 mb-3" style={{ border: activeCard === item.id ? "1px solid #FF0000" : "", cursor: "pointer", }} onClick={() => handleCardClick(item.id)}>
                                                         <div className="row m-0">
-                                                            <div className="col-auto p-0"><img src={item.image_url ? `https://68.183.103.154/${item.image_url}` : ''} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px", objectFit: "cover" }} /></div>
+                                                            <div className="col-auto p-0"><img src={item.image_url ? `https://kasirapp.duckdns.org/${item.image_url}` : ''} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px", objectFit: "cover" }} /></div>
                                                             <div className="col p-0">
                                                                 <div className="card-body ps-0">
                                                                     <div className="row">
@@ -459,7 +459,7 @@ function DataBarang() {
                                                     <div className="row mx-0" style={{ marginTop: 15 }}>
                                                         {/* Gambar */}
                                                         <div className="col-auto px-0" style={{ marginRight: 30 }}>
-                                                            <img src={selectedDetailBarang?.image_url ? `http://68.183.103.154/${selectedDetailBarang?.image_url}` : ''} className="images-card-rincian-barang" style={{ maxWidth: 125, minWidth: 125, maxHeight: 125, minHeight: 125, objectFit: "cover" }} />
+                                                            <img src={selectedDetailBarang?.image_url ? `https://kasirapp.duckdns.org/${selectedDetailBarang?.image_url}` : ''} className="images-card-rincian-barang" style={{ maxWidth: 125, minWidth: 125, maxHeight: 125, minHeight: 125, objectFit: "cover" }} />
                                                         </div>
 
                                                         {/* Nama dan ID */}
@@ -550,7 +550,7 @@ function DataBarang() {
                                 </div>
                                 <div className="modal-body overflow-auto-custom-card-manajemen" style={{ padding: "20px 23px 20px 32px", margin: "0px 3px 0px 0px" }}>
                                     <div className="text-center mb-3">
-                                        <img src={previewImage || `http://68.183.103.154/${editData?.image_url}`} style={{ width: 100, height: 100, marginBottom: 10, objectFit: "cover" }} className="border rounded-4 mt-1" />
+                                        <img src={previewImage || `https://kasirapp.duckdns.org/${editData?.image_url}`} style={{ width: 100, height: 100, marginBottom: 10, objectFit: "cover" }} className="border rounded-4 mt-1" />
                                         <div>
                                             <label htmlFor="uploadImage" className="btn btn-sm fw-medium text-white border-0 rounded-3 mt-0 mb-0" style={{ backgroundColor: "#FF0000", padding: "4.5px 20.32px" }}>
                                                 <img src={logoEditRincianBarangWhite} alt="Edit" /> Ubah
