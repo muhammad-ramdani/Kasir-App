@@ -6,84 +6,83 @@
 } */
 
 .pagination-component-rounded-card {
-    background: linear-gradient(to bottom, #ffffff 68px, transparent 68px);
-    padding: 15px 31px;
+   background: linear-gradient(to bottom, #ffffff 68px, transparent 68px);
+   padding: 15px 31px;
 }
 
 .pagination-component-content-grid {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+   display: grid;
+   grid-template-columns: 1fr auto;
+   align-items: center;
 }
 
 /* Dropdown Container (Left side content) */
 .pagination-component-dropdown-container {
-    display: inline-flex;
-    align-items: center;
+   display: inline-flex;
+   align-items: center;
 }
 
 .pagination-component-dropdown-label {
-    margin: 0;
-    color: #646464;
-    font-size: 16px;
-    font-weight: 400;
+   margin: 0;
+   color: #646464;
+   font-size: 16px;
+   font-weight: 400;
 }
 
 .pagination-component-dropdown {
-    margin-left: 6px;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    width: 55px;
-    height: 27px;
-    color: #646464;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    outline: none;
+   margin-left: 6px;
+   border: 1px solid #ffffff;
+   border-radius: 4px;
+   background-color: #ffffff;
+   width: 55px;
+   height: 27px;
+   color: #646464;
+   font-size: 16px;
+   font-weight: 400;
+   text-align: center;
+   outline: none;
 }
 
 .pagination-component-dropdown:focus {
-    border: 1px solid #ffffff !important;
+   border: 1px solid #ffffff !important;
 }
 
 .pagination-component-data-display {
-    margin: 0 50px 0 50px;
-    color: #646464;
-    font-size: 16px;
-    font-weight: 400;
+   margin: 0 50px 0 50px;
+   color: #646464;
+   font-size: 16px;
+   font-weight: 400;
 }
 
 /* Pagination Buttons (Right side content) */
 .pagination-component-pagination-buttons {
-    text-align: right;
+   text-align: right;
 }
 
 .pagination-component-pagination-page-btn {
-    padding: 5px 10px;
-    margin-right: 5px;
-    font-size: 16px;
-    color: #FFFFFF;
-    font-weight: 600;
-    
+   padding: 5px 10px;
+   margin-right: 5px;
+   font-size: 16px;
+   color: #ffffff;
+   font-weight: 600;
 }
 
 .pagination-component-pagination-page-btn:last-child {
-    margin-right: 0;
+   margin-right: 0;
 }
 
 .pagination-component-pagination-page-btn + .pagination-component-pagination-btn {
-    margin: 0 5px;
+   margin: 0 5px;
 }
 
 /* Additional Button Styles */
 .pagination-component-pagination-page-btn {
-    padding: 5px 15px;
-    border-radius: 10px;
-    background-color: #ff0000;
-    cursor: pointer;
-    border: 1px solid #ff0000;
-    transition: background-color 0.2s ease;
+   padding: 5px 15px;
+   border-radius: 10px;
+   background-color: #ff0000;
+   cursor: pointer;
+   border: 1px solid #ff0000;
+   transition: background-color 0.2s ease;
 }
 
 /* .pagination-component-pagination-page-btn:hover {
@@ -91,26 +90,26 @@
 } */
 
 .pagination-component-pagination-arrow-btn {
-    padding: 5px 10px;
-    margin-right: 5px;
+   padding: 5px 10px;
+   margin-right: 5px;
 }
 
 .pagination-component-pagination-arrow-btn:last-child {
-    margin-right: 0;
+   margin-right: 0;
 }
 
 .pagination-component-pagination-arrow-btn + .pagination-component-pagination-btn {
-    margin: 0 5px;
+   margin: 0 5px;
 }
 
 /* Arrow Button Styles */
 .pagination-component-pagination-arrow-btn {
-    padding: 5px 10px;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    border: 1px solid #828282;
-    cursor: pointer;
-    /* transition: background-color 0.2s ease; */
+   padding: 5px 10px;
+   border-radius: 10px;
+   background-color: #ffffff;
+   border: 1px solid #828282;
+   cursor: pointer;
+   /* transition: background-color 0.2s ease; */
 }
 
 /* .pagination-component-pagination-arrow-btn:hover {
@@ -118,6 +117,6 @@
 } */
 
 .pagination-component-arrow-icon {
-    width: 16px; 
-    height: 16px; 
+   width: 16px;
+   height: 16px;
 }
