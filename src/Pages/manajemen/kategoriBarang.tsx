@@ -1,7 +1,7 @@
 import "./styleAllManajemen.css";
 import searchNormal from "../../assets/imagesManajemenDataBarang/search-normal.svg";
 import tidakAdaBarang from "../../assets/imagesManajemenDataBarang/tidak-ada-barang.svg";
-import gambarChitato from "../../assets/imagesAllManajemen/chitato.png";
+// import gambarChitato from "../../assets/imagesAllManajemen/chitato.png";
 import gambarGoodDay from "../../assets/imagesAllManajemen/good-day.png";
 import gambarIndomie from "../../assets/imagesAllManajemen/indomie.png";
 import gambarJetz from "../../assets/imagesAllManajemen/jetz.png";
@@ -52,7 +52,7 @@ function KategoriBarang() {
 
     const cardContents2 = [
         {
-            gambarBarang: gambarChitato,
+            gambarBarang: gambarJetz,
             namaBarangProduk: "Chitato Rasa Sapi Panggang",
             kodeBarang: "000001",
             stokBarang: "100",
