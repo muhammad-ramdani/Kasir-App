@@ -399,7 +399,7 @@ function DataBarang() {
                                                 {sortedItems.map(item => (
                                                     <div key={item.id} className="card rounded-4 mb-3" style={{ border: activeCard === item.id ? "1px solid #FF0000" : "", cursor: "pointer", }} onClick={() => handleCardClick(item.id)}>
                                                         <div className="row m-0">
-                                                            <div className="col-auto p-0"><img src={item.image_url ? `http://68.183.103.154/${item.image_url}` : ''} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px", objectFit: "cover" }} /></div>
+                                                            <div className="col-auto p-0"><img src={item.image_url ? `https://68.183.103.154/${item.image_url}` : ''} className="images-card-barang" style={{ maxWidth: "78px", minWidth: "78px", maxHeight: "81px", minHeight: "81px", objectFit: "cover" }} /></div>
                                                             <div className="col p-0">
                                                                 <div className="card-body ps-0">
                                                                     <div className="row">
