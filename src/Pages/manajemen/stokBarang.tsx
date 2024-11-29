@@ -5,7 +5,6 @@ import logoExportDataWhite from "../../assets/imagesAllManajemen/logo-export-dat
 import logoImportData from "../../assets/imagesAllManajemen/logo-import-data.svg";
 import searchNormalManajemen from "../../assets/imagesAllManajemen/logo-search-normal-manajemen.svg";
 import logoEditManajemenGreen from "../../assets/imagesAllManajemen/logo-edit-manajemen-green.svg";
-// import chitato from "../../assets/imagesAllManajemen/chitato.png";
 import imageNoData from "../../assets/imagesAllManajemen/gambar-no-data-manajemen.svg";
 import EditStokBarang from "./editStokBarang";
 import apiName from "../../api/api";
@@ -54,18 +53,17 @@ function StockBarang() {
   const [totalPages, setTotalPages] = useState(1);
   const [dataPerPage, setDataPerPage] = useState(10);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 1440);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.innerWidth > 1440);
+        };
 
-    window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
   // fetching data form api(stocks)
   useEffect(() => {
     const fetchingData = async () => {
