@@ -1,7 +1,7 @@
 import loginImg from "../../../assets/login.png";
 import logoKasir from "../../../assets/kasir-jempol.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 import "./register.css";
@@ -12,13 +12,13 @@ function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [phone, setPhone] = useState("");
-  const [isPhoneValid, setIsPhoneValid] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({
     phone: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    email: ""
   });
   const navigate = useNavigate();
 
@@ -30,28 +30,34 @@ function Register() {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-  // Handle phone input (hanya angka yang diperbolehkan)
   const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value;
 
-    // Validasi hanya angka
+    // Validasi hanya angka di frontend
     if (/^\d*$/.test(input)) {
       setPhone(input);
-      setIsPhoneValid(input.length >= 10); // Perbarui status validasi
       setErrors({ ...errors, phone: "" }); // Hapus error jika valid
     } else {
       setErrors({ ...errors, phone: "Nomor telepon hanya boleh berisi angka." });
-      setIsPhoneValid(false); // Set isPhoneValid ke false jika tidak valid
     }
   };
-
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    // Validasi password dan konfirmasi password cocok
     if (password !== confirmPassword) {
       setErrors({ ...errors, confirmPassword: "Password dan konfirmasi password tidak cocok." });
-      // alert("Password dan konfirmasi password tidak cocok.");
+      return;
+    }
+
+    // Validasi nomor telepon
+    if (phone.length < 10 || phone.length > 13) {
+      setErrors({ ...errors, phone: "Nomor telepon harus memiliki panjang antara 10 hingga 13 digit." });
+      return;
+    }
+    if (!phone.startsWith("08") && !phone.startsWith("628")) {
+      setErrors({ ...errors, phone: "Nomor telepon harus dimulai dengan '08' atau '628'." });
       return;
     }
 
@@ -61,20 +67,32 @@ function Register() {
         password,
         phone
       };
-      console.log(requestData);
 
-      const response = await apiName.post("/users", requestData)
+      const response = await apiName.post("/users", requestData);
 
       if (response.status === 200) {
         alert("Registrasi berhasil!");
         navigate("/dashboard");
       }
-    } catch (error) {
-      console.log("error saat registrasi:", error);
+    } catch (error: any) {
+      console.error("Error saat registrasi:", error);
+
+      // Tangani error yang berasal dari backend
+      if (error.response && error.response.data && error.response.data.data && error.response.data.data.message) {
+        const errorMessage = error.response.data.data.message;
+
+        // Periksa apakah error disebabkan oleh email yang duplikat
+        if (errorMessage.includes("duplicate key value violates unique constraint \"users_email_key\"")) {
+          setErrors({ ...errors, email: "Email sudah digunakan. Silakan gunakan email lain." });
+          return;
+        }
+      }
+
       alert("Registrasi gagal. Silakan coba lagi.");
     }
-
   };
+
+
 
   return (
     <>
@@ -102,10 +120,12 @@ function Register() {
                       placeholder="Email"
                       value={email}
                       onChange={(e) => {
-                        setEmail(e.target.value)
+                        setEmail(e.target.value);
+                        setErrors({ ...errors, email: "" }); // Reset error jika input berubah
                       }}
 
                       required />
+                    {errors.email && <small className="error-message text-danger">{errors.email}</small>}
                   </div>
                 </div>
 
@@ -118,8 +138,7 @@ function Register() {
                       value={phone}
                       onChange={handlePhoneChange}
                       required />
-                    {isPhoneValid && <FontAwesomeIcon icon={faCheckCircle} className="phone-check-icon" />}
-                    {errors.phone && <small className="error-message">{errors.phone}</small>}
+                    {errors.phone && <small className="error-message text-danger">{errors.phone}</small>}
                   </div>
                 </div>
 
@@ -160,7 +179,7 @@ function Register() {
                       <FontAwesomeIcon icon={showConfirmPassword ? faEyeSlash : faEye} />
                     </span>
                     {errors.confirmPassword && (
-                      <small className="error-message">{errors.confirmPassword}</small>
+                      <small className="error-message text-danger">{errors.confirmPassword}</small>
                     )}
                   </div>
                 </div>
