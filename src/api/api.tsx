@@ -1,8 +1,6 @@
 import axios from "axios";
 
-const baseURL = window.location.hostname === "localhost"
-    ? "http://68.183.103.154:8080/api/v1" // URL lokal
-    : "/api"; // Proxy di Vercel
+const baseURL = "https://kasirapp.duckdns.org/api/v1"
 
 const apiName = axios.create({
     baseURL: baseURL,

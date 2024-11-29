@@ -13,11 +13,11 @@ import apiName from "../../api/api";
 import PaginationFix from "../../components/pagination-fix/paginationFix";
 
 interface Customer {
-    ID: number;
-    Name: string;
-    Email: string;
-    Address: string;
-    Phone: string;
+    id: number;
+    name: string;
+    email: string;
+    address: string;
+    phone: string;
 }
 
 
@@ -89,9 +89,12 @@ function DataPelanggan() {
                         offset: (currentPage - 1) * dataPerPage,
                     },
                 });
-                const { data, page_info } = response.data;
-                setDataCustomer(data);
-                setTotalPages(page_info.total_pages);
+
+                // Ambil data dan pagination dari response sesuai struktur BE
+                const { data: customerData, pagination } = response.data.data;
+                setDataCustomer(customerData); // Set data pelanggan
+                setTotalPages(pagination.total_pages); // Total halaman
+                setCurrentPage(pagination.current_page); // Halaman saat ini
             } catch (err) {
                 console.error("Error fetching profile:", err);
             }
@@ -112,7 +115,7 @@ function DataPelanggan() {
 
         try {
             await apiName.delete(`/customers/${customerToDelete}`);
-            setDataCustomer(dataCustomer.filter(customer => customer.ID !== customerToDelete));
+            setDataCustomer(dataCustomer.filter(customer => customer.id !== customerToDelete));
             setIsModalDelete(false);
             setCustomerToDelete(null);
         } catch (err) {
@@ -137,7 +140,7 @@ function DataPelanggan() {
 
         try {
             // Kirim data yang diubah ke API
-            const response = await apiName.put(`/customers/${customerToEdit.ID}`, customerToEdit);
+            const response = await apiName.put(`/customers/${customerToEdit.id}`, customerToEdit);
 
             // Dapatkan data yang diperbarui dari API
             const updatedCustomer = response.data.data;
@@ -145,7 +148,7 @@ function DataPelanggan() {
             // Perbarui state dataCustomer dengan data yang diperbarui
             setDataCustomer((prevData) =>
                 prevData.map((customer) =>
-                    customer.ID === updatedCustomer.ID ? updatedCustomer : customer
+                    customer.id === updatedCustomer.id ? updatedCustomer : customer
                 )
             );
 
@@ -168,10 +171,10 @@ function DataPelanggan() {
         } else {
             const lowercasedQuery = searchQuery.toLowerCase();
             const filtered = dataCustomer.filter((customer) =>
-                customer.Name.toLowerCase().includes(lowercasedQuery) ||
-                customer.Email.toLowerCase().includes(lowercasedQuery) ||
-                customer.Phone.includes(lowercasedQuery) ||
-                customer.Address.toLowerCase().includes(lowercasedQuery)
+                customer.name.toLowerCase().includes(lowercasedQuery) ||
+                customer.email.toLowerCase().includes(lowercasedQuery) ||
+                customer.phone.includes(lowercasedQuery) ||
+                customer.address.toLowerCase().includes(lowercasedQuery)
             );
             setFilteredData(filtered);
         }
@@ -259,12 +262,12 @@ function DataPelanggan() {
                             </thead>
                             <tbody>
                                 {filteredData.map((content, index) => (
-                                    content.Name || content.Email || content.Phone || content.Address ? ( // poin dan kode belum tau dari mana 
+                                    content.name || content.email || content.phone || content.address ? ( // poin dan kode belum tau dari mana 
                                         <tr key={index}>
-                                            {content.Name && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Name}</td>}
-                                            {content.Email && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Email}</td>}
-                                            {content.Phone && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Phone}</td>}
-                                            {content.Address && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.Address}</td>}
+                                            {content.name && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.name}</td>}
+                                            {content.email && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.email}</td>}
+                                            {content.phone && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.phone}</td>}
+                                            {content.address && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.address}</td>}
                                             {/* {content.pointDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.pointDimanajemenDataPelanggan}</td>}
                                             {content.kodeDimanajemenDataPelanggan && <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}>{content.kodeDimanajemenDataPelanggan}</td>} */}
                                             <td className="align-middle text-nowrap" style={{ padding: "15px 15px 15px 0px", color: "#646464" }}></td>
@@ -279,7 +282,7 @@ function DataPelanggan() {
                                                 </button>
                                                 <button
                                                     onClick={() => {
-                                                        setCustomerToDelete(content.ID);
+                                                        setCustomerToDelete(content.id);
                                                         setIsModalDelete(true)
                                                     }}
                                                     type="button" className="btn border-0 rounded-3" style={{ backgroundColor: "#FFE6E6", padding: "5.5px 8.5px", marginLeft: "10px" }} data-bs-toggle="modal" data-bs-target="#modalHapusPelangganDimanajemenDataPelanggan">
@@ -290,7 +293,7 @@ function DataPelanggan() {
                                     ) : null
                                 ))}
 
-                                {filteredData.every(content => !content.Name && !content.Email && !content.Phone && !content.Address) &&
+                                {filteredData.every(content => !content.name && !content.email && !content.phone && !content.address) &&
                                     <td className="text-center ps-0 align-middle" colSpan={7} style={{ height: "calc(100vh - 295px)" }}>
                                         <img src={imageNoData} />
                                         <p className="mb-0 fw-medium" style={{ color: "#CECECE", fontSize: 18 }}>Data tidak ditemukan</p>
@@ -303,13 +306,14 @@ function DataPelanggan() {
                     <PaginationFix
                         currentPage={currentPage}
                         totalPages={totalPages}
-                        dataPerPage={dataPerPage} // Pass the dataPerPage state
-                        onPageChange={(page) => setCurrentPage(page)} // Handler for changing the page
+                        dataPerPage={dataPerPage}
+                        onPageChange={(page) => setCurrentPage(page)}
                         onDataPerPageChange={(limit) => {
-                            setDataPerPage(limit); // Handler for changing the limit per page
-                            setCurrentPage(1); // Reset to page 1 when limit changes
+                            setDataPerPage(limit);
+                            setCurrentPage(1); // Reset ke halaman 1 setiap kali jumlah data per halaman berubah
                         }}
                     />
+
 
                 </div>
             </div>
@@ -434,11 +438,11 @@ function DataPelanggan() {
                                             placeholder="Masukan nama.."
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                             required
-                                            value={customerToEdit.Name}
+                                            value={customerToEdit.name}
                                             onChange={(e) =>
                                                 setCustomerToEdit({
                                                     ...customerToEdit,
-                                                    Name: e.target.value,
+                                                    name: e.target.value,
                                                 })
                                             }
                                         />
@@ -454,17 +458,17 @@ function DataPelanggan() {
                                             placeholder="081234567890"
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                             required
-                                            value={customerToEdit.Phone}
+                                            value={customerToEdit.phone}
                                             onChange={(e) =>
                                                 setCustomerToEdit({
                                                     ...customerToEdit,
-                                                    Phone: e.target.value,
+                                                    phone: e.target.value,
                                                 })
                                             }
                                             onKeyDown={(e) => {
                                                 const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Delete", "Tab"];
                                                 const isNumberKey = /^[0-9]$/.test(e.key);
-                                                const isPlusAtStart = e.key === "+" && customerToEdit.Phone === "";
+                                                const isPlusAtStart = e.key === "+" && customerToEdit.phone === "";
 
                                                 if (!isNumberKey && !isPlusAtStart && !allowedKeys.includes(e.key)) {
                                                     e.preventDefault();
@@ -483,11 +487,11 @@ function DataPelanggan() {
                                             placeholder="Masukkan alamat.."
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
                                             required
-                                            value={customerToEdit.Address}
+                                            value={customerToEdit.address}
                                             onChange={(e) =>
                                                 setCustomerToEdit({
                                                     ...customerToEdit,
-                                                    Address: e.target.value,
+                                                    address: e.target.value,
                                                 })
                                             }
                                         />
@@ -502,11 +506,11 @@ function DataPelanggan() {
                                             id="inputEmailPelangganDimanajemenDataPelanggan"
                                             placeholder="Masukkan email.."
                                             style={{ backgroundColor: "#F2F4FA", padding: "9.5px 18px" }}
-                                            value={customerToEdit.Email}
+                                            value={customerToEdit.email}
                                             onChange={(e) =>
                                                 setCustomerToEdit({
                                                     ...customerToEdit,
-                                                    Email: e.target.value,
+                                                    email: e.target.value,
                                                 })
                                             }
                                         />
